@@ -4,14 +4,21 @@ print "What Year?\n>> "
 year = gets.chomp.to_i
 
 day = get_first_sunday(year)
+month = 1
 
-52.times do
+days_in_month = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
 
-  date = "#{ year }-01-#{ '%02d' % day }-#{ year }"
-  out_file.puts(
-    %{
+if (year % 4 == 0 && !(year % 100 == 0 && year % 400 != 0)) {
+    days_in_month[1] = 29;
+}
+
+  52.times do
+
+    date = "#{ year }-#{ '%02d' % month }-#{ '%02d' % day }-#{ year }"
+    out_file.puts(
+      %{
 *******************
-#{ date }
+      #{ date }
 *******************
 Mon - Gt, Ln, 
 Tues - Gt, Ln, 
@@ -20,26 +27,32 @@ Thu - Gt, GS(), Ln,
 Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
 Sat - Gt, 
 Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap, 
-    }
-  )
+      }
+    )
 
-  day += 7
+    day += 7
+    total_precesion += 7
 
-end
+    if day > days_in_month(month)
+      month += 1
+      day = 
+    end
 
-out_file.close
+    end
 
-def get_first_sunday(year)
-  years_since = year - 1
-  leap_years = years_since / 4
-  century_years = years_since / 100
-  four_century_years = years_since / 400
+    out_file.close
+
+    def get_first_sunday(year)
+      years_since = year - 1
+      leap_years = years_since / 4
+      century_years = years_since / 100
+      four_century_years = years_since / 400
 
 
-  total_leap_years = leap_years - century_years + four_century_years
-  total_precesion = years_since + total_leap_years
-  day_index = total_precesion % 7
+      total_leap_years = leap_years - century_years + four_century_years
+      total_precesion = years_since + total_leap_years
+      day_index = total_precesion % 7
 
-  first_sunday = 7 - day_index;
-end
+      first_sunday = 7 - day_index;
+    end
 
