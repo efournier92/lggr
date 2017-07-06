@@ -14,11 +14,11 @@ if (year % 4 == 0 && !(year % 100 == 0 && year % 400 != 0)) {
 
   52.times do
 
-    date = "#{ year }-#{ '%02d' % month }-#{ '%02d' % day }-#{ year }"
+    date = "#{ year }-#{ '%02d' % month }-#{ '%02d' % day }"
     out_file.puts(
-      %{
+      ```
 *******************
-      #{ date }
+#{ date }
 *******************
 Mon - Gt, Ln, 
 Tues - Gt, Ln, 
@@ -27,15 +27,15 @@ Thu - Gt, GS(), Ln,
 Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
 Sat - Gt, 
 Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap, 
-      }
+```
     )
 
     day += 7
     total_precesion += 7
 
     if day > days_in_month(month)
+      day = days_in_month[month] - day
       month += 1
-      day = 
     end
 
     end
