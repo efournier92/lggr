@@ -1,0 +1,521 @@
+ 
+*******************
+2017-01-01
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-01-08
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-01-15
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-01-22
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-02--1
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-02-06
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-02-13
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-02-20
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-02-27
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-03--3
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-03-04
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-03-11
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-03-18
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-03-25
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-04--2
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-04-05
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-04-12
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-04-19
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-04-26
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-05--2
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-05-05
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-05-12
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-05-19
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-05-26
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-06--3
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-06-04
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-06-11
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-06-18
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-06-25
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-07--1
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-07-06
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-07-13
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-07-20
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-07-27
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-08--3
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-08-04
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-08-11
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-08-18
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-08-25
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-09--2
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-09-05
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-09-12
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-09-19
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-09-26
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-10--2
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-10-05
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-10-12
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-10-19
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-10-26
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-11--3
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-11-04
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,  
+*******************
+2017-11-11
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap, 
