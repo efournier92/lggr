@@ -32,7 +32,7 @@ end
 
     date = "#{ year }-#{ '%02d' % month }-#{ '%02d' % day }"
     out_file.print(
-    %{ 
+    %{\
 *******************
 #{ date }
 *******************
@@ -42,7 +42,8 @@ Wed - Gt, Ln,
 Thu - Gt, GS(), Ln, 
 Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
 Sat - Gt, 
-Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap, }
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,
+}
     )
 
     day += 7
