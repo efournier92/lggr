@@ -1,3 +1,4 @@
+require 'pry'
 out_file = File.new("logYear.txt", "w")
 
 print "What Year?\n>> "
@@ -46,9 +47,8 @@ Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap, }
 
     day += 7
     total_precesion += 7
-
-    if day > days_in_month[month]
-      day = days_in_month[month] - day
+    if day > days_in_month[month - 1]
+      day = day - days_in_month[month - 1]
       month += 1
     end
 
