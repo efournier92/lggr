@@ -1,8 +1,9 @@
 require 'pry'
-out_file = File.new("logYear.txt", "w")
 
 print "What Year?\n>> "
 year = gets.chomp.to_i
+
+out_file = File.new("#{year}_Log.txt", "w")
 
   def get_first_sunday(year)
     years_since = year - 1
