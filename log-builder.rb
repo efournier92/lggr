@@ -1,6 +1,3 @@
-require 'pry'
-require './tmp_strings'
-
 def get_first_sunday(year)
   years_since = year - 1
   leap_years = years_since / 4
@@ -14,143 +11,42 @@ def get_first_sunday(year)
   first_sunday = 7 - day_index;
 end
 
-def get_first_friday(year)
-  first_sunday = get_first_sunday(year)
-  if first_sunday >= 2
-    first_friday = first_sunday - 2
-  else
-    first_friday = first_sunday + 5
-  end
-end
-
-def is_leap_year?(year)
-  if (year % 4 == 0 && !(year % 100 == 0 && year % 400 != 0))
-    true 
-  else
-    false 
-  end
-end
-
-def print_do_file(days_in_month, year, month)
-  out_file = File.new("#{ year }_DO.txt", "w")
- 
-  day = get_first_sunday(year)
-  week_index = 52
-
+def print_log_to_file(days_in_month, year, month, day)
+  out_file = File.new("#{ year }_Log.txt", "w")
   52.times do
-    if week_index.even?
-      out_file.print(even_week)
-    else
-      out_file.print(odd_week)
-    end
+    out_file.print(
+%{\
+*******************
+#{ year }-#{ '%02d' % month }-#{ '%02d' % day }
+*******************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,
+}
+    )
     day += 7
 
-    if day == 0 
+    if day > days_in_month[month - 1]
       day = day - days_in_month[month - 1]
-      month -= 1
+      month += 1
     end
-    week_index -= 1
   end
-  out_file.puts(long_separator)
   out_file.close
 end
 
-def print_lg_file(days_in_month, year, month)
-  day = get_first_friday(year)
-  day_index = 0
-  second_friday_index = 1
-  days = ['Fri - ', 'Sat - ', 'Sun - ', 'Mon - ', 'Tue - ', 'Wed - ', 'Thr - ']
-  days_in_year = days_in_month.inject(:+)
+print "What Year?\n>> "
+year = gets.chomp.to_i
+day = get_first_sunday(year)
+month = 1
 
-  out_file = File.new("#{ year }_LG.txt", "w")
+days_in_month = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
+if (year % 4 == 0 && !(year % 100 == 0 && year % 400 != 0))
+  days_in_month[1] = 29
+end
 
-  until month == 13 do
-    if day_index == 1 || day_index == 2
-      out_file.print(
-%{\
-*************************
-        #{ year }-#{ '%02d' % month }-#{ '%02d' % day }
-**********
-        #{ days[day_index] }
-***
-[R] 
-}
-      )
-    second_friday_index += 1
-    elsif second_friday_index > 14
-      out_file.print(
-%{\
-*************************
-        #{ year }-#{ '%02d' % month }-#{ '%02d' % day }
-**********
-        #{ days[day_index] }
-***
-[S] 
-***
-[S] 
-***
-[R] 
-}
-      )
-      second_friday_index = 1
-    else
-      out_file.print(
-%{\
-*************************
-        #{ year }-#{ '%02d' % month }-#{ '%02d' % day }
-**********
-        #{ days[day_index] }
-***
-[S] 
-***
-[R] 
-}
-      )
-      second_friday_index += 1
-    end
+print_log_to_file(days_in_month, year, month, day)
 
-        if day > days_in_month[month - 1]
-          day = 1
-          month += 1
-      end
-
-      if day_index == 6
-        day_index = 0
-      else
-        day_index += 1
-      end
-
-      day += 1
-    end
-    out_file.puts("************************\n\n")
-    out_file.close
-  end
-
-  type = ''
-
-  until type == 'DO' || type == 'LG'
-    if type == 'DO'
-      print_do_file(days_in_month, year, month)
-    elsif type == 'LG'
-      print_lg_file(days_in_month, year, month)
-    else
-      print "DO || LG?\n>> "
-      type = gets.chomp
-    end
-  end
-
-  print "Which Year?\n>> "
-  year = gets.chomp.to_i
-
-  month = 1
-
-  days_in_month = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
-  if is_leap_year?(year)
-    days_in_month[1] = 29
-  end
-
-  if type == 'DO'
-    print_do_file(days_in_month, year, month)
-  elsif type == 'LG'
-    print_lg_file(days_in_month, year, month)
-  end
