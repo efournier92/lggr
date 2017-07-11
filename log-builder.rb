@@ -11,8 +11,8 @@ def get_first_sunday(year)
   first_sunday = 7 - day_index;
 end
 
-def print_log_to_file(days_in_month, year, month, day)
-  out_file = File.new("#{ year }_Log.txt", "w")
+def print_do_file(days_in_month, year, month, day)
+  out_file = File.new("#{ year }_DO.txt", "w")
   52.times do
     out_file.print(
 %{\
@@ -35,6 +35,34 @@ Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,
       month += 1
     end
   end
+  out_file.puts("*******************\n\n")
+  out_file.close
+end
+
+def print_lg_file(days_in_month, year, month, day)
+  out_file = File.new("#{ year }_LG.txt", "w")
+  52.times do
+    out_file.print(
+%{\
+****************************
+#{ year }-#{ '%02d' % month }-#{ '%02d' % day }
+**********
+
+***
+[S] 
+***
+[R] 
+****************************
+}
+    )
+    day += 7
+
+    if day > days_in_month[month - 1]
+      day = day - days_in_month[month - 1]
+      month += 1
+    end
+  end
+  out_file.puts("*******************\n\n")
   out_file.close
 end
 
