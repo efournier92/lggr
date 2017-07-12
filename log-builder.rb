@@ -50,12 +50,16 @@ Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,
 end
 
 def print_lg_file(days_in_month, year, month, day)
+  days_in_year = days_in_month.inject(:+)
+    # if is_leap_year?(year)
+    #   days_in_year = 360
+    # else
+    #   days_in_year = 360
+    # end
+
   out_file = File.new("#{ year }_LG.txt", "w")
-  days_in_year = 
-    is_leap_year?(year)
-      ? 366
-      : 365
-  days_in_year.times do
+
+  until month == 13 do
     out_file.print(
 %{\
 ****************************
@@ -70,6 +74,7 @@ def print_lg_file(days_in_month, year, month, day)
 }
     )
     day += 1
+    # binding.pry
 
     if day > days_in_month[month - 1]
       day = 1
@@ -99,7 +104,6 @@ day = get_first_sunday(year)
 month = 1
 
 days_in_month = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
-
 if is_leap_year?(year)
   days_in_month[1] = 29
 end
@@ -107,6 +111,6 @@ end
 if type == 'DO'
   print_do_file(days_in_month, year, month, day)
 elsif type == 'LG'
- print_lg_file
+  print_lg_file(days_in_month, year, month, day)
 end
 
