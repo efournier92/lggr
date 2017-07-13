@@ -96,8 +96,6 @@ def print_lg_file(days_in_month, year, month)
   out_file.close
 end
 
-print "What Year?\n>> "
-year = gets.chomp.to_i
 type = ''
 
 until type == 'DO' || type == 'LG'
@@ -111,10 +109,11 @@ until type == 'DO' || type == 'LG'
   end
 end
 
-get_start_days(year)
+print "Which Year?\n>> "
+year = gets.chomp.to_i
 
 month = 1
-
+get_start_days(year)
 days_in_month = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
 if is_leap_year?(year)
   days_in_month[1] = 29
