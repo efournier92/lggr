@@ -1,6 +1,6 @@
 require 'pry'
 
-def get_first_sunday(year)
+def get_start_days(year)
   years_since = year - 1
   leap_years = years_since / 4
   century_years = years_since / 100
@@ -11,6 +11,11 @@ def get_first_sunday(year)
   day_index = total_precesion % 7
 
   first_sunday = 7 - day_index;
+
+  if first_sunday <= 2
+    first_friday = first_sunday - 2
+  else
+    first_friday = first_sunday + 5
 end
 
 def is_leap_year?(year)
@@ -21,14 +26,17 @@ def is_leap_year?(year)
   end
 end
 
-def print_do_file(days_in_month, year, month, day)
+def print_do_file(days_in_month, year, month)
   out_file = File.new("#{ year }_DO.txt", "w")
+ 
+  day = first_sunday
+
   52.times do
     out_file.print(
 %{\
-*******************
+************************
 #{ year }-#{ '%02d' % month }-#{ '%02d' % day }
-*******************
+************************
 Mon - Gt, Ln, 
 Tues - Gt, Ln, 
 Wed - Gt, Ln, 
@@ -45,32 +53,29 @@ Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,
       month += 1
     end
   end
-  out_file.puts("*******************\n\n")
+  out_file.puts("************************\n\n")
   out_file.close
 end
 
-def print_lg_file(days_in_month, year, month, day)
+def print_lg_file(days_in_month, year, month)
+  day = first_friday
+  day_index = 0
+  days = ['Fri - ', 'Sat - ', 'Sun - ', 'Mon - ', 'Tue - ', 'Wed - ', 'Thr - ']
   days_in_year = days_in_month.inject(:+)
-    # if is_leap_year?(year)
-    #   days_in_year = 360
-    # else
-    #   days_in_year = 360
-    # end
 
   out_file = File.new("#{ year }_LG.txt", "w")
 
   until month == 13 do
     out_file.print(
 %{\
-****************************
+*************************
 #{ year }-#{ '%02d' % month }-#{ '%02d' % day }
 **********
-
+#{ days[day_index] }
 ***
 [S] 
 ***
 [R] 
-****************************
 }
     )
     day += 1
@@ -80,8 +85,14 @@ def print_lg_file(days_in_month, year, month, day)
       day = 1
       month += 1
     end
+
+    if day <= 6
+      day_index++
+    else
+      day_index = 0
+    end
   end
-  out_file.puts("*******************\n\n")
+  out_file.puts("************************\n\n")
   out_file.close
 end
 
@@ -91,16 +102,17 @@ type = ''
 
 until type == 'DO' || type == 'LG'
   if type == 'DO'
-    print_do_file(days_in_month, year, month, day)
+    print_do_file(days_in_month, year, month)
   elsif type == 'LG'
-    print_lg_file(days_in_month, year, month, day)
+    print_lg_file(days_in_month, year, month)
   else
     print "DO || LG?\n>> "
     type = gets.chomp
   end
 end
 
-day = get_first_sunday(year)
+get_start_days(year)
+
 month = 1
 
 days_in_month = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
@@ -109,8 +121,8 @@ if is_leap_year?(year)
 end
 
 if type == 'DO'
-  print_do_file(days_in_month, year, month, day)
+  print_do_file(days_in_month, year, month)
 elsif type == 'LG'
-  print_lg_file(days_in_month, year, month, day)
+  print_lg_file(days_in_month, year, month)
 end
 
