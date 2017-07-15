@@ -34,9 +34,26 @@ def print_do_file(days_in_month, year, month)
   out_file = File.new("#{ year }_DO.txt", "w")
  
   day = get_first_sunday(year)
+  week_index = 0
 
   52.times do
-    out_file.print(
+    if week_index.even?
+      out_file.print(
+%{\
+************************
+#{ year }-#{ '%02d' % month }-#{ '%02d' % day }
+************************
+Mon - Gt, Ln, 
+Tues - Gt, Ln, 
+Wed - Gt, Ln, 
+Thu - Gt, GS(), Ln, 
+Fri - Gt, aLg, Lg, Bgt, PyCC, 
+Sat - Gt, Lndr(Bed), 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Sv, Ns, AF(00), TM, FldLndr, Ln, Ap, 
+}
+    )
+    else
+      out_file.print(
 %{\
 ************************
 #{ year }-#{ '%02d' % month }-#{ '%02d' % day }
@@ -47,15 +64,17 @@ Wed - Gt, Ln,
 Thu - Gt, GS(), Ln, 
 Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
 Sat - Gt, 
-Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap, 
 }
     )
+    end
     day += 7
 
     if day > days_in_month[month - 1]
       day = day - days_in_month[month - 1]
       month += 1
     end
+    week_index += 1
   end
   out_file.puts("************************\n\n")
   out_file.close
