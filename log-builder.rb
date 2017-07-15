@@ -15,7 +15,7 @@ end
 
 def get_first_friday(year)
   first_sunday = get_first_sunday(year)
-  if first_sunday <= 2
+  if first_sunday >= 2
     first_friday = first_sunday - 2
   else
     first_friday = first_sunday + 5
@@ -71,8 +71,24 @@ def print_lg_file(days_in_month, year, month)
   out_file = File.new("#{ year }_LG.txt", "w")
 
   until month == 13 do
-    if second_friday_index != 14
-    out_file.print(
+    if second_friday_index == 15
+      out_file.print(
+%{\
+*************************
+#{ year }-#{ '%02d' % month }-#{ '%02d' % day }
+**********
+#{ days[day_index] }
+***
+[S] 
+***
+[S] 
+***
+[R] 
+}
+      )
+      second_friday_index = 1
+    else
+      out_file.print(
 %{\
 *************************
 #{ year }-#{ '%02d' % month }-#{ '%02d' % day }
@@ -83,20 +99,10 @@ def print_lg_file(days_in_month, year, month)
 ***
 [R] 
 }
-    )
+      )
+      second_friday_index += 1
+    end
 
-    out_file.print(
-%{\
-*************************
-#{ year }-#{ '%02d' % month }-#{ '%02d' % day }
-**********
-#{ days[day_index] }
-***
-[S] 
-***
-[R] 
-}
-    )
     if day > days_in_month[month - 1]
       day = 1
       month += 1
