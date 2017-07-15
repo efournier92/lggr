@@ -36,44 +36,48 @@ def print_do_file(days_in_month, year, month)
   day = get_first_sunday(year)
   week_index = 0
 
+  do_week_template = {
+    'Mon' => ['Gt', 'Ln'],
+    'Tue' => ['Gt', 'Ln'],
+    'Wed' => ['Gt', 'Ln'],
+    'Thu' => ['Gt', 'GS()', 'Ln'],
+    'Fri' => ['Gt', 'LgWks', 'aLg', 'Lg', 'Bgt', 'PyCC'],
+    'Sat' => ['Gt'],
+    'Sun' => ['Gt', 'Amz()', 'ClHm()', 'ClnKtch', 'ClnFrdg', 'Vac()', 'Sv', 'Ns', 'AF(00)', 'TM', 'Ln', 'Ap']
+  }
+
+  sun_evn = ['Gt', 'Amz()', 'ClHm()', 'ClnKtch', 'ClnFrdg', 'Vac()', 'Sv', 'Ns', 'AF(00)', 'TM', 'Ln', 'Ap']
+  sun_odd = ['Gt', 'Amz()', 'ClHm()', 'DoLn()', 'FldLn', 'ClnKtch', 'ClnFrdg', 'Sv', 'Ns', 'AF(00)', 'TM', 'Ln', 'Ap']
   52.times do
-    if week_index.even?
-      out_file.print(
-%{\
-************************
-#{ year }-#{ '%02d' % month }-#{ '%02d' % day }
-************************
-Mon - Gt, Ln, 
-Tues - Gt, Ln, 
-Wed - Gt, Ln, 
-Thu - Gt, GS(), Ln, 
-Fri - Gt, aLg, Lg, Bgt, PyCC, 
-Sat - Gt, Lndr(Bed), 
-Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Sv, Ns, AF(00), TM, FldLndr, Ln, Ap, 
-}
-    )
-    else
-      out_file.print(
-%{\
-************************
-#{ year }-#{ '%02d' % month }-#{ '%02d' % day }
-************************
-Mon - Gt, Ln, 
-Tues - Gt, Ln, 
-Wed - Gt, Ln, 
-Thu - Gt, GS(), Ln, 
-Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
-Sat - Gt, 
-Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap, 
-}
-    )
+    do_week = do_week_template 
+
+    if week_index.odd?
+      do_week['Sun'] = sun_odd
     end
+
+    out_file.puts('************************')
+    out_file.puts("#{ year }-#{ '%02d' % month }-#{ '%02d' % day }")
+    out_file.puts('************************')
+
+    do_week.each do |day, tasks|
+      out_file.print(
+        day + ' - '
+      )
+      tasks.each do |task|
+        out_file.print (
+          task + ', '
+        )
+      end
+      out_file.print("\n")
+    end
+
     day += 7
 
     if day > days_in_month[month - 1]
       day = day - days_in_month[month - 1]
       month += 1
     end
+
     week_index += 1
   end
   out_file.puts("************************\n\n")
@@ -88,49 +92,23 @@ def print_lg_file(days_in_month, year, month)
   days_in_year = days_in_month.inject(:+)
 
   out_file = File.new("#{ year }_LG.txt", "w")
+  out_file.puts('************************')
+  out_file.puts("#{ year }-#{ '%02d' % month }-#{ '%02d' % day }")
+  out_file.puts('*********')
+
+  weekday_string    = "***\n[S]\n***\n[R]"
+  weekend_string    = "***\n[R]"
+  odd_friday_string = "***\n[S]\n***\n[S]\n***\n[R]"
 
   until month == 13 do
     if day_index == 1 || day_index == 2
-      out_file.print(
-%{\
-*************************
-#{ year }-#{ '%02d' % month }-#{ '%02d' % day }
-**********
-#{ days[day_index] }
-***
-[R] 
-}
-      )
-    second_friday_index += 1
+      out_file.puts(weekend_string)
+      second_friday_index += 1
     elsif second_friday_index > 14
-      out_file.print(
-%{\
-*************************
-#{ year }-#{ '%02d' % month }-#{ '%02d' % day }
-**********
-#{ days[day_index] }
-***
-[S] 
-***
-[S] 
-***
-[R] 
-}
-      )
+      out_file.puts(odd_friday_string)
       second_friday_index = 1
     else
-      out_file.print(
-%{\
-*************************
-#{ year }-#{ '%02d' % month }-#{ '%02d' % day }
-**********
-#{ days[day_index] }
-***
-[S] 
-***
-[R] 
-}
-      )
+      out_file.print(weekday_string)
       second_friday_index += 1
     end
 
@@ -146,6 +124,7 @@ def print_lg_file(days_in_month, year, month)
     end
 
     day += 1
+    out_file.puts('************************')
   end
   out_file.puts("************************\n\n")
   out_file.close
