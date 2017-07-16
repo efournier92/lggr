@@ -15,7 +15,7 @@ end
 
 def get_first_friday(year)
   first_sunday = get_first_sunday(year)
-  if first_sunday >= 2
+  if first_sunday <= 2
     first_friday = first_sunday - 2
   else
     first_friday = first_sunday + 5
@@ -30,30 +30,25 @@ def is_leap_year?(year)
   end
 end
 
+day_sep = ', '
+
+do_obj = {
+  'Mon' : ['Gt', 'Ln'],
+  'Tue' : ['Gt', 'Ln'],
+  'Wed' : ['Gt', 'Ln'],
+  'Thu' : ['Gt', 'GS()', 'Ln'],
+  'Fri' : ['Gt', 'LgWks', 'aLg', 'Lg', 'Bgt', 'PyCC'],
+  'Sat' : ['Gt'],
+  'Sun' : ['Gt', 'Amz()', 'ClHm()', 'ClnKtch', 'ClnFrdg', 'Vac()', 'Sv', 'Ns', 'AF(00)', 'TM', 'Ln', 'Ap']
+}
+
 def print_do_file(days_in_month, year, month)
   out_file = File.new("#{ year }_DO.txt", "w")
  
   day = get_first_sunday(year)
-  week_index = 0
 
   52.times do
-    if week_index.even?
-      out_file.print(
-%{\
-************************
-#{ year }-#{ '%02d' % month }-#{ '%02d' % day }
-************************
-Mon - Gt, Ln, 
-Tues - Gt, Ln, 
-Wed - Gt, Ln, 
-Thu - Gt, GS(), Ln, 
-Fri - Gt, aLg, Lg, Bgt, PyCC, 
-Sat - Gt, Lndr(Bed), 
-Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Sv, Ns, AF(00), TM, FldLndr, Ln, Ap, 
-}
-    )
-    else
-      out_file.print(
+    out_file.print(
 %{\
 ************************
 #{ year }-#{ '%02d' % month }-#{ '%02d' % day }
@@ -64,17 +59,15 @@ Wed - Gt, Ln,
 Thu - Gt, GS(), Ln, 
 Fri - Gt, LgWks, aLg, Lg, Bgt, PyCC, 
 Sat - Gt, 
-Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap, 
+Sun - Gt, Amz(), ClHm(), ClnKtch, ClnFrdg, Vac(), Sv, Ns, AF(00), TM, Ln, Ap,
 }
     )
-    end
     day += 7
 
     if day > days_in_month[month - 1]
       day = day - days_in_month[month - 1]
       month += 1
     end
-    week_index += 1
   end
   out_file.puts("************************\n\n")
   out_file.close
@@ -90,36 +83,8 @@ def print_lg_file(days_in_month, year, month)
   out_file = File.new("#{ year }_LG.txt", "w")
 
   until month == 13 do
-    if day_index == 1 || day_index == 2
-      out_file.print(
-%{\
-*************************
-#{ year }-#{ '%02d' % month }-#{ '%02d' % day }
-**********
-#{ days[day_index] }
-***
-[R] 
-}
-      )
-    second_friday_index += 1
-    elsif second_friday_index > 14
-      out_file.print(
-%{\
-*************************
-#{ year }-#{ '%02d' % month }-#{ '%02d' % day }
-**********
-#{ days[day_index] }
-***
-[S] 
-***
-[S] 
-***
-[R] 
-}
-      )
-      second_friday_index = 1
-    else
-      out_file.print(
+    if second_friday_index != 14
+    out_file.print(
 %{\
 *************************
 #{ year }-#{ '%02d' % month }-#{ '%02d' % day }
@@ -130,10 +95,20 @@ def print_lg_file(days_in_month, year, month)
 ***
 [R] 
 }
-      )
-      second_friday_index += 1
-    end
+    )
 
+    out_file.print(
+%{\
+*************************
+#{ year }-#{ '%02d' % month }-#{ '%02d' % day }
+**********
+#{ days[day_index] }
+***
+[S] 
+***
+[R] 
+}
+    )
     if day > days_in_month[month - 1]
       day = 1
       month += 1
