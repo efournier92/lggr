@@ -92,15 +92,15 @@ def print_lg_file(days_in_month, year, month)
   days_in_year = days_in_month.inject(:+)
 
   out_file = File.new("#{ year }_LG.txt", "w")
-  out_file.puts('************************')
-  out_file.puts("#{ year }-#{ '%02d' % month }-#{ '%02d' % day }")
-  out_file.puts('*********')
-
-  weekday_string    = "***\n[S]\n***\n[R]"
+  weekday_string    = "***\n[S]\n***\n[R]\n"
   weekend_string    = "***\n[R]"
   odd_friday_string = "***\n[S]\n***\n[S]\n***\n[R]"
 
   until month == 13 do
+    out_file.puts("************************")
+    out_file.puts("#{ year }-#{ '%02d' % month }-#{ '%02d' % day }")
+    out_file.puts("*********\n\n")
+
     if day_index == 1 || day_index == 2
       out_file.puts(weekend_string)
       second_friday_index += 1
@@ -124,7 +124,6 @@ def print_lg_file(days_in_month, year, month)
     end
 
     day += 1
-    out_file.puts('************************')
   end
   out_file.puts("************************\n\n")
   out_file.close
