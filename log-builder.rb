@@ -96,19 +96,22 @@ def print_lg_file(days_in_month, year, month)
   weekend_string    = "***\n[R]"
   odd_friday_string = "***\n[S]\n***\n[S]\n***\n[R]"
 
+  year_arr = []
+
   until month == 13 do
-    out_file.puts("************************")
-    out_file.puts("#{ year }-#{ '%02d' % month }-#{ '%02d' % day }")
-    out_file.puts("*********\n\n")
+    day_string  = ""
+    day_string += "************************\n"
+    day_string += "#{ year }-#{ '%02d' % month }-#{ '%02d' % day }\n"
+    day_string += "*********\n\n\n"
 
     if day_index == 1 || day_index == 2
-      out_file.puts(weekend_string)
+      day_string += weekend_string
       second_friday_index += 1
     elsif second_friday_index > 14
-      out_file.puts(odd_friday_string)
+      day_string += odd_friday_string 
       second_friday_index = 1
     else
-      out_file.print(weekday_string)
+      day_string += weekend_string 
       second_friday_index += 1
     end
 
@@ -124,8 +127,8 @@ def print_lg_file(days_in_month, year, month)
     end
 
     day += 1
+    year_arr.push(day_string)
   end
-  out_file.puts("************************\n\n")
   out_file.close
 end
 
