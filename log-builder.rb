@@ -87,7 +87,7 @@ end
 def print_lg_file(days_in_month, year, month)
   day = get_first_friday(year)
   day_index = 0
-  second_friday_index = 1
+  friday_index = 1
   days = ['Fri - ', 'Sat - ', 'Sun - ', 'Mon - ', 'Tue - ', 'Wed - ', 'Thr - ']
   # Find total days in year
   days_in_year = days_in_month.inject(:+)
@@ -108,13 +108,13 @@ def print_lg_file(days_in_month, year, month)
 
     if day_index == 1 || day_index == 2
       day_string += weekend_string
-      second_friday_index += 1
-    elsif second_friday_index > 14
+      friday_index += 1
+    elsif days[day_index] == 'Fri - ' && friday_index > 8
       day_string += odd_friday_string 
-      second_friday_index = 1
+      friday_index = 1
     else
       day_string += weekday_string 
-      second_friday_index += 1
+      friday_index += 1
     end
 
     if day >= days_in_month[month - 1]
