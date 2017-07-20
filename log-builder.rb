@@ -130,7 +130,7 @@ def print_lg_file(days_in_month, year, month)
     year_arr.push(day_string)
   end
 
-  year_arr.each do | day |
+  year_arr.reverse_each do | day |
     out_file.print(day)
   end
   out_file.close
