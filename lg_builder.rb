@@ -1,20 +1,21 @@
 require 'pry'
+require './get_first.rb'
 
-def get_first_monday(year)
-  years_since = year - 1
-  leap_years = years_since / 4
-  century_years = years_since / 100
-  four_century_years = years_since / 400
+# def get_first_sunday(year)
+#   years_since = year - 1
+#   leap_years = years_since / 4
+#   century_years = years_since / 100
+#   four_century_years = years_since / 400
 
-  total_leap_years = leap_years - century_years + four_century_years
-  total_precesion = years_since + total_leap_years
-  day_index = total_precesion % 7
+#   total_leap_years = leap_years - century_years + four_century_years
+#   total_precesion = years_since + total_leap_years
+#   day_index = total_precesion % 7
 
-  first_monday = 7 - day_index + 1;
-end
+#   first_sunday = 7 - day_index;
+# end
 
 def get_first_friday(year)
-  first_sunday = get_first_sunday(year) - 1
+  first_sunday = get_first_sunday(year)
   if first_sunday >= 2
     first_friday = first_sunday - 2
   else
@@ -32,7 +33,8 @@ end
 
 def print_do_file(days_in_month, year, month)
   out_file = File.new("#{ year }_DO.txt", "w")
-  day = get_first_monday(year)
+ 
+  day = get_first_sunday(year)
   week_index = 0
 
   do_week_template = {
@@ -40,7 +42,7 @@ def print_do_file(days_in_month, year, month)
     'Tue' => ['Gt', 'Ln'],
     'Wed' => ['Gt', 'Ln'],
     'Thu' => ['Gt', 'GS()', 'Ln'],
-    'Fri' => ['Gt', 'Lg', 'aLg', 'LgWk', 'Bgt', 'PyCC'],
+    'Fri' => ['Gt', 'LgWks', 'aLg', 'Lg', 'Bgt', 'PyCC'],
     'Sat' => ['Gt'],
     'Sun' => ['Gt', 'Amz()', 'ClHm()', 'ClnKtch', 'ClnFrdg', 'Vac()', 'Sv', 'Ns', 'AF(00)', 'TM', 'Ln', 'Ap']
   }
@@ -86,38 +88,33 @@ end
 def print_lg_file(days_in_month, year, month)
   day = get_first_friday(year)
   day_index = 0
-  friday_index = 1
+  second_friday_index = 1
   days = ['Fri - ', 'Sat - ', 'Sun - ', 'Mon - ', 'Tue - ', 'Wed - ', 'Thr - ']
-  # Find total days in year
   days_in_year = days_in_month.inject(:+)
 
   out_file = File.new("#{ year }_LG.txt", "w")
-
   weekday_string    = "***\n[S]\n***\n[R]\n"
-  weekend_string    = "***\n[R]\n"
-  odd_friday_string = "***\n[S]\n***\n[S]\n***\n[R]\n"
-
-  year_arr = []
+  weekend_string    = "***\n[R]"
+  odd_friday_string = "***\n[S]\n***\n[S]\n***\n[R]"
 
   until month == 13 do
-    day_string  = ""
-    day_string += "************************\n"
-    day_string += "#{ year }-#{ '%02d' % month }-#{ '%02d' % day }\n"
-    day_string += "*********\n#{ days[day_index] }\n"
+    out_file.puts("************************")
+    out_file.puts("#{ year }-#{ '%02d' % month }-#{ '%02d' % day }")
+    out_file.puts("*********\n\n")
 
     if day_index == 1 || day_index == 2
-      day_string += weekend_string
-      friday_index += 1
-    elsif days[day_index] == 'Fri - ' && friday_index > 8
-      day_string += odd_friday_string 
-      friday_index = 1
+      out_file.puts(weekend_string)
+      second_friday_index += 1
+    elsif second_friday_index > 14
+      out_file.puts(odd_friday_string)
+      second_friday_index = 1
     else
-      day_string += weekday_string 
-      friday_index += 1
+      out_file.print(weekday_string)
+      second_friday_index += 1
     end
 
-    if day >= days_in_month[month - 1]
-      day = 0
+    if day > days_in_month[month - 1]
+      day = 1
       month += 1
     end
 
@@ -128,12 +125,8 @@ def print_lg_file(days_in_month, year, month)
     end
 
     day += 1
-    year_arr.push(day_string)
   end
-
-  year_arr.reverse_each do | day |
-    out_file.print(day)
-  end
+  out_file.puts("************************\n\n")
   out_file.close
 end
 
