@@ -89,9 +89,11 @@ def print_lg_file(days_in_month, year, month)
   day_index = 0
   second_friday_index = 1
   days = ['Fri - ', 'Sat - ', 'Sun - ', 'Mon - ', 'Tue - ', 'Wed - ', 'Thr - ']
+  # Find total days in year
   days_in_year = days_in_month.inject(:+)
 
   out_file = File.new("#{ year }_LG.txt", "w")
+
   weekday_string    = "***\n[S]\n***\n[R]\n"
   weekend_string    = "***\n[R]\n"
   odd_friday_string = "***\n[S]\n***\n[S]\n***\n[R]\n"
@@ -115,8 +117,8 @@ def print_lg_file(days_in_month, year, month)
       second_friday_index += 1
     end
 
-    if day > days_in_month[month - 1]
-      day = 1
+    if day >= days_in_month[month - 1]
+      day = 0
       month += 1
     end
 
