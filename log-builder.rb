@@ -1,6 +1,6 @@
 require 'pry'
 
-def get_first_sunday(year)
+def get_first_monday(year)
   years_since = year - 1
   leap_years = years_since / 4
   century_years = years_since / 100
@@ -10,11 +10,11 @@ def get_first_sunday(year)
   total_precesion = years_since + total_leap_years
   day_index = total_precesion % 7
 
-  first_sunday = 7 - day_index;
+  first_monday = 7 - day_index + 1;
 end
 
 def get_first_friday(year)
-  first_sunday = get_first_sunday(year)
+  first_sunday = get_first_sunday(year) - 1
   if first_sunday >= 2
     first_friday = first_sunday - 2
   else
@@ -32,8 +32,7 @@ end
 
 def print_do_file(days_in_month, year, month)
   out_file = File.new("#{ year }_DO.txt", "w")
- 
-  day = get_first_sunday(year)
+  day = get_first_monday(year)
   week_index = 0
 
   do_week_template = {
@@ -41,7 +40,7 @@ def print_do_file(days_in_month, year, month)
     'Tue' => ['Gt', 'Ln'],
     'Wed' => ['Gt', 'Ln'],
     'Thu' => ['Gt', 'GS()', 'Ln'],
-    'Fri' => ['Gt', 'LgWks', 'aLg', 'Lg', 'Bgt', 'PyCC'],
+    'Fri' => ['Gt', 'Lg', 'aLg', 'LgWk', 'Bgt', 'PyCC'],
     'Sat' => ['Gt'],
     'Sun' => ['Gt', 'Amz()', 'ClHm()', 'ClnKtch', 'ClnFrdg', 'Vac()', 'Sv', 'Ns', 'AF(00)', 'TM', 'Ln', 'Ap']
   }
