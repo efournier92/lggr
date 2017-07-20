@@ -93,8 +93,8 @@ def print_lg_file(days_in_month, year, month)
 
   out_file = File.new("#{ year }_LG.txt", "w")
   weekday_string    = "***\n[S]\n***\n[R]\n"
-  weekend_string    = "***\n[R]"
-  odd_friday_string = "***\n[S]\n***\n[S]\n***\n[R]"
+  weekend_string    = "***\n[R]\n"
+  odd_friday_string = "***\n[S]\n***\n[S]\n***\n[R]\n"
 
   year_arr = []
 
@@ -102,7 +102,7 @@ def print_lg_file(days_in_month, year, month)
     day_string  = ""
     day_string += "************************\n"
     day_string += "#{ year }-#{ '%02d' % month }-#{ '%02d' % day }\n"
-    day_string += "*********\n\n\n"
+    day_string += "*********\n#{ days[day_index] }\n"
 
     if day_index == 1 || day_index == 2
       day_string += weekend_string
@@ -111,7 +111,7 @@ def print_lg_file(days_in_month, year, month)
       day_string += odd_friday_string 
       second_friday_index = 1
     else
-      day_string += weekend_string 
+      day_string += weekday_string 
       second_friday_index += 1
     end
 
@@ -128,6 +128,10 @@ def print_lg_file(days_in_month, year, month)
 
     day += 1
     year_arr.push(day_string)
+  end
+
+  year_arr.each do | day |
+    out_file.print(day)
   end
   out_file.close
 end
