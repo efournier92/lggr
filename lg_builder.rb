@@ -1,5 +1,6 @@
 require 'pry'
-require './get_first.rb'
+require './cal_tools'
+require './print_tools'
 
 # def get_first_sunday(year)
 #   years_since = year - 1
