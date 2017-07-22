@@ -2,40 +2,11 @@ require 'pry'
 require './cal_tools'
 require './print_tools'
 
-# def get_first_sunday(year)
-#   years_since = year - 1
-#   leap_years = years_since / 4
-#   century_years = years_since / 100
-#   four_century_years = years_since / 400
-
-#   total_leap_years = leap_years - century_years + four_century_years
-#   total_precesion = years_since + total_leap_years
-#   day_index = total_precesion % 7
-
-#   first_sunday = 7 - day_index;
-# end
-
-def get_first_friday(year)
-  first_sunday = get_first_sunday(year)
-  if first_sunday >= 2
-    first_friday = first_sunday - 2
-  else
-    first_friday = first_sunday + 5
-  end
-end
-
-def is_leap_year?(year)
-  if (year % 4 == 0 && !(year % 100 == 0 && year % 400 != 0))
-    true 
-  else
-    false 
-  end
-end
 
 def print_do_file(days_in_month, year, month)
   out_file = File.new("#{ year }_DO.txt", "w")
  
-  day = get_first_sunday(year)
+  day = Cal_Tools.get_first_sunday(year)
   week_index = 0
 
   do_week_template = {
@@ -87,7 +58,7 @@ def print_do_file(days_in_month, year, month)
 end
 
 def print_lg_file(days_in_month, year, month)
-  day = get_first_friday(year)
+  day = Cal_Tools.get_first_friday(year)
   day_index = 0
   second_friday_index = 1
   days = ['Fri - ', 'Sat - ', 'Sun - ', 'Mon - ', 'Tue - ', 'Wed - ', 'Thr - ']
@@ -150,7 +121,7 @@ year = gets.chomp.to_i
 month = 1
 
 days_in_month = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
-if is_leap_year?(year)
+if cal_tools.is_leap_year?(year)
   days_in_month[1] = 29
 end
 
