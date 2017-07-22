@@ -1,4 +1,4 @@
-module LG
+module Lg
   def self.print(days_in_month, year, month)
     day = Cal_Tools.get_first_friday(year)
     day_index = 0
