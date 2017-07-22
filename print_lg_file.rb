@@ -1,0 +1,56 @@
+module Do_File
+  def self.print(days_in_month, year, month)
+    out_file = File.new("#{ year }_DO.txt", "w")
+
+    day = Cal_Tools.get_first_sunday(year)
+    week_index = 0
+
+    do_week_template = {
+      'Mon' => ['Gt', 'Ln'],
+      'Tue' => ['Gt', 'Ln'],
+      'Wed' => ['Gt', 'Ln'],
+      'Thu' => ['Gt', 'GS()', 'Ln'],
+      'Fri' => ['Gt', 'LgWks', 'aLg', 'Lg', 'Bgt', 'PyCC'],
+      'Sat' => ['Gt'],
+      'Sun' => ['Gt', 'Amz()', 'ClHm()', 'ClnKtch', 'ClnFrdg', 'Vac()', 'Sv', 'Ns', 'AF(00)', 'TM', 'Ln', 'Ap']
+    }
+
+    sun_evn = ['Gt', 'Amz()', 'ClHm()', 'ClnKtch', 'ClnFrdg', 'Vac()', 'Sv', 'Ns', 'AF(00)', 'TM', 'Ln', 'Ap']
+    sun_odd = ['Gt', 'Amz()', 'ClHm()', 'DoLn()', 'FldLn', 'ClnKtch', 'ClnFrdg', 'Sv', 'Ns', 'AF(00)', 'TM', 'Ln', 'Ap']
+    52.times do
+      do_week = do_week_template 
+
+      if week_index.odd?
+        do_week['Sun'] = sun_odd
+      end
+
+      out_file.puts('************************')
+      out_file.puts("#{ year }-#{ '%02d' % month }-#{ '%02d' % day }")
+      out_file.puts('************************')
+
+      do_week.each do |day, tasks|
+        out_file.print(
+          day + ' - '
+        )
+        tasks.each do |task|
+          out_file.print (
+            task + ', '
+          )
+        end
+        out_file.print("\n")
+      end
+
+      day += 7
+
+      if day > days_in_month[month - 1]
+        day = day - days_in_month[month - 1]
+        month += 1
+      end
+
+      week_index += 1
+    end
+    out_file.puts("************************\n\n")
+    out_file.close
+  end
+end
+

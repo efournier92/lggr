@@ -106,9 +106,9 @@ type = ''
 
 until type == 'DO' || type == 'LG'
   if type == 'DO'
-    print_do_file(days_in_month, year, month)
+    Do.print(days_in_month, year, month)
   elsif type == 'LG'
-    print_lg_file(days_in_month, year, month)
+    Lg.print(days_in_month, year, month)
   else
     print "DO || LG?\n>> "
     type = gets.chomp
