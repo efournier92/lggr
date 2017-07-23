@@ -1,8 +1,7 @@
 module Do
   def self.print(days_in_month, year, month)
     out_file = File.new("#{ year }_DO.txt", "w")
-
-    day = Cal_Tools.get_first_sunday(year)
+    day = get_first_monday(year)
     week_index = 0
 
     do_week_template = {
@@ -10,7 +9,7 @@ module Do
       'Tue' => ['Gt', 'Ln'],
       'Wed' => ['Gt', 'Ln'],
       'Thu' => ['Gt', 'GS()', 'Ln'],
-      'Fri' => ['Gt', 'LgWks', 'aLg', 'Lg', 'Bgt', 'PyCC'],
+      'Fri' => ['Gt', 'Lg', 'aLg', 'LgWk', 'Bgt', 'PyCC'],
       'Sat' => ['Gt'],
       'Sun' => ['Gt', 'Amz()', 'ClHm()', 'ClnKtch', 'ClnFrdg', 'Vac()', 'Sv', 'Ns', 'AF(00)', 'TM', 'Ln', 'Ap']
     }

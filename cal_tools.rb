@@ -1,5 +1,5 @@
 module Cal_Tools
-  def self.get_first_sunday(year)
+  def self.get_first_monday(year)
     years_since = year - 1
     leap_years = years_since / 4
     century_years = years_since / 100
@@ -9,11 +9,11 @@ module Cal_Tools
     total_precesion = years_since + total_leap_years
     day_index = total_precesion % 7
 
-    first_sunday = 7 - day_index;
+    first_monday = 7 - day_index + 1;
   end
 
   def self.get_first_friday(year)
-    first_sunday = get_first_sunday(year)
+    first_sunday = get_first_sunday(year) - 1
     if first_sunday >= 2
       first_friday = first_sunday - 2
     else

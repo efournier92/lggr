@@ -26,7 +26,8 @@ if Cal_Tools.is_leap_year?(year)
 end
 
 if type == 'DO'
-  print_do_file(days_in_month, year, month)
+  Do.print(days_in_month, year, month)
 elsif type == 'LG'
-  print_lg_file(days_in_month, year, month)
+  Lg.print(days_in_month, year, month)
 end
+
