@@ -1,6 +1,6 @@
 module Lg
   def self.print(days_in_month, year, month)
-    day = get_first_friday(year)
+    day = Cal_Tools.get_first_friday(year)
     day_index = 0
     friday_index = 1
     days = ['Fri - ', 'Sat - ', 'Sun - ', 'Mon - ', 'Tue - ', 'Wed - ', 'Thr - ']

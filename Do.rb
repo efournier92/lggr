@@ -16,6 +16,7 @@ module Do
 
     sun_evn = ['Gt', 'Amz()', 'ClHm()', 'ClnKtch', 'ClnFrdg', 'Vac()', 'Sv', 'Ns', 'AF(00)', 'TM', 'Ln', 'Ap']
     sun_odd = ['Gt', 'Amz()', 'ClHm()', 'DoLn()', 'FldLn', 'ClnKtch', 'ClnFrdg', 'Sv', 'Ns', 'AF(00)', 'TM', 'Ln', 'Ap']
+
     52.times do
       do_week = do_week_template 
 
@@ -40,14 +41,13 @@ module Do
       end
 
       day += 7
-
       if day > days_in_month[month - 1]
         day = day - days_in_month[month - 1]
         month += 1
       end
-
       week_index += 1
     end
+
     out_file.puts("************************\n\n")
     out_file.close
   end
