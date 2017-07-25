@@ -3,7 +3,7 @@ module Lg
     day = Cal_Tools.get_first_friday(year)
     day_index = 0
     friday_index = 1
-    days = ['Fri - ', 'Sat - ', 'Sun - ', 'Mon - ', 'Tue - ', 'Wed - ', 'Thr - ']
+    days = ['Fri - ', 'Sat - ', 'Sun - ', 'Mon - ', 'Tue - ', 'Wed - ', 'Thu - ']
     # Find total days in year
     days_in_year = days_in_month.inject(:+)
 
