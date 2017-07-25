@@ -1,7 +1,7 @@
 module Do
   def self.print(days_in_month, year, month)
     out_file = File.new("#{ year }_DO.txt", "w")
-    day = get_first_monday(year)
+    day = Cal_Tools.get_first_monday(year)
     week_index = 0
 
     do_week_template = {
@@ -14,7 +14,6 @@ module Do
       'Sun' => ['Gt', 'Amz()', 'ClHm()', 'ClnKtch', 'ClnFrdg', 'Vac()', 'Sv', 'Ns', 'AF(00)', 'TM', 'Ln', 'Ap']
     }
 
-    sun_evn = ['Gt', 'Amz()', 'ClHm()', 'ClnKtch', 'ClnFrdg', 'Vac()', 'Sv', 'Ns', 'AF(00)', 'TM', 'Ln', 'Ap']
     sun_odd = ['Gt', 'Amz()', 'ClHm()', 'DoLn()', 'FldLn', 'ClnKtch', 'ClnFrdg', 'Sv', 'Ns', 'AF(00)', 'TM', 'Ln', 'Ap']
 
     52.times do

@@ -1,3 +1,5 @@
+require 'pry'
+
 module Cal_Tools
   def self.days_in_months
     [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
@@ -13,7 +15,12 @@ module Cal_Tools
     total_precesion = years_since + total_leap_years
     day_index = total_precesion % 7
 
-    first_monday = 7 - day_index + 1;
+    first_monday = 8 - day_index;
+
+    if first_monday > 7
+      first_monday = first_monday - 7
+    end
+    first_monday
   end
 
   def self.get_first_friday(year)
