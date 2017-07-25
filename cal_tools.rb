@@ -17,8 +17,8 @@ module Cal_Tools
   end
 
   def self.get_first_friday(year)
-    first_sunday = get_first_sunday(year) - 1
-    if first_sunday >= 2
+    first_sunday = Cal_Tools.get_first_monday(year) - 1
+    if first_sunday > 2
       first_friday = first_sunday - 2
     else
       first_friday = first_sunday + 5
