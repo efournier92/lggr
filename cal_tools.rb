@@ -5,6 +5,10 @@ module Cal_Tools
     [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
   end
 
+  def self.day_names
+    ['Fri', 'Sat', 'Sun', 'Mon ', 'Tue', 'Wed', 'Thu']
+  end
+
   def self.get_first_monday(year)
     years_since = year - 1
     leap_years = years_since / 4
@@ -38,6 +42,19 @@ module Cal_Tools
     else
       false 
     end
+  end
+
+  def self.days_this_week(first_day)
+    arr = []
+    7.times do 
+      arr.push(first_day)
+      first_day += 1
+    end
+    arr
+  end
+
+  def self.is_first_friday_of_month?(year)
+
   end
 end
 

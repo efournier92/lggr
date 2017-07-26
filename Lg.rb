@@ -3,7 +3,7 @@ module Lg
     day = Cal_Tools.get_first_friday(year)
     day_index = 0
     friday_index = 1
-    days = ['Fri - ', 'Sat - ', 'Sun - ', 'Mon - ', 'Tue - ', 'Wed - ', 'Thu - ']
+    days = Cal_Tools.days_this_week['Fri - ', 'Sat - ', 'Sun - ', 'Mon - ', 'Tue - ', 'Wed - ', 'Thu - ']
     # Find total days in year
     days_in_year = days_in_month.inject(:+)
 
@@ -19,7 +19,7 @@ module Lg
       day_string  = ""
       day_string += "************************\n"
       day_string += "#{ year }-#{ '%02d' % month }-#{ '%02d' % day }\n"
-      day_string += "*********\n#{ days[day_index] }\n"
+      day_string += "*********\n#{ days[day_index] } - \n"
 
       if day_index == 1 || day_index == 2
         day_string += weekend_string
