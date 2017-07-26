@@ -18,17 +18,34 @@ module Do
 
 
     sun_odd = ['Gt', 'Amz()', 'ClHm()', 'DoLn()', 'FldLn', 'ClnKtch', 'ClnFrdg', 'Sv', 'Ns', 'AF(00)', 'TM', 'Ln', 'Ap']
+    next_week = nil
 
     52.times do
       do_week = do_week_template 
       days_this_week = Cal_Tools.days_this_week(day)
       first_day_of_month = days_this_week.index(1)
 
+      if next_week
+        do_week = next_week
+        next_week = nil
+      else
+        do_week = do_week_template 
+      end
+
       if first_day_of_month
         first_index = days_this_week[first_day_of_month]
         day_of_first = Cal_Tools.day_names[first_index]
-        binding.pry
         do_week[day_of_first].unshift('PyRnt')
+        binding.pry
+
+        if first_index == 0
+          do_week['Sat'].unshift('GtScrpts')
+          do_week['Sun'].unshift('FrsRzrs')
+        else
+          next_week = do_week_template
+          next_week['Sat'].unshift('GtScrpts')
+          next_week['Sun'].unshift('FrsRzrs')
+        end
       end
 
       if week_index.odd?
@@ -56,6 +73,7 @@ module Do
         day = day - days_in_month[month - 1]
         month += 1
       end
+      first_day_of_month = nil
       week_index += 1
       end
 
