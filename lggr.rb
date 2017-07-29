@@ -1,4 +1,5 @@
 require './Cal_Tools'
+require './Templates'
 require './Do'
 require './Lg'
 

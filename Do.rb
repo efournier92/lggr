@@ -17,11 +17,7 @@ module Do
     }
 
     next_week = nil
-    
 
-      if week_index.odd?
-        do_week['Sun'] = sun_odd
-      end
 
     52.times do
       if next_week
@@ -31,9 +27,15 @@ module Do
       end
 
       next_week = nil
+
+      if week_index.odd?
+        do_week['Sun'] = Templates.do_week_odd_sunday
+      end
+
       days_this_week = Cal_Tools.days_this_week(day)
 
-      do_week = Cal_Tools.is_week_odd?(do_week, sun_odd, week_index)
+      do_week = Cal_Tools.is_week_odd?(do_week, week_index)
+      # binding.pry
       do_week = Cal_Tools.month_end(do_week, days_this_week)
 
       month_start = Cal_Tools.month_start(do_week, days_this_week)
