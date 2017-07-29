@@ -56,5 +56,43 @@ module Cal_Tools
   def self.is_first_friday_of_month?(year)
 
   end
+
+  def self.is_odd_week?(do_week, sun_odd, week_index)
+    if week_index.odd?
+        do_week['Sun'] = sun_odd
+    end
+    do_week
+  end
+
+  def self.month_start(do_week, days_this_week)
+      contains_first_of_month = days_this_week.index(1)
+
+      if contains_first_of_month 
+        first_index = days_this_week[first_day_of_month]
+        day_of_first = Cal_Tools.day_names[first_index]
+        do_week[day_of_first].unshift('PyRnt')
+
+        next_week = nil
+        if first_index == 0
+          do_week['Sat'].unshift('GtScrpts')
+          do_week['Sun'].unshift('FrsRzrs')
+        else
+          next_week = Templates.do_week
+          next_week['Sat'].unshift('GtScrpts')
+          next_week['Sun'].unshift('FrsRzrs')
+        end
+      end
+      { 'do_week' => do_week, 'next_week' => next_week }
+  end 
+
+  def self.month_end(do_week, days_this_week)
+    index_of_28th = days_this_week.index(28)
+
+    if index_of_28th 
+      day_of_28th = Cal_Tools.day_names[index_of_28th]
+      do_week[index_of_28th].unshift('ByTrnTk')
+    end
+    do_week
+  end 
 end
 

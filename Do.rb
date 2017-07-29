@@ -16,41 +16,29 @@ module Do
       'Sun' => ['Gt', 'Amz()', 'ClHm()', 'ClnKtch', 'ClnFrdg', 'Vac()', 'Sv', 'Ns', 'AF(00)', 'TM', 'Ln', 'Ap']
     }
 
-
-    sun_odd = ['Gt', 'Amz()', 'ClHm()', 'DoLn()', 'FldLn', 'ClnKtch', 'ClnFrdg', 'Sv', 'Ns', 'AF(00)', 'TM', 'Ln', 'Ap']
     next_week = nil
-
-    52.times do
-      do_week = do_week_template 
-      days_this_week = Cal_Tools.days_this_week(day)
-      first_day_of_month = days_this_week.index(1)
-
-      if next_week
-        do_week = next_week
-        next_week = nil
-      else
-        do_week = do_week_template 
-      end
-
-      if first_day_of_month
-        first_index = days_this_week[first_day_of_month]
-        day_of_first = Cal_Tools.day_names[first_index]
-        do_week[day_of_first].unshift('PyRnt')
-        binding.pry
-
-        if first_index == 0
-          do_week['Sat'].unshift('GtScrpts')
-          do_week['Sun'].unshift('FrsRzrs')
-        else
-          next_week = do_week_template
-          next_week['Sat'].unshift('GtScrpts')
-          next_week['Sun'].unshift('FrsRzrs')
-        end
-      end
+    
 
       if week_index.odd?
         do_week['Sun'] = sun_odd
       end
+
+    52.times do
+      if next_week
+        do_week = next_week
+      else
+        do_week = Templates.do_week
+      end
+
+      next_week = nil
+      days_this_week = Cal_Tools.days_this_week(day)
+
+      do_week = Cal_Tools.is_week_odd?(do_week, sun_odd, week_index)
+      do_week = Cal_Tools.month_end(do_week, days_this_week)
+
+      month_start = Cal_Tools.month_start(do_week, days_this_week)
+      do_week = month_start['do_week']
+      next_week = month_start['next_week']
 
       out_file.puts('************************')
       out_file.puts("#{ year }-#{ '%02d' % month }-#{ '%02d' % day }")
