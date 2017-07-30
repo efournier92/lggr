@@ -90,12 +90,15 @@ module Cal_Tools
   end 
 
   def self.month_end(do_week, days_this_week)
-    index_of_28th = days_this_week.index(28)
+    index_of_26th = days_this_week.index(26)
     binding.pry
 
-    if index_of_28th 
-      day_of_28th = Cal_Tools.do_day_names[index_of_28th]
-      do_week[day_of_28th].unshift('ByTrnTk')
+    if index_of_26th 
+      day_of_26th = Cal_Tools.do_day_names[index_of_26th]
+      if day_of_26th == 'Sat' || day_of_26th == 'Sun'
+        day_of_26th = 'Mon'
+        do_week[day_of_26th].unshift('ByTrnTk')
+      end
     end
     do_week
   end 

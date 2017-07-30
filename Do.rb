@@ -18,7 +18,6 @@ module Do
 
     next_week = nil
 
-
     52.times do
       if next_week
         do_week = next_week
@@ -35,7 +34,6 @@ module Do
       days_this_week = Cal_Tools.days_this_week(day)
 
       do_week = Cal_Tools.is_week_odd?(do_week, week_index)
-      # binding.pry
       do_week = Cal_Tools.month_end(do_week, days_this_week)
 
       month_start = Cal_Tools.month_start(do_week, days_this_week)
