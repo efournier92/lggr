@@ -48,13 +48,17 @@ module Cal_Tools
     end
   end
 
-  def self.days_this_week(first_day)
-    arr = []
-    7.times do 
-      arr.push(first_day)
-      first_day += 1
+  def self.days_this_week(day, month)
+    day_array = []
+    days_in_month = Cal_Tools.days_in_months[month-1]
+    7.times do
+      if day > days_in_month
+        day = 1
+      end
+      day_array.push(day)
+      day += 1
     end
-    arr
+    day_array
   end
 
   def self.is_first_friday_of_month?(year)
@@ -69,24 +73,15 @@ module Cal_Tools
   end
 
   def self.month_start(do_week, days_this_week)
-      first_of_month = days_this_week.index(1)
+    first_index = days_this_week.index(1)
 
-      if first_of_month 
-        first_index = days_this_week[first_of_month]
-        day_of_first = Cal_Tools.do_day_names[first_index]
-        do_week[day_of_first].unshift('PyRnt')
-
-        next_week = nil
-        if first_index == 0
-          do_week['Sat'].unshift('GtScrpts')
-          do_week['Sun'].unshift('FrsRzrs')
-        else
-          next_week = Templates.do_week
-          next_week['Sat'].unshift('GtScrpts')
-          next_week['Sun'].unshift('FrsRzrs')
-        end
-      end
-      { 'do_week' => do_week, 'next_week' => next_week }
+    if first_index
+      day_of_first = Cal_Tools.do_day_names[first_index]
+      do_week[day_of_first].unshift('GtScrpts')
+      do_week['Sun'].unshift('FrsRzrs')
+      do_week[day_of_first].unshift('PyRnt')
+    end
+    do_week
   end 
 
   def self.month_end(do_week, days_this_week)

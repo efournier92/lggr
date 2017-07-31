@@ -19,26 +19,17 @@ module Do
     next_week = nil
 
     52.times do
-      if next_week
-        do_week = next_week
-      else
-        do_week = Templates.do_week
-      end
-
-      next_week = nil
+      do_week = Templates.do_week
 
       if week_index.odd?
         do_week['Sun'] = Templates.do_week_odd_sunday
       end
 
-      days_this_week = Cal_Tools.days_this_week(day)
+      days_this_week = Cal_Tools.days_this_week(day, month)
 
       do_week = Cal_Tools.is_week_odd?(do_week, week_index)
       do_week = Cal_Tools.month_end(do_week, days_this_week)
-
-      month_start = Cal_Tools.month_start(do_week, days_this_week)
-      do_week = month_start['do_week']
-      next_week = month_start['next_week']
+      do_week = Cal_Tools.month_start(do_week, days_this_week)
 
       out_file.puts('************************')
       out_file.puts("#{ year }-#{ '%02d' % month }-#{ '%02d' % day }")
@@ -63,10 +54,10 @@ module Do
       end
       first_day_of_month = nil
       week_index += 1
-      end
-
-      out_file.puts("************************\n\n")
-      out_file.close
     end
+
+    out_file.puts("************************\n\n")
+    out_file.close
   end
+end
 
