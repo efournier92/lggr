@@ -1,7 +1,4 @@
-require 'pry'
-
 module Cal_Tools
-
   def self.get_first_monday(year)
     years_since = year - 1
     leap_years = years_since / 4
@@ -50,10 +47,6 @@ module Cal_Tools
     day_array
   end
 
-  def self.is_first_friday_of_month?(year)
-
-  end
-
   def self.is_week_odd?(do_week, week_index)
     if week_index.odd?
       do_week['Sun'] = Templates.do_week_odd_sunday
@@ -97,7 +90,6 @@ module Cal_Tools
 
   def self.month_end(do_week, days_this_week)
     index_of_26th = days_this_week.index(26)
-
     if index_of_26th 
       day_of_26th = Templates.do_day_names[index_of_26th]
       if day_of_26th == 'Sat' || day_of_26th == 'Sun' && index_of_26th != 6

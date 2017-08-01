@@ -1,7 +1,8 @@
-require './Cal_Tools'
-require './Templates'
-require './Do'
-require './Lg'
+require 'pry'
+require './modules/Cal_Tools'
+require './modules/Templates'
+require './modules/Do'
+require './modules/Lg'
 
 type = ''
 month = 1

@@ -1,5 +1,3 @@
-require 'pry'
-
 module Do
   def self.print(days_in_month, year, month)
     out_file = File.new("#{ year }_DO.txt", "w")
