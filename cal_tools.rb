@@ -1,17 +1,6 @@
 require 'pry'
 
 module Cal_Tools
-  def self.days_in_months
-    [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
-  end
-
-  def self.lg_day_names
-    ['Fri', 'Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu']
-  end
-
-  def self.do_day_names
-    ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-  end
 
   def self.get_first_monday(year)
     years_since = year - 1
@@ -50,7 +39,7 @@ module Cal_Tools
 
   def self.days_this_week(day, month)
     day_array = []
-    days_in_month = Cal_Tools.days_in_months[month-1]
+    days_in_month = Templates.days_in_months[month-1]
     7.times do
       if day > days_in_month
         day = 1
@@ -72,14 +61,36 @@ module Cal_Tools
     do_week
   end
 
-  def self.month_start(do_week, days_this_week)
+  def self.year_start(do_week)
+    do_week['Mon'].unshift('PyIntrnt')
+    do_week['Sat'].unshift('CtPls')
+    do_week['Mon'].unshift('RcvScrpts')
+    do_week['Sun'].unshift('FrsRzrs')
+    do_week['Sun'].unshift('FrshCntcts')
+    do_week['Mon'].unshift('PyRnt')
+    do_week
+  end
+
+  def self.month_start(do_week, week_index, days_this_week, month)
+    start_of_quarters = [1, 4, 7, 10]
     first_index = days_this_week.index(1)
 
+    if week_index == 0 && !first_index
+      do_week = Cal_Tools.year_start(do_week)
+    end
+
     if first_index
-      day_of_first = Cal_Tools.do_day_names[first_index]
-      do_week[day_of_first].unshift('GtScrpts')
+      day_of_first = Templates.do_day_names[first_index]
+      do_week['Sat'].unshift('CtPls')
+      do_week[day_of_first].unshift('RcvScrpts')
+      do_week[day_of_first].unshift('PyIntrnt')
       do_week['Sun'].unshift('FrsRzrs')
+      do_week['Sun'].unshift('FrshCntcts')
       do_week[day_of_first].unshift('PyRnt')
+      if start_of_quarters.include?(month) 
+        do_week['Sun'].unshift('FrsCntctCs')
+        do_week['Sun'].unshift('BgSv')
+      end
     end
     do_week
   end 
@@ -88,7 +99,7 @@ module Cal_Tools
     index_of_26th = days_this_week.index(26)
 
     if index_of_26th 
-      day_of_26th = Cal_Tools.do_day_names[index_of_26th]
+      day_of_26th = Templates.do_day_names[index_of_26th]
       if day_of_26th == 'Sat' || day_of_26th == 'Sun' && index_of_26th != 6
         day_of_26th = 'Mon'
       elsif day_of_26th == 'Sat' || day_of_26th == 'Sun' && index_of_26th == 6

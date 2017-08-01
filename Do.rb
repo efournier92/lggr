@@ -4,19 +4,8 @@ module Do
   def self.print(days_in_month, year, month)
     out_file = File.new("#{ year }_DO.txt", "w")
     day = Cal_Tools.get_first_monday(year)
+
     week_index = 0
-
-    do_week_template = {
-      'Mon' => ['Gt', 'Ln'],
-      'Tue' => ['Gt', 'Ln'],
-      'Wed' => ['Gt', 'Ln'],
-      'Thu' => ['Gt', 'GS()', 'Ln'],
-      'Fri' => ['Gt', 'Lg', 'aLg', 'LgWk', 'Bgt', 'PyCC'],
-      'Sat' => ['Gt'],
-      'Sun' => ['Gt', 'Amz()', 'ClHm()', 'ClnKtch', 'ClnFrdg', 'Vac()', 'Sv', 'Ns', 'AF(00)', 'TM', 'Ln', 'Ap']
-    }
-
-    next_week = nil
 
     52.times do
       do_week = Templates.do_week
@@ -29,7 +18,7 @@ module Do
 
       do_week = Cal_Tools.is_week_odd?(do_week, week_index)
       do_week = Cal_Tools.month_end(do_week, days_this_week)
-      do_week = Cal_Tools.month_start(do_week, days_this_week)
+      do_week = Cal_Tools.month_start(do_week, week_index, days_this_week, month)
 
       out_file.puts('************************')
       out_file.puts("#{ year }-#{ '%02d' % month }-#{ '%02d' % day }")

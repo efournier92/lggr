@@ -1,4 +1,16 @@
 module Templates
+  def self.days_in_months
+    [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
+  end
+
+  def self.lg_day_names
+    ['Fri', 'Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu']
+  end
+
+  def self.do_day_names
+    ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  end
+
   def self.do_week
     {
       'Mon' => ['Gt', 'Ln'],

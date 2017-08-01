@@ -3,7 +3,7 @@ module Lg
     day = Cal_Tools.get_first_friday(year)
     day_index = 0
     friday_index = 1
-    days = Cal_Tools.days_this_week['Fri - ', 'Sat - ', 'Sun - ', 'Mon - ', 'Tue - ', 'Wed - ', 'Thu - ']
+    days = Templates.lg_day_names
     # Find total days in year
     days_in_year = days_in_month.inject(:+)
 
@@ -11,7 +11,7 @@ module Lg
 
     weekday_string    = "***\n[S]\n***\n[R]\n"
     weekend_string    = "***\n[R]\n"
-    odd_friday_string = "***\n[S]\n***\n[S]\n***\n[R]\n"
+    friday_string = "***\n[S]\n***\n[S]\n***\n[R]\n"
 
     year_arr = []
 
@@ -23,13 +23,10 @@ module Lg
 
       if day_index == 1 || day_index == 2
         day_string += weekend_string
-        friday_index += 1
-      elsif days[day_index] == 'Fri - ' && friday_index > 8
-        day_string += odd_friday_string 
-        friday_index = 1
+      elsif days[day_index] == 'Fri'
+        day_string += friday_string 
       else
         day_string += weekday_string 
-        friday_index += 1
       end
 
       if day >= days_in_month[month - 1]
