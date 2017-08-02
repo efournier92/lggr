@@ -77,6 +77,7 @@ module Cal_Tools
       do_week['Sat'].unshift('CtPls')
       do_week[day_of_first].unshift('RcvScrpts')
       do_week[day_of_first].unshift('PyIntrnt')
+      do_week['Sun'].unshift('NxBk')
       do_week['Sun'].unshift('FrsRzrs')
       do_week['Sun'].unshift('FrshCntcts')
       do_week[day_of_first].unshift('PyRnt')

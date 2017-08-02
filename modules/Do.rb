@@ -1,6 +1,6 @@
 module Do
   def self.print(days_in_month, year, month)
-    out_file = File.new("#{ year }_DO.txt", "w")
+    out_file = File.new("./Out/#{ year }_DO.txt", "w")
     day = Cal_Tools.get_first_monday(year)
 
     week_index = 0

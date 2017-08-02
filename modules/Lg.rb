@@ -7,7 +7,7 @@ module Lg
     # Find total days in year
     days_in_year = days_in_month.inject(:+)
 
-    out_file = File.new("#{ year }_LG.txt", "w")
+    out_file = File.new("./Out/#{ year }_LG.txt", "w")
 
     weekday_string    = "***\n[S]\n***\n[R]\n"
     weekend_string    = "***\n[R]\n"
