@@ -16,9 +16,9 @@ module Templates
       'Mon' => ['Gt', 'Ln'],
       'Tue' => ['Gt', 'Ln'],
       'Wed' => ['Gt', 'Ln'],
-      'Thu' => ['Gt', 'GS()', 'Ln'],
+      'Thu' => ['Gt', 'Ln'],
       'Fri' => ['Gt', 'Lg', 'aLg', 'LgWk', 'Bgt', 'PyCC'],
-      'Sat' => ['Gt'],
+      'Sat' => ['Gt', 'GS()'],
       'Sun' => ['Gt', 'Amz()', 'ClHm()', 'ClnKtch', 'ClnFrdg', 'Vac()', 'Sv', 'Ns', 'AF(00)', 'TM', 'Ln', 'Ap']
     }
   end
