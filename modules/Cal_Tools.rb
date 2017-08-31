@@ -39,7 +39,7 @@ module Cal_Tools
     days_in_month = Templates.days_in_months[month-1]
     7.times do
       if day > days_in_month
-        day = 1
+        day = 2
       end
       day_array.push(day)
       day += 1
