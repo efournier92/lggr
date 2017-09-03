@@ -13,18 +13,18 @@ module Templates
 
   def self.do_week
     {
-      'Mon' => ['Gt', 'Ln'],
-      'Tue' => ['Gt', 'Ln'],
-      'Wed' => ['Gt', 'Ln'],
-      'Thu' => ['Gt', 'Ln'],
-      'Fri' => ['Gt', 'Lg', 'aLg', 'LgWk', 'Bgt', 'PyCC'],
-      'Sat' => ['Gt', 'GS()'],
-      'Sun' => ['Gt', 'Amz()', 'ClHm()', 'ClnKtch', 'ClnFrdg', 'Vac()', 'Sv', 'Plk', 'Ns', 'AF(00)', 'TM', 'Ln', 'Ap']
+      'Mon' => ['Gt', 'Af_Rcv(00)'],
+      'Tue' => ['Gt'],
+      'Wed' => ['Gt'],
+      'Thu' => ['Gt'],
+      'Fri' => ['Gt', 'aLg', 'Lg', 'FnLg[R]s', 'LgWk', 'Bgt', 'PyCC'],
+      'Sat' => ['Gt', 'Af_Ord()'],
+      'Sun' => ['Gt', 'Amz()', 'ClHm()', 'ClnKtch', 'ClnFrdg', 'Vac()', 'Sv', 'Plk', 'Ns', 'TM', 'Ln', 'Ap']
     }
   end
 
   def self.do_week_odd_sunday
-    ['Gt', 'Amz()', 'ClHm()', 'DoLn()', 'FldLn', 'ClnKtch', 'ClnFrdg', 'Sv', 'Ns', 'AF(00)', 'TM', 'Ln', 'Ap']
+    ['Gt', 'Amz()', 'ClHm()', 'Lndrmt(all)', 'FldLn', 'ClnKtch', 'ClnFrdg', 'Sv', 'Ns', 'AF(00)', 'TM', 'Ln', 'Ap']
   end
 end
 
