@@ -19,7 +19,7 @@ module Templates
       'Thu' => ['Gt'],
       'Fri' => ['Gt', 'aLg', 'Lg', 'FnLg[R]s', 'LgWk', 'Bgt', 'PyCC'],
       'Sat' => ['Gt', 'Af_Ord()'],
-      'Sun' => ['Gt', 'Amz()', 'ClHm()', 'ClnKtch', 'ClnFrdg', 'Vac()', 'Sv', 'Plk', 'Ns', 'TM', 'Ln', 'Ap']
+      'Sun' => ['Gt', 'Amz()', 'ClnMbDsktp', 'TM', 'Ln', 'ClHm(1300, )', 'Vac()', 'ClnKtch', 'ClnFrdg', 'Sv', 'Plk', 'Ns', 'Ap']
     }
   end
 
