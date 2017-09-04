@@ -103,10 +103,10 @@ module Cal_Tools
     do_week
   end 
 
-  def self.check_birthdays(do_week, days_this_week)
+  def self.check_birthdays(month, days_this_week)
     {
       dad = 
-      birthday_arr = [
+      birthdays = [
         { name: 'Dad', month: 9, day: 29 },
         { name: 'Mom', month: 8, day: 26 },
         { name: 'Kevin', month: 8, day: 15 },
@@ -116,6 +116,10 @@ module Cal_Tools
         { name: 'Grant', month: 11, day: 28 }
       ]
     }
+
+    birthdays.each do | birthday |
+
+    end
 
   end 
 end
