@@ -103,7 +103,23 @@ module Cal_Tools
     do_week
   end 
 
-  def self.month_end(do_week, days_this_week)
+  def self.check_birthdays(do_week, days_this_week)
+    {
+      dad = 
+      birthday_arr = [
+        { name: 'Dad', month: 9, day: 29 }
+        { name: 'Mom', month: 8, day: 26 }
+        { name: 'Kevin', month: 8, day: 15 }
+        { name: 'Lori', month: 8, day: 9 }
+        { name: 'Lori', month: 8, day: 9 }
+      ]
+      Mom - 08/26
+      Kevin - 08/15
+      Lori - 08/09
+      Brian - 10/10
+      Nate - 08/19
+      Grant - 11/28
+    }
 
   end 
 end
