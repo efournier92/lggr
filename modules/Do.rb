@@ -17,6 +17,7 @@ module Do
       do_week = Cal_Tools.is_week_odd?(do_week, week_index)
       do_week = Cal_Tools.month_end(do_week, days_this_week)
       do_week = Cal_Tools.month_start(do_week, week_index, days_this_week, month)
+      do_week = Cal_Tools.check_birthdays(month, days_this_week)
 
       out_file.puts('************************')
       out_file.puts("#{ year }-#{ '%02d' % month }-#{ '%02d' % day }")

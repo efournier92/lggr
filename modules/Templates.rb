@@ -13,7 +13,7 @@ module Templates
 
   def self.do_week
     {
-      'Mon' => ['Gt', 'Af_Rcv(00)'],
+      'Mon' => ['Gt', 'Af_Rcv(1900)'],
       'Tue' => ['Gt'],
       'Wed' => ['Gt'],
       'Thu' => ['Gt'],
@@ -24,7 +24,7 @@ module Templates
   end
 
   def self.do_week_odd_sunday
-    ['Gt', 'Amz()', 'ClHm()', 'Lndrmt(all)', 'FldLn', 'ClnKtch', 'ClnFrdg', 'Sv', 'Ns', 'AF(00)', 'TM', 'Ln', 'Ap']
+      ['Gt', 'Amz()', 'ClnMbDsktp', 'TM', 'Ln', 'ClHm(1300, )', 'Lndrmt(all)', 'FldLn', 'ClnKtch', 'ClnFrdg', 'Sv', 'Plk', 'Ns', 'Ap']
   end
 end
 
