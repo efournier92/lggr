@@ -107,18 +107,14 @@ module Cal_Tools
     {
       dad = 
       birthday_arr = [
-        { name: 'Dad', month: 9, day: 29 }
-        { name: 'Mom', month: 8, day: 26 }
-        { name: 'Kevin', month: 8, day: 15 }
-        { name: 'Lori', month: 8, day: 9 }
-        { name: 'Lori', month: 8, day: 9 }
+        { name: 'Dad', month: 9, day: 29 },
+        { name: 'Mom', month: 8, day: 26 },
+        { name: 'Kevin', month: 8, day: 15 },
+        { name: 'Lori', month: 8, day: 9 },
+        { name: 'Brian', month: 10, day: 10 },
+        { name: 'Nate', month: 8, day: 19 },
+        { name: 'Grant', month: 11, day: 28 }
       ]
-      Mom - 08/26
-      Kevin - 08/15
-      Lori - 08/09
-      Brian - 10/10
-      Nate - 08/19
-      Grant - 11/28
     }
 
   end 
