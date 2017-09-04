@@ -118,7 +118,9 @@ module Cal_Tools
     }
 
     birthdays.each do | birthday |
+      if (birthday.month == month && days_this_week.include?(birthday.day)
 
+      end
     end
 
   end 
