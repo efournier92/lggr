@@ -102,5 +102,9 @@ module Cal_Tools
     end
     do_week
   end 
+
+  def self.month_end(do_week, days_this_week)
+
+  end 
 end
 
