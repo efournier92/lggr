@@ -102,27 +102,5 @@ module Cal_Tools
     end
     do_week
   end 
-
-  def self.check_birthdays(month, days_this_week)
-    {
-      dad = 
-      birthdays = [
-        { name: 'Dad', month: 9, day: 29 },
-        { name: 'Mom', month: 8, day: 26 },
-        { name: 'Kevin', month: 8, day: 15 },
-        { name: 'Lori', month: 8, day: 9 },
-        { name: 'Brian', month: 10, day: 10 },
-        { name: 'Nate', month: 8, day: 19 },
-        { name: 'Grant', month: 11, day: 28 }
-      ]
-    }
-
-    birthdays.each do | birthday |
-      if (birthday.month == month && days_this_week.include?(birthday.day)
-
-      end
-    end
-
-  end 
 end
 
