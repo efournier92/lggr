@@ -6,7 +6,6 @@ module Do
     week_index = 0
 
     52.times do
-
       do_week = Templates.do_week
 
       if week_index.odd?
@@ -27,6 +26,7 @@ module Do
         out_file.print(
           day + ' - '
         )
+
         tasks.each do |task|
           out_file.print (
             task + ', '
