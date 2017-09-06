@@ -6,6 +6,7 @@ module Do
     week_index = 0
 
     52.times do
+
       do_week = Templates.do_week
 
       if week_index.odd?
