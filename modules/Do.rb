@@ -7,16 +7,17 @@ module Do
 
     52.times do
       do_week = Templates.do_week
+      do_week.week_index = week_index
 
       if week_index.odd?
         do_week['Sun'] = Templates.do_week_odd_sunday
       end
 
-      days_this_week = Cal_Tools.days_this_week(day, month)
+      do_week.days = Cal_Tools.days_this_week(day, month)
 
       do_week = Cal_Tools.is_week_odd?(do_week, week_index)
-      do_week = Cal_Tools.month_end(do_week, days_this_week)
-      do_week = Cal_Tools.month_start(do_week, week_index, days_this_week, month)
+      do_week = Cal_Tools.month_end(do_week, do_week.days)
+      do_week = Cal_Tools.month_start(do_week, week_index, do_week.days, month)
 
       out_file.puts('************************')
       out_file.puts("#{ year }-#{ '%02d' % month }-#{ '%02d' % day }")
