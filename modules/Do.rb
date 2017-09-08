@@ -26,6 +26,7 @@ module Do
         out_file.print(
           day + ' - '
         )
+
         tasks.each do |task|
           out_file.print (
             task + ', '
