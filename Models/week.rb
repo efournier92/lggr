@@ -1,9 +1,7 @@
 class Week
   def initialize
-    @days = {}
-
-      {
-        'Mon' => { 'tasks' => ['Gt', 'Af_Rcv(1900)'] },
+    @days = []
+    monday = Day.new('Mon', ['Gt', 'Af_Rcv(1900)'],  },
         'Tue' => { 'tasks' => ['Gt'] },
         'Wed' => { 'tasks' => ['Gt'] },
         'Thu' => { 'tasks' => ['Gt'] },
