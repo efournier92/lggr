@@ -1,6 +1,7 @@
 class Year
   def initialize
     @weeks = []
+
     52.times do
       do_week = Templates.do_week
       do_week.week_index = week_index
