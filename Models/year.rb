@@ -2,11 +2,13 @@ class Year
   def initialize(year)
     @year = year
     @weeks = []
+    month = 1
+    week_index = 1
     day = Cal_Tools.get_first_monday(year)
 
     52.times do
       days_this_week = Week.days_this_week(day, month)
-      do_week = Week.new(week_index) 
+      do_week = Week.new(week_index, days_this_week)
 
       if week_index.odd?
         do_week['Sun'] = Templates.do_week_odd_sunday

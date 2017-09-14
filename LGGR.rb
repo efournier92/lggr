@@ -1,4 +1,7 @@
 require 'pry'
+require './Models/year.rb'
+require './Models/week.rb'
+require './Models/day.rb'
 require './modules/Cal_Tools'
 require './modules/Templates'
 require './modules/Do'
@@ -6,23 +9,26 @@ require './modules/Lg'
 
 type = ''
 month = 1
-days_in_months = Templates.days_in_months
+Year.new(2017)
+binding.pry
 
-until type == 'DO' || type == 'LG'
-  print "DO || LG?\n>> "
-  type = gets.chomp
-end
+# days_in_months = Templates.days_in_months
 
-print "Which Year?\n>> "
-year = gets.chomp.to_i
+# until type == 'DO' || type == 'LG'
+#   print "DO || LG?\n>> "
+#   type = gets.chomp
+# end
 
-if Cal_Tools.is_leap_year?(year)
-  days_in_months[1] = 29
-end
+# print "Which Year?\n>> "
+# year = gets.chomp.to_i
 
-if type == 'DO'
-  Do.print(days_in_months, year, month)
-elsif type == 'LG'
-  Lg.print(days_in_months, year, month)
-end
+# if Cal_Tools.is_leap_year?(year)
+#   days_in_months[1] = 29
+# end
+
+# if type == 'DO'
+#   Do.print(days_in_months, year, month)
+# elsif type == 'LG'
+#   Lg.print(days_in_months, year, month)
+# end
 

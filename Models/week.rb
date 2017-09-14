@@ -5,12 +5,17 @@ class Week
     @week_index = week_index
     @days_this_week = days_this_week
     mon = Day.new('Mon', ['Gt', 'Af_Rcv(1900)'], month, days_this_week[0])
-    tue = Day.new('Tue', ['Gt'], month, days_this_week[0])
-    wed = Day.new('Wed', ['Gt'], month, days_this_week[0])
-    thu = Day.new('Thu', ['Gt'], month, days_this_week[0])
-    fri = Day.new('Fri', ['Gt', 'aLg', 'Lg', 'FnLg[R]s', 'LgWk', 'Bgt', 'PyCC'], month, days_this_week[0])
-    sat = Day.new('Sat', ['Gt', 'Af_Ord()'], month, days_this_week[0])
-    sun = Day.new('Sun', ['Gt', 'Amz()', 'ClnMbDsktp', 'TM', 'Ln', 'ClHm(1300, )', 'Vac()', 'ClnKtch', 'ClnFrdg', 'Sv', 'Plk', 'Ns', 'Ap'], month, days_this_week[0])
+    tue = Day.new('Tue', ['Gt'], month, days_this_week[1])
+    wed = Day.new('Wed', ['Gt'], month, days_this_week[2])
+    thu = Day.new('Thu', ['Gt'], month, days_this_week[3])
+    fri = Day.new('Fri', 
+                 ['Gt', 'aLg', 'Lg', 'FnLg[R]s', 'LgWk', 'Bgt', 'PyCC'],
+                 month, days_this_week[4])
+    sat = Day.new('Sat', ['Gt', 'Af_Ord()'], month, days_this_week[5])
+    sun = Day.new('Sun', 
+                  ['Gt', 'Amz()', 'ClnMbDsktp', 'TM', 'Ln', 'ClHm(1300, )', 
+                   'Vac()', 'ClnKtch', 'ClnFrdg', 'Sv', 'Plk', 'Ns', 'Ap'],
+                  month, days_this_week[6])
     @days = [mon, tue, wed, thu, fri, sat, sun]
   end
 
