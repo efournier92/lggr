@@ -1,7 +1,7 @@
 class Week
-  attr_accessor :week_index, :days_this_week
+  attr_accessor :week_index, :days_this_week, :days
 
-  def initialize(week_index, days_this_week)
+  def initialize(week_index, days_this_week, month)
     @week_index = week_index
     @days_this_week = days_this_week
     mon = Day.new('Mon', ['Gt', 'Af_Rcv(1900)'], month, days_this_week[0])

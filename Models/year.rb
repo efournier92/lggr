@@ -8,7 +8,8 @@ class Year
 
     52.times do
       days_this_week = Week.days_this_week(day, month)
-      do_week = Week.new(week_index, days_this_week)
+      do_week = Week.new(week_index, days_this_week, month)
+      binding.pry
 
       if week_index.odd?
         do_week['Sun'] = Templates.do_week_odd_sunday
