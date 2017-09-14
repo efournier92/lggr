@@ -1,5 +1,6 @@
 class Day
-  attr_reader :tasks, :month, :month_day
+  attr_accessor :tasks
+  attr_reader :month, :month_day
 
   def initialize(name, tasks, month, month_day)
     @name = name
