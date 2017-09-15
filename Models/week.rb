@@ -4,6 +4,10 @@ class Week
   def initialize(week_index, days_this_week, month)
     @week_index = week_index
     @days_this_week = days_this_week
+    @days = Week.template 
+  end
+
+  def self.template
     mon = Day.new('Mon', ['Gt', 'Af_Rcv(1900)'], month, days_this_week[0])
     tue = Day.new('Tue', ['Gt'], month, days_this_week[1])
     wed = Day.new('Wed', ['Gt'], month, days_this_week[2])
@@ -16,7 +20,7 @@ class Week
                   ['Gt', 'Amz()', 'ClnMbDsktp', 'TM', 'Ln', 'ClHm(1300, )', 
                    'Vac()', 'ClnKtch', 'ClnFrdg', 'Sv', 'Plk', 'Ns', 'Ap'],
                   month, days_this_week[6])
-    @days = [mon, tue, wed, thu, fri, sat, sun]
+    [mon, tue, wed, thu, fri, sat, sun]
   end
 
   def self.days_this_week(day, month)
