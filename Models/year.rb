@@ -11,10 +11,13 @@ class Year
       do_week = Week.new(week_index, days_this_week, month)
       binding.pry
 
-      if week_index.odd?
-        do_week['Sun'] = Templates.do_week_odd_sunday
+      if do_week.week_index.odd?
+        do_week.days.find do |day|
+          if day.name == 'Sun'
+            day.tasks = Templates.do_week_odd_sunday
+          end
+        end
       end
-
 
       do_week.each_with_index do |day, day_details|
         day_details.month = month
