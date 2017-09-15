@@ -4,6 +4,7 @@ class Year
     @weeks = []
     month = 1
     week_index = 1
+    days_in_months = Year.days_in_months
     day = Cal_Tools.get_first_monday(year)
 
     52.times do
@@ -14,30 +15,29 @@ class Year
       if do_week.week_index.odd?
         do_week.days.find do |day|
           if day.name == 'Sun'
-            day.tasks = Templates.do_week_odd_sunday
+            day.tasks = Day.odd_sunday_tasks 
           end
         end
       end
 
-      do_week.each_with_index do |day, day_details|
-        day_details.month = month
-        day_details.day = do_week.days_this_week[index]
-      end
+      # do_week.days = Cal_Tools.days_this_week(day, month)
 
-      do_week.days = Cal_Tools.days_this_week(day, month)
-
-      do_week = Cal_Tools.is_week_odd?(do_week, week_index)
-      do_week = Cal_Tools.month_end(do_week, do_week.days)
-      do_week = Cal_Tools.month_start(do_week, week_index, do_week.days, month)
+      # do_week = Cal_Tools.is_week_odd?(do_week, week_index)
+      # do_week = Cal_Tools.month_end(do_week, do_week.days)
+      # do_week = Cal_Tools.month_start(do_week, week_index, do_week.days, month)
 
       @weeks.push(do_week)
       day += 7
-      if day > days_in_month[month - 1]
-        day = day - days_in_month[month - 1]
+      if day > days_in_months[month - 1]
+        day = day - days_in_months[month - 1]
         month += 1
       end
       first_day_of_month = nil
       week_index += 1
     end
+  end
+
+  def self.days_in_months
+    [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
   end
 end
