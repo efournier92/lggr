@@ -9,13 +9,19 @@ class Week
 
   def self.template(month, days_this_week)
     mon = Day.new('Mon', ['Gt', 'Af_Rcv(1900)'], month, days_this_week[0])
+    month += 1 if days_this_week[0] > days_this_week[1]
     tue = Day.new('Tue', ['Gt'], month, days_this_week[1])
+    month += 1 if days_this_week[1] > days_this_week[2]
     wed = Day.new('Wed', ['Gt'], month, days_this_week[2])
+    month += 1 if days_this_week[2] > days_this_week[3]
     thu = Day.new('Thu', ['Gt'], month, days_this_week[3])
+    month += 1 if days_this_week[3] > days_this_week[4]
     fri = Day.new('Fri', 
                  ['Gt', 'aLg', 'Lg', 'FnLg[R]s', 'LgWk', 'Bgt', 'PyCC'],
                  month, days_this_week[4])
+    month += 1 if days_this_week[4] > days_this_week[5]
     sat = Day.new('Sat', ['Gt', 'Af_Ord()'], month, days_this_week[5])
+    month += 1 if days_this_week[5] > days_this_week[6]
     sun = Day.new('Sun', 
                   ['Gt', 'Amz()', 'ClnMbDsktp', 'TM', 'Ln', 'ClHm(1300, )', 
                    'Vac()', 'ClnKtch', 'ClnFrdg', 'Sv', 'Plk', 'Ns', 'Ap'],

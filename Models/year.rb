@@ -10,7 +10,6 @@ class Year
     52.times do
       days_this_week = Week.days_this_week(day, month)
       do_week = Week.new(week_index, days_this_week, month)
-      binding.pry
 
       if do_week.week_index.odd?
         do_week.days.find do |day|
@@ -20,9 +19,6 @@ class Year
         end
       end
 
-      # do_week.days = Cal_Tools.days_this_week(day, month)
-
-      # do_week = Cal_Tools.is_week_odd?(do_week, week_index)
       # do_week = Cal_Tools.month_end(do_week, do_week.days)
       # do_week = Cal_Tools.month_start(do_week, week_index, do_week.days, month)
 
@@ -35,6 +31,7 @@ class Year
       first_day_of_month = nil
       week_index += 1
     end
+    binding.pry
   end
 
   def self.days_in_months
