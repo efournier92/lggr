@@ -31,6 +31,14 @@ class Year
       first_day_of_month = nil
       week_index += 1
     end
+    binding.pry
+  end
+
+  def self.days_in_months
+    [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
+  end
+
+  def self.add_holidays
     @weeks.each do |week|
       week.days.each do |day|
         if day.month == 2 && day.month_day == 14
@@ -40,10 +48,5 @@ class Year
         end
       end
     end
-    binding.pry
-  end
-
-  def self.days_in_months
-    [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
   end
 end
