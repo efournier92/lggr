@@ -31,6 +31,15 @@ class Year
       first_day_of_month = nil
       week_index += 1
     end
+    @weeks.each do |week|
+      week.days.each do |day|
+        if day.month == 2 && day.month_day == 14
+          day.tasks.unshift('[Valentines]')
+        elsif day.month == 12 && day.month_day == 25
+          day.tasks.unshift('[Christmas]')
+        end
+      end
+    end
     binding.pry
   end
 
