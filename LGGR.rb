@@ -9,7 +9,11 @@ require './modules/Lg'
 
 type = ''
 month = 1
-Year.new(2017)
+do_year = Year.new(2017)
+do_year = Year.month_start(do_year)
+do_year = Year.holidays(do_year)
+do_year = Year.birthdays(do_year)
+
 binding.pry
 
 # days_in_months = Templates.days_in_months

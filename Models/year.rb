@@ -38,7 +38,7 @@ class Year
     [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
   end
 
-  def self.add_holidays
+  def self.holidays
     @weeks.each do |week|
       week.days.each do |day|
         if day.month == 2 && day.month_day == 14
