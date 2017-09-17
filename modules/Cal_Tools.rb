@@ -1,4 +1,5 @@
 module Cal_Tools
+
   def self.get_first_monday(year)
     years_since = year - 1
     leap_years = years_since / 4

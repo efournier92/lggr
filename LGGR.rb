@@ -10,6 +10,7 @@ require './modules/Lg'
 type = ''
 month = 1
 do_year = Year.new(2017)
+binding.pry
 do_year = Year.month_start(do_year)
 do_year = Year.holidays(do_year)
 do_year = Year.birthdays(do_year)
