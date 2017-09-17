@@ -9,7 +9,30 @@ require './modules/Lg'
 
 type = ''
 month = 1
-Year.new(2017)
+do_year = Year.new(1999)
+
+def thanksgiving(do_year)
+  november_thursdays = []
+  november_thursdays_count = 0
+  do_year.weeks.each do |week|
+    week.days.each do |day|
+      if day.month == 11 && day.name == 'Thu'
+        november_thursdays_count += 1
+        if november_thursdays_count == 4
+          day.tasks.unshift('[Thanksgiving]')
+        end
+      end
+    end
+  end
+  november_thursdays[3]
+end
+
+thanksgiving = thanksgiving(do_year)
+binding.pry
+do_year = Year.month_start(do_year)
+do_year = Year.holidays(do_year)
+do_year = Year.birthdays(do_year)
+
 binding.pry
 
 # days_in_months = Templates.days_in_months
