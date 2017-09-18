@@ -11,6 +11,10 @@ type = ''
 month = 1
 do_year = Year.new(1999)
 
+def easter(do_year, do_year.year)
+  
+end
+
 def thanksgiving(do_year)
   november_thursdays = []
   november_thursdays_count = 0
@@ -24,7 +28,6 @@ def thanksgiving(do_year)
       end
     end
   end
-  november_thursdays[3]
 end
 
 thanksgiving = thanksgiving(do_year)
