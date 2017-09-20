@@ -1,5 +1,4 @@
 module Holidays
-
   def easter(year)
     epact_calc = ( 24 + 19 * ( year % 19 ) ) % 30
     paschal_days = epact_calc - ( epact_calc / 28 )
@@ -13,4 +12,18 @@ module Holidays
     { month: easter_month, day: easter_day }
   end
 
+  def thanksgiving(do_year)
+    november_thursdays = []
+    november_thursdays_count = 0
+    do_year.weeks.each do |week|
+      week.days.each do |day|
+        if day.month == 11 && day.name == 'Thu'
+          november_thursdays_count += 1
+          if november_thursdays_count == 4
+            day.tasks.unshift('[Thanksgiving]')
+          end
+        end
+      end
+    end
+  end
 end
