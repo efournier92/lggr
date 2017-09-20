@@ -1,5 +1,19 @@
 module Holidays
-  def easter(do_year, year)
+  def self.memorial_day(do_year)
+    do_year.weeks.each do | week |
+      week.days.reverse_each do | day |
+        if days.month == 5 && day.name == 'Mon'
+            day.tasks.unshift('[Memorial_Day]')
+            binding.pry
+            break
+        end
+      end
+    end
+    do_year
+  end
+
+  def self.easter(do_year)
+    year = do_year.year
     epact_calc = ( 24 + 19 * ( year % 19 ) ) % 30
     paschal_days = epact_calc - ( epact_calc / 28 )
     days_to_sunday = paschal_days - (
@@ -19,7 +33,7 @@ module Holidays
     do_year
   end
 
-  def thanksgiving(do_year)
+  def self.thanksgiving(do_year)
     november_thursdays = []
     november_thursdays_count = 0
     do_year.weeks.each do | week |
