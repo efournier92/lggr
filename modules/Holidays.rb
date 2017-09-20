@@ -1,7 +1,18 @@
 module Holidays
+  def self.labor_day(do_year)
+    do_year.weeks.each do | week |
+      week.days.each do | day |
+        if day.month == 9 && day.name == 'Mon'
+          day.tasks.unshift('[Memorial_Day]')
+          break
+        end
+      end
+    end
+  end
+
   def self.memorial_day(do_year)
     do_year.weeks.each do | week |
-      week.days.reverse_each do | day |
+      week.days.each do | day |
         if day.month == 5 && day.name == 'Mon' && day.month_day >= 25
           day.tasks.unshift('[Memorial_Day]')
           binding.pry
