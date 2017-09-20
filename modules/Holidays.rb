@@ -2,10 +2,10 @@ module Holidays
   def self.memorial_day(do_year)
     do_year.weeks.each do | week |
       week.days.reverse_each do | day |
-        if days.month == 5 && day.name == 'Mon'
-            day.tasks.unshift('[Memorial_Day]')
-            binding.pry
-            break
+        if day.month == 5 && day.name == 'Mon' && day.month_day >= 25
+          day.tasks.unshift('[Memorial_Day]')
+          binding.pry
+          break
         end
       end
     end

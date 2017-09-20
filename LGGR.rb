@@ -12,6 +12,8 @@ type = ''
 month = 1
 do_year = Year.new(1999)
 
+Holidays.memorial_day(do_year)
+
 def easter(year)
    epact_calc = ( 24 + 19 * ( year % 19 ) ) % 30
     paschal_days = epact_calc - ( epact_calc / 28 )
