@@ -1,51 +1,37 @@
 class Week
+  attr_accessor :week_index, :days_this_week, :days
 
-  attr_reader   :year, :month, :days
-  attr_accessor :index, :days_this_week
-
-  def initialize(index, days_this_week, year, month)
-    @index = index
-    @month = month
-    @year = year
+  def initialize(week_index, days_this_week, month)
+    @week_index = week_index
     @days_this_week = days_this_week
-    @days = []
-
-   last_day = 0
-    Week.days.each_with_index do | (day_name, day_tasks), index |
-      month_day = days_this_week[index]
-      # increment month if it's a new month
-      # binding.pry if index == 0
-      month += 1 if month_day < last_day
-      # reset to January after December
-      month = 1 if month == 13
-      # adjust year on January 1st
-      year += 1 if month == 1 && month_day == 1 && index != 0
-      day = Day.new(day_name, day_tasks, year, month, month_day)
-      @days.push(day)
-      last_day = month_day 
-    end
+    @days = Week.template(month, days_this_week)
   end
 
-  def self.days
-    { 'Mon' => ['Ht', 'Gt', 'Af_Rcv(1900)'],
-      'Tue' => ['Ht', 'Gt'],
-      'Wed' => ['Ht', 'Gt'],
-      'Thu' => ['Ht', 'Gt'],
-      'Fri' => ['Gt', 'aLg', 'Lg', 'FnLg[R]s', 'LgWk', 'Bdgt', 'PyCC'],
-      'Sat' => ['Gt', 'Af_Ord()'],
-      'Sun' => ['Gt', 'Amz()', 'ClnMbDsktp', 'TM', 'Ln', 'ClHm(1300, )', 
-                'Vac()', 'ClnKtch', 'ClnFrdg', 'Sv', 'Plk', 'Ns', 'Ap']
-    }
+  def self.template(month, days_this_week)
+    mon = Day.new('Mon', ['Gt', 'Af_Rcv(1900)'], month, days_this_week[0])
+    month += 1 if days_this_week[0] > days_this_week[1]
+    tue = Day.new('Tue', ['Gt'], month, days_this_week[1])
+    month += 1 if days_this_week[1] > days_this_week[2]
+    wed = Day.new('Wed', ['Gt'], month, days_this_week[2])
+    month += 1 if days_this_week[2] > days_this_week[3]
+    thu = Day.new('Thu', ['Gt'], month, days_this_week[3])
+    month += 1 if days_this_week[3] > days_this_week[4]
+    fri = Day.new('Fri', 
+                 ['Gt', 'aLg', 'Lg', 'FnLg[R]s', 'LgWk', 'Bgt', 'PyCC'],
+                 month, days_this_week[4])
+    month += 1 if days_this_week[4] > days_this_week[5]
+    sat = Day.new('Sat', ['Gt', 'Af_Ord()'], month, days_this_week[5])
+    month += 1 if days_this_week[5] > days_this_week[6]
+    sun = Day.new('Sun', 
+                  ['Gt', 'Amz()', 'ClnMbDsktp', 'TM', 'Ln', 'ClHm(1300, )', 
+                   'Vac()', 'ClnKtch', 'ClnFrdg', 'Sv', 'Plk', 'Ns', 'Ap'],
+                  month, days_this_week[6])
+    [mon, tue, wed, thu, fri, sat, sun]
   end
 
-  def self.odd_week_sunday_tasks
-      ['Gt', 'Amz()', 'ClnMbDsktp', 'TM', 'Ln', 'ClHm(1300, )', 'Lndrmt(all)', 
-       'FldLn', 'ClnKtch', 'ClnFrdg', 'Sv', 'Plk', 'Ns', 'Ap']
-  end
-
-  def self.days_this_week(day, month, days_in_months)
+  def self.days_this_week(day, month)
     day_array = []
-    days_in_month = days_in_months[month - 1]
+    days_in_month = Templates.days_in_months[month-1]
     7.times do
       if day > days_in_month
         day = 1
@@ -55,27 +41,6 @@ class Week
     end
     day_array
   end
-
-  def self.add_first_week(do_year)
-    do_year.
-    last_monday_of_previous_year = 31 - ( 7 - first_day )
-    days_this_week = Week.days_this_week(last_monday_of_previous_year, 
-                                          1, @days_in_months)
-    year = @year - 1
-    first_week = Week.new(0, days_this_week, year, 12)
-    @weeks.push(first_week)
-  end
-
-  def self.add_final_week
-    last_day_of_previous_year = @weeks.last.days.last
-    last_monday_of_previous_year = last_day_of_previous_year.month_day
-    if last_day_of_previous_year.month != 1
-      days_this_week = Week.days_this_week(last_monday_of_previous_year, 
-                                          12, @days_in_months)
-      final_week = Week.new(53, days_this_week, last_day_of_previous_year.year, 12)
-      @weeks.push(final_week)
-    end
-  end
-
+  
 end
 
