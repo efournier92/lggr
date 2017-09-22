@@ -1,6 +1,4 @@
 class Year
-  attr_accessor :weeks
-
   def initialize(year)
     @year = year
     @weeks = []
@@ -33,30 +31,22 @@ class Year
       first_day_of_month = nil
       week_index += 1
     end
+    binding.pry
   end
 
   def self.days_in_months
     [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
   end
 
-  def self.holidays
-    @weeks.each do |week|
-      week.days.each do |day|
-        if day.month == 1 && day.month_day == 1
-          day.tasks.unshift("[New Year's Day]")
-        elsif day.month == 2 && day.month_day == 14
-          day.tasks.unshift("[Valentine's Day]")
-        elsif day.month == 7 && day.month_day == 4
-          day.tasks.unshift("[4th of July]")
-        elsif day.month == 12 && day.month_day == 25
+  def self.add_holidays
           day.tasks.unshift('[Christmas]')
         end
       end
     end
   end
 
-  def self.birthdays
-    @weeks.each do |week|
+  def self.add_birthdays(do_year)
+    do_year.weeks.each do |week|
       week.days.each do |day|
         if day.month == 9 && day.month_day == 29
           day.tasks.unshift("[Bday_Dd]")
