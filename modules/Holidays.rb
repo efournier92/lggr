@@ -10,12 +10,15 @@ module Holidays
     end
   end
 
-  def self.find_n_day(do_year, month, nth_day, day_name, holiday_name)
+  def self.find_nth_day_in_month(do_year, month, nth_day, day_name, holiday_name)
+    day_count = 0
     do_year.weeks.each do | week |
       week.days.each do | day |
         if day.month == month && day.name == day_name 
-          day.tasks.unshift('[Memorial_Day]')
-          break
+          day_count += 1
+          if day_count == nth_day
+            day.tasks.unshift(holiday_name)
+          end
         end
       end
     end
