@@ -22,6 +22,20 @@ module Holidays
         end
       end
     end
+    do_year
+  end
+
+  def self.find_last_day_in_month(do_year, month, day_name, holiday_name)
+    do_year.weeks.each do | week |
+      week.days.each do | day |
+        last_week_in_month_start_date = days_in_months[2] - 6
+        if day.month == month && day.name == day_name 
+          && day.month_day >= last_week_in_month_start_date
+          day.tasks.unshift(holiday_name)
+        end
+      end
+    end
+    do_year
   end
 
   def self.memorial_day(do_year)
