@@ -14,15 +14,21 @@ module Holidays
     # New Year's Day
     do_year = Holidays.add_to_specific_date(do_year, 1, 1, "[New_Year's_Day]") 
     # Presdent's Day
-    do_year = Holidays.add_to_nth_day_in_month(do_year, 2, 3, 'Mon', "President's_Day")
+    do_year = Holidays.add_to_nth_day_in_month(do_year, 2, 3, 'Mon', "[President's_Day]")
     # Daylight Savings (Begin)
+    do_year = Holidays.add_to_nth_day_in_month(do_year, 3, 2, 'Sun', "[Daylight_Saving(Begin)]")
     # Good Friday
     # Easter
+    do_year = Holidays.add_easter(do_year)
     # Memorial Day
+    find_last_occurance_in_month(do_year, 5, 'Mon', "[Memorial_Day]")
+
     # Independence Day
+    do_year = Holidays.add_to_specific_date(do_year, 7, 4, "[Independence_Day]") 
     # Labor Day
     # Veterans Day
     # Daylight Savings (End)
+    do_year = Holidays.add_to_nth_day_in_month(do_year, 1, 11, 'Sun', "Daylight_Saving(Begin)")
     # Thanksgiving
     # Christmas
   end
@@ -81,7 +87,7 @@ module Holidays
     do_year
   end
 
-  def self.easter(do_year)
+  def self.add_easter(do_year)
     year = do_year.year
     epact_calc = ( 24 + 19 * ( year % 19 ) ) % 30
     paschal_days = epact_calc - ( epact_calc / 28 )
