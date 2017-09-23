@@ -39,7 +39,7 @@ class Year
   end
 
   def add_holidays
-    Holidays.
+    self = Holidays.add_all(self)
   end
 
   def add_birthdays
