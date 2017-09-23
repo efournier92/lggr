@@ -38,15 +38,12 @@ class Year
     [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
   end
 
-  def self.add_holidays
-          day.tasks.unshift('[Christmas]')
-        end
-      end
-    end
+  def add_holidays
+    Holidays.
   end
 
-  def self.add_birthdays(do_year)
-    do_year.weeks.each do |week|
+  def add_birthdays
+    @weeks.each do |week|
       week.days.each do |day|
         if day.month == 9 && day.month_day == 29
           day.tasks.unshift("[Bday_Dd]")
