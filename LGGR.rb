@@ -13,7 +13,7 @@ month = 1
 do_year = Year.new(1999)
 
 # do_year = Year.month_start(do_year)
-do_year.add_holidays
+do_year = Year.add_holidays(do_year)
 do_year.add_birthdays
 
 binding.pry

@@ -1,5 +1,6 @@
 class Year
   attr_accessor :weeks
+  attr_reader :year
 
   def initialize(year)
     @year = year
@@ -39,8 +40,8 @@ class Year
     [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
   end
 
-  def add_holidays
-    Holidays.add_all(self)
+  def self.add_holidays(do_year)
+    do_year = Holidays.add_all(do_year)
   end
 
   def add_birthdays
