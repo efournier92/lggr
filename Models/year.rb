@@ -1,4 +1,6 @@
 class Year
+  attr_accessor :weeks
+
   def initialize(year)
     @year = year
     @weeks = []
