@@ -31,7 +31,6 @@ class Year
       first_day_of_month = nil
       week_index += 1
     end
-    binding.pry
   end
 
   def self.days_in_months
@@ -39,7 +38,7 @@ class Year
   end
 
   def add_holidays
-    self = Holidays.add_all(self)
+    Holidays.add_all(self)
   end
 
   def add_birthdays

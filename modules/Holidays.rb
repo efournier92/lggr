@@ -84,8 +84,7 @@ module Holidays
     do_year.weeks.each do | week |
       week.days.each do | day |
       last_week_in_month_start_date = days_in_months[2] - 6
-      if day.month == month && day.name == day_name 
-        && day.month_day >= last_week_in_month_start_date
+      if day.month == month && day.name == day_name && day.month_day >= last_week_in_month_start_date
         day.tasks.unshift(holiday_name)
       end
     end

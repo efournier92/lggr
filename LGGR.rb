@@ -12,8 +12,6 @@ type = ''
 month = 1
 do_year = Year.new(1999)
 
-Holidays.memorial_day(do_year)
-
 # do_year = Year.month_start(do_year)
 do_year.add_holidays
 do_year.add_birthdays
