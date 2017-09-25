@@ -41,11 +41,11 @@ class Year
   end
 
   def self.add_holidays(do_year)
-    do_year = Holidays.add_all(do_year)
+    Holidays.add_all(do_year)
   end
 
-  def add_birthdays
-    @weeks.each do |week|
+  def self.add_birthdays(do_year)
+    do_year.weeks.each do |week|
       week.days.each do |day|
         if day.month == 9 && day.month_day == 29
           day.tasks.unshift("[Bday_Dd]")
@@ -57,6 +57,8 @@ class Year
           day.tasks.unshift("[Bday_Lori]")
         elsif day.month == 10 && day.month_day == 10
           day.tasks.unshift("[Bday_Brian]")
+        elsif day.month == 2 && day.month_day == 13
+          day.tasks.unshift("[Bday_Eric]")
         elsif day.month == 8 && day.month_day == 19
           day.tasks.unshift("[Bday_Nate]")
         elsif day.month == 11 && day.month_day == 28
@@ -64,5 +66,7 @@ class Year
         end
       end
     end
+    do_year
   end
 end
+

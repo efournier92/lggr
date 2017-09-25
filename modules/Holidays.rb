@@ -5,9 +5,13 @@ module Holidays
     do_year = Holidays.add_to_specific_date(
       do_year, 1, 1, "[New_Year's_Day]"
     )
-    # Presdent's Day
+    # President's Day
     do_year = Holidays.add_to_nth_day_in_month(
       do_year, 2, 3, 'Mon', "[President's_Day]"
+    )
+    # Valentine's Day
+    do_year = Holidays.add_to_specific_date(
+      do_year, 2, 14, "[Valentine's_Day]"
     )
     # Daylight Savings (Begin)
     do_year = Holidays.add_to_nth_day_in_month(

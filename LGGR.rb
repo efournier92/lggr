@@ -10,12 +10,11 @@ require './modules/Lg'
 
 type = ''
 month = 1
-do_year = Year.new(1999)
+do_year = Year.new(2001)
 
 # do_year = Year.month_start(do_year)
 do_year = Year.add_holidays(do_year)
-do_year.add_birthdays
-
+do_year = Year.add_birthdays(do_year)
 binding.pry
 
 # days_in_months = Templates.days_in_months
