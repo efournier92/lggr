@@ -1,5 +1,6 @@
 module Lg
   def self.print(do_year)
+    year = do_year.year
     out_file = File.new("./Out/#{ year }_LG.txt", "w")
 
     weekday_string = "***\n[S]\n***\n[R]\n"
@@ -9,14 +10,16 @@ module Lg
     do_year.weeks.each do | week |
       week.days.each do | day |
           out_file.puts('************************')
-          out_file.puts("#{ do_year.year }-#{ '%02d' % day.month }-#{ '%02d' % day.month_day }")
+          out_file.puts("#{ year }-#{ '%02d' % day.month }-#{ '%02d' % day.month_day }")
           out_file.puts('***********')
           out_file.puts("#{ day.name } - ")
-          out_file.puts('***')
           if day.name == 'Fri'
-            out_file.puts("#{ day.name } - ")
-
-
+            out_file.puts(friday_string)
+          elsif day.name == 'Sat' || day.name == 'Sun'
+            out_file.puts(weekend_string)
+          else
+            out_file.puts(weekday_string)
+          end
       end
     end
 
