@@ -28,11 +28,7 @@ module Cal_Tools
   end
 
   def self.is_leap_year?(year)
-    if (year % 4 == 0 && !(year % 100 == 0 && year % 400 != 0))
-      true 
-    else
-      false 
-    end
+    year % 4 == 0 && !( year % 100 == 0 && year % 400 != 0 )
   end
 
   def self.days_this_week(day, month)

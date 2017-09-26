@@ -40,6 +40,10 @@ class Year
     [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
   end
 
+  def is_leap_year?
+    @year % 4 == 0 && !( @year % 100 == 0 && @year % 400 != 0 )
+  end
+
   def self.add_holidays(do_year)
     Holidays.add_all(do_year)
   end
