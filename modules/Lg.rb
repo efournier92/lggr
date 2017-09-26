@@ -3,9 +3,9 @@ module Lg
     year = do_year.year
     out_file = File.new("./Out/#{ year }_LG.txt", "w")
 
-    weekday_string = "***\n[S]\n***\n[R]\n"
-    weekend_string = "***\n[R]\n"
-    friday_string  = "***\n[S]\n***\n[S]\n***\n[R]\n"
+    weekday_string = "***\n[S] \n***\n[R] \n"
+    weekend_string = "***\n[R] \n"
+    friday_string  = "***\n[S] \n***\n[S] \n***\n[R] \n"
 
     do_year.weeks.each do | week |
       week.days.each do | day |
