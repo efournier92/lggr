@@ -5,18 +5,18 @@ require './Models/day.rb'
 require './modules/Cal_Tools'
 require './modules/Holidays'
 require './modules/Templates'
-require './modules/Do'
-require './modules/Lg'
+require './modules/Printer'
 
 type = ''
 month = 1
-do_year = Year.new(1992)
+do_year = Year.new(1993)
 
 # do_year = Year.month_start(do_year)
 do_year = Year.add_holidays(do_year)
 do_year = Year.add_birthdays(do_year)
 Printer.print_do(do_year)
 Printer.print_lg(do_year)
+binding.pry
 
 # days_in_months = Templates.days_in_months
 
