@@ -8,6 +8,8 @@ class Year
     month = 1
     week_index = 1
     days_in_months = Year.days_in_months
+
+    days_in_months[2] = 29 if self.leap_year?
     day = Cal_Tools.get_first_monday(year)
 
     52.times do
@@ -40,7 +42,7 @@ class Year
     [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
   end
 
-  def is_leap_year?
+  def leap_year?
     @year % 4 == 0 && !( @year % 100 == 0 && @year % 400 != 0 )
   end
 
