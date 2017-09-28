@@ -15,8 +15,8 @@ do_year = Year.new(1992)
 # do_year = Year.month_start(do_year)
 do_year = Year.add_holidays(do_year)
 do_year = Year.add_birthdays(do_year)
-Do.print(do_year)
-Lg.print(do_year)
+Printer.print_do(do_year)
+Printer.print_lg(do_year)
 
 # days_in_months = Templates.days_in_months
 
