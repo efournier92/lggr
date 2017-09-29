@@ -2,19 +2,19 @@ module Holidays
 
   def self.add_all(do_year)
     # New Year's Day
-    do_year = Cal_Tools.add_to_specific_date(
+    do_year = Add_Tag.to_specific_date(
       do_year, 1, 1, "[New_Year's_Day]"
     )
     # President's Day
-    do_year = Cal_Tools.add_to_nth_day_in_month(
+    do_year = Add_Tag.to_nth_day_in_month(
       do_year, 2, 3, 'Mon', "[President's_Day]"
     )
     # Valentine's Day
-    do_year = Cal_Tools.add_to_specific_date(
+    do_year = Add_Tag.to_specific_date(
       do_year, 2, 14, "[Valentine's_Day]"
     )
     # Daylight Savings (Begin)
-    do_year = Cal_Tools.add_to_nth_day_in_month(
+    do_year = Add_Tag.to_nth_day_in_month(
       do_year, 3, 2, 'Sun', "[Daylight_Saving(Begin)]"
     )
     # Easter & Good Friday
@@ -22,35 +22,35 @@ module Holidays
       do_year
     )
     # Memorial Day
-    do_year = Cal_Tools.find_last_occurance_in_month(
+    do_year = Add_Tag.to_last_week_in_month(
       do_year, 5, 'Mon', "[Memorial_Day]"
     )
     # Independence Day
-    do_year = Cal_Tools.add_to_specific_date(
+    do_year = Add_Tag.to_specific_date(
       do_year, 7, 4, "[Independence_Day]"
     )
     # Labor Day
-    do_year = Cal_Tools.add_to_nth_day_in_month(
+    do_year = Add_Tag.to_nth_day_in_month(
       do_year, 9, 1, 'Mon', "[Labor_Day]"
     )
     # Veterans Day
-    do_year = Cal_Tools.add_to_specific_date(
+    do_year = Add_Tag.to_specific_date(
       do_year, 11, 11, "[Veterans_Day]"
     )
     # Daylight Savings (End)
-    do_year = Cal_Tools.add_to_nth_day_in_month(
+    do_year = Add_Tag.to_nth_day_in_month(
       do_year, 11, 1, 'Sun', "[Daylight_Saving(End)]"
     )
     # Thanksgiving
-    do_year = Cal_Tools.add_to_nth_day_in_month(
+    do_year = Add_Tag.to_nth_day_in_month(
       do_year, 11, 4, 'Sun', "[Thanksgiving]"
     )
     # Christmas
-    do_year = Cal_Tools.add_to_specific_date(
+    do_year = Add_Tag.to_specific_date(
       do_year, 12, 25, "[Christmas]"
     )
     # New Year's Eve 
-    do_year = Cal_Tools.add_to_specific_date(
+    do_year = Add_Tag.to_specific_date(
       do_year, 12, 31, "[New_Year's_Eve]"
     )
   end
