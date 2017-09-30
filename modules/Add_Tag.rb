@@ -1,4 +1,5 @@
 module Add_Tag 
+
   def self.to_specific_date(do_year, month, month_day, description_tag)
     day_count = 0
     do_year.weeks.each do | week |
@@ -11,7 +12,7 @@ module Add_Tag
     do_year
   end
 
-  def self.to_nth_day_in_month(do_year, month, nth_day, day_name, description_tag)
+  def self.to_nth_xday_in_month(do_year, month, nth_day, day_name, description_tag)
     day_count = 0
     do_year.weeks.each do | week |
       week.days.each do | day |
@@ -38,5 +39,6 @@ module Add_Tag
     end
     do_year
   end
+
 end 
 

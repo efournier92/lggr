@@ -1,25 +1,32 @@
 class Month
-  def self.add_to_nth_day_in_month(do_year, month, nth_day, day_name, holiday_name)
-    day_count = 0
+
+  def self.add_start_tasks(do_year, week_index, days_this_week, month)
+    quarter_months = [1, 4, 7, 10]
+
+
+    for (i = 1; i <= 12;i += 1) 
+      do_week[day_of_first].unshift(
+      # add to first day of month
+      Add_Tag.to_specific_date(do_year.year, i, 1, 
+                               'ByTrnTk, PyIntrnt, PyRnt, RcvScrpts, ')
+      Add_Tag.to_nth_day_in_month(do_year.year, i, 1, 'Sat', 
+                                  'Scpts_Ord, Scpts_Rcv, Scpts_CtPls, ')
+      Add_Tag.to_nth_day_in_month(do_year.year, i, 1, 'Sun', 
+                                  'NxBk, FrsRzrs, FrshCntcts, ')
+
+      # add to first Saturday of month
+      #
+      # add to first Sunday of month
+    end
+    quarter_months.each do |month|
+      Add_Tag.to_nth_day_in_month(do_year.year, i, 1, 'Sun', 'NxBk, FrsRzrs, FrshCntcts, ', 'FrsCntctCs, BgSv, ')
+
     do_year.weeks.each do | week |
       week.days.each do | day |
-        if day.month == month && day.name == day_name 
-          day_count += 1
-          if day_count == nth_day
-            day.tasks.unshift(holiday_name)
-          end
-        end
+      # Add
+      # add to first Saturday of month
+      # add to first Sunday of month
       end
-    end
-    do_year
-  end
-
-  def self.add_month_start_tasks(do_week, week_index, days_this_week, month)
-    start_of_quarters = [1, 4, 7, 10]
-    first_index = days_this_week.index(1)
-
-    if week_index == 0 && !first_index
-      do_week = Cal_Tools.year_start(do_week)
     end
 
     if first_index
@@ -27,10 +34,10 @@ class Month
       do_week['Sat'].unshift('CtPls')
       do_week[day_of_first].unshift('RcvScrpts')
       do_week[day_of_first].unshift('PyIntrnt')
+      do_week[day_of_first].unshift('PyRnt')
       do_week['Sun'].unshift('NxBk')
       do_week['Sun'].unshift('FrsRzrs')
       do_week['Sun'].unshift('FrshCntcts')
-      do_week[day_of_first].unshift('PyRnt')
       if start_of_quarters.include?(month) 
         do_week['Sun'].unshift('FrsCntctCs')
         do_week['Sun'].unshift('BgSv')
