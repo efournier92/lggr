@@ -4,10 +4,6 @@ class Month
     [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
   end
 
-  def self.to_last_day_of_month(do_year, month)
-    last_day_of_month = Month.days_in_months[month - 1]
-  end
-
   def self.add_start_tasks(do_year, week_index, days_this_week, month)
     for (month = 1; month <= 12; month += 1) 
       Add_Tag.to_specific_date(do_year.year, month, 1, 
