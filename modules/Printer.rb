@@ -1,4 +1,5 @@
 module Printer
+
   def self.print_do(do_year)
     year = do_year.year 
     out_file = File.new("./Out/#{ year }_DO.txt", "w")
@@ -44,5 +45,6 @@ module Printer
       end
     end
   end
+
 end
 
