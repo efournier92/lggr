@@ -1,11 +1,8 @@
 class Month
 
-  def self.days_in_months
-    [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
-  end
-
   def self.add_start_tasks(do_year, week_index, days_this_week, month)
     for (month = 1; month <= 12; month += 1) 
+      #Las
       Add_Tag.to_last_day_of_month(do_year, month, 
                                    'Rnt_PrpChk, ')
       Add_Tag.to_specific_date(do_year, month, 1, 
