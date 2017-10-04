@@ -66,10 +66,13 @@ module Holidays
     easter_day = days_to_sunday + 28 - (
       31 * ( easter_month / 4 )
     )
-    good_friday_month = 
-      easter_day > 2 ? easter_month : easter_month - 1
-    good_friday_day = 
-      easter_day > 2 ? easter_day - 2 : Year.days_in_months[good_friday_month - 1] - ( easter_day - 1 )
+
+    good_friday_month = easter_day > 2 ? 
+      easter_month : easter_month - 1
+
+    good_friday_day = easter_day > 2 ? easter_day - 2 : 
+      Year.days_in_months[good_friday_month - 1] - ( easter_day - 1 )
+
     do_year.weeks.each do | week |
       week.days.each do | day |
         if day.month == easter_month && day.month_day == easter_day
@@ -82,5 +85,6 @@ module Holidays
     end
     do_year
   end
+
 end
 
