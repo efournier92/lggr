@@ -10,9 +10,9 @@ require 'pry'
 print_type = ''
 month = 1
 
-until type == 'DO' || type == 'LG'
+until print_type == 'DO' || print_type == 'LG'
   print "DO || LG?\n>> "
-  type = gets.chomp
+  print_type = gets.chomp
 end
 
 print "Which Year?\n>> "
