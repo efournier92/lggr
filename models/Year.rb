@@ -1,15 +1,15 @@
 class Year
   attr_accessor :weeks
-  attr_reader :year
+  attr_reader :year, :days_in_months
 
   def initialize(year)
     @year  = year
     @weeks = []
     month  = 1
     week_index = 1
-    days_in_months = Year.days_in_months
+    @days_in_months = Year.days_in_months
     # adjust for leap year
-    days_in_months[2] = 29 if self.leap_year?
+    @days_in_months[2] = 29 if self.leap_year?
     day = Year.get_first_monday(year)
 
     # TODO: fill in last at start & end of year 
