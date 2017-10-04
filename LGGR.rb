@@ -1,17 +1,18 @@
-require 'pry'
-require './Models/year.rb'
-require './Models/week.rb'
-require './Models/day.rb'
-require './modules/Cal_Tools'
+require './models/Day'
+require './models/Month'
+require './models/Week'
+require './models/Year'
+require './modules/Birthdays'
+require './modules/Add_Tag'
 require './modules/Holidays'
-require './modules/Templates'
 require './modules/Printer'
+require 'pry'
 
-type = ''
+print_type = ''
 month = 1
 do_year = Year.new(1993)
 
-# do_year = Year.month_start(do_year)
+do_year = Month.add_start_tasks(do_year)
 do_year = Year.add_holidays(do_year)
 do_year = Year.add_birthdays(do_year)
 Printer.print_do(do_year)
