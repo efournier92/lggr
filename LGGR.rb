@@ -7,7 +7,6 @@ require './modules/Add_Tag'
 require './modules/Holidays'
 require './modules/Printer'
 require 'pry'
-
 print_type = ''
 month = 1
 
