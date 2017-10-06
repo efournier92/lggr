@@ -15,9 +15,10 @@ class Year
     # TODO: fill in last at start & end of year 
 
     52.times do
-      days_this_week = Week.days_this_week(day, month)
+      days_this_week = Week.days_this_week(day, month, @days_in_months)
+      binding.pry
       do_week = Week.new(week_index, days_this_week, month)
-      if do_week.week_index.odd?
+      if do_week.index.odd?
         do_week.days.find do | day |
           if day.name == 'Sun'
             day.tasks = Day.odd_sunday_tasks 

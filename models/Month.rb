@@ -1,9 +1,10 @@
 class Month
 
-  def self.add_start_tasks(do_year, week_index, days_this_week, month)
+  def self.add_start_tasks(do_year)
     for month in 1..12
       # last day of month
-      do_year = Add_Tag.to_last_day_of_month(do_year, month, 'RntPrepChk')
+      do_year = Add_Tag.to_last_day_of_month(do_year, month, 1, 
+                                             'RntPrepChk')
       # first day of month
       do_year = Add_Tag.to_specific_date(do_year, month, 1, 
                                'ByTrnTk, Rnt_Py, PyIntrnt, ')

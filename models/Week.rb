@@ -2,8 +2,17 @@ class Week
   attr_accessor :week_index, :days_this_week
 
   def initialize(week_index, days_this_week, month)
-    @week_index = week_index
+    @index = week_index
     @days_this_week = days_this_week
+  end
+
+  def self.build(month, days_this_week)
+    week_arr = []
+    Week.days.each_with_index do | day_name, day_tasks |
+      day = Day.new(day_name, day_tasks, month, days_this_week[index])
+      week_arr.push(day)
+    end
+    week_arr
   end
 
   def self.days
@@ -18,13 +27,17 @@ class Week
     }
   end
 
-  def self.build(month, days_this_week)
-    week_arr = []
-    Week.days.each_with_index do | day_name, day_tasks |
-      day = Day.new(day_name, day_tasks, month, days_this_week[index])
-      week_arr.push(day)
+  def self.days_this_week(day, month, days_in_months)
+    day_array = []
+    days_in_month = days_in_months[month - 1]
+    7.times do
+      if day > days_in_month
+        day = 1
+      end
+      day_array.push(day)
+      day += 1
     end
-    week_arr
+    day_array
   end
 
 end
