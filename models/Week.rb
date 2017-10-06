@@ -1,5 +1,5 @@
 class Week
-  attr_reader   :month
+  attr_reader   :month, :days
   attr_accessor :index, :days_this_week
 
   def initialize(index, days_this_week, month)
@@ -12,7 +12,6 @@ class Week
   def self.build(days_this_week, month)
     week_arr = []
     Week.days.each_with_index do | (day_name,day_tasks), index |
-      binding.pry
       day = Day.new(day_name, day_tasks, month, days_this_week[index])
       week_arr.push(day)
     end

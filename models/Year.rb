@@ -26,7 +26,7 @@ class Year
     52.times do
       days_this_week = Week.days_this_week(day, month, @days_in_months)
       do_week = Week.new(week_index, days_this_week, month)
-      add_bookend_weeks(do_week, month)
+      # add_bookend_weeks(do_week, month)
       if do_week.index.odd?
         do_week.days.find do | day |
           if day.name == 'Sun'
@@ -35,6 +35,7 @@ class Year
         end
       end
       @weeks.push(do_week)
+      binding.pry
       day += 7
       # check if new month
       if day > days_in_months[month - 1]
