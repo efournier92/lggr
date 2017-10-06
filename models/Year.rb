@@ -12,32 +12,34 @@ class Year
     @days_in_months[2] = 29 if self.leap_year?
     day = Year.get_first_monday(year)
 
-    def add_bookend_weeks(do_week, month)
+    def add_first_week(first_day)
+      last_monday_of_previous_Year = 31 - ( 7 - first_day )
+      days_this_week = Week.days_this_week(last_monday_of_previous_Year, 
+                                           1, @days_in_months)
+      first_week = Week.new(0, days_this_week, 12)
+      @weeks.push(first_week)
+    end
+
+    def add_final_week(do_week, month)
       last_monday_of_previous_Year = 31 - ( 7 - do_week.days[0].month_day )
       days_this_week = Week.days_this_week(last_monday_of_previous_Year, 
                                            month, @days_in_months)
-      new_week = Week.new(0, days_this_week, 12)
-      binding.pry
-      if week.month == 1 && do_week.days_this_week.include?(1)
-        dec_31 = 7 - do_week[0]
-      elsif month == 12
-      end
-
+      first_week = Week.new(0, days_this_week, 12)
+      @weeks.push(first_week)
     end
 
     week_index = 0
+    add_first_week(day)
 
     52.times do
       days_this_week = Week.days_this_week(day, month, @days_in_months)
       do_week = Week.new(week_index, days_this_week, month)
-      add_bookend_weeks(do_week, month)
       if do_week.index.odd?
         do_week.days.find do | day |
           if day.name == 'Sun'
             day.tasks = Day.odd_sunday_tasks 
           end
         end
-      end
       @weeks.push(do_week)
       binding.pry
       day += 7
@@ -50,6 +52,7 @@ class Year
       week_index += 1
     end
   end
+end
 
   def self.days_in_months
     [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]

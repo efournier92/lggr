@@ -3,7 +3,7 @@ class Month
   def self.add_start_tasks(do_year)
     for month in 1..12
       # last day of month
-      do_year = Add_Tag.to_last_day_of_month(do_year, month, 1, 
+      do_year = Add_Tag.to_last_day_of_month(do_year, month, 
                                              'RntPrepChk')
       # first day of month
       do_year = Add_Tag.to_specific_date(do_year, month, 1, 

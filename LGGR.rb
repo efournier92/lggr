@@ -26,6 +26,7 @@ do_year = Month.add_start_tasks(do_year)
 do_year = Year.add_birthdays(do_year)
 # add holidays to year object
 do_year = Year.add_holidays(do_year)
+binding.pry
 
 if type == 'DO'
   Printer.print_do(do_year)
