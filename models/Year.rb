@@ -12,12 +12,21 @@ class Year
     @days_in_months[2] = 29 if self.leap_year?
     day = Year.get_first_monday(year)
 
-    # TODO: fill in last at start & end of year 
+    def add_bookend_weeks(do_week, month)
+      if week.month == 1 && do_week.days_this_week.include?(1)
+        binding.pry
+        dec_31 = 7 - do_week[0]
+      elsif month == 12
+      end
+
+    end
+
+    week_index = 0
 
     52.times do
       days_this_week = Week.days_this_week(day, month, @days_in_months)
-      binding.pry
       do_week = Week.new(week_index, days_this_week, month)
+      add_bookend_weeks(do_week, month)
       if do_week.index.odd?
         do_week.days.find do | day |
           if day.name == 'Sun'
