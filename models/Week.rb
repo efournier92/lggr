@@ -11,9 +11,14 @@ class Week
 
   def self.build(days_this_week, month)
     week_arr = []
+    last_day = 0
     Week.days.each_with_index do | (day_name,day_tasks), index |
-      day = Day.new(day_name, day_tasks, month, days_this_week[index])
+      month_day = days_this_week[index]
+      month += 1 if last_day > month_day
+      month = 1 if month == 13 
+      day = Day.new(day_name, day_tasks, month, month_day)
       week_arr.push(day)
+      last_day = month_day 
     end
     week_arr
   end

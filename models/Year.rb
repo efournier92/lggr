@@ -13,8 +13,12 @@ class Year
     day = Year.get_first_monday(year)
 
     def add_bookend_weeks(do_week, month)
+      last_monday_of_previous_Year = 31 - ( 7 - do_week.days[0].month_day )
+      days_this_week = Week.days_this_week(last_monday_of_previous_Year, 
+                                           month, @days_in_months)
+      new_week = Week.new(0, days_this_week, 12)
+      binding.pry
       if week.month == 1 && do_week.days_this_week.include?(1)
-        binding.pry
         dec_31 = 7 - do_week[0]
       elsif month == 12
       end
@@ -26,7 +30,7 @@ class Year
     52.times do
       days_this_week = Week.days_this_week(day, month, @days_in_months)
       do_week = Week.new(week_index, days_this_week, month)
-      # add_bookend_weeks(do_week, month)
+      add_bookend_weeks(do_week, month)
       if do_week.index.odd?
         do_week.days.find do | day |
           if day.name == 'Sun'
