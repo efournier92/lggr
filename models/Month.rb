@@ -16,10 +16,10 @@ class Month
                                   'FrshCntcts, FrshRzrs, NxBk')
       # quarterly tasks
       quarter_months = [1, 4, 7, 10]
-      quarter_months.each do |quarter_month|
+      quarter_months.each do | quarter_month |
         if (month == quarter_month)
           # first Sunday of quarter
-          do_year = Add_Tag.to_nth_day_in_month(do_year.year, i, 1, 'Sun', 
+          do_year = Add_Tag.to_nth_xday_in_month(do_year, quarter_month, 1, 'Sun', 
                                       'FrsCntctCs, BgSv, TB_B, ')
         end
       end

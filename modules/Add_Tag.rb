@@ -42,7 +42,7 @@ module Add_Tag
 
   def self.to_last_day_of_month(do_year, month, new_tag)
     last_day_of_month = Year.days_in_months[month - 1]
-    Add_Tag.to_specific_date(do_year, month, new_tag)
+    Add_Tag.to_specific_date(do_year, month, last_day_of_month, new_tag)
   end
 
 end 

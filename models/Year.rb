@@ -28,7 +28,7 @@ class Year
       @weeks.push(first_week)
     end
 
-    week_index = 0
+    week_index = 1
     add_first_week(day)
 
     52.times do

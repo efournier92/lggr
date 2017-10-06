@@ -6,7 +6,7 @@ module Holidays
       do_year, 1, 1, "[New_Year's_Day]"
     )
     # President's Day
-    do_year = Add_Tag.to_nth_day_in_month(
+    do_year = Add_Tag.to_nth_xday_in_month(
       do_year, 2, 3, 'Mon', "[President's_Day]"
     )
     # Valentine's Day
@@ -14,7 +14,7 @@ module Holidays
       do_year, 2, 14, "[Valentine's_Day]"
     )
     # Daylight Savings (Begin)
-    do_year = Add_Tag.to_nth_day_in_month(
+    do_year = Add_Tag.to_nth_xday_in_month(
       do_year, 3, 2, 'Sun', "[Daylight_Saving(Begin)]"
     )
     # Easter & Good Friday
@@ -30,7 +30,7 @@ module Holidays
       do_year, 7, 4, "[Independence_Day]"
     )
     # Labor Day
-    do_year = Add_Tag.to_nth_day_in_month(
+    do_year = Add_Tag.to_nth_xday_in_month(
       do_year, 9, 1, 'Mon', "[Labor_Day]"
     )
     # Veterans Day
@@ -38,11 +38,11 @@ module Holidays
       do_year, 11, 11, "[Veterans_Day]"
     )
     # Daylight Savings (End)
-    do_year = Add_Tag.to_nth_day_in_month(
+    do_year = Add_Tag.to_nth_xday_in_month(
       do_year, 11, 1, 'Sun', "[Daylight_Saving(End)]"
     )
     # Thanksgiving
-    do_year = Add_Tag.to_nth_day_in_month(
+    do_year = Add_Tag.to_nth_xday_in_month(
       do_year, 11, 4, 'Sun', "[Thanksgiving]"
     )
     # Christmas
