@@ -40,8 +40,8 @@ class Year
             day.tasks = Day.odd_sunday_tasks 
           end
         end
+      end
       @weeks.push(do_week)
-      binding.pry
       day += 7
       # check if new month
       if day > days_in_months[month - 1]
@@ -52,7 +52,6 @@ class Year
       week_index += 1
     end
   end
-end
 
   def self.days_in_months
     [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
