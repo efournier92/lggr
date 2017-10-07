@@ -5,7 +5,7 @@ class Day
   def initialize(name, tasks, year, month, month_day)
     @name = name
     @tasks = tasks
-    @year = tasks
+    @year = year
     @month = month
     @month_day = month_day
   end

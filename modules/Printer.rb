@@ -15,7 +15,8 @@ module Printer
           out_file.print("#{ task }, ")
         end
         day.name == 'Sun' ?
-          out_file.puts("\n************************") :
+          # out_file.puts("\n************************") :
+          out_file.puts('') :
           out_file.puts('')
       end
     end
