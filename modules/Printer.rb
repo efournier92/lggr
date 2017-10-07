@@ -7,7 +7,7 @@ module Printer
       week.days.each do | day |
         if day.name == 'Mon' || ( day.month == 1 && day.month_day == 1 )
           out_file.puts('************************')
-          out_file.puts("#{ year }-#{ '%02d' % day.month }-#{ '%02d' % day.month_day }")
+          out_file.puts("#{ day.year }-#{ '%02d' % day.month }-#{ '%02d' % day.month_day }")
           out_file.puts('************************')
         end
         out_file.print("#{ day.name } - ")

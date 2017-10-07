@@ -5,7 +5,7 @@ class Year
   def initialize(year)
     @year  = year
     @weeks = []
-    month  = 1
+    month  = 0
     week_index = 1
     @days_in_months = Year.days_in_months
     # adjust for leap year
@@ -16,7 +16,7 @@ class Year
       last_monday_of_previous_Year = 31 - ( 7 - first_day )
       days_this_week = Week.days_this_week(last_monday_of_previous_Year, 
                                            1, @days_in_months)
-      first_week = Week.new(0, days_this_week, 12)
+      first_week = Week.new(0, days_this_week, year, 12)
       @weeks.push(first_week)
     end
 
@@ -24,7 +24,7 @@ class Year
       last_monday_of_previous_Year = 31 - ( 7 - do_week.days[0].month_day )
       days_this_week = Week.days_this_week(last_monday_of_previous_Year, 
                                            month, @days_in_months)
-      first_week = Week.new(0, days_this_week, 12)
+      first_week = Week.new(0, days_this_week, year, 12)
       @weeks.push(first_week)
     end
 
@@ -33,7 +33,7 @@ class Year
 
     52.times do
       days_this_week = Week.days_this_week(day, month, @days_in_months)
-      do_week = Week.new(week_index, days_this_week, month)
+      do_week = Week.new(week_index, days_this_week, year, month)
       if do_week.index.odd?
         do_week.days.find do | day |
           if day.name == 'Sun'

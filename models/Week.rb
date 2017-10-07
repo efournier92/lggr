@@ -2,21 +2,28 @@ class Week
   attr_reader   :month, :days
   attr_accessor :index, :days_this_week
 
-  def initialize(index, days_this_week, month)
+  def initialize(index, days_this_week, year, month)
     @index = index
     @month = month
     @days_this_week = days_this_week
-    @days = Week.build(days_this_week, month)
+    @days = Week.build(days_this_week, year, month)
   end
 
-  def self.build(days_this_week, month)
+  def self.build(days_this_week, year, month)
     week_arr = []
     last_day = 0
     Week.days.each_with_index do | (day_name,day_tasks), index |
       month_day = days_this_week[index]
-      month += 1 if last_day > month_day
-      month = 1 if month == 13 
-      day = Day.new(day_name, day_tasks, month, month_day)
+      if last_day > month_day 
+        if month == 0
+          month += 1
+          year += 1
+        elsif month == 13
+          month = 1
+          year -= 1
+        end
+      end
+      day = Day.new(day_name, day_tasks, year, month, month_day)
       week_arr.push(day)
       last_day = month_day 
     end
