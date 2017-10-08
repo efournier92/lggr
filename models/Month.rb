@@ -7,10 +7,10 @@ class Month
                                              'RntPrepChk')
       # first day of month
       do_year = Add_Tag.to_specific_date(do_year, month, 1, 
-                               'ByTrnTk, Rnt_Py, PyIntrnt, ')
+                               'ByTrnTk, Rnt_Py, PyIntrnt')
       # first Saturday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 1, 'Sat', 
-                                             'Scpts_Ord, Scpts_Rcv, Scpts_CtPls, ')
+                                             'Scpts_Ord, Scpts_Rcv, Scpts_CtPls')
       # first Sunday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 1, 'Sun', 
                                   'FrshCntcts, FrshRzrs, NxBk')
@@ -20,7 +20,7 @@ class Month
         if (month == quarter_month)
           # first Sunday of quarter
           do_year = Add_Tag.to_nth_xday_in_month(do_year, quarter_month, 1, 'Sun', 
-                                      'FrsCntctCs, BgSv, TB_B, ')
+                                      'FrsCntctCs, BgSv, TB_B')
         end
       end
     end 
