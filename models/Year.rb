@@ -13,17 +13,17 @@ class Year
     day = Year.get_first_monday(year)
 
     def add_first_week(first_day)
-      last_monday_of_previous_Year = 31 - ( 7 - first_day )
-      days_this_week = Week.days_this_week(last_monday_of_previous_Year, 
+      last_monday_of_previous_year = 31 - ( 7 - first_day )
+      days_this_week = Week.days_this_week(last_monday_of_previous_year, 
                                            1, @days_in_months)
-      year = year - 1
+      year = @year - 1
       first_week = Week.new(0, days_this_week, year, 12)
       @weeks.push(first_week)
     end
 
     def add_final_week(do_week, month)
-      last_monday_of_previous_Year = 31 - ( 7 - do_week.days[0].month_day )
-      days_this_week = Week.days_this_week(last_monday_of_previous_Year, 
+      last_monday_of_this_year = do_week.days[0].month_day
+      days_this_week = Week.days_this_week(last_monday_of_previous_year, 
                                            month, @days_in_months)
       first_week = Week.new(53, days_this_week, year, 12)
       @weeks.push(first_week)
