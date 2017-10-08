@@ -6,28 +6,22 @@ class Week
     @index = index
     @month = month
     @days_this_week = days_this_week
-    @days = Week.build(days_this_week, year, month)
-  end
+    @days = []
 
-  def self.build(days_this_week, year, month)
-    week_arr = []
-    last_day = 0
+   last_day = 0
+
     Week.days.each_with_index do | (day_name,day_tasks), index |
       month_day = days_this_week[index]
-      if last_day > month_day 
-        if month == 0
-          month += 1
-          year += 1
-        elsif month == 13
-          month = 1
-          year -= 1
-        end
-      end
+      year = year - 1 if @index == 0 && @days.empty?
+      
+        year = year += 1 if @index == 0 && month_day < last_day 
+        # elsif month == 13
+        #   month = 1
+        #   year -= 1
       day = Day.new(day_name, day_tasks, year, month, month_day)
-      week_arr.push(day)
+      @days.push(day)
       last_day = month_day 
     end
-    week_arr
   end
 
   def self.days

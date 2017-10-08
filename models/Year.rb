@@ -5,7 +5,7 @@ class Year
   def initialize(year)
     @year  = year
     @weeks = []
-    month  = 0
+    month  = 1
     week_index = 1
     @days_in_months = Year.days_in_months
     # adjust for leap year

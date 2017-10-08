@@ -14,12 +14,10 @@ module Printer
         day.tasks.each do |task|
           out_file.print("#{ task }, ")
         end
-        day.name == 'Sun' ?
-          # out_file.puts("\n************************") :
-          out_file.puts('') :
-          out_file.puts('')
+        out_file.puts('')
       end
     end
+    out_file.puts('************************')
   end
 
   def self.print_lg(do_year)
