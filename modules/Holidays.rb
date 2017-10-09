@@ -43,7 +43,7 @@ module Holidays
     )
     # Thanksgiving
     do_year = Add_Tag.to_nth_xday_in_month(
-      do_year, 11, 4, 'Sun', "[Thanksgiving]"
+      do_year, 11, 4, 'Thu', "[Thanksgiving]"
     )
     # Christmas
     do_year = Add_Tag.to_specific_date(
