@@ -48,6 +48,7 @@ class Year
         end
       end
       @weeks.push(do_week)
+      # intement for next week
       day += 7
       # check if new month
       if day > days_in_months[month - 1]
