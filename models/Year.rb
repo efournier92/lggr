@@ -10,7 +10,6 @@ class Year
     @days_in_months = Year.days_in_months
     # adjust for leap year
     @days_in_months[1] = 29 if self.leap_year?
-    binding.pry
     day = Year.get_first_monday(year)
 
     def add_first_week(first_day)
