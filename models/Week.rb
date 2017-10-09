@@ -9,15 +9,12 @@ class Week
     @days = []
 
    last_day = 0
-
     Week.days.each_with_index do | (day_name, day_tasks), index |
       month_day = days_this_week[index]
-      # adjust year for last week of previous year (first_week)
-      # year += 1 if @index == 0 && month_day < last_day 
       # increment month if it's a new month
       month += 1 if month_day < last_day 
       month = 1 if month == 13
-      # adjust year for first week of next year (final_week)
+      # adjust year on January 1st
       year += 1 if month == 1 && month_day == 1 
       day = Day.new(day_name, day_tasks, year, month, month_day)
       @days.push(day)
@@ -30,7 +27,7 @@ class Week
       'Tue' => ['Gt'],
       'Wed' => ['Gt'],
       'Thu' => ['Gt'],
-      'Fri' => ['Gt', 'aLg', 'Lg', 'FnLg[R]s', 'LgWk', 'Bgt', 'PyCC'],
+      'Fri' => ['Gt', 'aLg', 'Lg', 'FnLg[R]s', 'LgWk', 'Bdgt', 'PyCC'],
       'Sat' => ['Gt', 'Af_Ord()'],
       'Sun' => ['Gt', 'Amz()', 'ClnMbDsktp', 'TM', 'Ln', 'ClHm(1300, )', 
                 'Vac()', 'ClnKtch', 'ClnFrdg', 'Sv', 'Plk', 'Ns', 'Ap']
