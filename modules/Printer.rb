@@ -5,7 +5,7 @@ module Printer
     out_file = File.new("./Out/#{ year }_DO.txt", "w")
     do_year.weeks.each do | week |
       week.days.each do | day |
-        if day.name == 'Mon' || ( day.month == 1 && day.month_day == 1 )
+        if day.name == 'Mon'
           out_file.puts('************************')
           out_file.puts("#{ day.year }-#{ '%02d' % day.month }-#{ '%02d' % day.month_day }")
           out_file.puts('************************')

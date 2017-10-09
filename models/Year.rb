@@ -21,18 +21,23 @@ class Year
       @weeks.push(first_week)
     end
 
-    def add_final_week(do_week, month)
-      last_monday_of_this_year = do_week.days[0].month_day
-      days_this_week = Week.days_this_week(last_monday_of_previous_year, 
-                                           month, @days_in_months)
-      first_week = Week.new(53, days_this_week, year, 12)
-      @weeks.push(first_week)
+    def add_final_week
+      last_day_of_previous_year = @weeks.last.days.last
+      last_monday_of_previous_year = last_day_of_previous_year.month_day
+      if last_day_of_previous_year.month != 1
+        days_this_week = Week.days_this_week(last_monday_of_previous_year, 
+                                             12, @days_in_months)
+      binding.pry
+        final_week = Week.new(53, days_this_week, last_day_of_previous_year.year, 12)
+        @weeks.push(final_week)
+      end
     end
 
     week_index = 1
     add_first_week(day)
 
     52.times do
+      month = 1 if month == 13
       days_this_week = Week.days_this_week(day, month, @days_in_months)
       do_week = Week.new(week_index, days_this_week, year, month)
       if do_week.index.odd?
@@ -52,6 +57,7 @@ class Year
       first_day_of_month = nil
       week_index += 1
     end
+    add_final_week
   end
 
   def self.days_in_months
