@@ -13,6 +13,7 @@ class Week
       month_day = days_this_week[index]
       # increment month if it's a new month
       month += 1 if month_day < last_day 
+      # reset to January after December
       month = 1 if month == 13
       # adjust year on January 1st
       year += 1 if month == 1 && month_day == 1 
