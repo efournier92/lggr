@@ -22,7 +22,7 @@ module Printer
 
   def self.print_lg(do_year)
     year = do_year.year
-    out_file = File.new("./Out/#{ year }_LG.txt", "w")
+    out_file = File.new("./Out/#{ '%04d' % year }_LG.txt", "w")
 
     weekday_string = "***\n[S] \n***\n[R] \n"
     weekend_string = "***\n[R] \n"
@@ -31,7 +31,7 @@ module Printer
     do_year.weeks.each do | week |
       week.days.each do | day |
           out_file.puts('************************')
-          out_file.puts("#{ year }-#{ '%02d' % day.month }-#{ '%02d' % day.month_day }")
+          out_file.puts("#{ '%04d' % year }-#{ '%02d' % day.month }-#{ '%02d' % day.month_day }")
           out_file.puts('***********')
           out_file.puts("#{ day.name } - ")
           if day.name == 'Fri'
