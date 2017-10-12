@@ -11,7 +11,7 @@ print_type = ''
 month = 1
 
 until print_type == 'DO' || print_type == 'LG' || print_type == 'BTH'
-  print "DO || LG || BTH?\n>> "
+  print "DO || LG || BTH\n>> "
   print_type = gets.chomp
 end
 
@@ -26,7 +26,7 @@ do_year = Month.add_start_tasks(do_year)
 do_year = Year.add_birthdays(do_year)
 # add holidays to year object
 do_year = Year.add_holidays(do_year)
-binding.pry
+
 if print_type == 'DO'
   Printer.print_do(do_year)
 elsif print_type == 'LG'
