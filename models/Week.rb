@@ -24,10 +24,10 @@ class Week
   end
 
   def self.days
-    { 'Mon' => ['Gt', 'Af_Rcv(1900)'],
-      'Tue' => ['Gt'],
-      'Wed' => ['Gt'],
-      'Thu' => ['Gt'],
+    { 'Mon' => ['Ht', 'Gt', 'Af_Rcv(1900)'],
+      'Tue' => ['Ht', 'Gt'],
+      'Wed' => ['Ht', 'Gt'],
+      'Thu' => ['Ht', 'Gt'],
       'Fri' => ['Gt', 'aLg', 'Lg', 'FnLg[R]s', 'LgWk', 'Bdgt', 'PyCC'],
       'Sat' => ['Gt', 'Af_Ord()'],
       'Sun' => ['Gt', 'Amz()', 'ClnMbDsktp', 'TM', 'Ln', 'ClHm(1300, )', 
