@@ -32,31 +32,17 @@ class Year
       end
     end
 
-    def shift_start_days(start_of_year?)
-      if start_of_year?
-        day_index = 0, first_week  = 1, second_week = 0, cutoff_month = 12
-      else
-        day_index = 4, first_week  = 54, second_week = 55, cutoff_month = 1
-      end
-      if @weeks[first_week].days[day_index].month == cutoff_month
-        @weeks[first_week].days.shift(day_index)
-        start_of_year? ? @weeks.shift : @weeks.pop
-      else
-        @weeks[second_week].days.shift(day_index)
-      end
-    end
- 
     week_index = 1
     first_monday = day
     add_first_week(first_monday - 7)
     add_first_week(first_monday)
-    binding.pry
     # get_last_friday
 
-    52.times do
+    54.times do
       month = 1 if month == 13
       days_this_week = Week.days_this_week(day, month, @days_in_months)
       do_week = Week.new(week_index, days_this_week, year, month)
+      year = do_week.year
       if do_week.index.odd?
         do_week.days.find do | day |
           if day.name == 'Sun'
@@ -75,7 +61,7 @@ class Year
       first_day_of_month = nil
       week_index += 1
     end
-    add_final_week
+    # add_final_week
   end
 
   def self.days_in_months

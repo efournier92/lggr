@@ -1,6 +1,6 @@
 class Week
 
-  attr_reader   :month, :days
+  attr_reader   :year, :month, :days
   attr_accessor :index, :days_this_week
 
   def initialize(index, days_this_week, year, month)
@@ -18,8 +18,8 @@ class Week
       # reset to January after December
       month = 1 if month == 13
       # adjust year on January 1st
-      year += 1 if month == 1 && month_day == 1 
-      day = Day.new(day_name, day_tasks, year, month, month_day)
+      @year += 1 if month == 1 && month_day == 1 
+      day = Day.new(day_name, day_tasks, @year, month, month_day)
       @days.push(day)
       last_day = month_day 
     end
