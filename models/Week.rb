@@ -1,10 +1,12 @@
 class Week
+
   attr_reader   :month, :days
   attr_accessor :index, :days_this_week
 
   def initialize(index, days_this_week, year, month)
     @index = index
     @month = month
+    @year = year
     @days_this_week = days_this_week
     @days = []
 
@@ -53,7 +55,8 @@ class Week
     day_array
   end
 
-  def add_first_week(do_year)
+  def self.add_first_week(do_year)
+    do_year.
     last_monday_of_previous_year = 31 - ( 7 - first_day )
     days_this_week = Week.days_this_week(last_monday_of_previous_year, 
                                           1, @days_in_months)
@@ -62,7 +65,7 @@ class Week
     @weeks.push(first_week)
   end
 
-  def add_final_week
+  def self.add_final_week
     last_day_of_previous_year = @weeks.last.days.last
     last_monday_of_previous_year = last_day_of_previous_year.month_day
     if last_day_of_previous_year.month != 1
@@ -72,5 +75,6 @@ class Week
       @weeks.push(final_week)
     end
   end
+
 end
 

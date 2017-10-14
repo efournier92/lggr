@@ -12,9 +12,41 @@ class Year
     @days_in_months[1] = 29 if self.leap_year?
     day = Year.get_first_monday(year)
 
+    def add_first_week(first_monday)
+      last_monday = 31 - ( 7 - first_monday )
+      first_monday = last_monday
+      days_this_week = Week.days_this_week(last_monday, 1, @days_in_months)
+      year = @year - 1
+      first_week = Week.new(0, days_this_week, year, 12)
+      @weeks.push(first_week)
+    end
 
+    def add_final_week
+      last_day_of_previous_year = @weeks.last.days.last
+      last_monday_of_previous_year = last_day_of_previous_year.month_day
+      if last_day_of_previous_year.month != 1
+        days_this_week = Week.days_this_week(last_monday_of_previous_year, 
+                                             12, @days_in_months)
+        final_week = Week.new(53, days_this_week, last_day_of_previous_year.year, 12)
+        @weeks.push(final_week)
+      end
+    end
+
+    def get_last_friday
+      if @weeks[1].month == 12
+        @weeks[1].days.shift(4)
+        @weeks.shift
+        binding.pry
+      else
+        @weeks[0].days.shift(4)
+      end
+    end
+ 
     week_index = 1
-    add_first_week(day)
+    first_monday = day
+    add_first_week(first_monday - 7)
+    add_first_week(first_monday)
+    get_last_friday
 
     52.times do
       month = 1 if month == 13
