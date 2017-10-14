@@ -32,13 +32,17 @@ class Year
       end
     end
 
-    def get_last_friday
-      if @weeks[1].month == 12
-        @weeks[1].days.shift(4)
-        @weeks.shift
-        binding.pry
+    def shift_start_days(start_of_year?)
+      if start_of_year?
+        day_index = 0, first_week  = 1, second_week = 0, cutoff_month = 12
       else
-        @weeks[0].days.shift(4)
+        day_index = 4, first_week  = 54, second_week = 55, cutoff_month = 1
+      end
+      if @weeks[first_week].days[day_index].month == cutoff_month
+        @weeks[first_week].days.shift(day_index)
+        start_of_year? ? @weeks.shift : @weeks.pop
+      else
+        @weeks[second_week].days.shift(day_index)
       end
     end
  
@@ -46,7 +50,8 @@ class Year
     first_monday = day
     add_first_week(first_monday - 7)
     add_first_week(first_monday)
-    get_last_friday
+    binding.pry
+    # get_last_friday
 
     52.times do
       month = 1 if month == 13
