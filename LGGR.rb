@@ -3,8 +3,9 @@ require './models/Day'
 require './models/Month'
 require './models/Week'
 require './models/Year'
-require './modules/Birthdays'
 require './modules/Add_Tag'
+require './modules/Birthdays'
+require './modules/Bookend_Weeks'
 require './modules/Holidays'
 require './modules/Printer'
 print_type = ''
@@ -26,14 +27,16 @@ do_year = Month.add_start_tasks(do_year)
 do_year = Year.add_birthdays(do_year)
 # add holidays to year object
 do_year = Year.add_holidays(do_year)
+do_year = Bookend_Weeks.shift_do_start(do_year)
+binding.pry
 
 if print_type == 'DO'
-  do_year = Year.shift_start_days(do_year, 'DO', true)
-  do_year = Year.shift_start_days(do_year, 'DO', false)
+  do_year = Bookend_Weeks.shift_start_days(do_year, 'DO', true)
+  do_year = Bookend_Weeks.shift_start_days(do_year, 'DO', false)
   Printer.print_do(do_year)
 elsif print_type == 'LG'
-  do_year = Year.shift_start_days(do_year, 'LG', true)
-  do_year = Year.shift_start_days(do_year, 'LG', false)
+  do_year = Bookend_Weeks.shift_start_days(do_year, 'LG', true)
+  do_year = Bookend_Weeks.shift_start_days(do_year, 'LG', false)
   Printer.print_lg(do_year)
 elsif print_type == 'BTH'
   Printer.print_do(do_year)
