@@ -11,13 +11,15 @@ class Year
     # adjust for leap year
     @days_in_months[1] = 29 if self.leap_year?
     day = Year.get_first_monday(year)
+    week_index = 
 
     def add_first_week(first_monday)
       last_monday = 31 - ( 7 - first_monday )
       first_monday = last_monday
       days_this_week = Week.days_this_week(last_monday, 1, @days_in_months)
+      binding.pry
       year = @year - 1
-      first_week = Week.new(0, days_this_week, year, 12)
+      first_week = Week.new(week_index, days_this_week, year, 12)
       @weeks.push(first_week)
     end
 
