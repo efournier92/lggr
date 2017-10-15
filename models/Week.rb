@@ -9,6 +9,7 @@ class Week
     @year = year
     @days_this_week = days_this_week
     @days = []
+    binding.pry
 
    last_day = 0
     Week.days.each_with_index do | (day_name, day_tasks), index |
@@ -18,6 +19,7 @@ class Week
       # reset to January after December
       month = 1 if month == 13
       # adjust year on January 1st
+      binding.pry if month == 1 && month_day == 1 
       year += 1 if month == 1 && month_day == 1 
       day = Day.new(day_name, day_tasks, year, month, month_day)
       @days.push(day)
@@ -61,7 +63,6 @@ class Week
     days_this_week = Week.days_this_week(last_monday_of_previous_year, 
                                           1, @days_in_months)
     year = @year - 1
-    binding.pry
     first_week = Week.new(0, days_this_week, year, 12)
     @weeks.push(first_week)
   end
