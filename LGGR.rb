@@ -29,14 +29,17 @@ do_year = Year.add_birthdays(do_year)
 do_year = Year.add_holidays(do_year)
 # do_year = Bookend_Weeks.shift_do_start(do_year)
 # do_year = Bookend_Weeks.shift_do_end(do_year)
+# do_year = Bookend_Weeks.shift_lg_start(do_year)
+# do_year = Bookend_Weeks.shift_lg_end(do_year)
 
 if print_type == 'DO'
-  do_year = Bookend_Weeks.shift_start_days(do_year, 'DO', true)
-  do_year = Bookend_Weeks.shift_start_days(do_year, 'DO', false)
+  do_year = Bookend_Weeks.shift_do_start(do_year)
+  do_year = Bookend_Weeks.shift_do_end(do_year)
   Printer.print_do(do_year)
+binding.pry
 elsif print_type == 'LG'
-  do_year = Bookend_Weeks.shift_start_days(do_year, 'LG', true)
-  do_year = Bookend_Weeks.shift_start_days(do_year, 'LG', false)
+  do_year = Bookend_Weeks.shift_lg_start(do_year)
+  do_year = Bookend_Weeks.shift_lg_end(do_year)
   Printer.print_lg(do_year)
 elsif print_type == 'BTH'
   Printer.print_do(do_year)
