@@ -8,8 +8,12 @@ module Bookend_Weeks
   end
 
   def self.shift_lg_start(do_year)
-    while do_year.weeks.first.days.all? { | day | day.month == 12 }
-      do_year.weeks.shift
+    until do_year.weeks.first.days.any? { | day | day.month == 1 }
+      first_day = do_year.weeks.first.days.first.month_day
+      first_day_month = do_year.weeks.first.days.first.month
+      binding.pry
+      break if first_day_month == 12 && first_day >= 25
+      do_year.weeks.shift 
     end
     do_year.weeks.first.days.shift(5)
     do_year
