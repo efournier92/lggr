@@ -27,10 +27,6 @@ do_year = Month.add_start_tasks(do_year)
 do_year = Year.add_birthdays(do_year)
 # add holidays to year object
 do_year = Year.add_holidays(do_year)
-# do_year = Bookend_Weeks.shift_do_start(do_year)
-# do_year = Bookend_Weeks.shift_do_end(do_year)
-# do_year = Bookend_Weeks.shift_lg_start(do_year)
-# do_year = Bookend_Weeks.shift_lg_end(do_year)
 
 if print_type == 'DO'
   do_year = Bookend_Weeks.shift_do_start(do_year)
