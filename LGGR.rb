@@ -11,8 +11,8 @@ require './modules/Printer'
 print_type = ''
 month = 1
 
-until print_type == 'DO' || print_type == 'LG' || print_type == 'BTH'
-  print "DO || LG || BTH\n>> "
+until print_type == 'DO' || print_type == 'LG'
+  print "DO || LG\n>> "
   print_type = gets.chomp
 end
 
