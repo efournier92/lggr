@@ -1,0 +1,531 @@
+************************
+2012-12-31
+************************
+Mon - [New_Year's_Eve], RntPrepChk, Ht, Gt, Af_Rcv(1900), 
+Tue - [New_Year's_Day], ByTrnTk, Rnt_Py, PyIntrnt, Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Scpts_Ord, Scpts_Rcv, Scpts_CtPls, Gt, Af_Ord(), 
+Sun - FrsCntctCs, BgSv, TB_B, FrshCntcts, FrshRzrs, NxBk, Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Vac(), ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-01-07
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Lndrmt(all), FldLn, ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-01-14
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Vac(), ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-01-21
+************************
+Mon - PyIntrnt, Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Lndrmt(all), FldLn, ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-01-28
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - RntPrepChk, Ht, Gt, 
+Fri - ByTrnTk, Rnt_Py, PyIntrnt, Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Scpts_Ord, Scpts_Rcv, Scpts_CtPls, Gt, Af_Ord(), 
+Sun - FrshCntcts, FrshRzrs, NxBk, Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Vac(), ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-02-04
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Lndrmt(all), FldLn, ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-02-11
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - [Bday_Eric], Ht, Gt, 
+Thu - [Valentine's_Day], Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Vac(), ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-02-18
+************************
+Mon - [President's_Day], Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - PyIntrnt, Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Lndrmt(all), FldLn, ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-02-25
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - RntPrepChk, Ht, Gt, 
+Fri - ByTrnTk, Rnt_Py, PyIntrnt, Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Scpts_Ord, Scpts_Rcv, Scpts_CtPls, Gt, Af_Ord(), 
+Sun - FrshCntcts, FrshRzrs, NxBk, Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Vac(), ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-03-04
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - [Daylight_Saving(Begin)], Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Lndrmt(all), FldLn, ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-03-11
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Vac(), ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-03-18
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - PyIntrnt, Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Lndrmt(all), FldLn, ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-03-25
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - [Good_Friday], Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - [Easter], RntPrepChk, Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Vac(), ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-04-01
+************************
+Mon - ByTrnTk, Rnt_Py, PyIntrnt, Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Scpts_Ord, Scpts_Rcv, Scpts_CtPls, Gt, Af_Ord(), 
+Sun - FrsCntctCs, BgSv, TB_B, FrshCntcts, FrshRzrs, NxBk, Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Lndrmt(all), FldLn, ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-04-08
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Vac(), ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-04-15
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - PyIntrnt, Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Lndrmt(all), FldLn, ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-04-22
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Vac(), ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-04-29
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - RntPrepChk, Ht, Gt, 
+Wed - ByTrnTk, Rnt_Py, PyIntrnt, Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Scpts_Ord, Scpts_Rcv, Scpts_CtPls, Gt, Af_Ord(), 
+Sun - FrshCntcts, FrshRzrs, NxBk, Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Lndrmt(all), FldLn, ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-05-06
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - [Mother's_Day], Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Vac(), ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-05-13
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Lndrmt(all), FldLn, ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-05-20
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - PyIntrnt, Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Vac(), ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-05-27
+************************
+Mon - [Memorial_Day], Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - RntPrepChk, Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Scpts_Ord, Scpts_Rcv, Scpts_CtPls, ByTrnTk, Rnt_Py, PyIntrnt, Gt, Af_Ord(), 
+Sun - FrshCntcts, FrshRzrs, NxBk, Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Lndrmt(all), FldLn, ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-06-03
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Vac(), ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-06-10
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - [Father's_Day], Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Lndrmt(all), FldLn, ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-06-17
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - PyIntrnt, Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Vac(), ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-06-24
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - RntPrepChk, Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Lndrmt(all), FldLn, ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-07-01
+************************
+Mon - ByTrnTk, Rnt_Py, PyIntrnt, Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - [Independence_Day], Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Scpts_Ord, Scpts_Rcv, Scpts_CtPls, Gt, Af_Ord(), 
+Sun - FrsCntctCs, BgSv, TB_B, FrshCntcts, FrshRzrs, NxBk, Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Vac(), ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-07-08
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Lndrmt(all), FldLn, ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-07-15
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - PyIntrnt, Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Vac(), ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-07-22
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Lndrmt(all), FldLn, ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-07-29
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - RntPrepChk, Ht, Gt, 
+Thu - ByTrnTk, Rnt_Py, PyIntrnt, Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Scpts_Ord, Scpts_Rcv, Scpts_CtPls, Gt, Af_Ord(), 
+Sun - FrshCntcts, FrshRzrs, NxBk, Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Vac(), ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-08-05
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - [Bday_Lori], Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Lndrmt(all), FldLn, ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-08-12
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - [Bday_Kevin], Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Vac(), ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-08-19
+************************
+Mon - [Bday_Nate], Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - PyIntrnt, Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Lndrmt(all), FldLn, ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-08-26
+************************
+Mon - [Bday_Mm], Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - RntPrepChk, Gt, Af_Ord(), 
+Sun - FrshCntcts, FrshRzrs, NxBk, ByTrnTk, Rnt_Py, PyIntrnt, Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Vac(), ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-09-02
+************************
+Mon - [Labor_Day], Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Scpts_Ord, Scpts_Rcv, Scpts_CtPls, Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Lndrmt(all), FldLn, ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-09-09
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Vac(), ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-09-16
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - PyIntrnt, Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Lndrmt(all), FldLn, ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-09-23
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - [Bday_Dd], Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Vac(), ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-09-30
+************************
+Mon - RntPrepChk, Ht, Gt, Af_Rcv(1900), 
+Tue - ByTrnTk, Rnt_Py, PyIntrnt, Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Scpts_Ord, Scpts_Rcv, Scpts_CtPls, Gt, Af_Ord(), 
+Sun - FrsCntctCs, BgSv, TB_B, FrshCntcts, FrshRzrs, NxBk, Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Lndrmt(all), FldLn, ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-10-07
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - [Bday_Brian], Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Vac(), ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-10-14
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Lndrmt(all), FldLn, ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-10-21
+************************
+Mon - PyIntrnt, Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Vac(), ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-10-28
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - [Halloween], RntPrepChk, Ht, Gt, 
+Fri - ByTrnTk, Rnt_Py, PyIntrnt, Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Scpts_Ord, Scpts_Rcv, Scpts_CtPls, Gt, Af_Ord(), 
+Sun - [Daylight_Saving(End)], FrshCntcts, FrshRzrs, NxBk, Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Lndrmt(all), FldLn, ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-11-04
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Vac(), ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-11-11
+************************
+Mon - [Veterans_Day], Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Lndrmt(all), FldLn, ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-11-18
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - PyIntrnt, Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Vac(), ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-11-25
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - [Thanksgiving], [Bday_Grant], Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - RntPrepChk, Gt, Af_Ord(), 
+Sun - ByTrnTk, Rnt_Py, PyIntrnt, Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Lndrmt(all), FldLn, ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-12-02
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Vac(), ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-12-09
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Lndrmt(all), FldLn, ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-12-16
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - Ht, Gt, 
+Wed - Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - PyIntrnt, Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Vac(), ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-12-23
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - [Christmas_Eve], Ht, Gt, 
+Wed - [Christmas], Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Lndrmt(all), FldLn, ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
+2013-12-30
+************************
+Mon - Ht, Gt, Af_Rcv(1900), 
+Tue - [New_Year's_Eve], RntPrepChk, Ht, Gt, 
+Wed - [New_Year's_Day], ByTrnTk, Rnt_Py, PyIntrnt, Ht, Gt, 
+Thu - Ht, Gt, 
+Fri - Gt, aLg, Lg, FnLg[R]s, LgWk, Bdgt, PyCC, 
+Sat - Gt, Af_Ord(), 
+Sun - Gt, Amz(), ClnMbDsktp, TM, Ln, ClHm(1300, ), Vac(), ClnKtch, ClnFrdg, Sv, Plk, Ns, Ap, 
+************************
