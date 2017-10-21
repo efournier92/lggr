@@ -14,12 +14,11 @@ class Week
     Week.days.each_with_index do | (day_name, day_tasks), index |
       month_day = days_this_week[index]
       # increment month if it's a new month
-      # binding.pry if index == 0
       month += 1 if month_day < last_day
       # reset to January after December
       month = 1 if month == 13
       # adjust year on January 1st
-      year += 1 if month == 1 && month_day == 1 && index != 0
+      year += 1 if month == 1 && month_day == 1 && ( @index > 5 || index != 0 )
       day = Day.new(day_name, day_tasks, year, month, month_day)
       @days.push(day)
       last_day = month_day 

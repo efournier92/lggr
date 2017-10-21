@@ -11,8 +11,7 @@ module Bookend_Weeks
     until do_year.weeks.first.days.any? { | day | day.month == 1 }
       first_day = do_year.weeks.first.days.first.month_day
       first_day_month = do_year.weeks.first.days.first.month
-      binding.pry
-      break if first_day_month == 12 && first_day >= 25
+      break if first_day_month == 12 && first_day >= 21
       do_year.weeks.shift 
     end
     do_year.weeks.first.days.shift(5)
@@ -28,6 +27,9 @@ module Bookend_Weeks
 
   def self.shift_lg_end(do_year)
     while do_year.weeks.last.days.all? { | day | day.month == 1 }
+      first_day = do_year.weeks.last.days.first.month_day
+      last_day_month = do_year.weeks.last.days.last.month
+      break if last_day_month == 1 && first_day == 1
       do_year.weeks.pop
     end
     do_year.weeks.last.days.pop(2)

@@ -36,8 +36,5 @@ elsif print_type == 'LG'
   do_year = Bookend_Weeks.shift_lg_start(do_year)
   do_year = Bookend_Weeks.shift_lg_end(do_year)
   Printer.print_lg(do_year)
-elsif print_type == 'BTH'
-  Printer.print_do(do_year)
-  Printer.print_lg(do_year)
 end
 
