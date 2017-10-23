@@ -3,10 +3,10 @@ class Month
   def self.add_start_tasks(do_year)
     for month in 1..12
       # 20th of month
-      do_year = Add_Tag.to_specific_date(do_year, month, 21, 'PyIntrnt')
+      do_year = Add_Tag.to_specific_date(do_year, month, 21, 'Intrnt_Py')
       # 28th of month
       do_year = Add_Tag.to_specific_date(do_year, month, 28, 
-                               'TrnTk_By, Rnt_Py, PyIntrnt')
+                               'TrnTk_By, Rnt_Py')
       # last day of month
       do_year = Add_Tag.to_last_day_of_month(do_year, month, 
                                              'RntPrepChk')
@@ -25,7 +25,7 @@ class Month
         if (month == quarter_month)
           # first Sunday of quarter
           do_year = Add_Tag.to_nth_xday_in_month(do_year, quarter_month, 1, 'Sun', 
-                                      'FrsCntctCs, BgSv, TB_B')
+                                      'FrsCntctCs, BgSv, TM_B')
         end
       end
     end 
