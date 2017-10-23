@@ -2,14 +2,17 @@ class Month
 
   def self.add_start_tasks(do_year)
     for month in 1..12
-      # 20th of Month
+      # 20th of month
       do_year = Add_Tag.to_specific_date(do_year, month, 21, 'PyIntrnt')
+      # 28th of month
+      do_year = Add_Tag.to_specific_date(do_year, month, 28, 
+                               'TrnTk_By, Rnt_Py, PyIntrnt')
       # last day of month
       do_year = Add_Tag.to_last_day_of_month(do_year, month, 
                                              'RntPrepChk')
       # first day of month
       do_year = Add_Tag.to_specific_date(do_year, month, 1, 
-                               'ByTrnTk, Rnt_Py, PyIntrnt')
+                               'Rnt_Py, PyIntrnt')
       # first Saturday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 1, 'Sat', 
                                              'Scpts_Ord, Scpts_Rcv, Scpts_CtPls')
