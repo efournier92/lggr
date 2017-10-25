@@ -38,7 +38,7 @@ class Week
   end
 
   def self.odd_week_sunday_tasks
-      ['Gt', 'ClnMbDsktp', 'TM', 'ClHm(1300, )', 'Ln_drmt', 'Ln_Fld', 
+      ['Gt', 'ClnMbDsktp', 'TM', 'ClHm(1300, )', 'Lndrmt()', 'FldLn', 
        'ClnKtch', 'Sv', 'Plk', 'Ns', 'Ap']
   end
 
