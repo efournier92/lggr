@@ -1,40 +1,40 @@
 require 'pry'
-require './Models/year.rb'
-require './Models/week.rb'
-require './Models/day.rb'
-require './modules/Cal_Tools'
+require './models/Day'
+require './models/Month'
+require './models/Week'
+require './models/Year'
+require './modules/Add_Tag'
+require './modules/Birthdays'
+require './modules/Bookend_Weeks'
 require './modules/Holidays'
-require './modules/Templates'
 require './modules/Printer'
-
-type = ''
+print_type = ''
 month = 1
-do_year = Year.new(1993)
 
-# do_year = Year.month_start(do_year)
-do_year = Year.add_holidays(do_year)
+until print_type == 'DO' || print_type == 'LG'
+  print "DO || LG\n>> "
+  print_type = gets.chomp
+end
+
+print "Which Year?\n>> "
+year = gets.chomp.to_i
+
+# create year object
+do_year = Year.new(year)
+# add monthly tasks to year object
+do_year = Month.add_start_tasks(do_year)
+# add birthdays to year object
 do_year = Year.add_birthdays(do_year)
-Printer.print_do(do_year)
-Printer.print_lg(do_year)
-binding.pry
+# add holidays to year object
+do_year = Year.add_holidays(do_year)
 
-# days_in_months = Templates.days_in_months
-
-# until type == 'DO' || type == 'LG'
-#   print "DO || LG?\n>> "
-#   type = gets.chomp
-# end
-
-# print "Which Year?\n>> "
-# year = gets.chomp.to_i
-
-# if Cal_Tools.is_leap_year?(year)
-#   days_in_months[1] = 29
-# end
-
-# if type == 'DO'
-#   Do.print(days_in_months, year, month)
-# elsif type == 'LG'
-#   Lg.print(days_in_months, year, month)
-# end
+if print_type == 'DO'
+  do_year = Bookend_Weeks.shift_do_start(do_year)
+  do_year = Bookend_Weeks.shift_do_end(do_year)
+  Printer.print_do(do_year)
+elsif print_type == 'LG'
+  do_year = Bookend_Weeks.shift_lg_start(do_year)
+  do_year = Bookend_Weeks.shift_lg_end(do_year)
+  Printer.print_lg(do_year)
+end
 
