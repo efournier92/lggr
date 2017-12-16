@@ -26,7 +26,7 @@ class Week
   end
 
   def self.days
-    { 'Monday'    => ['Gt', 'Af_Rcv(1900)', 'Frdg_Cln', 'TrshOut'],
+    { 'Monday'    => ['Gt', 'Af_Rcv(1900)', 'Frdg_Cln', 'Trsh_Out'],
       'Tuesday'   => ['Gm', 'Gt'],
       'Wednesday' => ['NoBo', 'Gm', 'Gt'],
       'Thursday'  => ['Gm', 'Gt'],
