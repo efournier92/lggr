@@ -5,17 +5,17 @@ module Printer
     out_file = File.new("./Out/DO_#{ '%04d' % year }.md", "w")
     do_year.weeks.each do | week |
       week.days.each do | day |
-        if day.name == 'Mon'
+        if day.name == 'Monday'
           out_file.puts("## #{ '%04d' % day.year }-#{ '%02d' % day.month }-#{ '%02d' % day.month_day }")
         end
-        out_file.print("### #{ day.name }")
+        out_file.puts("### #{ day.name }")
         day.tasks.each do |task|
           out_file.print("#{ task }, ")
         end
-        out_file.puts('')
+        out_file.puts
       end
+      out_file.puts
     end
-    out_file.puts('************************')
   end
 
   def self.print_lg(do_year)
