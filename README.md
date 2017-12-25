@@ -1,3 +1,3 @@
 # Lggr
 
-App for
+Standalone app for created list-based ToDos, based on calendars.
