@@ -28,18 +28,16 @@ module Printer
 
     do_year.weeks.reverse_each do | week |
       week.days.reverse_each do | day |
-      out_file.puts("## #{ '%04d' % day.year }-#{ '%02d' % day.month }-#{ '%02d' % day.month_day } | #{day.name}")
-      if day.name == 'Friday'
-        out_file.puts(friday_string)
-      elsif day.name == 'Saturday' || day.name == 'Sunday'
-        out_file.puts(weekend_string)
-      else
-        out_file.puts(weekday_string)
+        out_file.puts("## #{ '%04d' % day.year }-#{ '%02d' % day.month }-#{ '%02d' % day.month_day } | #{day.name}")
+        if day.name == 'Friday'
+          out_file.puts(friday_string)
+        elsif day.name == 'Saturday' || day.name == 'Sunday'
+          out_file.puts(weekend_string)
+        else
+          out_file.puts(weekday_string)
+        end
       end
     end
-    out_file.puts
-    end
-    out_file.puts
   end
 
 end
