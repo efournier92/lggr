@@ -26,21 +26,22 @@ class Week
   end
 
   def self.days
-    { 'Monday'    => ['Gt', 'Af_Rcv(1900)', 'Frdg_Cln', 'TrshOut'],
+    { 'Monday'    => ['Gt', 'Af_Rcv(1900)', 'Frdg_Cln', 'Trsh_Out'],
       'Tuesday'   => ['Gm', 'Gt'],
       'Wednesday' => ['NoBo', 'Gm', 'Gt'],
       'Thursday'  => ['Gm', 'Gt'],
-      'Friday'    => ['Gt', 'Lg_aLg', 'Lg_Fn[R]s', 'Lg_LstWk', 'Lg_NxtWk', 
+      'Friday'    => ['Gt', 'Lg_aLg', 'Lg_[R]s_Fn', 'Lg_LstWk', 'Lg_NxtWk', 
                      'Bdgt', 'PyCC', 'Hr_Wsh'],
       'Saturday'  => ['Gt', 'Af_Ord()', 'Amz_Ord()'],
-      'Sunday'    => ['NoBo', 'Gt', 'ClnMbDsktp', 'TM', 'ClHm(1300, )', 
-                      'Vac()', 'Ktch_Cln', 'Tlt_Cln', 'Sv', 'Plk', 'Ns', 'Ap']
+      'Sunday'    => ['Gt', 'ClnMbDsktp', 'TM', 'ClHm(1300, )', 'Ln_drmt', 'Ln_Fld', 
+                      'Ktch_Cln', 'Sv', 'Plk', 'Ns', 'Ap']
+    
     }
   end
 
   def self.odd_week_sunday_tasks
-      ['Gt', 'ClnMbDsktp', 'TM', 'ClHm(1300, )', 'Ln_drmt', 'Ln_Fld', 
-       'Ktch_Cln', 'Sv', 'Plk', 'Ns', 'Ap']
+    ['NoBo', 'Gt', 'ClnMbDsktp', 'TM', 'ClHm(1300, )', 
+     'Vcm', 'Ktch_Cln', 'Tlt_Cln', 'Sv', 'Plk', 'Ns', 'Ap']
   end
 
   def self.days_this_week(day, month, days_in_months)
