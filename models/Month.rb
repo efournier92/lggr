@@ -25,14 +25,14 @@ class Month
                                              'Hr_Ct()')
       # first Sunday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 1, 'Sunday', 
-                                  'FrshCntcts, FrshRzrs, NxBk')
+                                  'Cntcts_Nw, Rzrs_Nw, Nx_Bk')
       # quarterly tasks
       quarter_months = [1, 4, 7, 10]
       quarter_months.each do | quarter_month |
         if (month == quarter_month)
           # first Sunday of quarter
           do_year = Add_Tag.to_nth_xday_in_month(do_year, quarter_month, 1, 'Sunday', 
-                                      'FrsCntctCs, BgSv, TM_B')
+                                      'Cntct_Cs_Nw, BgSv, TM_B')
         end
       end
     end 
