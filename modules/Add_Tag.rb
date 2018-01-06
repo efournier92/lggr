@@ -13,11 +13,9 @@ module Add_Tag
   end
 
   def self.to_nth_xday_in_month(do_year, month, nth_day, day_name, new_tag)
-    require 'pry'
     day_count = 0
     do_year.weeks.each do | week |
       week.days.each do | day |
-            binding.pry
         if day.month == month && day.name == day_name 
           day_count += 1
           if day_count == nth_day
