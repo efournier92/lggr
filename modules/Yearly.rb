@@ -59,7 +59,7 @@ module Holidays
     )
     # Christmas Eve
     do_year = Add_Tag.to_specific_date(
-      do_year, 12, 24, "[Christmas_Eve]"
+      do_year, 12, 24, "[Christmas_Eve], Vrzn_CllPhn_Dd_Py($300)"
     )
     # Christmas
     do_year = Add_Tag.to_specific_date(

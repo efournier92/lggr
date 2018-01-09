@@ -42,8 +42,6 @@ class Year
       days_this_week = Week.days_this_week(day, month, @days_in_months)
       do_week = Week.new(week_index, days_this_week, year, month)
       year = do_week.year
-      require 'pry'
-      binding.pry
       if do_week.index.odd?
         do_week.days.find do | day |
           if day.name == 'Sunday'

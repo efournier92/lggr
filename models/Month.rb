@@ -17,15 +17,18 @@ class Month
       # first day of month
       do_year = Add_Tag.to_specific_date(do_year, month, 1, 
                                'Rnt_Py, Orbt_NwLst, Lg_DoLst_NxtMnth')
+      # first Friday of month
+      do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 1, 'Friday', 
+                                             'WtrBttle_Pk')
       # first Saturday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 1, 'Saturday', 
                                              'Scpts_Ord, Scpts_Rcv, Scpts_CtPls')
-      # third Saturday of month
-      do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 3, 'Saturday', 
-                                             'Hr_Ct()')
       # first Sunday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 1, 'Sunday', 
                                   'Cntcts_Nw, Rzrs_Nw, Nx_Bk')
+      # third Saturday of month
+      do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 3, 'Saturday', 
+                                             'Hr_Ct()')
       # quarterly tasks
       quarter_months = [1, 4, 7, 10]
       quarter_months.each do | quarter_month |
