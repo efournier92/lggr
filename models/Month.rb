@@ -25,7 +25,7 @@ class Month
                                              'Scpts_Ord, Scpts_Rcv, Scpts_CtPls')
       # first Sunday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 1, 'Sunday', 
-                                  'Cntcts_Nw, Rzrs_Nw, Nx_Bk')
+                                  'Cntcts_Nw, Rzrs_Nw, Nx_Bk, WtrBttle_Cln')
       # third Saturday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 3, 'Saturday', 
                                              'Hr_Ct()')
@@ -36,6 +36,9 @@ class Month
           # first Sunday of quarter
           do_year = Add_Tag.to_nth_xday_in_month(do_year, quarter_month, 1, 'Sunday', 
                                       'Cntct_Cs_Nw, BgSv, TM_B')
+          # first Saturday of quarter
+          do_year = Add_Tag.to_nth_xday_in_month(do_year, quarter_month, 1, 'Saturday', 
+                                      'Slt_Flsh')
         end
       end
     end 

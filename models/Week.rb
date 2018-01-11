@@ -28,20 +28,20 @@ class Week
   def self.days
     { 'Monday'    => ['Gt', 'Af_Rcv(1900)', 'Ktch_Cln(Frdg)', 'Trsh_Out'],
       'Tuesday'   => ['Gm', 'Gt'],
-      'Wednesday' => ['nobo', 'Gm', 'Gt'],
+      'Wednesday' => ['Gm', 'Gt', '[nobo]'],
       'Thursday'  => ['Gm', 'Gt'],
       'Friday'    => ['Gt', 'Lg_aLg', 'Lg_[R]s_Fn', 'Lg_LstWk', 'Lg_NxtWk', 
                      'Bdgt', 'Cc_Py', 'Hr_Wsh'],
       'Saturday'  => ['Gt', 'Af_Ord()', 'Amz_Ord()'],
-      'Sunday'    => ['nobo', 'Gt', 'Mb_Dsktp_Cln', 'TM', 'Mm&Dd_Cl(1300, )', 'Ln_drmt', 'Ln_Fld', 
-                      'Ktch_Cln(Snk)', 'Sv', 'Plk', 'Ns', 'Ap']
+      'Sunday'    => ['Gt', 'Mb_Dsktp_Cln', 'TM', 'Mm&Dd_Cl(1300, )', 'Ln_drmt', 'Ln_Fld', 
+                      'Ktch_Cln(Snk)', 'Hr_LnUp', 'Sv', 'Plk', 'Ns', 'Ap', '[nobo]']
     
     }
   end
 
   def self.odd_week_sunday_tasks
     ['nobo', 'Gt', 'Mb_Dsktp_Cln', 'TM', 'Mm&Dd_Cl(1300, )', 'Ktch_Cln(Snk)', 
-     'Apt_Vcm', 'Tlt_Cln', 'Sv', 'Plk', 'Ns', 'Ap']
+     'Apt_Vcm', 'Bthrm_Cln(Tlt)', 'Hr_LnUp', 'Sv', 'Plk', 'Ns', 'Ap']
   end
 
   def self.days_this_week(day, month, days_in_months)
