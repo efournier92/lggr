@@ -1,4 +1,4 @@
-module Holidays
+module Annual 
 
   def self.add_all(do_year)
     # New Year's Day
@@ -18,7 +18,7 @@ module Holidays
       do_year, 3, 2, 'Sun', "[Daylight_Saving(Begin)]"
     )
     # Easter & Good Friday
-    do_year = Holidays.add_easter_and_good_friday(
+    do_year = Annual.add_easter_and_good_friday(
       do_year
     )
     # Mother's Day 
@@ -68,6 +68,11 @@ module Holidays
     # New Year's Eve 
     do_year = Add_Tag.to_specific_date(
       do_year, 12, 31, "[New_Year's_Eve]"
+    )
+
+    # Laundry Every 3 Weeks
+    do_year = Add_Tag.to_xday_every_n_weeks(
+      do_year, 3, "Sunday", "Ln_drmt, Ln_Fld"
     )
   end
 

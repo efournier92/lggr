@@ -16,7 +16,7 @@ class Month
                                              'Rnt_Chk_Pk')
       # first day of month
       do_year = Add_Tag.to_specific_date(do_year, month, 1, 
-                               'Rnt_Py, Orbt_NwLst, Lg_DoLst_NxtMnth')
+                               'Rnt_Py, Orbt_NwLst, Lg_Do_NxtMnth')
       # first Friday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 1, 'Friday', 
                                              'WtrBttle_Pk')
