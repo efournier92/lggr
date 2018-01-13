@@ -16,19 +16,6 @@ until print_type == 'DO' || print_type == 'LG'
   print_type = gets.chomp
 end
 
-if print_type == 'DO'
-  print "All || Month #\n>> "
-  do_print_month = gets.chomp
-  require 'pry'
-  binding.pry
-
-  until do_print_month == 'All' 
-    print "Which Month [0-11]\n>> "
-    print_type = gets.chomp.to_i
-
-  end
-end
-
 print "Which Year?\n>> "
 year = gets.chomp.to_i
 
