@@ -36,7 +36,6 @@ class Year
     first_monday = day
     add_first_week(first_monday - 7)
     add_first_week(first_monday)
-    # get_last_friday
 
     54.times do
       month = 1 if month == 13
@@ -45,7 +44,7 @@ class Year
       year = do_week.year
       if do_week.index.odd?
         do_week.days.find do | day |
-          if day.name == 'Sun'
+          if day.name == 'Sunday'
             day.tasks = Week.odd_week_sunday_tasks 
           end
         end

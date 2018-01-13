@@ -13,7 +13,21 @@ month = 1
 
 until print_type == 'DO' || print_type == 'LG'
   print "DO || LG\n>> "
-  print_type = gets.chomp
+  print_type = gets.chomp.upcase
+end
+
+if print_type == 'DO'
+  print "MONTH: { All || [1-11]\n>> "
+  do_print_month = gets.chomp.downcase
+  require 'pry'
+
+  isValid = false
+  until do_print_month == 'all' || isValid == true
+    print "Which Month [0-11]\n>> "
+    binding.pry
+    isValid = print_type.match(/^([1-9]|[01][0-1])$/)
+  end
+    print_type = gets.chomp.to_i
 end
 
 print "Which Year?\n>> "
