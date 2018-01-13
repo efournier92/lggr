@@ -9,6 +9,7 @@ require './modules/Bookend_Weeks'
 require './modules/Holidays'
 require './modules/Printer'
 print_type = ''
+print_month
 month = 1
 
 until print_type == 'DO' || print_type == 'LG'
@@ -17,17 +18,16 @@ until print_type == 'DO' || print_type == 'LG'
 end
 
 if print_type == 'DO'
-  print "MONTH: { All || [1-11]\n>> "
-  do_print_month = gets.chomp.downcase
-  require 'pry'
-
-  isValid = false
-  until do_print_month == 'all' || isValid == true
-    print "Which Month [0-11]\n>> "
-    binding.pry
-    isValid = print_type.match(/^([1-9]|[01][0-1])$/)
+  is_valid = false
+  until is_valid == true
+    print "MONTH: All || [0-11]\n>> "
+    print_month = gets.chomp
+    is_valid = true if print_month == 'all' 
+    if print_month.match(/^([1-9]|[01][0-1])$/)
+      is_valid = true 
+      print_month = print_month.to_i
+    end
   end
-    print_type = gets.chomp.to_i
 end
 
 print "Which Year?\n>> "
@@ -44,8 +44,13 @@ do_year = Year.add_holidays(do_year)
 
 if print_type == 'DO'
   do_year = Bookend_Weeks.shift_do_start(do_year)
+  do_year = Bookend_Weeks.shift_do_start(do_year)
   do_year = Bookend_Weeks.shift_do_end(do_year)
-  Printer.print_do(do_year)
+  if print_month
+    Printer.print_do(do_year)
+  else
+    Printer.print_do_month(do_year, print_month)
+  end
 elsif print_type == 'LG'
   do_year = Bookend_Weeks.shift_lg_start(do_year)
   do_year = Bookend_Weeks.shift_lg_end(do_year)
