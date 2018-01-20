@@ -26,7 +26,6 @@ if print_type == 'DO'
     if print_month.match(/^([1-9]|[01][0-1])$/)
       is_valid = true 
       print_month = print_month.to_i
-      print_month += 1
     end
   end
 end
