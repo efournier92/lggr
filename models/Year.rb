@@ -82,8 +82,8 @@ class Year
     first_monday
   end
 
-  def self.add_holidays(do_year)
-    Holidays.add_all(do_year)
+  def self.add_annual_tasks(do_year)
+    Annual.add_all(do_year)
   end
 
   def self.add_birthdays(do_year)

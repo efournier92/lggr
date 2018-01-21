@@ -27,10 +27,12 @@ module Add_Tag
     do_year
   end
 
-  def self.to_xday_every_n_week(do_year, week_interval, day_name, new_tag)
+  def self.to_xday_every_n_week(do_year, week_interval, xday_name, new_tag)
     do_year.weeks.each do | week |
       week.days.each do | day |
-        if day.week % n == 0 && day.day_name == day_name
+        require 'pry'
+        binding.pry
+        if day.week.index % week_interval == 0 && day.day_name == xday_name
           day.tasks.unshift(new_tag)
         end
       end
@@ -50,7 +52,6 @@ module Add_Tag
     end
     do_year
   end
-
 
   def self.to_last_day_of_month(do_year, month, new_tag)
     last_day_of_month = Year.days_in_months[month - 1]
