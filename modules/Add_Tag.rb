@@ -13,27 +13,16 @@ module Add_Tag
   end
 
   def self.to_nth_xday_in_month(do_year, month, nth_day, day_name, new_tag)
+    require 'pry'
     day_count = 0
     do_year.weeks.each do | week |
       week.days.each do | day |
+            binding.pry
         if day.month == month && day.name == day_name 
           day_count += 1
           if day_count == nth_day
             day.tasks.unshift(new_tag)
           end
-        end
-      end
-    end
-    do_year
-  end
-
-  def self.to_xday_every_n_week(do_year, week_interval, xday_name, new_tag)
-    do_year.weeks.each do | week |
-      week.days.each do | day |
-        require 'pry'
-        binding.pry
-        if day.week.index % week_interval == 0 && day.day_name == xday_name
-          day.tasks.unshift(new_tag)
         end
       end
     end
