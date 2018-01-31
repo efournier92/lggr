@@ -1,2 +1,2 @@
-# lggr
+# Logger
 
