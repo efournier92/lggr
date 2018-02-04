@@ -1,6 +1,6 @@
 module Printer
 
-  def self.print_do(do_year)
+  def self.print_do_year(do_year)
     year = do_year.year 
     out_file = File.new("./Out/DO_#{ '%04d' % year }.md", "w")
     do_year.weeks.each do | week |
@@ -18,13 +18,33 @@ module Printer
     end
   end
 
+  def self.print_do_month(do_year, month)
+    year = do_year.year 
+    out_file = File.new("./Out/DO_#{ '%04d' % year }_#{ '%02d' % month }.md", "w")
+    do_year.weeks.each do | week |
+      week.days.each do | day |
+        if day.month == month
+          if day.name == 'Monday'
+            out_file.puts("\n## #{ '%04d' % day.year }-#{ '%02d' % day.month }-#{ '%02d' % day.month_day }\n")
+          end
+          out_file.puts("### #{ day.name }")
+          day.tasks.each do |task|
+            out_file.print("#{ task }, ")
+          end
+          out_file.puts
+        end
+      end
+    end
+    out_file.puts
+  end
+
   def self.print_lg(do_year)
     year = do_year.year
     out_file = File.new("./Out/LG_#{ '%04d' % year }.md", "w")
 
-    weekday_string = "### Tsk\n\n### Scrm \n\n### \n\n\n"
-    weekend_string = "### Tsk\n\n###\n\n\n"
-    friday_string  = "### Tsk\n\n### Nxt_Scrm\n\n### Scrm\n\n### \n\n\n"
+    weekday_string = "### Do\n\n### Scrm\n\n### \n\n\n"
+    weekend_string = "### Do\n\n###\n\n\n"
+    friday_string  = "### Do\n\n### Nxt_Scrm\n\n### Scrm\n\n### \n\n\n"
 
     do_year.weeks.reverse_each do | week |
       week.days.reverse_each do | day |

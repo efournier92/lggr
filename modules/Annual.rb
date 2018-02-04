@@ -59,7 +59,7 @@ module Holidays
     )
     # Christmas Eve
     do_year = Add_Tag.to_specific_date(
-      do_year, 12, 24, "[Christmas_Eve]"
+      do_year, 12, 24, "[Christmas_Eve], Vrzn_CllPhn_Dd_Py($300)"
     )
     # Christmas
     do_year = Add_Tag.to_specific_date(
@@ -68,6 +68,11 @@ module Holidays
     # New Year's Eve 
     do_year = Add_Tag.to_specific_date(
       do_year, 12, 31, "[New_Year's_Eve]"
+    )
+
+    # Laundry Every 3 Weeks
+    do_year = Add_Tag.to_xday_every_n_weeks(
+      do_year, 3, "Sunday", "Ln_drmt, Ln_Fld"
     )
   end
 
