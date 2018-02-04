@@ -1,4 +1,3 @@
-require 'pry'
 require './models/Day'
 require './models/Month'
 require './models/Week'
