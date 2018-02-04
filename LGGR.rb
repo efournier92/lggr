@@ -6,7 +6,7 @@ require './models/Year'
 require './modules/Add_Tag'
 require './modules/Birthdays'
 require './modules/Bookend_Weeks'
-require './modules/Holidays'
+require './modules/Annual'
 require './modules/Printer'
 print_type = ''
 print_month = nil
@@ -42,14 +42,14 @@ do_year = Year.new(year)
 do_year = Month.add_start_tasks(do_year)
 # add birthdays to year object
 do_year = Year.add_birthdays(do_year)
-# add holidays to year object
-do_year = Year.add_holidays(do_year)
+# add annual tasks to year object
+do_year = Year.add_annual_tasks(do_year)
 
 if print_type == 'DO'
   do_year = Bookend_Weeks.shift_do_start(do_year)
   do_year = Bookend_Weeks.shift_do_start(do_year)
   do_year = Bookend_Weeks.shift_do_end(do_year)
-  if print_month
+  if print_month.downcase != 'all'
     Printer.print_do_month(do_year, print_month)
   else
     Printer.print_do_year(do_year)

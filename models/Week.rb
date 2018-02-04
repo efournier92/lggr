@@ -35,7 +35,8 @@ class Week
                      'Bdgt', 'Cc_Py', 'Hr_Wsh'],
       'Saturday'  => ['Gt', 'Af_Ord()', 'Amz_Ord()'],
       'Sunday'    => ['Gt', 'Mb_Dsktp_Cln', 'TM', 'Mm&Dd_Cl(1300, )', 'Apt_Vcm', 
-                      'Ln_Fld', 'Ktch_Cln(Snk)', 'Hr_LnUp', 'Bthrm_Cln(Tlt)', 
+                      'Ktch_Cln(Snk)', 'Hr_LnUp', 'Bthrm_Cln(Tlt)', 
+
                       'Sv', 'Plk', 'Ns', 'Ap', '[nobo]']
     }
   end
