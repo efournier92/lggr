@@ -1,4 +1,4 @@
-module Holidays
+module Annual 
 
   def self.add_all(do_year)
     # New Year's Day
@@ -18,7 +18,7 @@ module Holidays
       do_year, 3, 2, 'Sun', "[Daylight_Saving(Begin)]"
     )
     # Easter & Good Friday
-    do_year = Holidays.add_easter_and_good_friday(
+    do_year = Annual.add_easter_and_good_friday(
       do_year
     )
     # Mother's Day 
