@@ -27,12 +27,10 @@ module Add_Tag
     do_year
   end
 
-  def self.to_xday_every_n_week(do_year, week_interval, xday_name, new_tag)
+  def self.to_xday_every_n_weeks(do_year, week_interval, xday_name, new_tag)
     do_year.weeks.each do | week |
       week.days.each do | day |
-        require 'pry'
-        binding.pry
-        if day.week.index % week_interval == 0 && day.day_name == xday_name
+        if week.index % week_interval == 0 && day.name == xday_name
           day.tasks.unshift(new_tag)
         end
       end
