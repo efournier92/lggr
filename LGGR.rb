@@ -21,8 +21,8 @@ if print_type == 'DO'
   is_valid = false
   until is_valid == true
     print "MONTH: All || [1-12]\n>> "
-    print_month = gets.chomp
-    is_valid = true if print_month == 'all' 
+    print_month = gets.chomp.upcase
+    is_valid = true if print_month == 'ALL' 
     if print_month.match(/^([1-9]|[01][0-1])$/)
       is_valid = true 
       print_month = print_month.to_i

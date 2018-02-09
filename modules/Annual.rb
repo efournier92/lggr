@@ -69,8 +69,6 @@ module Annual
     do_year = Add_Tag.to_specific_date(
       do_year, 12, 31, "[New_Year's_Eve]"
     )
-
-    # Laundry Every 3 Weeks
   end
 
   def self.add_easter_and_good_friday(do_year)
