@@ -22,10 +22,10 @@ class Month
                                              'WtrBttle_Pk')
       # first Saturday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 1, 'Saturday', 
-                                             'Scpts_Ord, Scpts_Rcv, Scpts_CtPls')
+                                             'Scpts_Ord, Scpts_Rcv, Scpts_Pls_Ct')
       # first Sunday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 1, 'Sunday', 
-                                  'Cntcts_Nw, Rzrs_Nw, Nx_Bk, WtrBttle_Cln')
+                                  'Cntcts_Nw, ThBrsh_Hd_Nw, Rzrs_Nw, Nx_Bk, WtrBttle_Cln')
       # third Saturday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 3, 'Saturday', 
                                              'Hr_Ct()')
