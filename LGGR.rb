@@ -49,7 +49,7 @@ if print_type == 'DO'
   do_year = Bookend_Weeks.shift_do_start(do_year)
   do_year = Bookend_Weeks.shift_do_start(do_year)
   do_year = Bookend_Weeks.shift_do_end(do_year)
-  if print_month.downcase != 'all'
+  if print_month.is_a? Integer
     Printer.print_do_month(do_year, print_month)
   else
     Printer.print_do_year(do_year)
