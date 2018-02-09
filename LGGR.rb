@@ -36,6 +36,7 @@ until year.is_a? Integer
   year = gets.chomp.to_i
 end
 
+
 # create year object
 do_year = Year.new(year)
 # add monthly tasks to year object
@@ -44,11 +45,23 @@ do_year = Month.add_start_tasks(do_year)
 do_year = Year.add_birthdays(do_year)
 # add annual tasks to year object
 do_year = Year.add_annual_tasks(do_year)
+# add laundry tasks with offset
+if print_type == 'DO'
+  ln_offset = nil
+  until ln_offset.is_a? Integer
+    print "Laundry Offset [0-2]\n>> "
+    ln_offset = gets.chomp.to_i
+  end
+  do_year = Add_Tag.to_xday_every_n_weeks(
+    do_year, 3, "Sunday", "Ln_drmt, Ln_Fld", ln_offset
+  )
+end
 
 if print_type == 'DO'
   do_year = Bookend_Weeks.shift_do_start(do_year)
   do_year = Bookend_Weeks.shift_do_start(do_year)
   do_year = Bookend_Weeks.shift_do_end(do_year)
+
   if print_month.is_a? Integer
     Printer.print_do_month(do_year, print_month)
   else
