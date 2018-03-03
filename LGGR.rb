@@ -36,7 +36,6 @@ until year.is_a? Integer
   year = gets.chomp.to_i
 end
 
-
 # create year object
 do_year = Year.new(year)
 # add monthly tasks to year object
