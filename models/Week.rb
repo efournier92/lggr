@@ -33,7 +33,7 @@ class Week
       'Thursday'  => ['Gm', 'Gt'],
       'Friday'    => ['V1_Hrs_Brn', 'Gt', 'Lg_aLg', 'Lg_[R]s_Fn', 'Lg_LstWk', 'Lg_NxtWk', 
                      'Bdgt', 'Cc_Py', 'Hr_Wsh'],
-      'Saturday'  => ['Gt', 'Af_Ord()', 'Amz_Ord()'],
+      'Saturday'  => ['Gt', 'Amz_Ord()', 'Af_Ord()'],
       'Sunday'    => ['Gt', 'Mb_Dsktp_Cln', 'TM', 'Mm&Dd_Cl(1300, )', 'Apt_Vcm', 
                       'Ktch_Cln(Snk)', 'Hr_LnUp', 'Bthrm_Cln(Tlt)', 
                       'Sv', 'Plk', 'Ns', 'AfBg_DwnStrs', 'Ap', '[NoBo]']
