@@ -17,6 +17,14 @@ until print_type == 'DO' || print_type == 'LG'
   print_type = gets.chomp.upcase
 end
 
+
+year = nil
+until year.is_a? Integer
+  print "Which Year?\n>> "
+  year = gets.chomp.to_i
+end
+
+
 if print_type == 'DO'
   is_valid = false
   until is_valid == true
@@ -28,12 +36,6 @@ if print_type == 'DO'
       print_month = print_month.to_i
     end
   end
-end
-
-year = nil
-until year.is_a? Integer
-  print "Which Year?\n>> "
-  year = gets.chomp.to_i
 end
 
 # create year object
