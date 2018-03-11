@@ -7,7 +7,7 @@ module Annual
     )
     # President's Day
     do_year = Add_Tag.to_nth_xday_in_month(
-      do_year, 2, 3, 'Mon', "[President's_Day]"
+      do_year, 2, 3, 'Monday', "[President's_Day]"
     )
     # Valentine's Day
     do_year = Add_Tag.to_specific_date(
@@ -15,7 +15,7 @@ module Annual
     )
     # Daylight Savings (Begin)
     do_year = Add_Tag.to_nth_xday_in_month(
-      do_year, 3, 2, 'Sun', "[Daylight_Saving(Begin)]"
+      do_year, 3, 2, 'Sunday', "[Daylight_Saving(Begin)]"
     )
     # Easter & Good Friday
     do_year = Annual.add_easter_and_good_friday(
