@@ -23,15 +23,15 @@ module Annual
     )
     # Mother's Day 
     do_year = Add_Tag.to_nth_xday_in_month(
-      do_year, 5, 2, 'Sun', "[Mother's_Day]"
+      do_year, 5, 2, 'Sunday', "[Mother's_Day]"
     )
     # Memorial Day
     do_year = Add_Tag.to_last_week_in_month(
-      do_year, 5, 'Mon', "[Memorial_Day]"
+      do_year, 5, 'Monday', "[Memorial_Day]"
     )
     # Father's Day 
     do_year = Add_Tag.to_nth_xday_in_month(
-      do_year, 6, 3, 'Sun', "[Father's_Day]"
+      do_year, 6, 3, 'Sunday', "[Father's_Day]"
     )
     # Independence Day
     do_year = Add_Tag.to_specific_date(
@@ -39,7 +39,7 @@ module Annual
     )
     # Labor Day
     do_year = Add_Tag.to_nth_xday_in_month(
-      do_year, 9, 1, 'Mon', "[Labor_Day]"
+      do_year, 9, 1, 'Monday', "[Labor_Day]"
     )
     # Halloween
     do_year = Add_Tag.to_specific_date(
@@ -51,11 +51,11 @@ module Annual
     )
     # Daylight Savings (End)
     do_year = Add_Tag.to_nth_xday_in_month(
-      do_year, 11, 1, 'Sun', "[Daylight_Saving(End)]"
+      do_year, 11, 1, 'Sunday', "[Daylight_Saving(End)]"
     )
     # Thanksgiving
     do_year = Add_Tag.to_nth_xday_in_month(
-      do_year, 11, 4, 'Thu', "[Thanksgiving]"
+      do_year, 11, 4, 'Thursday', "[Thanksgiving]"
     )
     # Christmas Eve
     do_year = Add_Tag.to_specific_date(
