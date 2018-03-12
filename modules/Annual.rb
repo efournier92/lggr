@@ -18,7 +18,7 @@ module Annual
       do_year, 3, 2, 'Sunday', "[Daylight_Saving(Begin)]"
     )
     # Easter & Good Friday
-    do_year = Annual.add_easter_and_good_friday(
+    do_year = Annual.easter_and_good_friday(
       do_year
     )
     # Mother's Day 
@@ -69,9 +69,25 @@ module Annual
     do_year = Add_Tag.to_specific_date(
       do_year, 12, 31, "[New_Year's_Eve]"
     )
+    # Easter & Good Friday
+    do_year = Annual.clock_changes(
+      do_year
+    )
   end
 
-  def self.add_easter_and_good_friday(do_year)
+  def self.clock_changes(do_year)
+    [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
+    month_indexes_to_tag = [2, 4, 6, 9, 11]
+    do_year.weeks.each do | week |
+      week.days.each do | day |
+        if day.month_day == 1 && day.month
+        binding.pry
+      end
+    end
+    do_year
+  end
+
+  def self.easter_and_good_friday(do_year)
     year = do_year.year
     epact_calc = ( 24 + 19 * ( year % 19 ) ) % 30
     paschal_days = epact_calc - ( epact_calc / 28 )
