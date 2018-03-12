@@ -15,7 +15,7 @@ module Annual
     )
     # Daylight Savings (Begin)
     do_year = Add_Tag.to_nth_xday_in_month(
-      do_year, 3, 2, 'Sunday', "[Daylight_Saving(Begin)]"
+      do_year, 3, 2, 'Sunday', "[Daylight_Saving(Begin), Clks_Tm_St(Blu_Arm, Wtch_Brwn, Wtch_Blck), ]"
     )
     # Easter & Good Friday
     do_year = Annual.easter_and_good_friday(
@@ -51,7 +51,7 @@ module Annual
     )
     # Daylight Savings (End)
     do_year = Add_Tag.to_nth_xday_in_month(
-      do_year, 11, 1, 'Sunday', "[Daylight_Saving(End)]"
+      do_year, 11, 1, 'Sunday', "[Daylight_Saving(End), Clks_Tm_St(Blu_Arm, Wtch_Brwn, Wtch_Blck), ]"
     )
     # Thanksgiving
     do_year = Add_Tag.to_nth_xday_in_month(
