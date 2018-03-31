@@ -102,8 +102,15 @@ module Annual
     good_friday_month = easter_day > 2 ? 
       easter_month : easter_month - 1
 
-    good_friday_day = easter_day > 2 ? easter_day - 2 : 
-      Year.days_in_months[good_friday_month - 1] - ( easter_day - 1 )
+    days_in_good_friday_month = Year.days_in_months[good_friday_month - 1]
+
+    if easter_day == 2
+      good_friday_day = days_in_good_friday_month
+    elsif easter_day == 1
+      good_friday_day = days_in_good_friday_month - 1
+    else
+      good_friday_day = easter_day - 2
+    end
 
     do_year.weeks.each do | week |
       week.days.each do | day |
