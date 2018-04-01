@@ -2,6 +2,6 @@
 
 Calendar application for maintaining TODO lists in markdown.
 
-## Tech
+## Tech Stack
 * Ruby
 
