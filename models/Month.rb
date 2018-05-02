@@ -16,7 +16,7 @@ class Month
                                              'Rnt_Chk_Pk')
       # first day of month
       do_year = Add_Tag.to_specific_date(do_year, month, 1, 
-                               'Rnt_Py, Orbt_NwLst, Lg_Do_NxtMnth')
+                               'Rnt_Py, Kodi_Orbt_NwLst_Dwn, Lg_Do_NxtMnth')
       # first Saturday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 1, 'Saturday', 
                                              'Scpts_Ord, Scpts_Rcv, Scpts_Pls_Ct')
@@ -32,7 +32,7 @@ class Month
         if (month == quarter_month)
           # first Sunday of quarter
           do_year = Add_Tag.to_nth_xday_in_month(do_year, quarter_month, 1, 'Sunday', 
-                                      'Cntcts_Cs_Nw, Sv_Bg, TM_B')
+                                      'Cntcts_Cs_Nw, Sv_Bg, Bk(BnkB, LnxA, LnxB, OsxA, OsxB)')
           # first Saturday of quarter
           do_year = Add_Tag.to_nth_xday_in_month(do_year, quarter_month, 1, 'Saturday', 
                                       'Slt_Flsh')
