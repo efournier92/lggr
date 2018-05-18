@@ -27,9 +27,9 @@ class Week
 
   def self.days
     { 
-      'Monday'    => ['Af_Rcv(<0800)', 'Gt', 'Ktch_Cln(Frdg)', 'Trsh_Out'],
+      'Monday'    => ['Gm', 'Af_Rcv(<0800)', 'Gt', 'Ktch_Cln(Frdg)', 'Trsh_Out'],
       'Tuesday'   => ['Gm', 'Gt'],
-      'Wednesday' => ['Gm', 'Gt', '[NoBo]'],
+      'Wednesday' => ['Gt', '[NoBo]'],
       'Thursday'  => ['Gm', 'Gt'],
       'Friday'    => ['V1_Hrs_Brn', 'Gt', 'Lg_aLg', 'Lg_[R]s_Fn', 'Lg_LstWk', 'Lg_NxtWk', 
                      'Bdgt', 'Cc_Py', 'Hr_Wsh'],
