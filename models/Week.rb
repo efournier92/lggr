@@ -27,16 +27,16 @@ class Week
 
   def self.days
     { 
-      'Monday'    => ['Gm', 'Af_Rcv(<0800)', 'Gt', 'Ktch_Cln(Frdg)', 'Trsh_Out'],
-      'Tuesday'   => ['Gm', 'Gt'],
-      'Wednesday' => ['Gt', '[NoBo]'],
-      'Thursday'  => ['Gm', 'Gt'],
+      'Monday'    => ['Gm', 'Af_Rcv(<0800)', 'Gt', 'Ktch_Cln(Frdg)', 'Trsh_Out', 'Ap_Hnd'],
+      'Tuesday'   => ['Gm', 'Gt', 'Ap_Hnd'],
+      'Wednesday' => ['Gt', '[NoBo]', 'Ap_Hnd'],
+      'Thursday'  => ['Gm', 'Gt', 'Ap_Hnd'],
       'Friday'    => ['V1_Hrs_Brn', 'Gt', 'Lg_aLg', 'Lg_[R]s_Fn', 'Lg_LstWk', 'Lg_NxtWk', 
-                     'Bdgt', 'Cc_Py', 'Hr_Wsh'],
-      'Saturday'  => ['Gt', 'Amz_Ord()', 'Af_Ord()'],
-      'Sunday'    => ['Gt', 'Mb_Dsktp_Cln', 'Bk(Bnk-BnkA)', 'Mm&Dd_Cl(1300, )', 'Apt_Vcm', 
+                     'Bdgt', 'Cc_Py', 'Hr_Wsh', 'Ap_Hnd'],
+      'Saturday'  => ['Gt', 'Amz_Ord()', 'Af_Ord()', 'Ap_Hnd'],
+      'Sunday'    => ['Gt', 'Mb_Dsktp_Cln', 'Bk(Bnk-BnkA)', 'Mm&Dd_Cl(1300, )', 'Ap_Hnd', 'Apt_Vcm', 
                       'Ktch_Cln(Snk)', 'Hr_LnUp', 'Bthrm_Cln(Tlt)', 
-                      'Sv', 'Plk', 'Ns', 'AfBg_DwnStrs', 'Ap', '[NoBo]']
+                      'Sv', 'Plk', 'Ns', 'AfBg_DwnStrs', 'Ap_Hnd', '[NoBo]']
     }
   end
 
