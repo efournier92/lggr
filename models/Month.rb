@@ -20,6 +20,9 @@ class Month
       # first Sunday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 1, 'Sunday', 
                                   'Cntcts_Nw, ThBrsh_Hd_Nw, Rzrs_Nw, McBk_Cln(Scrn, Kbrd), Nx_Bk, WtrBttle_Cln')
+      # second Sunday of month
+      do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 2, 'Sunday', 
+                                             'Ln_drmt, Ln_Fld',
       # third Saturday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 3, 'Saturday', 
                                              'Hr_Ct()')
