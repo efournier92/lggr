@@ -11,9 +11,6 @@ class Month
       # 28th of month
       do_year = Add_Tag.to_specific_date(do_year, month, 28, 
                                'TrnTk_By')
-      # last day of month
-      do_year = Add_Tag.to_last_day_of_month(do_year, month, 
-                                             'Rnt_Chk_Pk')
       # first day of month
       do_year = Add_Tag.to_specific_date(do_year, month, 1, 
                                'Rnt_Py, Kodi_Orbt_NwLst_Dwn, Lg_Do_NxtMnth')
