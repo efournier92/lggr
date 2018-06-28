@@ -13,16 +13,13 @@ class Month
                                'TrnTk_By')
       # first day of month
       do_year = Add_Tag.to_specific_date(do_year, month, 1, 
-                               'Rnt_Py, Kodi_Orbt_NwLst_Dwn, Lg_Do_NxtMnth')
-      # first Saturday of month
-      do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 1, 'Saturday', 
-                                             'Scpts_Ord, Scpts_Rcv, Scpts_Pls_Ct')
+                               'Rnt_Py, Lg_Do_NxtMnth')
       # first Sunday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 1, 'Sunday', 
                                   'Cntcts_Nw, ThBrsh_Hd_Nw, Rzrs_Nw, McBk_Cln(Scrn, Kbrd), Nx_Bk, WtrBttle_Cln')
       # second Sunday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 2, 'Sunday', 
-                                             'Ln_drmt, Ln_Fld')
+                                             'Ln_drmt, Ln_Fld, Scpts_Ord, Scpts_Rcv, Scpts_Pls_Ct')
       # third Saturday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 3, 'Saturday', 
                                              'Hr_Ct()')
