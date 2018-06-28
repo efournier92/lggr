@@ -80,7 +80,7 @@ module Annual
     do_year.weeks.each do | week |
       week.days.each do | day |
         if day.month_day == 1 && month_indexes_to_tag.include?(day.month)
-          day.tasks.unshift("Wtchs_Dt_St(Brwn, Blck)")
+          day.tasks.unshift('Wtchs_Dt_St(Brwn, Blck)')
         end
       end
     end
