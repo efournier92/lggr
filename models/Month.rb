@@ -16,7 +16,7 @@ class Month
                                'Rnt_Py, Lg_Do_NxtMnth')
       # first Sunday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 1, 'Sunday', 
-                                  'Cntcts_Nw, ThBrsh_Hd_Nw, Rzrs_Nw, McBk_Cln(Scrn, Kbrd), Nx_Bk, WtrBttle_Cln')
+                                  'Cntcts_Nw, ThBrsh_Hd_Nw, Rzrs_Nw, Mcbk_Cln(Scrn, Kbrd), Nx_Bk, WtrBttle_Cln')
       # second Sunday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 2, 'Sunday', 
                                              'Ln_drmt, Ln_Fld, Scpts_Ord, Scpts_Rcv, Scpts_Pls_Ct')
@@ -29,7 +29,7 @@ class Month
         if (month == quarter_month)
           # first Sunday of quarter
           do_year = Add_Tag.to_nth_xday_in_month(do_year, quarter_month, 1, 'Sunday', 
-                                      'Cntcts_Cs_Nw, Sv_Bg, Bk(BnkB, LnxA, LnxB, OsxA, OsxB)')
+                                      'Cntcts_Cs_Nw, Sv_Bg, Bk(bkA(Lnx, Osx, Win), bkA-bkB, gryEx-blkEx, )')
           # first Saturday of quarter
           do_year = Add_Tag.to_nth_xday_in_month(do_year, quarter_month, 1, 'Saturday', 
                                       'Slt_Flsh')
