@@ -30,7 +30,7 @@ class Week
       'Monday'    => ['Af_Rcv(<0800)', 'Gt', 'Ktch_Cln(Frdg)', 'Trsh_Out', 'Ap_Hnd'],
       'Tuesday'   => ['Gt', 'Ap_Hnd'],
       'Wednesday' => ['Gt', '[NoBo]', 'Ap_Hnd'],
-      'Thursday'  => ['Gt', , 'Sv', 'Plk', 'Ns', 'Ap_Hnd'],
+      'Thursday'  => ['Gt', 'Sv', 'Plk', 'Ns', 'Ap_Hnd'],
       'Friday'    => ['V1_Hrs_Brn', 'Gt', 'Lg_aLg', 'Lg_[R]s_Fn', 'Lg_LstWk', 'Lg_NxtWk', 
                       'Bdgt', 'Cc_Py', 'Hr_Wsh', 'Ap_Hnd'],
       'Saturday'  => ['Amz_Ord()', 'Af_Ord()', 'Gt', 'Ap_Hnd'],
