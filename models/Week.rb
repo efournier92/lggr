@@ -29,15 +29,15 @@ class Week
     { 
       'Monday'    => ['Af_Rcv(<0800)', 'Gt', 'Ktch_Cln(Frdg)', 'Trsh_Out', 'Ap_Hnd'],
       'Tuesday'   => ['Gt', 'Ap_Hnd'],
-      'Wednesday' => ['Gt', '[NoBo]', 'Ap_Hnd'],
+      'Wednesday' => ['Gt', 'Ap_Hnd', '[NoBo]'],
       'Thursday'  => ['Gt', 'Sv', 'Plk', 'Ns', 'Ap_Hnd'],
       'Friday'    => ['Bdgt', 'Cc_Py', 'V1_Hrs_Brn', 'Gt', 'Lg_aLg', 
                       'Lg_[R]s_Fn', 'Lg_LstWk', 'Lg_NxtWk', 'Hr_Wsh', 'Ap_Hnd'],
       'Saturday'  => ['Amz_Ord()', 'Af_Ord()', 'Gt', 'Ap_Hnd'],
-      'Sunday'    => ['Gt', 'Mm&Dd_Cl(1300, )', 'Hr_LnUp', 
-                      'Bk(Bnk-bnkA, extA-extB, sda3-bkA)', 
-                      'Apt_Vcm', 'Ktch_Cln(Snk)', 'Bthrm_Cln(Tlt, Snk)', 
-                      'AfBg_DwnStrs', 'Ap_Hnd', '[NoBo]']
+      'Sunday'    => ['Gt', 'Bk(Bnk-bnkA, extA-extB, sda3-bkA)', 
+                      'Mm&Dd_Cl(1300, )', 'Apt_Vcm', 'Ktch_Cln(Snk)', 
+                      'Bthrm_Cln(Tlt, Snk)', 'Mcbk_Cln(Scrn, Kybrd)', 
+                      'AfBg_DwnStrs', 'Hr_LnUp', 'Ap_Hnd', '[NoBo]']
     }
   end
 
