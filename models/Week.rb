@@ -32,12 +32,12 @@ class Week
       'Wednesday' => ['Gt', 'Ap_Hnd', '[NoBo]'],
       'Thursday'  => ['Gt', 'Sv', 'Plk', 'Ns', 'Ap_Hnd'],
       'Friday'    => ['Bdgt', 'Cc_Py', 'V1_Hrs_Brn', 'Gt', 'Lg_aLg', 
-                      'Lg_[R]s_Fn', 'Lg_LstWk', 'Lg_NxtWk', 'Hr_Wsh', 'Ap_Hnd'],
-      'Saturday'  => ['Amz_Ord()', 'Af_Ord()', 'Gt', 'Ap_Hnd'],
+                      'Lg_[R]s_Fn', 'Lg_LstWk', 'Lg_NxtWk', 'Ap_Hnd'],
+      'Saturday'  => ['Amz_Ord()', 'Af_Ord()', 'Gt', 'Hr_Wsh', 'Ap_Hnd'],
       'Sunday'    => ['Gt', 'Bk(Bnk-bnkA, extA-extB, sda3-bkA)', 
                       'Mm&Dd_Cl(1300, )', 'Apt_Vcm', 'Ktch_Cln(Snk)', 
                       'Bthrm_Cln(Tlt, Snk)', 'Mcbk_Cln(Scrn, Kybrd)', 
-                      'AfBg_DwnStrs', 'Hr_LnUp', 'Ap_Hnd', '[NoBo]']
+                      'AfBg_DwnStrs', 'Ap_Hnd', '[NoBo]']
     }
   end
 
