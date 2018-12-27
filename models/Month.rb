@@ -10,13 +10,13 @@ class Month
                                          'Bill_Electric_Pay')
       # 28th of month
       do_year = Add_Tag.to_specific_date(do_year, month, 28, 
-                               'TrainTicket_Buy')
+                               'Bill_TrainTicket_Pay')
       # first day of month
       do_year = Add_Tag.to_specific_date(do_year, month, 1, 
-                               'Rent_Pay, Lg_Do_NextMonth')
+                               'Bill_Rent_Pay, Lg_Do_NextMonth')
       # first Sunday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 1, 'Sunday', 
-                                  'Contacts_New, ToothBrush_Head_New, Razors_New, Nx_Bk, Bk(bkA(Lnx, Osx, Win), bkA-bkB, gry-blk)')
+                                  'Contacts_New, ToothBrush_Head_New, Razors_New, Nx_Bk, Bk(bkA(Lnx, Osx, Win), bkA-bkB, gry-blk,)')
       # second Sunday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 2, 'Sunday', 
                                              'Rx_Ord, Ln_drmt, Rx_Rcv, Ln_Fld, Rx_Pills_Cut')
