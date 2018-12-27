@@ -118,7 +118,7 @@ module Annual
           day.tasks.unshift('[Easter]')
         end
         if day.month == good_friday_month && day.month_day == good_friday_day
-          day.tasks.unshift('[Good_Friday]')
+          day.tasks.unshift('[Good Friday]')
         end
       end
     end
