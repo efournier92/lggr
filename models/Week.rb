@@ -27,7 +27,7 @@ class Week
 
   def self.days
     { 
-      'Monday'    => ['Af_Rcv(<0800)', 'Gt', 'Ktch_Cln(Frdg)', 'Trsh_Out', 'Ap_Hnd'],
+      'Monday'    => ['Af_Rcv(<0800)', 'Gt', 'Apt(Kitchen_Clean(Fridge), _Trash_Out', 'Ap_Hand', '[NoBo]'],
       'Tuesday'   => ['Gt', 'Ap_Hnd'],
       'Wednesday' => ['Gt', 'Ap_Hnd', '[NoBo]'],
       'Thursday'  => ['Gt', 'Sv', 'Plk', 'Ns', 'Ap_Hnd'],
@@ -35,9 +35,9 @@ class Week
                       'Lg_LstWk', 'Lg_NxtWk', 'Gt', 'Lg_aLg', 'Ap_Hnd'],
       'Saturday'  => ['Amz_Ord()', 'Af_Ord()', 'Gt', 'Hr_Wsh', 'Ap_Hnd'],
       'Sunday'    => ['Gt', 'Bk(Bnk-bnkA, extA-extB, sda3-bkA)', 
-                      'Mm&Dd_Cl(1300, )', 'Apt_Vcm', 'Ktch_Cln(Snk)', 
-                      'Bthrm_Cln(Tlt, Snk)', 'Mcbk_Cln(Scrn, Kybrd)', 
-                      'AfBg_DwnStrs', 'Ap_Hnd', '[NoBo]']
+                      'Mm&Dd_Call(1300,)', 'Apt(Vaccuum, Kitchen_Clean(Sink,)', 
+                      'Bathroom_Clean(Toilet, Sink,)', 'Mcbk_Clean(Scrn, Case_Iso,)', 
+                      'AfBg_DwnStrs', 'Ap_Hnd']
     }
   end
 

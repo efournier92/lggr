@@ -4,33 +4,32 @@ class Month
     for month in 1..12
       # 10th of month
       do_year = Add_Tag.to_specific_date(do_year, month, 10, 
-                                         'Intrnt_Py')
+                                         'Bill_Internet_Pay')
       # 16th of month
       do_year = Add_Tag.to_specific_date(do_year, month, 16, 
-                                         'Elctrc_Py')
+                                         'Bill_Electric_Pay')
       # 28th of month
       do_year = Add_Tag.to_specific_date(do_year, month, 28, 
-                               'TrnTk_By')
+                               'TrainTicket_Buy')
       # first day of month
       do_year = Add_Tag.to_specific_date(do_year, month, 1, 
-                               'Rnt_Py, Lg_Do_NxtMnth')
+                               'Rent_Pay, Lg_Do_NextMonth')
       # first Sunday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 1, 'Sunday', 
-                                  'Cntcts_Nw, ThBrsh_Hd_Nw, Rzrs_Nw, Nx_Bk, WtrBttle_Cln, Bk(bkA(Lnx, Osx, Win), bkA-bkB, gry-blk)')
+                                  'Contacts_New, ToothBrush_Head_New, Razors_New, Nx_Bk, Bk(bkA(Lnx, Osx, Win), bkA-bkB, gry-blk)')
       # second Sunday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 2, 'Sunday', 
-                                             'Scpts_Ord, Ln_drmt, Scpts_Rcv, Ln_Fld, Scpts_Pls_Ct')
+                                             'Rx_Ord, Ln_drmt, Rx_Rcv, Ln_Fld, Rx_Pills_Cut')
       # third Saturday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 3, 'Saturday', 
-                                             'Hr_Ct()')
+                                             'Hair_Cut()')
       # quarterly tasks
       quarter_months = [1, 4, 7, 10]
       quarter_months.each do | quarter_month |
         if (month == quarter_month)
           # first Sunday of quarter
-          do_year = Add_Tag.to_nth_xday_in_month(do_year, quarter_month, 1, 'Sunday', 'Cntcts_Cs_Nw, Sv_Bg')
-          # first Saturday of quarter
-          do_year = Add_Tag.to_nth_xday_in_month(do_year, quarter_month, 1, 'Saturday', 'Slt_Flsh')
+          do_year = Add_Tag.to_nth_xday_in_month(do_year, quarter_month, 1, 'Sunday', 
+                                                 'Contacts_Case_New, Sv_All')
         end
       end
     end 
