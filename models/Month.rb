@@ -1,5 +1,4 @@
 class Month
-
   def self.add_start_tasks(do_year)
     for month in 1..12
       # 10th of month
@@ -16,7 +15,7 @@ class Month
                                'Bill_Rent_Pay, Lg_Do_NextMonth')
       # first Sunday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 1, 'Sunday', 
-                                  'Contacts_New, ToothBrush_Head_New, Razors_New, Nx_Bk, Bk(bkA(Lnx, Osx, Win), bkA-bkB, gry-blk,)')
+                                  'Contacts_New, Razors_New, ToothBrush_Head_New, Nx_Bk, Bk(bkA(Lnx, Osx, Win), bkA-bkB, gry-blk,)')
       # third Saturday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 3, 'Saturday', 
                                              'Hair_Cut()')
@@ -35,6 +34,4 @@ class Month
     end 
     do_year
   end
-
 end
-

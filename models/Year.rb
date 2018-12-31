@@ -53,7 +53,6 @@ class Year
       first_day_of_month = nil
       week_index += 1
     end
-    # add_final_week
   end
 
   def self.days_in_months
@@ -89,6 +88,4 @@ class Year
   def self.add_birthdays(do_year)
     Birthdays.add_all(do_year)
   end
-
 end
-

@@ -1,5 +1,4 @@
 module Bookend_Weeks
-
   def self.shift_do_start(do_year)
     while do_year.weeks.first.days.all? { | day | day.month == 12 }
       do_year.weeks.shift
@@ -35,6 +34,5 @@ module Bookend_Weeks
     do_year.weeks.last.days.pop(2)
     do_year
   end
-
 end
 
