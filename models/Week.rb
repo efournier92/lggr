@@ -27,16 +27,16 @@ class Week
 
   def self.days
     { 
-      'Monday'    => ['Af_Rcv(<0700)', 'Gt', 'Apt(Kitchen_Clean(Fridge), Trash_Out,)', 'Ap_Hand', '[NoBo]'],
+      'Monday'    => ['Af_Rcv(<0700)', 'Gt', 'Apt(Kitchen_Clean(Fridge, Sink, Counter,), Trash_Out,)', 'Ap_Hand', '[NoBo]'],
       'Tuesday'   => ['Gt', 'Ap_Hnd'],
       'Wednesday' => ['Gt', 'Ap_Hnd', '[NoBo]'],
       'Thursday'  => ['Gt', 'Sv', 'Plk', 'Nails(Fingers,)', 'Ap_Hnd'],
-      'Friday'    => ['Bdgt', 'Bill_Cc_Pay', 'V1_Hours_Burn', 'Lg_[R]s_Fn', 
+      'Friday'    => ['Bnk(Budget, Bill_Cc_Pay)', 'Spectrum_V1_Hours_Burn', 'Lg_[R]s_Fn', 
                       'Lg_LastWeek', 'Lg_NextWeek', 'Gt', 'Lg_aLg', 'Ap_Hnd'],
       'Saturday'  => ['Amz_Buy()', 'Af_Buy()', 'Gt', 'Hair_Wash', 'Ap_Hnd'],
       'Sunday'    => ['Gt', 'Bk(Bnk-bnkA, extA-extB, sda3-bkA,)', 
-                      'Mm&Dd_Call(1300,)', 'Apt(Vaccuum, Kitchen_Clean(Sink,)', 
-                      'Bathroom_Clean(Toilet, Sink,)', 'Pch_Laptop_Clean(Screen, Case_Iso,)', 'Mcbk_Clean(Screen, Case_Iso,)', 'Af_Bag_DownStairs', 'Ap_Hnd']
+                      'Mm&Dd_Call(1300,)', 'Pch_Laptop_Clean(Screen, Case_Iso,)', 
+                      'Mcbk_Clean(Screen, Case_Iso,)', 'Af_Bag_DownStairs', 'Ap_Hnd']
     }
   end
 
