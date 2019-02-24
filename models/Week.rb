@@ -27,15 +27,20 @@ class Week
 
   def self.days
     { 
-      'Monday'    => ['Af_Rcv(<0700)', 'Gt', 'Apt(Kitchen_Clean(Fridge, Sink, Counter,), Trash_Out,)', 'Ap_Hand', '[NoBo]'],
-      'Tuesday'   => ['Gt', 'Ap_Hnd'],
-      'Wednesday' => ['Gt', 'Ap_Hnd', '[NoBo]'],
-      'Thursday'  => ['Gt', 'Sv', 'Plk', 'Nails(Fingers,)', 'Ap_Hnd'],
-      'Friday'    => ['Bnk(Budget, Bill_Cc_Pay)', 'Spectrum_V1_Hours_Burn', 'Lg_[R]s_Fn', 
-                      'Lg_LastWeek', 'Lg_NextWeek', 'Gt', 'Lg_aLg', 'Ap_Hnd'],
-      'Saturday'  => ['Amz_Buy()', 'Af_Buy()', 'Gt', 'Hair_Wash', 'Ap_Hnd'],
-      'Sunday'    => ['Gt', 'Bk(Bnk-bnkA, extA-extB, sda3-bkA,)', 
-                      'Mm&Dd_Call(1300,)', 'Pch_Laptop_Clean(Screen, Case_Iso,)', 
+      'Monday'    => ['Af_Rcv(<0700)', 'Pch(Spectrum(,),),', 'Fish_Water_QuarterChange',
+                      'Apt(Kitchen_Clean(Fridge, Sink, Counter,), Trash_Out,)', 
+                      'Gt', 'Ap_Hand', '[NoBo]'],
+      'Tuesday'   => ['Pch(Spectrum(,),)', 'Gt', 'Ap_Hnd'],
+      'Wednesday' => ['Pch(Spectrum(,),)', 'Fish_Water_QuarterChange', 
+                      'Gt', 'Ap_Hnd', '[NoBo]'],
+      'Thursday'  => ['Pch(Spectrum(,),)', 'Gt', 'Sv', 'Plk', 
+                      'Nails(Fingers,),' 'Ap_Hnd'],
+      'Friday'    => ['Bnk(Budget, Bill_Cc_Pay)', 'Lg_[R]s_Fn', 'Lg_LastWeek', 
+                      'Lg_NextWeek', 'Pch(Spectrum(V1_Hours_Burn,),)', 'Gt', 
+                      'Lg_aLg', 'Ap_Hnd'],
+                      'Saturday'  => ['Amz_Buy()', 'Af_Buy(Water_2.5g,)', 'Gt', 'Fish_Water_QuarterChange',
+                      'Bk(Bnk-bnkA, extA-extB, sda3-bkA,)', 'Hair_Wash', 'Ap_Hnd'],
+      'Sunday'    => ['Gt', 'Mm&Dd_Call(1300,)', 'Pch_Laptop_Clean(Screen, Case_Iso,)', 
                       'Mcbk_Clean(Screen, Case_Iso,)', 'Af_Bag_DownStairs', 'Ap_Hnd']
     }
   end

@@ -19,6 +19,9 @@ class Month
       # third Saturday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 3, 'Saturday', 
                                              'Hair_Cut()')
+      # third Sunday of month
+      do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 3, 'Sunday', 
+                                             'Dd_FournierDesktop_ReActivate(Windows, Office,), Fish_Tank_Clean')
       # fourth Sunday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 4, 'Sunday', 
                                              'Rx_Ord, Ln_drmt, Rx_Rcv, Ln_Fld, Rx_Pills_Cut')
