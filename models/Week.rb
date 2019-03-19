@@ -39,9 +39,9 @@ class Week
                       'Lg_NextWeek', 'Pch(Spectrum(V1_Hours_Burn,),)', 'Gt', 
                       'Lg_aLg', 'Ap_Hnd'],
                       'Saturday'  => ['Amz_Buy()', 'Af_Buy(Water_2.5g,)', 'Gt', 'Fish_Water_QuarterChange',
-                      'Bk(Bnk-bnkA, extA-extB, sda3-bkA,)', 'Hair_Wash', 'Ap_Hnd'],
+                      'Bk(Bnk-bnkA, extA-extB,)', 'Hair_Wash', 'Ap_Hnd'],
       'Sunday'    => ['Gt', 'Mm&Dd_Call(1300,)', 'Pch_Laptop_Clean(Screen, Case_Iso,)', 
-                      'Mcbk_Clean(Screen, Case_Iso,)', 'Af_Bag_DownStairs', 'Ap_Hnd']
+                      'Mcbk_Clean(Screen, Case_Iso,)', 'Ap_Hnd']
     }
   end
 

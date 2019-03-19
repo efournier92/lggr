@@ -15,7 +15,7 @@ class Month
                                'Bill_Rent_Pay, Lg_Do_NextMonth')
       # first Sunday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 1, 'Sunday', 
-                                  'Contacts_New, Razors_New, ToothBrush_Head_New, Nx_Bk, Bk(bkA(Lnx, Osx, Win), bkA-bkB, gry-blk,)')
+                                             'Contacts_New(Case, Lenses,), Razors_New, ToothBrush_Head_New, Bk(Nx, sda3-bkA, bkA-bkB, gry-blk,)')
       # third Saturday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 3, 'Saturday', 
                                              'Hair_Cut()')
@@ -30,8 +30,7 @@ class Month
       quarter_months.each do | quarter_month |
         if (month == quarter_month)
           # first Sunday of quarter
-          do_year = Add_Tag.to_nth_xday_in_month(do_year, quarter_month, 1, 'Sunday', 
-                                                 'Contacts_Case_New, Sv_All')
+          do_year = Add_Tag.to_nth_xday_in_month(do_year, quarter_month, 1, 'Sunday', 'Sv_All')
         end
       end
     end 
