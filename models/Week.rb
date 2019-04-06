@@ -27,13 +27,13 @@ class Week
 
   def self.days
     { 
-      'Monday'    => ['Af_Rcv(<0700)', 'Pch(Spectrum(,),)', 'Fish_Water(Siphon, ThirdChange,)',
+      'Monday'    => ['Af_Rcv(<0700)', 'Pch(Spectrum(),)', 'Fish_Water(Siphon, ThirdChange,)',
                       'Apt(Kitchen_Clean(Fridge, Sink, Counter,), Trash_Out,)', 
                       'Gt', 'Ap_Hand', '[NoBo]'],
-      'Tuesday'   => ['Pch(Spectrum(,),)', 'Gt', 'Ap_Hnd'],
-      'Wednesday' => ['Pch(Spectrum(,),)', 'Fish_Water(Siphon, ThirdChange,)', 
+      'Tuesday'   => ['Pch(Spectrum(),)', 'Gt', 'Ap_Hnd'],
+      'Wednesday' => ['Pch(Spectrum(),)', 'Fish_Water(Siphon, ThirdChange,)', 
                       'Gt', 'Ap_Hnd', '[NoBo]'],
-      'Thursday'  => ['Pch(Spectrum(,),)', 'Gt', 'Sv', 'Plk', 
+      'Thursday'  => ['Pch(Spectrum(),)', 'Gt', 'Sv', 'Plk', 
                       'Nails(Fingers,),' 'Ap_Hnd'],
       'Friday'    => ['Bnk(Budget, Bill_Cc_Pay)', 'Lg_[R]s_Fn', 'Lg_LastWeek', 
                       'Lg_NextWeek', 'Pch(Spectrum(V1_Hours_Burn,),)', 'Gt', 
