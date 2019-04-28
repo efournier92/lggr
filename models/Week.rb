@@ -10,7 +10,7 @@ class Week
     @days_this_week = days_this_week
     @days = []
 
-   last_day = 0
+    last_day = 0
     Week.days.each_with_index do | (day_name, day_tasks), index |
       month_day = days_this_week[index]
       # increment month if it's a new month
@@ -27,21 +27,21 @@ class Week
 
   def self.days
     { 
-      'Monday'    => ['Af_Rcv(<0700)', 'Pch(Spectrum(),)', 'Fish_Water(Siphon, ThirdChange,)',
-                      'Apt(Kitchen_Clean(Fridge, Sink, Counter,), Trash_Out,)', 
+    'Monday'    => ['Af_Rcv(<0700)', 'Pch(Spectrum(),)', 'Fish_Water(Siphon, ThirdChange,)',
+                      'Apt(Kitchen_Clean(Fridge, Sink, Counter,),)', 
                       'Gt', 'Ap_Hand', '[NoBo]'],
-      'Tuesday'   => ['Pch(Spectrum(),)', 'Gt', 'Ap_Hnd'],
-      'Wednesday' => ['Pch(Spectrum(),)', 'Fish_Water(Siphon, ThirdChange,)', 
-                      'Gt', 'Ap_Hnd', '[NoBo]'],
-      'Thursday'  => ['Pch(Spectrum(),)', 'Gt', 'Sv', 'Plk', 
-                      'Nails(Fingers,),' 'Ap_Hnd'],
-      'Friday'    => ['Bnk(Budget, Bill_Cc_Pay)', 'Lg_[R]s_Fn', 'Lg_LastWeek', 
-                      'Lg_NextWeek', 'Pch(Spectrum(V1_Hours_Burn,),)', 'Gt', 
-                      'Lg_aLg', 'Ap_Hnd'],
-                      'Saturday'  => ['Amz_Buy()', 'Af_Buy()', 'Gt', 'Fish_Water(Siphon, ThirdChange,)',
-                      'Bk(Bnk-bnkA, extA-extB,)', 'Hair_Wash', 'Ap_Hnd'],
-      'Sunday'    => ['Gt', 'Mm&Dd_Call(1300,)', 'Pch_Laptop_Clean(Screen, Case_Iso,)', 
-                      'Mcbk_Clean(Screen, Case_Iso,)', 'Ap_Hnd']
+    'Tuesday'   => ['Apt_Trash_Out', 'Pch(Spectrum(),)', 'Gt', 'Ap_Hnd'],
+    'Wednesday' => ['Pch(Spectrum(),)', 'Fish_Water(Siphon, ThirdChange,)', 
+                    'Gt', 'Ap_Hnd', '[NoBo]'],
+    'Thursday'  => ['Pch(Spectrum(),)', 'Gt', 'Sv', 'Plk', 
+                    'Nails(Fingers,),' 'Ap_Hnd'],
+    'Friday'    => ['Bnk(Budget, Bill_Cc_Pay)', 'Lg_[R]s_Fn', 'Lg_LastWeek', 
+                    'Lg_NextWeek', 'Pch(Spectrum(V1_Hours_Burn,),)', 'Gt', 
+                    'Lg_aLg', 'Ap_Hnd'],
+    'Saturday'  => ['Amz_Buy()', 'Af_Buy()', 'Gt', 'Fish_Water(Siphon, ThirdChange,)',
+                    'Bk(Bnk-bnkA, extA-extB,)', 'Hair_Wash', 'Ap_Hnd'],
+    'Sunday'    => ['Gt', 'Mm&Dd_Call(1300,)', 'Pch_Laptop_Clean(Screen, Case_Iso,)', 
+                    'Mcbk_Clean(Screen, Case_Iso,)', 'Hair_Sideburns_Fix', 'Ap_Hnd']
     }
   end
 
@@ -60,9 +60,9 @@ class Week
 
   def self.add_first_week(do_year)
     do_year.
-    last_monday_of_previous_year = 31 - ( 7 - first_day )
+      last_monday_of_previous_year = 31 - ( 7 - first_day )
     days_this_week = Week.days_this_week(last_monday_of_previous_year, 
-                                          1, @days_in_months)
+                                         1, @days_in_months)
     year = @year - 1
     first_week = Week.new(0, days_this_week, year, 12)
     @weeks.push(first_week)
@@ -73,7 +73,7 @@ class Week
     last_monday_of_previous_year = last_day_of_previous_year.month_day
     if last_day_of_previous_year.month != 1
       days_this_week = Week.days_this_week(last_monday_of_previous_year, 
-                                          12, @days_in_months)
+                                           12, @days_in_months)
       final_week = Week.new(53, days_this_week, last_day_of_previous_year.year, 12)
       @weeks.push(final_week)
     end
