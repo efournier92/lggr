@@ -27,14 +27,17 @@ class Week
 
   def self.days
     { 
-    'Monday'    => ['Af_Rcv(<0700)', 'Pch(Spectrum(),)', 'Fish_Water(Siphon, ThirdChange,)',
-                      'Apt(Kitchen_Clean(Fridge, Sink, Counter,),)', 
-                      'Gt', 'Ap_Hand', '[NoBo]'],
+    'Monday'    => ['Af_Rcv(<0700)', 'Pch(Spectrum(),)', 
+                    'Fish_Water(Siphon, ThirdChange,)',
+                    'Apt(Kitchen_Clean(Fridge, Sink, Counter,),)', 
+                    'Gt', 'Ap_Hand', '[NoBo]'],
     'Tuesday'   => ['Apt_Trash_Out', 'Pch(Spectrum(),)', 'Gt', 'Ap_Hnd'],
     'Wednesday' => ['Pch(Spectrum(),)', 'Fish_Water(Siphon, ThirdChange,)', 
                     'Gt', 'Ap_Hnd', '[NoBo]'],
-    'Thursday'  => ['Pch(Spectrum(),)', 'Gt', 'Sv', 'Plk', 
-                    'Nails(Fingers,),' 'Ap_Hnd'],
+    'Thursday'  => ['Pch(Spectrum(),)', 'Ktch_Cln(Snk, Cntr)', 
+                    'Apt(Vacuum, Dresser_Clean', 'CndBg_Fll', 
+                    'Bthrm_Cln(Snk, Tlt)', 'Mcbk_Folders_Clean', 'Sv', 'Plk', 
+                    'Nails(Fingers,)', 'Gt', 'Ap_Hnd'],
     'Friday'    => ['Bnk(Budget, Bill_Cc_Pay)', 'Lg_[R]s_Fn', 'Lg_LastWeek', 
                     'Lg_NextWeek', 'Pch(Spectrum(V1_Hours_Burn,),)', 'Gt', 
                     'Lg_aLg', 'Ap_Hnd'],
