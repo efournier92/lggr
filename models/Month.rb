@@ -25,7 +25,7 @@ class Month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 4, 'Sunday', 
                                              'Rx_Ord, Ln_drmt, Rx_Rcv, Ln_Fld, Rx_Pills_Cut')
       # every third Sunday
-      do_year = Add_Tag.to_xday_every_n_weeks(do_year, month, 3, 'Sunday', 'Dd_FournierDesktop_ReActivate(Windows, Office,)')
+      do_year = Add_Tag.to_xday_every_n_weeks(do_year, month, 2, 'Sunday', 'Dd_FournierDesktop_ReActivate(Windows, Office,)')
 
       # quarterly tasks
       quarter_months = [1, 4, 7, 10]
