@@ -3,19 +3,16 @@ class Month
     for month in 1..12
       # 10th of month
       do_year = Add_Tag.to_specific_date(do_year, month, 10, 
-                                         'Bill_Internet_Pay')
+                                         'Bills_Pay(Internet,)')
       # 16th of month
       do_year = Add_Tag.to_specific_date(do_year, month, 16, 
-                                         'Bill_Electric_Pay')
-      # 28th of month
-      do_year = Add_Tag.to_specific_date(do_year, month, 28, 
-                               'Bill_TrainTicket_Pay')
+                                         'Bills_Pay(Electric,)')
       # first day of month
       do_year = Add_Tag.to_specific_date(do_year, month, 1, 
                                'Bill_Rent(Check_Write, Pay,), Lg_Do_NextMonth')
       # first Sunday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 1, 'Sunday', 
-                                             'Contacts_New(Case, Lenses,), Razors_New, ToothBrush_Head_New, Bk(Nx, sda3-bkA, bkA-bkB, gry-extA, gry-blk,), BatteryExtender_Charge')
+                                             'Contacts_New(Case, Lenses,), Razors_New, ToothBrush_Head_New, Bk(Nx, gry-blk, gry-extA, sda3-bkA, bkA-bkB, bnk-bnkA, extA-extB,), BatteryExtender_Charge')
       # third Saturday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 3, 'Saturday', 
                                              'Hair_Cut()')
@@ -23,9 +20,9 @@ class Month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 3, 'Sunday', 'Fish_Tank_Clean')
       # fourth Sunday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 4, 'Sunday', 
-                                             'Rx_Ord, Ln_drmt, Rx_Rcv, Ln_Fld, Rx_Pills_Cut')
+                                             'Rx_Ord, Laundy(Laundromat, Fold), Rx(Order, Rcv, Pills_Cut')
       # every third Sunday
-      do_year = Add_Tag.to_xday_every_n_weeks(do_year, month, 2, 'Sunday', 'Dd_FournierDesktop_ReActivate(Windows, Office,)')
+      do_year = Add_Tag.to_xday_every_n_weeks(do_year, month, 2, 'Sunday', 'FournierDesktop_ReActivate(Windows, Office,)')
 
       # quarterly tasks
       quarter_months = [1, 4, 7, 10]
@@ -39,3 +36,4 @@ class Month
     do_year
   end
 end
+

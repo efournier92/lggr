@@ -34,17 +34,17 @@ class Week
     'Tuesday'   => ['Apt_Trash_Out', 'Pch(Spectrum(),)', 'Gt', 'Ap_Hnd'],
     'Wednesday' => ['Pch(Spectrum(),)', 'Fish_Water(Siphon, ThirdChange,)', 
                     'Gt', 'Ap_Hnd', '[NoBo]'],
-    'Thursday'  => ['Pch(Spectrum(),)', 'Apt(Ktch_Cln(Snk, Cntr), Vacuum, Dresser_Clean, Bthrm_Cln(Snk, Tlt),)', 
+    'Thursday'  => ['Pch(Spectrum(),)', 
+                    'Apt(Kitchen_Clean(Sink,), Vacuum, Dresser_Clean, Bathroom_Clean(Sink, Toilet),)', 
                     'Sv', 'Plk', 'Nails(Fingers,)', 'Gt', 'Ap_Hnd'],
-    'Friday'    => ['Bnk(Budget, Bill_Cc_Pay)', 'Pch(Spectrum(V1_Hours_Burn,),)', 
+    'Friday'    => ['Pch(Spectrum(V1_Hours_Burn,),)', 'Bank(Budget, Bills_Pay(CreditCard_Chase,)', 
                     'Gt', 'Lg(NextWeek, aLg, Entries_Fin, LastWeek, Missed_Fix,)', 
                     'Ap_Hnd'],
     'Saturday'  => ['Amz_Buy()', 'Af_Buy()', 'Gt', 'Fish_Water(Siphon, ThirdChange,)',
                     'Macbook_Folders_Clean', 'Bk(bnk-bnkA, extA-extB,)', 
                     'Hair_Wash', 'Ap_Hnd'],
     'Sunday'    => ['Gt', 'Mm&Dd_Call(1300,)', 'Screens_Clean(Pch_Laptop, Macbook, Nx,)', 
-                    'Pch_Laptop_Clean(Screen, Case_Iso,)', 
-                    'Mcbk_Clean(Screen, Case_Iso,)', 'Hair_Sideburns_Fix', 'Ap_Hnd']
+                    'Hair_Sideburns_Fix', 'Ap_Hnd']
     }
   end
 
