@@ -20,7 +20,7 @@ class Month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 3, 'Sunday', 'Fish_Tank_Clean')
       # fourth Sunday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 4, 'Sunday', 
-                                             'Rx_Ord, Laundy(Laundromat, Fold), Rx(Order, Rcv, Pills_Cut')
+                                             'Laundy(Laundromat, Fold), Rx(Order, Rcv, Pills_Cut,)')
       # every third Sunday
       do_year = Add_Tag.to_xday_every_n_weeks(do_year, month, 2, 'Sunday', 'FournierDesktop_ReActivate(Windows, Office,)')
 

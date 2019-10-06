@@ -28,7 +28,7 @@ class Week
   def self.days
     { 
     'Monday'    => ['Af_Rcv(<0700)', 'Pch(Spectrum(),)', 
-                    'Fish_Water(Siphon, ThirdChange,)',
+                    'Car_Camry_GasUp', 'Fish_Water(Siphon, ThirdChange,)',
                     'Apt(Kitchen_Clean(Fridge, Sink, Counter,),)', 
                     'Gt', 'Ap_Hand', '[NoBo]'],
     'Tuesday'   => ['Apt_Trash_Out', 'Pch(Spectrum(),)', 'Gt', 'Ap_Hnd'],
@@ -36,14 +36,15 @@ class Week
                     'Gt', 'Ap_Hnd', '[NoBo]'],
     'Thursday'  => ['Pch(Spectrum(),)', 
                     'Apt(Kitchen_Clean(Sink,), Vacuum, Dresser_Clean, Bathroom_Clean(Sink, Toilet),)', 
-                    'Sv', 'Plk', 'Nails(Fingers,)', 'Gt', 'Ap_Hnd'],
-    'Friday'    => ['Pch(Spectrum(V1_Hours_Burn,),)', 'Bank(Budget, Bills_Pay(CreditCard_Chase,)', 
+                    'Sv', 'Plk', 'Nails_Clip(Fingers, Toes,)', 'Gt', 'Ap_Hnd'],
+    'Friday'    => ['Pch(Spectrum(V1_Hours_Burn,),)', 'Bank(Budget, Bills_Pay(CreditCard_Chase,),)', 
                     'Gt', 'Lg(NextWeek, aLg, Entries_Fin, LastWeek, Missed_Fix,)', 
                     'Ap_Hnd'],
     'Saturday'  => ['Amz_Buy()', 'Af_Buy()', 'Gt', 'Fish_Water(Siphon, ThirdChange,)',
                     'Macbook_Folders_Clean', 'Bk(bnk-bnkA, extA-extB,)', 
                     'Hair_Wash', 'Ap_Hnd'],
-    'Sunday'    => ['Gt', 'Mm&Dd_Call(1300,)', 'Screens_Clean(Pch_Laptop, Macbook, Nx,)', 
+    'Sunday'    => ['Gt', 'UncleRick_Tracfone_Minutes_Check(),', 
+                    'Mm&Dd_Call(1300,)', 'Screens_Clean(Pch_Laptop, Macbook, Nx,)', 
                     'Hair_Sideburns_Fix', 'Ap_Hnd']
     }
   end
