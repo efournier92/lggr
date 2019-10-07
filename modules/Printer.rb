@@ -43,9 +43,9 @@ module Printer
     year = do_year.year
     out_file = File.new("./Out/LG_#{ '%04d' % year }.md", "w")
 
-    weekday_string = "\n### Do\n\n### Scrm\n\n### \n\n"
+    weekday_string = "\n### Do\n\n### Scrum\n\n### \n\n"
     weekend_string = "\n### Do\n\n###\n\n"
-    friday_string  = "\n### Do\n\n### Nxt_Scrm\n\n### Scrm\n\n### \n\n"
+    friday_string  = "\n### Do\n\n### Scrum\n\n### \n\n"
 
     do_year.weeks.each do | week |
       week.days.each do | day |
