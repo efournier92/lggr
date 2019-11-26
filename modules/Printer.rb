@@ -45,14 +45,11 @@ module Printer
 
     weekday_string = "\n### Do\n\n### Scrum\n\n### \n\n"
     weekend_string = "\n### Do\n\n###\n\n"
-    friday_string  = "\n### Do\n\n### Scrum\n\n### \n\n"
 
     do_year.weeks.each do | week |
       week.days.each do | day |
       out_file.puts("## #{ '%04d' % day.year }-#{ '%02d' % day.month }-#{ '%02d' % day.month_day } | #{day.name}")
-      if day.name == 'Friday'
-        out_file.puts(friday_string)
-      elsif day.name == 'Saturday' || day.name == 'Sunday'
+      if day.name == 'Saturday' || day.name == 'Sunday'
         out_file.puts(weekend_string)
       else
         out_file.puts(weekday_string)
