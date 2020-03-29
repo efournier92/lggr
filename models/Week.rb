@@ -36,7 +36,7 @@ class Week
                     'Apt(Kitchen_Clean(Sink,), Vacuum, Dresser_Clean, Bathroom_Clean(Sink, Toilet),)', 
                     'Sv', 'Plk', 'Nails_Clip(Fingers, Toes,)', 'Git', 'Music()', 'Ap_Hnd'],
     'Friday'    => ['Pch(Spectrum(V1_Hours_Burn,),)', 'Bank(Budget, Bills_Pay(CreditCard_Chase,),)', 
-                    'Git', 'Music()', 'Lg(NextWeek, aLg, Entries_Fin, LastWeek, Missed_Fix,)', 
+                    'Git', 'Music()', 'Log(NextWeek, aLog, Entries_Fin, LastWeek, Missed_Fix,)', 
                     'Ap_Hnd'],
     'Saturday'  => ['Amz_Buy()', 'Af_Buy()', 'Git', 'Music()',
                     'Laptop_Folders_Clean', 'Bk(bnk-bnkA, extA-extB,)', 

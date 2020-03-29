@@ -9,7 +9,7 @@ class Month
                                          'Bills_Pay(Electric,)')
       # first day of month
       do_year = Add_Tag.to_specific_date(do_year, month, 1, 
-                               'Bill_Rent(Check_Write, Pay,), Lg_Do_NextMonth')
+                               'Bill_Rent(Check_Write, Pay,), Log_Do_NextMonth')
       # first Sunday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 1, 'Sunday', 
                                              'Contacts_New(Case, Lenses,), Razors_New, ToothBrush_Head_New, Bk(Nx, gry-blk, gry-extA, sda3-bkA, bkA-bkB, bnk-bnkA, extA-extB,), BatteryExtender_Charge')
@@ -20,7 +20,7 @@ class Month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 4, 'Sunday', 
                                              'Laundry(Laundromat, Fold), Rx(Order, Rcv, Pills_Cut,)')
       # every third Sunday
-      do_year = Add_Tag.to_xday_every_n_weeks(do_year, month, 2, 'Sunday', 'FournierDesktop_ReActivate(Windows, Office,)')
+      do_year = Add_Tag.to_xday_every_n_weeks(do_year, month, 2, 'Sunday', 'FournierDesktop_Reactivate(Windows, Office,)')
 
       # quarterly tasks
       quarter_months = [1, 4, 7, 10]
