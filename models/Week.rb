@@ -41,8 +41,7 @@ class Week
     'Saturday'  => ['Amz_Buy()', 'Af_Buy()', 'Git', 'Music()',
                     'Laptop_Folders_Clean', 'Bk(bnk-bnkA, extA-extB,)', 
                     'Hair_Wash', 'Ap_Hnd'],
-    'Sunday'    => ['Git', 'UncleRick_Tracfone_Minutes_Check()', 
-                    'Mm&Dd_Call(1300,)', 'Screens_Clean(Pch_Laptop, Laptop, Nx,)', 
+    'Sunday'    => ['Git', 'Mm&Dd_Call(1300,)', 'Screens_Clean(Pch_Laptop, Laptop, Nx,)', 
                     'Hair_Sideburns_Fix', 'Music()', 'Ap_Hnd']
     }
   end
