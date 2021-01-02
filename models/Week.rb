@@ -24,26 +24,23 @@ class Week
       last_day = month_day 
     end
   end
+  
+  def self.pch_spectrum
+    "Pch(\n  Spectrum(),\n)"
+  end
 
-  SPECTRUM = "Pch(\n  Spectrum(),\n)"
-  SPECTRUM_V1_HOURS = "Pch(\n  Spectrum(\n    V1_Hours_Burn,\n  ),\n)"
+
 
   def self.days
+    task = Task.new
     { 
-    "Monday"    => ["Af_Rcv(<0700,)", "#{SPECTRUM}", "Car_Camry_GasUp", 
-                    "Apt(\n  Kitchen_Clean(Fridge, Sink, Counter,),\n)", 
-                    "Git", "Music()", "[NoBo]"],
-    "Tuesday"   => ["Apt_Trash_Out", "#{SPECTRUM}", "Git", "Music()"],
-    "Wednesday" => ["#{SPECTRUM}", "Git", "Music()", "[NoBo]"],
-    "Thursday"  => ["#{SPECTRUM}", "Apt(\n  Kitchen_Clean(Sink,),\n  Vacuum,\n  Dresser_Clean,\n  Bathroom_Clean(Sink, Toilet),\n)", 
-                    "Groom(\n  Shave(),\n  Pluck,\n  Nails_Clip(Fingers, Toes,),\n)", "Git", "Music()"],
-    "Friday"    => ["#{SPECTRUM_V1_HOURS}", "Bank(\nBudget,\nBills_Pay(\n  CreditCard_Chase,\n)", 
-                    "Git", "Music()", "Log(\n  NextWeek,\n  aLog,\n  Entries_Fin,\n  LastWeek,\n  Missed_Fix,\n)"],
-    "Saturday"  => ["Amz_Buy()", "Af_Buy()", "Git", "Music()",
-                    "Laptop_Folders_Clean", "Bk(\n  bnk-bnkA,\n  extA-extB,\n)", 
-                    "Groom(\n  Hair_Wash,\n)"],
-    "Sunday"    => ["Git", "Mm&Dd_Call(1300,)", "Screens_Clean(Pch_Laptop, Laptop, Phone,)", 
-                    "Groom(Hair_Sideburns_Fix,)", "Music()"]
+      "Monday"    => [task.amazon_fresh_recieve, task.pch_spectrum, task.apartment_kitchen_clean, task.git, task.music, task.nobo],
+      "Tuesday"   => [task.apartment_trash_out, task.pch_spectrum, task.git, "Music()"],
+      "Wednesday" => [task.pch_spectrum, task.git, task.music, task.nobo],
+      "Thursday"  => [task.pch_spectrum, task.apartment_all, task.groom_all, task.git, task.music],
+      "Friday"    => [task.pch_spectrum_v1_hours, task.bank_all, task.git, task.music, task.lg_all],
+      "Saturday"  => [task.amazon_buy, task.amazon_fresh_buy, task.git, task.music, task.laptop_folders_clean, task.backup_weekly, task.groom_hair_wash],
+      "Sunday"    => [task.git, task.call_mom_and_dad, task.screens_clean, task.groom_hair_sideburns_fix, task.music]
     }
   end
 

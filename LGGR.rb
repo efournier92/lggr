@@ -1,13 +1,14 @@
-require 'pry'
 require './models/Day'
 require './models/Month'
 require './models/Week'
 require './models/Year'
+require './models/Task'
 require './modules/Add_Tag'
 require './modules/Birthdays'
 require './modules/Bookend_Weeks'
 require './modules/Annual'
 require './modules/Printer'
+
 print_type = ''
 print_month = nil
 month = 1

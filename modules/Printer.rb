@@ -8,6 +8,7 @@ module Printer
   end
 
   def self.print_tasks(out_file, day)
+    make_out_dir
     out_file.puts("## #{ '%04d' % day.year }-#{ '%02d' % day.month }-#{ '%02d' % day.month_day } | #{day.name}")
     out_file.puts()
     out_file.puts("```text")
@@ -20,7 +21,7 @@ module Printer
   end
 
   def self.print_do_year(do_year)
-    self.make_out_dir
+    make_out_dir
     year = do_year.year 
     out_file = File.new("#{OUT_DIR}/DO_#{ '%04d' % year }.md", "w")
     do_year.weeks.each do | week |
@@ -31,6 +32,7 @@ module Printer
   end
 
   def self.print_do_month(do_year, month)
+    make_out_dir
     year = do_year.year 
     out_file = File.new("#{OUT_DIR}/DO_#{ '%04d' % year }_#{ '%02d' % month }.md", "w")
     do_year.weeks.each do | week |
@@ -43,8 +45,9 @@ module Printer
   end
 
   def self.print_lg(do_year)
+    make_out_dir
     year = do_year.year
-    out_file = File.new("./Out/LG_#{ '%04d' % year }.md", "w")
+    out_file = File.new("#{OUT_DIR}/LG_#{ '%04d' % year }.md", "w")
 
     weekday_string = "\n### Do\n\n```text\n\n```\n\n### Scrum\n\n### \n\n"
     weekend_string = "\n### Do\n\n```text\n\n```\n\n###\n\n"
