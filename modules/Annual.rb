@@ -15,7 +15,7 @@ module Annual
     )
     # Daylight Savings (Begin)
     do_year = Add_Tag.to_nth_xday_in_month(
-      do_year, 3, 2, 'Sunday', "[Daylight Saving Begins], Clocks_Time_Set(BlueAlarm, Watches(Brown, Black,)"
+      do_year, 3, 2, 'Sunday', "[Daylight Saving Begins],\nClocks_Time_Set(BlueAlarm,)"
     )
     # Easter & Good Friday
     do_year = Annual.easter_and_good_friday(
@@ -51,7 +51,7 @@ module Annual
     )
     # Daylight Savings (End)
     do_year = Add_Tag.to_nth_xday_in_month(
-      do_year, 11, 1, 'Sunday', "[Daylight Saving Ends], Clocks_Time_Set(Blue_Arm, Wtch_Brwn, Wtch_Blck)"
+      do_year, 11, 1, 'Sunday', "[Daylight Saving Ends],\nClocks_Time_Set(Blue_Arm,)"
     )
     # Thanksgiving
     do_year = Add_Tag.to_nth_xday_in_month(
@@ -59,7 +59,7 @@ module Annual
     )
     # Christmas Eve
     do_year = Add_Tag.to_specific_date(
-      do_year, 12, 24, "[Christmas Eve], Bill_Phone_Verizon_Dd_Py($300)"
+      do_year, 12, 24, "[Christmas Eve],\nBill_Phone_Verizon_Dd_Py($300m)"
     )
     # Christmas
     do_year = Add_Tag.to_specific_date(
@@ -69,22 +69,6 @@ module Annual
     do_year = Add_Tag.to_specific_date(
       do_year, 12, 31, "[New Year's Eve]"
     )
-    # Easter & Good Friday
-    do_year = Annual.clock_changes(
-      do_year
-    )
-  end
-
-  def self.clock_changes(do_year)
-    month_indexes_to_tag = [3, 5, 7, 10, 12]
-    do_year.weeks.each do | week |
-      week.days.each do | day |
-        if day.month_day == 1 && month_indexes_to_tag.include?(day.month)
-          day.tasks.unshift('Watches_Date_Set(Brown, Black)')
-        end
-      end
-    end
-    do_year
   end
 
   def self.easter_and_good_friday(do_year)

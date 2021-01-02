@@ -25,24 +25,25 @@ class Week
     end
   end
 
+  SPECTRUM = "Pch(\n  Spectrum(),\n)"
+  SPECTRUM_V1_HOURS = "Pch(\n  Spectrum(\n    V1_Hours_Burn,\n  ),\n)"
+
   def self.days
     { 
-    'Monday'    => ['Af_Rcv(<0700)', 'Pch(Spectrum(),)', 'Car_Camry_GasUp', 
-                    'Apt(Kitchen_Clean(Fridge, Sink, Counter,),)', 
-                    'Git', 'Music()', 'Ap_Hand', '[NoBo]'],
-    'Tuesday'   => ['Apt_Trash_Out', 'Pch(Spectrum(),)', 'Git', 'Music()', 'Ap_Hnd'],
-    'Wednesday' => ['Pch(Spectrum(),)', 'Git', 'Music()', 'Ap_Hnd', '[NoBo]'],
-    'Thursday'  => ['Pch(Spectrum(),)', 
-                    'Apt(Kitchen_Clean(Sink,), Vacuum, Dresser_Clean, Bathroom_Clean(Sink, Toilet),)', 
-                    'Sv', 'Plk', 'Nails_Clip(Fingers, Toes,)', 'Git', 'Music()', 'Ap_Hnd'],
-    'Friday'    => ['Pch(Spectrum(V1_Hours_Burn,),)', 'Bank(Budget, Bills_Pay(CreditCard_Chase,),)', 
-                    'Git', 'Music()', 'Log(NextWeek, aLog, Entries_Fin, LastWeek, Missed_Fix,)', 
-                    'Ap_Hnd'],
-    'Saturday'  => ['Amz_Buy()', 'Af_Buy()', 'Git', 'Music()',
-                    'Laptop_Folders_Clean', 'Bk(bnk-bnkA, extA-extB,)', 
-                    'Hair_Wash', 'Ap_Hnd'],
-    'Sunday'    => ['Git', 'Mm&Dd_Call(1300,)', 'Screens_Clean(Pch_Laptop, Laptop, Nx,)', 
-                    'Hair_Sideburns_Fix', 'Music()', 'Ap_Hnd']
+    "Monday"    => ["Af_Rcv(<0700,)", "#{SPECTRUM}", "Car_Camry_GasUp", 
+                    "Apt(\n  Kitchen_Clean(Fridge, Sink, Counter,),\n)", 
+                    "Git", "Music()", "[NoBo]"],
+    "Tuesday"   => ["Apt_Trash_Out", "#{SPECTRUM}", "Git", "Music()"],
+    "Wednesday" => ["#{SPECTRUM}", "Git", "Music()", "[NoBo]"],
+    "Thursday"  => ["#{SPECTRUM}", "Apt(\n  Kitchen_Clean(Sink,),\n  Vacuum,\n  Dresser_Clean,\n  Bathroom_Clean(Sink, Toilet),\n)", 
+                    "Groom(\n  Shave(),\n  Pluck,\n  Nails_Clip(Fingers, Toes,),\n)", "Git", "Music()"],
+    "Friday"    => ["#{SPECTRUM_V1_HOURS}", "Bank(\nBudget,\nBills_Pay(\n  CreditCard_Chase,\n)", 
+                    "Git", "Music()", "Log(\n  NextWeek,\n  aLog,\n  Entries_Fin,\n  LastWeek,\n  Missed_Fix,\n)"],
+    "Saturday"  => ["Amz_Buy()", "Af_Buy()", "Git", "Music()",
+                    "Laptop_Folders_Clean", "Bk(\n  bnk-bnkA,\n  extA-extB,\n)", 
+                    "Groom(\n  Hair_Wash,\n)"],
+    "Sunday"    => ["Git", "Mm&Dd_Call(1300,)", "Screens_Clean(Pch_Laptop, Laptop, Phone,)", 
+                    "Groom(Hair_Sideburns_Fix,)", "Music()"]
     }
   end
 
