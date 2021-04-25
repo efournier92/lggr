@@ -14,7 +14,7 @@ module Printer
     out_file.puts("```text")
 
     day.tasks.each do |task|
-      out_file.puts("#{ task }, ")
+      out_file.puts("#{ task },")
     end
     out_file.puts("```")
     out_file.puts

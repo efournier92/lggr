@@ -33,27 +33,23 @@ class Task
   end
 
   def apartment_kitchen_clean
-    "Apt(\n  Kitchen_Clean(Fridge, Sink, Counter,),\n)"
+    "Apartment(\n  Kitchen_Clean(Fridge, Sink, Counter,),\n)"
   end
 
   def apartment_trash_out
-    "Apt(Trash_Out,)"
+    "Apartment(Trash_Out,)"
   end
 
   def apartment_all
-    "Apt(\n  Kitchen_Clean(Sink,),\n  Vacuum,\n  Dresser_Clean,\n  Bathroom_Clean(Sink, Toilet),\n)"
+    "Apartment(\n  Kitchen_Clean(Sink,),\n  Vacuum,\n  Dresser_Clean,\n  Bathroom_Clean(Sink, Toilet),\n)"
   end
 
   def groom_all
-    "Groom(\n  Shave(),\n  Pluck,\n  Nails_Clip(Fingers, Toes,),\n)"
+    "Groom(\n  Shave(),\n  Pluck,\n  Hair(\n    Wash,\n    Sideburns_Fix,\n  ),\n  Nails_Clip(Fingers, Toes,),\n)"
   end
 
   def groom_shave_all
     "Groom(\n  Shave(All,)\n,)"
-  end
-
-  def groom_hair_wash
-    "Groom(\n  Hair_Wash,\n)"
   end
 
   def bank_all
@@ -61,7 +57,15 @@ class Task
   end
 
   def lg_all
-    "Lg(\n  NextWeek,\n  aLog,\n  Entries_Fin,\n  LastWeek,\n  Missed_Fix,\n)"
+    "Lg(\n  LastWeek,\n  NextWeek,\n  Dos_Fix,\n)"
+  end
+
+  def lg_audio
+    "Lg(\n  Audio,\n)"
+  end
+
+  def lg_do_next_month
+    "Lg_Do_NextMonth"
   end
 
   def laptop_folders_clean
@@ -80,10 +84,6 @@ class Task
     "Screens_Clean(Pch_Laptop, Laptop, Phone,)"
   end
 
-  def groom_hair_sideburns_fix
-    "Groom(Hair_Sideburns_Fix,)"
-  end
-
   def music
     "Music()"
   end
@@ -93,7 +93,7 @@ class Task
   end
 
   def bill_rent_pay
-    "Bill_Rent_Pay,\nLog_Do_NextMonth"
+    "Bill_Rent_Pay"
   end
 
   def first_of_month
