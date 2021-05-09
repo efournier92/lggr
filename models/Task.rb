@@ -9,11 +9,11 @@ class Task
   end
 
   def pch_spectrum
-    "Pch(\n  Spectrum(),\n)"
+    "Pch(\n  Spectrum(SeeScrum,),\n)"
   end
 
   def pch_spectrum_v1_hours
-    "Pch(\n  Spectrum(\n    V1_Hours_Burn,\n  ),\n)"
+    "Pch(\n  Spectrum(\n    See Scrum,\n    V1_Hours_Burn,\n  ),\n)"
   end
 
   def amazon_buy
