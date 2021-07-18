@@ -16,6 +16,10 @@ class Task
     "Pch(\n  Spectrum(\n    SeeScrum,\n    V1_Hours_Burn,\n  ),\n)"
   end
 
+  def vitamins_take
+    "Vitamins_Take(1ADay(x1Pill,), Omega3(x4000mg,), D3(x5000iu,),)"
+  end
+
   def amazon_buy
     "Amazon_Buy()"
   end
