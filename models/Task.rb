@@ -36,8 +36,12 @@ class Task
     "Car_Camry_GasUp"
   end
 
-  def apartment_kitchen_clean
-    "Apartment(\n  Kitchen_Clean(Fridge, Sink, Counter,),\n)"
+  def apartment_kitchen_all_clean
+    "Apartment(\n  Kitchen_Clean(Fridge, Juicer, Sink, Counter,),\n)"
+  end
+
+  def apartment_kitchen_juicer_clean
+    "Apartment(\n  Kitchen_Clean(Juicer, Sink, Counter,),\n)"
   end
 
   def apartment_trash_out
@@ -46,6 +50,10 @@ class Task
 
   def apartment_all
     "Apartment(\n  Kitchen_Clean(Sink,),\n  Vacuum,\n  Dresser_Clean,\n  Bathroom_Clean(Sink, Toilet),\n)"
+  end
+
+  def aquarium_jar_water_change
+    "Aquarium(\n  2.5Gallon(\n    Water_Change(Replaced1Gallon,),\n  ),\n)"
   end
 
   def groom_all
