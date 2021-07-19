@@ -49,7 +49,7 @@ class Task
   end
 
   def apartment_all
-    "Apartment(\n  Kitchen_Clean(Sink,),\n  Vacuum,\n  Dresser_Clean,\n  Bathroom_Clean(Sink, Toilet),\n)"
+    "Apartment(\n  Kitchen_Clean(Sink,),\n  Vacuum,\n  Dresser_Clean,\n  Dugout_Clean,\n  Bathroom_Clean(Sink, Toilet,),\n)"
   end
 
   def aquarium_jar_water_change
