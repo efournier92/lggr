@@ -5,28 +5,28 @@ module Birthdays
       week.days.each do |day|
         # Dad
         if day.month == 9 && day.month_day == 29
-          day.tasks.unshift("[Dad's Birthday]")
+          day.tasks.unshift("[Birthday_Dad]")
         # Mom
         elsif day.month == 8 && day.month_day == 26
-          day.tasks.unshift("[Mom's Birthday]")
+          day.tasks.unshift("[Birthday_Mom]")
         # Kevin
         elsif day.month == 8 && day.month_day == 15
-          day.tasks.unshift("[Kevin's Birthday]")
+          day.tasks.unshift("[Birthday_Kevin]")
         # Lori 
         elsif day.month == 8 && day.month_day == 9
-          day.tasks.unshift("[Lori's Birthday]")
+          day.tasks.unshift("[Birthday_Lori]")
         # Brian
         elsif day.month == 10 && day.month_day == 10
-          day.tasks.unshift("[Brian's Birthday]")
+          day.tasks.unshift("[Birthday_Brian]")
         # Eric
         elsif day.month == 2 && day.month_day == 13
-          day.tasks.unshift("[Eric's Birthday]")
+          day.tasks.unshift("[Birthday_Eric]")
         # Nate 
         elsif day.month == 8 && day.month_day == 19
-          day.tasks.unshift("[Nate's Birthday]")
+          day.tasks.unshift("[Birthday_Nate]")
         # Grant
         elsif day.month == 11 && day.month_day == 28
-          day.tasks.unshift("[Grant's Birthday]")
+          day.tasks.unshift("[Birthday_Grant]")
         end
       end
     end

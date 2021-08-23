@@ -29,7 +29,7 @@ class Task
   end
 
   def amazon_fresh_recieve
-    "AmazonFresh_Recieve(<0700,)"
+    "AmazonFresh_Recieve(0600-0800,)"
   end
 
   def car_camry_gasup
@@ -85,7 +85,7 @@ class Task
   end
 
   def backup_weekly
-    "Backup(\n  bnk-bnkA,\n  extA-extB,\n)"
+    "Backup(\n  snc-sncA,\n  extA-extB,\n)"
   end
 
   def call_mom_and_dad
@@ -118,10 +118,6 @@ class Task
 
   def laundry
     "Laundry(Laundromat, Fold,)"
-  end
-
-  def rx
-    "Rx(Order, Rcv, Pills_Cut,)"
   end
 
   def nobo

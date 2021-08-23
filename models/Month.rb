@@ -14,9 +14,6 @@ class Month
       # third Saturday of month
       do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 3, "Saturday", task.hair_cut)
 
-      # fourth Sunday of month
-      do_year = Add_Tag.to_nth_xday_in_month(do_year, month, 4, "Sunday", task.rx)
-
       # quarterly tasks
       quarter_months = [1, 4, 7, 10]
       quarter_months.each do | quarter_month |
