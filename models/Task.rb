@@ -36,6 +36,10 @@ class Task
     "Car_Camry_GasUp"
   end
 
+  def juice_make
+    "Juice_Make"
+  end
+
   def apartment_kitchen_all_clean
     "Apartment(\n  Kitchen_Clean(Fridge, Juicer, Sink, Counter,),\n)"
   end
