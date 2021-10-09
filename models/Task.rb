@@ -109,7 +109,11 @@ class Task
   end
 
   def bill_rent_pay
-    "Bill_Rent_Pay"
+    "Bill_Rent_Pay(Price($950),)"
+  end
+
+  def bill_auto_insurance_pay
+    "Car_Camry_AutoInsurance_Geico_Pay(Price($155,),)"
   end
 
   def first_of_month
