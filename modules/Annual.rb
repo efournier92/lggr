@@ -63,7 +63,7 @@ module Annual
 
     # Daylight Savings (End)
     do_year = Add_Tag.to_nth_xday_in_month(
-      do_year, 11, 1, "Sunday", "[Daylight Saving Ends],\nClocks_Time_Set(Blue_Arm,)"
+      do_year, 11, 1, "Sunday", "[Daylight Saving Ends],\nClocks_Time_Set(BlueAlarm,)"
     )
 
     # Thanksgiving
