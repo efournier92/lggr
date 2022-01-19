@@ -36,6 +36,10 @@ class Task
     "Car_Camry_GasUp"
   end
 
+  def car_camry_run
+    "Car_Camry_Run(StartedFine, RanFor(~20Minutes,),)"
+  end
+
   def juice_make
     "Juice_Make"
   end
@@ -92,6 +96,10 @@ class Task
     "Laptop_Folders_Clean"
   end
 
+  def docs_scan
+    "Docs_Scan()"
+  end
+
   def backup_weekly
     "Backup(\n  snc-sncA,\n  extA-extB,\n)"
   end
@@ -101,7 +109,7 @@ class Task
   end
 
   def screens_clean
-    "Screens_Clean(Pch_Laptop, Laptop, Phone,)"
+    "Screens_Clean(Pch_Laptop, Laptop, Phone, Scanner,)"
   end
 
   def music
@@ -113,11 +121,11 @@ class Task
   end
 
   def bill_rent_pay
-    "Bills_Pay(\n  Rent(Price($950,),\n)"
+    "Bills_Pay(\n  Rent(Price($950,),),\n)"
   end
 
   def first_of_month
-    "Contacts_New(Case, Lenses,),\nRazors_New,\nToothBrush_Head_New,\nBk(\n  Phone,\n  sda3-bkA,\n  bkA-bkB,\n  bnk-bnkA,\n  extA-extB,\n),\nBatteryExtender_Charge"
+    "Contacts_New(Case, Lenses,),\nRazors_New,\nToothBrush_Head_New,\nBackup(\n  Phone,\n  Partition_General-bkA,\n  bkA-bkB,\n  bnk-bnkA,\n  extA-extB,\n),\nBatteryExtender_Charge"
   end
 
   def hair_cut
@@ -126,6 +134,22 @@ class Task
 
   def laundry
     "Laundry(Laundromat, Fold,)"
+  end
+
+  def jeopardy_backup
+    "Jeopardy_PastWeek(Download, Convert, Backup(To(ExtA),),)"
+  end
+
+  def takeout
+    "Takeout(\n  From(Name(),\n  Address(),\n),\n  Method(Pickup,),\n  Items(),\n  @(),\n  Price($,),\n)"
+  end
+
+  def lecoursville_media_add
+    "LeCoursvilleCom_Media_Add(\n  Videos(),\n)"
+  end
+
+  def media_consume
+    "Media_Consume()"
   end
 
   def nobo
