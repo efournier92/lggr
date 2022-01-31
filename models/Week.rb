@@ -29,8 +29,6 @@ class Week
     "Pch(\n  Spectrum(),\n)"
   end
 
-
-
   def self.days
     task = Task.new
     { 
@@ -40,7 +38,7 @@ class Week
       "Thursday"  => [task.pch_spectrum, task.vitamins_take, task.aquarium_jar_water_change, task.git, task.music],
       "Friday"    => [task.pch_spectrum_v1_hours, task.vitamins_take, task.aquarium_jar_and_tank_water_change, task.bank_all, task.lg_audio, task.git, task.music],
       "Saturday"  => [task.amazon_buy, task.amazon_fresh_buy, task.git, task.music, task.laptop_folders_clean, task.jeopardy_backup, task.backup_weekly, task.media_consume],
-      "Sunday"    => [task.git, task.call_mom_and_dad, task.aquarium_jar_and_tank_water_change, task.juice_make, task.apartment_all, task.docs_scan, task.screens_clean, task.groom_all, task.apartment_trash_out, task.car_camry_run, task.takeout, task.lg_all, task.music, task.media_consume]
+      "Sunday"    => [task.git, task.call_mom_and_dad, task.aquarium_jar_and_tank_water_change_with_sponges, task.juice_make, task.apartment_all, task.docs_scan, task.screens_clean, task.groom_all, task.apartment_trash_out, task.car_camry_run, task.takeout, task.lg_all, task.music, task.media_consume]
     }
   end
 

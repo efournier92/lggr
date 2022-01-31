@@ -68,6 +68,10 @@ class Task
     "Aquarium(\n  2.5Gallon(\n    Water_Change(Replaced1Gallon,),\n  ),\n  10Gallon(\n    Water_Change(Replaced2.5Gallons,),\n  ),\n)"
   end
 
+  def aquarium_jar_and_tank_water_change_with_sponges
+    "Aquarium(\n  2.5Gallon(\n    Water_Change(Replaced1Gallon,),\n    Sponges_Squeeze,\n  ),\n  10Gallon(\n    Water_Change(Replaced2.5Gallons,),\n    Sponges_Squeeze,\n  ),\n)"
+  end
+
   def groom_all
     "Groom(\n  Shave(),\n  Pluck,\n  Hair(\n    Wash,\n    Sideburns_Fix,\n  ),\n  Nails_Clip(Fingers, Toes,),\n)"
   end
