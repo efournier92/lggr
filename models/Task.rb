@@ -145,7 +145,7 @@ class Task
   end
 
   def takeout
-    "Takeout(\n  From(Name(),\n  Address(),\n),\n  Method(Pickup,),\n  Items(),\n  @(),\n  Price($,),\n)"
+    "Takeout(\n  From(\n    Name(),\n    Address(),\n  ),\n  Method(Pickup,),\n  Items(),\n  @(),\n  Price($,),\n)"
   end
 
   def lecoursville_media_add
