@@ -45,7 +45,7 @@ class Task
   end
 
   def apartment_kitchen_all_clean
-    "Apartment(\n  Kitchen_Clean(Fridge, Juicer, Sink, Counter,),\n)"
+    "Apartment(\n  Kitchen_Clean(Fridge, Sink, Counter,),\n)"
   end
 
   def apartment_kitchen_juicer_clean
@@ -57,7 +57,7 @@ class Task
   end
 
   def apartment_all
-    "Apartment(\n  Kitchen_Clean(Sink,),\n  Vacuum,\n  Dresser_Clean,\n  Dugout_Clean,\n  Bathroom_Clean(Sink, Toilet,),\n)"
+    "Apartment(\n  Kitchen_Clean(Juicer, Sink, Counter,),\n  Vacuum,\n  Dresser_Clean,\n  Dugout_Clean,\n  Bathroom_Clean(Sink, Toilet,),\n)"
   end
 
   def aquarium_jar_water_change
@@ -109,7 +109,7 @@ class Task
   end
 
   def call_mom_and_dad
-    "Mom+Dad_Call(1300,)"
+    "Mom+Dad_Call(@(1300,),)"
   end
 
   def screens_clean
