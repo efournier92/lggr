@@ -73,7 +73,7 @@ class Task
   end
 
   def groom_all
-    "Groom(\n  Shave(),\n  Pluck,\n  Hair(\n    Wash,\n    Sideburns_Fix,\n  ),\n  Nails_Clip(Fingers, Toes,),\n)"
+    "Groom(\n  Shave(),\n  Pluck,\n  Hair(\n    Wash,\n    Sideburns_Fix,\n  ),\n  Nails_Clip(Fingers, Cuticles, Toes,),\n)"
   end
 
   def groom_shave_all
