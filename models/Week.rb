@@ -33,7 +33,7 @@ class Week
     task = Task.new
     { 
       "Monday"    => [task.amazon_fresh_recieve, task.pch_spectrum, task.vitamins_take, task.apartment_kitchen_all_clean, task.aquarium_jar_water_change, task.git, task.music, task.nobo],
-      "Tuesday"   => [task.apartment_trash_out, task.pch_spectrum, task.vitamins_take, task.aquarium_jar_water_change, task.git, task.music],
+      "Tuesday"   => [task.pch_spectrum, task.vitamins_take, task.aquarium_jar_water_change, task.git, task.music],
       "Wednesday" => [task.pch_spectrum, task.vitamins_take, task.aquarium_jar_and_tank_water_change, task.car_camry_run, task.takeout, task.git, task.music, task.nobo],
       "Thursday"  => [task.pch_spectrum, task.vitamins_take, task.aquarium_jar_water_change, task.git, task.music],
       "Friday"    => [task.pch_spectrum_v1_hours, task.vitamins_take, task.aquarium_jar_and_tank_water_change, task.bank_all, task.lg_audio, task.git, task.music],

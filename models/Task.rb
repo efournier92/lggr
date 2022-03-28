@@ -57,7 +57,7 @@ class Task
   end
 
   def apartment_all
-    "Apartment(\n  Kitchen_Clean(Juicer, Sink, Counter,),\n  Vacuum,\n  Dresser_Clean,\n  Dugout_Clean,\n  Bathroom_Clean(Sink, Toilet,),\n)"
+    "Apartment(\n  Kitchen_Clean(Juicer, Sink, Counter,),\n  Vacuum,\n  Dresser_Clean,\n  Dugout_Clean,\n  Bathroom_Clean(Sink, Toilet,),\n  Trash_Out,)"
   end
 
   def aquarium_jar_water_change
@@ -73,7 +73,7 @@ class Task
   end
 
   def groom_all
-    "Groom(\n  Shave(),\n  Pluck,\n  Hair(\n    Wash,\n    Sideburns_Fix,\n  ),\n  Nails_Clip(Fingers, Cuticles, Toes,),\n)"
+    "Groom(\n  Shower,\n  Shave(),\n  Pluck,\n  Hair(\n    Wash,\n    Sideburns_Fix,\n  ),\n  Nails_Clip(Fingers, Cuticles, Toes,),\n)"
   end
 
   def groom_shave_all
