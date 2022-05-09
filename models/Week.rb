@@ -32,13 +32,13 @@ class Week
   def self.days
     task = Task.new
     { 
-      "Monday"    => [task.amazon_fresh_recieve, task.pch_spectrum, task.vitamins_take, task.apartment_kitchen_all_clean, task.aquarium_jar_water_change, task.git, task.music, task.nobo],
-      "Tuesday"   => [task.pch_spectrum, task.vitamins_take, task.aquarium_jar_water_change, task.git, task.music],
+      "Monday"    => [task.amazon_fresh_recieve, task.pch_spectrum, task.vitamins_take, task.apartment_kitchen_all_clean, task.aquarium_jar_and_tank_water_change task.git, task.music, task.nobo],
+      "Tuesday"   => [task.pch_spectrum, task.vitamins_take, task.aquarium_jar_and_tank_water_change, task.git, task.music],
       "Wednesday" => [task.pch_spectrum, task.vitamins_take, task.aquarium_jar_and_tank_water_change, task.car_camry_run, task.takeout, task.git, task.music, task.nobo],
-      "Thursday"  => [task.pch_spectrum, task.vitamins_take, task.aquarium_jar_water_change, task.git, task.music],
+      "Thursday"  => [task.pch_spectrum, task.vitamins_take, task.aquarium_jar_and_tank_water_change, task.git, task.music],
       "Friday"    => [task.pch_spectrum_v1_hours, task.vitamins_take, task.aquarium_jar_and_tank_water_change, task.bank_all, task.lg_audio, task.git, task.music],
       "Saturday"  => [task.amazon_buy, task.amazon_fresh_buy, task.git, task.music, task.laptop_folders_clean, task.jeopardy_backup, task.backup_weekly, task.media_consume],
-      "Sunday"    => [task.git, task.call_mom_and_dad, task.aquarium_jar_and_tank_water_change_with_sponges, task.juice_make, task.apartment_all, task.docs_scan, task.screens_clean, task.groom_all, task.car_camry_run, task.takeout, task.lg_all, task.music, task.media_consume]
+      "Sunday"    => [task.git, task.call_mom_and_dad, task.aquarium_jar_and_tank_water_change_with_filter, task.juice_make, task.apartment_all, task.docs_scan, task.screens_clean, task.groom_all, task.car_camry_run, task.takeout, task.lg_all, task.music, task.media_consume]
     }
   end
 
