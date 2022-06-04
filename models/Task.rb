@@ -73,7 +73,7 @@ class Task
   end
 
   def groom_all
-    "Groom(\n  Shower,\n  Shave(),\n  Pluck,\n  Hair(\n    Wash,\n    Sideburns_Fix,\n  ),\n  Nails_Clip(Fingers, Cuticles, Toes,),\n)"
+    "Groom(\n  Shower,\n  Shave(),\n  Hair(\n    Wash,\n    Sideburns_Fix,\n  ),\n  Nails_Clip(Fingers, Cuticles, Toes,),\n)"
   end
 
   def groom_shave_all
@@ -150,6 +150,10 @@ class Task
 
   def lecoursville_media_add
     "LeCoursvilleCom_Media_Add(\n  Videos(),\n)"
+  end
+
+  def excercise
+    "Excercise(\n  Types(),\n  Repetitions(),\n)"
   end
 
   def media_consume
