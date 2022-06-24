@@ -25,11 +25,11 @@ class Task
   end
 
   def amazon_fresh_buy
-    "AmazonFresh_Buy()"
+    "AmazonFresh_Buy(\n  Items(),\n  ForDelivery(Sunday(), @(1000-1200,),),\n)"
   end
 
   def amazon_fresh_recieve
-    "AmazonFresh_Recieve(0600-0800,)"
+    "AmazonFresh_Recieve(@(1000-1200,),)"
   end
 
   def car_camry_gasup
