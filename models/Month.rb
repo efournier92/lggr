@@ -20,7 +20,7 @@ class Month
       quarter_months.each do | quarter_month |
         if (month == quarter_month)
           # first Sunday of quarter
-          do_year = Add_Tag.to_nth_xday_in_month(do_year, quarter_month, 1, "Sunday", task.groom_shave_all)
+          # do_year = Add_Tag.to_nth_xday_in_month(do_year, quarter_month, 1, "Sunday", task.groom_shave_all)
         end
       end
     end 

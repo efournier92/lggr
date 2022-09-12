@@ -25,20 +25,20 @@ class Week
     end
   end
   
-  def self.pch_spectrum
+  def self.work
     "Pch(\n  Spectrum(),\n)"
   end
 
   def self.days
     task = Task.new
     { 
-      "Monday"    => [task.pch_spectrum, task.vitamins_take, task.excercise, task.apartment_kitchen_all_clean, task.aquarium_jar_and_tank_water_change, task.git, task.music, task.nobo],
-      "Tuesday"   => [task.pch_spectrum, task.vitamins_take, task.aquarium_jar_and_tank_water_change, task.git, task.music],
-      "Wednesday" => [task.pch_spectrum, task.vitamins_take, task.excercise, task.aquarium_jar_and_tank_water_change, task.git, task.music, task.nobo],
-      "Thursday"  => [task.pch_spectrum, task.vitamins_take, task.aquarium_jar_and_tank_water_change, task.git, task.music],
-      "Friday"    => [task.pch_spectrum_v1_hours, task.vitamins_take, task.excercise, task.aquarium_jar_and_tank_water_change, task.bank_all, task.lg_audio, task.takeout, task.git, task.music],
-      "Saturday"  => [task.amazon_fresh_buy, task.amazon_buy, task.git, task.music, task.laptop_folders_clean, task.jeopardy_backup, task.backup_weekly, task.media_consume],
-      "Sunday"    => [task.amazon_fresh_recieve, task.git, task.call_mom_and_dad, task.aquarium_jar_and_tank_water_change_with_filter, task.juice_make, task.apartment_all, task.docs_scan, task.screens_clean, task.groom_all, task.lg_all, task.music, task.media_consume]
+      "Monday"    => [task.career_daily, task.teeth_brush, task.vitamins_take, task.excercise, task.aquarium_jar_and_tank_water_change, task.git, task.music, task.nobo],
+      "Tuesday"   => [task.career_daily, task.teeth_brush, task.vitamins_take, task.aquarium_jar_and_tank_water_change, task.git, task.music],
+      "Wednesday" => [task.career_daily, task.teeth_brush, task.vitamins_take, task.excercise, task.aquarium_jar_and_tank_water_change, task.git, task.music, task.nobo],
+      "Thursday"  => [task.career_daily, task.teeth_brush, task.vitamins_take, task.aquarium_jar_and_tank_water_change, task.git, task.music],
+      "Friday"    => [task.career_hours_burn, task.teeth_brush, task.vitamins_take, task.excercise, task.aquarium_jar_and_tank_water_change, task.bank_all, task.lg_audio, task.takeout, task.git, task.music],
+      "Saturday"  => [task.teeth_brush, task.amazon_fresh_buy, task.amazon_buy, task.git, task.music, task.laptop_folders_clean, task.jeopardy_backup, task.backup_weekly, task.media_consume],
+      "Sunday"    => [task.amazon_fresh_recieve, task.teeth_brush, task.git, task.mom_and_dad_call, task.juice_make, task.apartment_kitchen_all_clean, task.apartment_all, task.aquarium_jar_and_tank_water_change_with_filter, task.screens_clean, task.docs_scan, task.groom_all, task.lg_all, task.music, task.media_consume]
     }
   end
 

@@ -8,12 +8,16 @@ class Task
     "Music()"
   end
 
-  def pch_spectrum
-    "Pch(\n  Spectrum(SeeScrum,),\n)"
+  def career_daily
+    "Career(\n  Dorsata(SeeScrum,),\n)"
   end
 
-  def pch_spectrum_v1_hours
-    "Pch(\n  Spectrum(\n    SeeScrum,\n    V1_Hours_Burn,\n  ),\n)"
+  def career_hours_burn
+    "Career(\n  Dorsata(\n    SeeScrum,\n    Hours_Burn(),\n  ),\n)"
+  end
+
+  def teeth_brush
+    "Teeth(\n  Brush(Morning, Noon, Night,),\n  Floss(Noon, Night,),\n)"
   end
 
   def vitamins_take
@@ -45,11 +49,7 @@ class Task
   end
 
   def apartment_kitchen_all_clean
-    "Apartment(\n  Kitchen_Clean(Fridge, Sink, Counter,),\n)"
-  end
-
-  def apartment_kitchen_juicer_clean
-    "Apartment(\n  Kitchen_Clean(Juicer, Sink, Counter,),\n)"
+    "Apartment(\n  Kitchen_Clean(Fridge, Juicer, Sink, Counter,),\n)"
   end
 
   def apartment_trash_out
@@ -77,7 +77,7 @@ class Task
   end
 
   def groom_shave_all
-    "Groom(\n  Shave(All,)\n,)"
+    "Groom(\n  Shave(All,)\n)"
   end
 
   def bank_all
@@ -85,7 +85,7 @@ class Task
   end
 
   def lg_all
-    "Lg(\n  LastWeek,\n  NextWeek,\n  Dos_Fix,\n)"
+    "Lg(\n  task.screens_clean,\n  LastWeek,\n  NextWeek,\n)"
   end
 
   def lg_audio
@@ -108,7 +108,7 @@ class Task
     "Backup(\n  snc-sncA,\n  extA-extB,\n)"
   end
 
-  def call_mom_and_dad
+  def mom_and_dad_call
     "Mom+Dad_Call(@(1300,),)"
   end
 
