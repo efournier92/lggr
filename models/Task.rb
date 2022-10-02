@@ -12,12 +12,8 @@ class Task
     "Career(\n  Dorsata(SeeScrum,),\n)"
   end
 
-  def career_hours_burn
-    "Career(\n  Dorsata(\n    SeeScrum,\n    Hours_Burn(),\n  ),\n)"
-  end
-
-  def teeth_brush
-    "Teeth(\n  Brush(Morning, Noon, Night,),\n  Floss(Noon, Night,),\n)"
+  def teeth
+    "Teeth(\n  Brush(Morning, Noon, Night,),\n  Floss(Morning, Noon, Night,),\n  Rinse(Morning, Noon, Night,),\n)"
   end
 
   def vitamins_take
@@ -57,7 +53,7 @@ class Task
   end
 
   def apartment_all
-    "Apartment(\n  Kitchen_Clean(Juicer, Sink, Counter,),\n  Vacuum,\n  Dresser_Clean,\n  Dugout_Clean,\n  Bathroom_Clean(Toilet, Sink,),\n  Trash_Out,\n)"
+    "Apartment(\n  Kitchen_Clean(Fridge, Juicer, Sink, Counter,),\n  Vacuum,\n  Dresser_Clean,\n  Dugout_Clean,\n  Bathroom_Clean(Toilet, Sink,),\n  Trash_Out,\n)"
   end
 
   def aquarium_jar_water_change
@@ -85,7 +81,7 @@ class Task
   end
 
   def lg_all
-    "Lg(\n  task.screens_clean,\n  LastWeek,\n  NextWeek,\n)"
+    "Lg(\n  Dos_Fix,\n  LastWeek,\n  NextWeek,\n)"
   end
 
   def lg_audio
@@ -93,7 +89,7 @@ class Task
   end
 
   def lg_do_next_month
-    "Lg_Do_NextMonth"
+    "Lg(\n  Do_NextMonth,\n)"
   end
 
   def laptop_folders_clean

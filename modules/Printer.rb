@@ -49,16 +49,19 @@ module Printer
     year = do_year.year
     out_file = File.new("#{OUT_DIR}/LG_#{ '%04d' % year }.md", "w")
 
-    weekday_string = "\n### Do\n\n```text\n```\n\n### Scrum\n\n"
-    weekend_string = "\n### Do\n\n```text\n```\n\n"
+    template_base    = "\n### Do\n\n```text\n```\n\n"
+    template_weekday = template_base + "### Scrum\n\n#### Yesterday\n\n#### Today\n\n#### Parking Lot\n\n"
+    template_monday  = template_base + "### Scrum\n\n#### Last Friday\n\n#### Today\n\n#### Parking Lot\n\n"
 
     do_year.weeks.each do | week |
       week.days.each do | day |
         out_file.puts("## #{ '%04d' % day.year }-#{ '%02d' % day.month }-#{ '%02d' % day.month_day } | #{day.name}")
         if day.name == 'Saturday' || day.name == 'Sunday'
-          out_file.puts(weekend_string)
+          out_file.puts(template_base)
+        elsif day.name == 'Monday'
+          out_file.puts(template_monday)
         else
-          out_file.puts(weekday_string)
+          out_file.puts(template_weekday)
         end
       end
     end
