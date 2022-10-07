@@ -9,7 +9,7 @@ class Task
   end
 
   def career_daily
-    "Career(\n  Dorsata(SeeScrum,),\n)"
+    "Career(\n  Dorsata(\n    SeeScrum,\n    WorkedUntil(),\n  ),\n)"
   end
 
   def teeth
@@ -25,7 +25,7 @@ class Task
   end
 
   def amazon_fresh_buy
-    "AmazonFresh_Buy(\n  Items(),\n  ForDelivery(Sunday(), @(1000-1200,),),\n)"
+    "AmazonFresh_Buy(\n  Items(),\n  ForDelivery(Sunday(), @(1000-1200,),),\n  Price(),\n)"
   end
 
   def amazon_fresh_recieve
