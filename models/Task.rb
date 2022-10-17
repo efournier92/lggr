@@ -13,7 +13,7 @@ class Task
   end
 
   def teeth
-    "Teeth(\n  Brush(Morning, Noon, Night,),\n  Floss(Morning, Noon, Night,),\n  Rinse(Morning, Noon, Night,),\n)"
+    "Teeth(\n  Morning(Brush, Floss, Rinse,),\n  Noon(Brush, Floss, Rinse,),\n  Night(Brush, Floss, Rinse,),\n)"
   end
 
   def vitamins_take
@@ -53,7 +53,7 @@ class Task
   end
 
   def apartment_all
-    "Apartment(\n  Kitchen_Clean(Fridge, Juicer, Sink, Counter,),\n  Vacuum,\n  Dresser_Clean,\n  Dugout_Clean,\n  Bathroom_Clean(Toilet, Sink,),\n  Trash_Out,\n)"
+    "Apartment(\n  Kitchen_Clean(Fridge, Sink, Counter,),\n  Vacuum,\n  Desk_Clean,\n  Dresser_Clean,\n  Dugout_Clean,\n  Bathroom_Clean(Toilet, Sink,),\n  Trash_Out,\n)"
   end
 
   def aquarium_jar_water_change
@@ -69,7 +69,11 @@ class Task
   end
 
   def groom_all
-    "Groom(\n  Shower,\n  Shave(),\n  Hair(\n    Wash,\n    Sideburns_Fix,\n  ),\n  Nails_Clip(Fingers, Cuticles, Toes,),\n)"
+    "Groom(\n  Shower,\n  Shave(Face,),\n  Hair(\n    Wash,\n    Sideburns_Fix,\n  ),\n  Nails_Clip(Fingers, Cuticles, Toes,),\n)"
+  end
+
+  def groom_quick
+    "Groom(\n  Shower,\n  Shave(Face,),\n  Hair(\n    Wash,\n    Sideburns_Fix,\n  ),\n)"
   end
 
   def groom_shave_all
