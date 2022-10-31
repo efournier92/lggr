@@ -113,7 +113,7 @@ class Task
   end
 
   def screens_clean
-    "Screens_Clean(Laptops(Primary, Work,), Phone, Scanner,)"
+    "Screens_Clean(Laptops(Primary, Work,), Monitors(Desk,), Phone, Scanner,)"
   end
 
   def music
