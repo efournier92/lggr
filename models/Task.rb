@@ -5,7 +5,7 @@ class Task
   end
 
   def music
-    "Music()"
+    "Music(\n  MinutesPlayedFor(),  \nPracticed(),\n)"
   end
 
   def career_daily
@@ -53,7 +53,7 @@ class Task
   end
 
   def apartment_all
-    "Apartment(\n  Kitchen_Clean(Fridge, Sink, Counter,),\n  Vacuum,\n  Desk_Clean,\n  Dresser_Clean,\n  Dugout_Clean,\n  Bathroom_Clean(Toilet, Sink,),\n  Trash_Out,\n)"
+    "Apartment(\n  Kitchen_Clean(Fridge, Sink, Counter,),\n  Vacuum,\n  Workstation_Clean,\n  Dresser_Clean,\n  Dugout_Clean,\n  Bathroom_Clean(Toilet, Sink,),\n  Trash_Out,\n)"
   end
 
   def aquarium_jar_water_change
@@ -129,7 +129,7 @@ class Task
   end
 
   def first_of_month
-    "Contacts_New(Case, Lenses,),\nRazors_New,\nToothBrush_Head_New,\nBackup(\n  Phone,\n  Partition_General-bkA,\n  bkA-bkB,\n  bnk-bnkA,\n  extA-extB,\n),\nBatteryExtender_Charge"
+    "Contacts_New(Case, Lenses,),\nRazors_New,\nToothBrush_Head_New,\nBackup(\n  Phone,\n  Partition_General-bkA,\n  bkA-bkB,\n  snc-sncA,\n  extA-extB,\n),\nBatteryExtender_Charge"
   end
 
   def hair_cut
