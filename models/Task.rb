@@ -116,10 +116,6 @@ class Task
     "Screens_Clean(Laptops(Primary, Work,), Monitors(Desk,), Phone, Scanner,)"
   end
 
-  def music
-    "Music()"
-  end
-
   def bill_utilities_pay
     "Bills_Pay(\n  Electric(Price($,),),\n  Internet(Price($,),),\n  Insurance_Automotive(Price($155,),),\n)"
   end
