@@ -78,7 +78,7 @@ module Annual
 
     # Christmas Eve
     do_year = Add_Tag.to_specific_date(
-      do_year, 12, 24, "[Holiday_ChristmasEve],\nBill_Phone_Verizon_Dd_Py($300m)"
+      do_year, 12, 24, "[Holiday_ChristmasEve],\nBill_Phone_Verizon_Dad_Pay($480,)"
     )
 
     # Christmas

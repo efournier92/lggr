@@ -9,7 +9,7 @@ class Task
   end
 
   def career_daily
-    "Career(\n  Dorsata(\n    SeeScrum,\n    WorkedUntil(),\n  ),\n)"
+    "Career(\n  Dorsata(\n    SeeScrum,\n    WorkedUntil(TODO,),\n  ),\n)"
   end
 
   def teeth
@@ -88,8 +88,12 @@ class Task
     "Lg(\n  Dos_Fix,\n  LastWeek,\n  NextWeek,\n)"
   end
 
-  def lg_audio
-    "Lg(\n  Audio,\n)"
+  def lg_audio_thumbs
+    "Lg(\n  Audio(Thumbs,),\n)"
+  end
+
+  def lg_audio_ssh
+    "Lg(\n  Ssh,\n)"
   end
 
   def lg_do_next_month
@@ -125,7 +129,7 @@ class Task
   end
 
   def first_of_month
-    "Contacts_New(Case, Lenses,),\nRazors_New,\nToothBrush_Head_New,\nBackup(\n  Phone,\n  Partition_General-bkA,\n  bkA-bkB,\n  snc-sncA,\n  extA-extB,\n),\nBatteryExtender_Charge"
+    "Contacts_New(Case, Lenses,),\nRazors_New,\nToothBrush_Head_New,\nBackup(\n  Phone,\n  Partition_Primary-bkA,\n  bkA-bkB,\n  snc-sncA,\n  extA-extB,\n),\nBatteryExtender_Charge"
   end
 
   def hair_cut
