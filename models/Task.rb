@@ -8,6 +8,10 @@ class Task
     "Music(\n  MinutesPlayedFor(),\n  Practiced(),\n)"
   end
 
+  def guitar_restring
+    "Music(Equipment_Guitar_Restring,)"
+  end
+
   def career_daily
     "Career(\n  Dorsata(\n    SeeScrum,\n    WorkedUntil(TODO,),\n  ),\n)"
   end

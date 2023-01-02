@@ -51,6 +51,7 @@ git	models/Task.rb	/^  def git$/;"	f	class:Task
 groom_all	models/Task.rb	/^  def groom_all$/;"	f	class:Task
 groom_quick	models/Task.rb	/^  def groom_quick$/;"	f	class:Task
 groom_shave_all	models/Task.rb	/^  def groom_shave_all$/;"	f	class:Task
+guitar_restring	models/Task.rb	/^  def guitar_restring$/;"	f	class:Task
 hair_cut	models/Task.rb	/^  def hair_cut$/;"	f	class:Task
 initialize	models/Day.rb	/^  def initialize(name, tasks, year, month, month_day)$/;"	f	class:Day
 initialize	models/Week.rb	/^  def initialize(index, days_this_week, year, month)$/;"	f	class:Week

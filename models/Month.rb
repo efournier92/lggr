@@ -21,6 +21,8 @@ class Month
         if (month == quarter_month)
           # first Sunday of quarter
           # do_year = Add_Tag.to_nth_xday_in_month(do_year, quarter_month, 1, "Sunday", task.groom_shave_all)
+          # first Saturday of the quarter
+          do_year = Add_Tag.to_nth_xday_in_month(do_year, quarter_month, 1, "Saturday", task.guitar_restring)
         end
       end
     end 
