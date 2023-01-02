@@ -5,7 +5,7 @@ class Task
   end
 
   def music
-    "Music(\n  MinutesPlayedFor(),  \nPracticed(),\n)"
+    "Music(\n  MinutesPlayedFor(),\n  Practiced(),\n)"
   end
 
   def career_daily
