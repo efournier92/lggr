@@ -63,14 +63,14 @@ laundry	models/Task.rb	/^  def laundry$/;"	f	class:Task
 leap_year?	models/Year.rb	/^  def leap_year?$/;"	f	class:Year
 lecoursville_media_add	models/Task.rb	/^  def lecoursville_media_add$/;"	f	class:Task
 lg_all	models/Task.rb	/^  def lg_all$/;"	f	class:Task
-lg_audio_ssh	models/Task.rb	/^  def lg_audio_ssh$/;"	f	class:Task
-lg_audio_thumbs	models/Task.rb	/^  def lg_audio_thumbs$/;"	f	class:Task
+lg_audio	models/Task.rb	/^  def lg_audio$/;"	f	class:Task
 lg_do_next_month	models/Task.rb	/^  def lg_do_next_month$/;"	f	class:Task
 make_out_dir	modules/Printer.rb	/^  def self.make_out_dir$/;"	F	class:Printer
 media_consume	models/Task.rb	/^  def media_consume$/;"	f	class:Task
 mom_and_dad_call	models/Task.rb	/^  def mom_and_dad_call$/;"	f	class:Task
 music	models/Task.rb	/^  def music$/;"	f	class:Task
 nobo	models/Task.rb	/^  def nobo$/;"	f	class:Task
+posture	models/Task.rb	/^  def posture$/;"	f	class:Task
 print_do_month	modules/Printer.rb	/^  def self.print_do_month(do_year, month)$/;"	F	class:Printer
 print_do_year	modules/Printer.rb	/^  def self.print_do_year(do_year)$/;"	F	class:Printer
 print_lg	modules/Printer.rb	/^  def self.print_lg(do_year)$/;"	F	class:Printer

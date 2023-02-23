@@ -5,7 +5,11 @@ class Task
   end
 
   def music
-    "Music(\n  MinutesPlayedFor(),\n  Practiced(),\n)"
+    "Music(\n  MinutesPlayedFor(),\n  Posture_SongsSittingProperly(),\n  Practiced(),\n)"
+  end
+
+  def posture
+    "Posture(\n  Worstation_Chair(\n    HoursSat(TODO,),\n  ),  \n  Music(\n    SongsSittingProperly(TODO,),\n  ),\n)"
   end
 
   def guitar_restring
@@ -92,12 +96,8 @@ class Task
     "Lg(\n  Dos_Fix,\n  LastWeek,\n  NextWeek,\n)"
   end
 
-  def lg_audio_thumbs
-    "Lg(\n  Audio(Thumbs,),\n)"
-  end
-
-  def lg_audio_ssh
-    "Lg(\n  Ssh,\n)"
+  def lg_audio
+    "Lg(\n  Audio(Thumbs, Ssh,),\n)"
   end
 
   def lg_do_next_month
