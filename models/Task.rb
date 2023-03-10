@@ -21,7 +21,8 @@ class Task
   end
 
   def teeth
-    "Teeth(\n  Morning(Brush, Floss, Rinse,),\n  Noon(Brush, Floss, Rinse,),\n  Night(Brush, Floss, Rinse,),\n)"
+    "Teeth(\n  Morning(Rinse(Alcohol,), Floss(String,), Brush(Fluoride,),),\n  Noon(Rinse(Fluoride,), Floss(InterdentalBrush,), Brush(Fluoride,),),\n  Night(Rinse(Fluoride,), Floss(Waterpik,), Brush(Fluoride,),),\n)"
+
   end
 
   def vitamins_take
