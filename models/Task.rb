@@ -122,7 +122,7 @@ class Task
   end
 
   def screens_clean
-    "Screens_Clean(Laptops(Primary, Work,), Monitors(Desk,), Phone, Scanner,)"
+    "Screens_Clean(Laptops(Primary, Work,), Scanner, Phone, Monitors(Workstation,),)"
   end
 
   def bill_utilities_pay
