@@ -8,6 +8,10 @@ class Task
     "Music(\n  MinutesPlayedFor(),\n  Posture_SongsSittingProperly(),\n  Practiced(),\n)"
   end
 
+  def posture_trainer
+    "Posture(\n  Trainer_UprightGo(\n    HoursWorn(),\n  ),\n)"
+  end
+
   def posture
     "Posture(\n  Worstation_Chair(\n    HoursSat(TODO,),\n  ),  \n  Music(\n    SongsSittingProperly(TODO,),\n  ),\n)"
   end

@@ -32,11 +32,11 @@ class Week
   def self.days
     task = Task.new
     { 
-      "Monday"    => [task.career_daily, task.git, task.vitamins_take, task.teeth, task.excercise, task.aquarium_jar_and_tank_water_change, task.nobo],
-      "Tuesday"   => [task.career_daily, task.git, task.vitamins_take, task.teeth, task.aquarium_jar_and_tank_water_change, task.music],
-      "Wednesday" => [task.career_daily, task.git, task.vitamins_take, task.teeth, task.excercise, task.aquarium_jar_and_tank_water_change, task.groom_quick, task.music, task.nobo],
-      "Thursday"  => [task.career_daily, task.git, task.vitamins_take, task.teeth, task.aquarium_jar_and_tank_water_change, task.music],
-      "Friday"    => [task.career_daily, task.git, task.vitamins_take, task.teeth, task.excercise, task.aquarium_jar_and_tank_water_change, task.bank_all, task.takeout, task.music],
+      "Monday"    => [task.career_daily, task.git, task.vitamins_take, task.teeth, task.posture_trainer, task.excercise, task.aquarium_jar_and_tank_water_change, task.nobo],
+      "Tuesday"   => [task.career_daily, task.git, task.vitamins_take, task.teeth, task.posture_trainer, task.aquarium_jar_and_tank_water_change, task.music],
+      "Wednesday" => [task.career_daily, task.git, task.vitamins_take, task.teeth, task.posture_trainer, task.excercise, task.aquarium_jar_and_tank_water_change, task.groom_quick, task.music, task.nobo],
+      "Thursday"  => [task.career_daily, task.git, task.vitamins_take, task.teeth, task.posture_trainer, task.aquarium_jar_and_tank_water_change, task.music],
+      "Friday"    => [task.career_daily, task.git, task.vitamins_take, task.teeth, task.posture_trainer, task.excercise, task.aquarium_jar_and_tank_water_change, task.bank_all, task.takeout, task.music],
       "Saturday"  => [task.teeth, task.git, task.amazon_fresh_buy, task.amazon_buy, task.music, task.laptop_folders_clean, task.lg_audio, task.jeopardy_backup, task.backup_weekly, task.media_consume],
       "Sunday"    => [task.amazon_fresh_recieve, task.teeth, task.git, task.mom_and_dad_call, task.apartment_all, task.aquarium_jar_and_tank_water_change_with_filter, task.screens_clean, task.docs_scan, task.groom_all, task.lg_all, task.music, task.media_consume]
     }

@@ -71,6 +71,7 @@ mom_and_dad_call	models/Task.rb	/^  def mom_and_dad_call$/;"	f	class:Task
 music	models/Task.rb	/^  def music$/;"	f	class:Task
 nobo	models/Task.rb	/^  def nobo$/;"	f	class:Task
 posture	models/Task.rb	/^  def posture$/;"	f	class:Task
+posture_trainer	models/Task.rb	/^  def posture_trainer$/;"	f	class:Task
 print_do_month	modules/Printer.rb	/^  def self.print_do_month(do_year, month)$/;"	F	class:Printer
 print_do_year	modules/Printer.rb	/^  def self.print_do_year(do_year)$/;"	F	class:Printer
 print_lg	modules/Printer.rb	/^  def self.print_lg(do_year)$/;"	F	class:Printer
