@@ -1,3 +1,5 @@
+require 'pry'
+
 require './models/Day'
 require './models/Month'
 require './models/Week'
@@ -12,6 +14,15 @@ require './modules/Printer'
 print_type = ''
 print_month = nil
 month = 1
+
+# STEPS
+# - Read config file
+# - Generate year
+# - Iterate on each day of year
+#   - Add tasks for day of the week
+#   - Check if day matches any special rules
+#     - Add tasks that match rules
+# - Print year object
 
 # Collect type user input
 until print_type == 'DO' || print_type == 'LG'
@@ -42,6 +53,7 @@ end
 
 # create year object
 do_year = Year.new(year)
+
 # add monthly tasks to year object
 do_year = Month.add_start_tasks(do_year)
 # add birthdays to year object
