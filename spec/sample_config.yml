@@ -1,13 +1,35 @@
 tasks:
-  Sample:
-    FirstTask:
-      - Because
-      - Strategy
-      - Result
-  apartment_trash_out: "Apartment(Trash_Out,)"
+  1_Dimentional:
+    - Level_1
+  2_Dimentional:
+    Level_1:
+      - Level_2
+  3_Dimentional:
+    Level_1:
+      Level_2:
+        - Level_3
+  3_Dimentional_Leaf_Siblings:
+    Level_1:
+      Level_2:
+        - Level_3
+        - Level_3
+  3_Dimentional_Internal_Siblings:
+    Level_1:
+      Level_2a:
+        - Level_3
+      Level_2b:
+        - Level_3
 days:
-  monday: 
-    - Sample
+  Monday:
+    - 1_Dimentional
+  Tuesday:
+    - 2_Dimentional
+  Wednesday:
+    - 3_Dimentional
+  Thursday:
+    - 1_Dimentional
+    - 2_Dimentional
+    - 3_Dimentional
 special:
   birthdays:
     johnny: "2000-01-01"
@@ -37,4 +59,3 @@ special:
       month: 6
       nth_day: 3
       day_name: "Sunday"
-
