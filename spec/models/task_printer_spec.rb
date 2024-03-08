@@ -1,5 +1,6 @@
 require './models/config_reader'
 require './models/task_printer'
+require 'pry-byebug'
 
 describe TaskPrinter do
   TEST_CONFIG_PATH = './spec/test_config.yml'
@@ -8,27 +9,40 @@ describe TaskPrinter do
     DIMENTIONAL_1: '1_Dimentional',
     DIMENTIONAL_2: '2_Dimentional',
     DIMENTIONAL_3: '3_Dimentional',
+    DIMENTIONAL_1_DOUBLE: '1_Dimentional_Double',
     DIMENTIONAL_3_SIBLINGS_LEAF: '3_Dimentional_Leaf_Siblings',
     DIMENTIONAL_3_SIBLINGS_INTERNAL: '3_Dimentional_Internal_Siblings',
   }
 
   before :each do
-    @config_reader = ConfigReader.new()
-    @config = @config_reader.read(TEST_CONFIG_PATH)
+    @config_reader = ConfigReader.new(TEST_CONFIG_PATH)
+    @config = @config_reader.read_file(TEST_CONFIG_PATH)
     @config_tasks = @config[CONFIG_KEYS[:TASKS]]
 
     @printer = TaskPrinter.new()
     @config_tasks = @config[CONFIG_KEYS[:TASKS]]
   end
 
-  context 'given a 1-dimentional task to print' do
+  context 'given a single 1-dimentional task to print' do
     it 'formats the task appropriately' do
       task_name = CONFIG_KEYS[:DIMENTIONAL_1]
       task = @config_tasks[task_name]
 
       task_printed = @printer.print(task)
 
-      expected_output = 'Level_1,'
+      expected_output = "Level_1,\n"
+      expect(task_printed).to eq(expected_output)
+    end
+  end
+
+  context 'given multiple 1-dimentional tasks to print' do
+    it 'formats the task appropriately' do
+      task_name = CONFIG_KEYS[:DIMENTIONAL_1_DOUBLE]
+      task = @config_tasks[task_name]
+
+      task_printed = @printer.print(task)
+
+      expected_output = "Level_1a,\nLevel_1b,\n"
       expect(task_printed).to eq(expected_output)
     end
   end
@@ -40,7 +54,7 @@ describe TaskPrinter do
 
       task_printed = @printer.print(task)
 
-      expected_output = "Level_1(\n  Level_2,\n),"
+      expected_output = "Level_1(\n  Level_2,\n),\n"
       expect(task_printed).to eq(expected_output)
     end
   end
@@ -52,7 +66,7 @@ describe TaskPrinter do
 
       task_printed = @printer.print(task)
 
-      expected_output = "Level_1(\n  Level_2(\n    Level_3,\n  ),\n),"
+      expected_output = "Level_1(\n  Level_2(\n    Level_3,\n  ),\n),\n"
       expect(task_printed).to eq(expected_output)
     end
   end
@@ -64,7 +78,7 @@ describe TaskPrinter do
 
       task_printed = @printer.print(task)
 
-      expected_output = "Level_1(\n  Level_2(\n    Level_3,\n    Level_3,\n  ),\n),"
+      expected_output = "Level_1(\n  Level_2(\n    Level_3,\n    Level_3,\n  ),\n),\n"
       expect(task_printed).to eq(expected_output)
     end
   end
@@ -76,7 +90,7 @@ describe TaskPrinter do
 
       task_printed = @printer.print(task)
 
-      expected_output = "Level_1(\n  Level_2a(\n    Level_3,\n  ),\n  Level_2b(\n    Level_3,\n  ),\n),"
+      expected_output = "Level_1(\n  Level_2a(\n    Level_3,\n  ),\n  Level_2b(\n    Level_3,\n  ),\n),\n"
       expect(task_printed).to eq(expected_output)
     end
   end

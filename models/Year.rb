@@ -2,7 +2,7 @@ class Year
   attr_accessor :weeks
   attr_reader :year, :days_in_months
 
-  def initialize(year)
+  def initialize(year, config_file)
     @year  = year
     @weeks = []
     month  = 1
@@ -11,13 +11,14 @@ class Year
     # adjust for leap year
     @days_in_months[1] = 29 if self.leap_year?
     day = Year.get_first_monday(year)
+    @config_file = config_file
 
     def add_first_week(first_monday)
       last_monday = 31 - ( 7 - first_monday )
       first_monday = last_monday
       days_this_week = Week.days_this_week(last_monday, 1, @days_in_months)
       year = @year - 1
-      first_week = Week.new(0, days_this_week, year, 12)
+      first_week = Week.new(0, days_this_week, year, 12, @config_file)
       @weeks.push(first_week)
     end
 
@@ -25,9 +26,9 @@ class Year
       last_day_of_previous_year = @weeks.last.days.last
       last_monday_of_previous_year = last_day_of_previous_year.month_day
       if last_day_of_previous_year.month != 1
-        days_this_week = Week.days_this_week(last_monday_of_previous_year, 
+        days_this_week = Week.days_this_week(last_monday_of_previous_year,
                                              12, @days_in_months)
-        final_week = Week.new(53, days_this_week, last_day_of_previous_year.year, 12)
+        final_week = Week.new(53, days_this_week, last_day_of_previous_year.year, 12, @config_file)
         @weeks.push(final_week)
       end
     end
@@ -40,7 +41,7 @@ class Year
     54.times do
       month = 1 if month == 13
       days_this_week = Week.days_this_week(day, month, @days_in_months)
-      do_week = Week.new(week_index, days_this_week, year, month)
+      do_week = Week.new(week_index, days_this_week, year, month, @config_file)
       year = do_week.year
       @weeks.push(do_week)
       # increment for next week
@@ -89,4 +90,3 @@ class Year
     Birthdays.add_all(do_year)
   end
 end
-

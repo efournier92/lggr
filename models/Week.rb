@@ -1,45 +1,43 @@
-class Week
+require './models/config_reader'
 
+class Week
   attr_reader   :year, :month, :days
   attr_accessor :index, :days_this_week
 
-  def initialize(index, days_this_week, year, month)
+  def initialize(index, days_this_week, year, month, config_file_path)
     @index = index
     @month = month
     @year = year
     @days_this_week = days_this_week
-    @days = []
+    @config_file_path = config_file_path
+    @days = create_days()
+  end
 
-    last_day = 0
-    Week.days.each_with_index do | (day_name, day_tasks), index |
-      month_day = days_this_week[index]
-      # increment month if it's a new month
-      month += 1 if month_day < last_day
-      # reset to January after December
-      month = 1 if month == 13
-      # adjust year on January 1st
-      year += 1 if month == 1 && month_day == 1 && ( @index > 5 || index != 0 )
-      day = Day.new(day_name, day_tasks, year, month, month_day)
-      @days.push(day)
-      last_day = month_day 
+  DAY_NAMES = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+
+  def create_days
+    config_reader = ConfigReader.new(@config_file_path)
+    days_hash = {}
+    DAY_NAMES.each do |day_name|
+      days_hash[day_name] = config_reader.print_tasks_by_day_name(day_name)
     end
-  end
-  
-  def self.work
-    "Pch(\n  Spectrum(),\n)"
-  end
 
-  def self.days
-    task = Task.new
-    { 
-      "Monday"    => [task.career_daily, task.git, task.vitamins_take, task.teeth, task.posture_trainer, task.excercise, task.aquarium_jar_and_tank_water_change, task.nobo],
-      "Tuesday"   => [task.career_daily, task.git, task.vitamins_take, task.teeth, task.posture_trainer, task.aquarium_jar_and_tank_water_change, task.music],
-      "Wednesday" => [task.career_daily, task.git, task.vitamins_take, task.teeth, task.posture_trainer, task.excercise, task.aquarium_jar_and_tank_water_change, task.groom_quick, task.music, task.nobo],
-      "Thursday"  => [task.career_daily, task.git, task.vitamins_take, task.teeth, task.posture_trainer, task.aquarium_jar_and_tank_water_change, task.music],
-      "Friday"    => [task.career_daily, task.git, task.vitamins_take, task.teeth, task.posture_trainer, task.excercise, task.aquarium_jar_and_tank_water_change, task.bank_all, task.takeout, task.music],
-      "Saturday"  => [task.teeth, task.git, task.amazon_fresh_buy, task.amazon_buy, task.music, task.laptop_folders_clean, task.lg_audio, task.jeopardy_backup, task.backup_weekly, task.media_consume],
-      "Sunday"    => [task.amazon_fresh_recieve, task.teeth, task.git, task.mom_and_dad_call, task.apartment_all, task.aquarium_jar_and_tank_water_change_with_filter, task.screens_clean, task.docs_scan, task.groom_all, task.lg_all, task.music, task.media_consume]
-    }
+    days = []
+    last_day = 0
+    days_hash.each_with_index do | (day_name, day_tasks), index |
+      month_day = @days_this_week[index]
+      # increment month if it's a new month
+      @month += 1 if month_day < last_day
+      # reset to January after December
+      @month = 1 if @month == 13
+      # adjust year on January 1st
+      @year += 1 if @month == 1 && month_day == 1 && ( @index > 5 || @index != 0 )
+      day = Day.new(day_name, day_tasks, @year, @month, month_day)
+      days.push(day)
+      last_day = month_day
+    end
+
+    days
   end
 
   def self.days_this_week(day, month, days_in_months)
@@ -58,7 +56,7 @@ class Week
   def self.add_first_week(do_year)
     do_year.
       last_monday_of_previous_year = 31 - ( 7 - first_day )
-    days_this_week = Week.days_this_week(last_monday_of_previous_year, 
+    days_this_week = Week.days_this_week(last_monday_of_previous_year,
                                          1, @days_in_months)
     year = @year - 1
     first_week = Week.new(0, days_this_week, year, 12)
@@ -69,7 +67,7 @@ class Week
     last_day_of_previous_year = @weeks.last.days.last
     last_monday_of_previous_year = last_day_of_previous_year.month_day
     if last_day_of_previous_year.month != 1
-      days_this_week = Week.days_this_week(last_monday_of_previous_year, 
+      days_this_week = Week.days_this_week(last_monday_of_previous_year,
                                            12, @days_in_months)
       final_week = Week.new(53, days_this_week, last_day_of_previous_year.year, 12)
       @weeks.push(final_week)
@@ -77,4 +75,3 @@ class Week
   end
 
 end
-

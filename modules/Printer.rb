@@ -11,18 +11,15 @@ module Printer
     make_out_dir
     out_file.puts("## #{ '%04d' % day.year }-#{ '%02d' % day.month }-#{ '%02d' % day.month_day } | #{day.name}")
     out_file.puts()
-    out_file.puts("```text")
-
-    day.tasks.each do |task|
-      out_file.puts("#{ task },")
-    end
+    out_file.puts("```text\n")
+    out_file.puts("#{ day.tasks }")
     out_file.puts("```")
     out_file.puts
   end
 
   def self.print_do_year(do_year)
     make_out_dir
-    year = do_year.year 
+    year = do_year.year
     out_file = File.new("#{OUT_DIR}/DO_#{ '%04d' % year }.md", "w")
     do_year.weeks.each do | week |
       week.days.each do | day |
@@ -33,7 +30,7 @@ module Printer
 
   def self.print_do_month(do_year, month)
     make_out_dir
-    year = do_year.year 
+    year = do_year.year
     out_file = File.new("#{OUT_DIR}/DO_#{ '%04d' % year }_#{ '%02d' % month }.md", "w")
     do_year.weeks.each do | week |
       week.days.each do | day |
@@ -68,4 +65,3 @@ module Printer
   end
 
 end
-

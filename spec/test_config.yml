@@ -1,7 +1,13 @@
 tasks:
   1_Dimentional:
     - Level_1
+  1_Dimentional_Double:
+    - Level_1a
+    - Level_1b
   2_Dimentional:
+    Level_1:
+      - Level_2
+  2_Dimentional_Mixed:
     Level_1:
       - Level_2
   3_Dimentional:
@@ -23,12 +29,14 @@ days:
   Monday:
     - 1_Dimentional
   Tuesday:
-    - 2_Dimentional
+    - 1_Dimentional
+    - 1_Dimentional
   Wednesday:
     - 3_Dimentional
   Thursday:
     - 1_Dimentional
-    - 2_Dimentional
+    - 3_Dimentional
+  Friday:
     - 3_Dimentional
 special:
   birthdays:
