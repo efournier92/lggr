@@ -4,19 +4,19 @@ class Week
   attr_reader   :year, :month, :days
   attr_accessor :index, :days_this_week
 
-  def initialize(index, days_this_week, year, month, config_file_path)
+  def initialize(index, days_this_week, year, month, config_file)
     @index = index
     @month = month
     @year = year
     @days_this_week = days_this_week
-    @config_file_path = config_file_path
+    @config_file = config_file
     @days = create_days()
   end
 
   DAY_NAMES = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
   def create_days
-    config_reader = ConfigReader.new(@config_file_path)
+    config_reader = ConfigReader.new(@config_file)
     days_hash = {}
     DAY_NAMES.each do |day_name|
       days_hash[day_name] = config_reader.print_tasks_by_day_name(day_name)
@@ -59,7 +59,7 @@ class Week
     days_this_week = Week.days_this_week(last_monday_of_previous_year,
                                          1, @days_in_months)
     year = @year - 1
-    first_week = Week.new(0, days_this_week, year, 12)
+    first_week = Week.new(0, days_this_week, year, 12, @config_file)
     @weeks.push(first_week)
   end
 
@@ -69,7 +69,7 @@ class Week
     if last_day_of_previous_year.month != 1
       days_this_week = Week.days_this_week(last_monday_of_previous_year,
                                            12, @days_in_months)
-      final_week = Week.new(53, days_this_week, last_day_of_previous_year.year, 12)
+      final_week = Week.new(53, days_this_week, last_day_of_previous_year.year, 12, @config_file)
       @weeks.push(final_week)
     end
   end

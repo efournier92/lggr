@@ -7,18 +7,12 @@ class ConfigReader
     DAYS: 'days'
   }
 
-  def initialize(config_file_path)
-    @config = read_file(config_file_path)
+  def initialize(config_file)
+    @config = read_file(config_file)
   end
 
-  def read_file(file_path)
-    begin
-      config = YAML.load_file(file_path)
-    rescue
-      config = {}
-    end
-
-    config
+  def read_file(config_file)
+    YAML.load_file(config_file)
   end
 
   def get_configured_days()

@@ -6,7 +6,7 @@ describe Lggr do
 
   context 'give main is executed' do
     it 'accepts all inputs' do
-      lggr = Lggr.new('DO', 2020, 1)
+      lggr = Lggr.new(TEST_CONFIG_PATH, 'DO', 2020, 1)
       output = lggr.main()
     end
   end

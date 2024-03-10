@@ -8,8 +8,10 @@ tasks:
     Level_1:
       - Level_2
   2_Dimentional_Mixed:
-    Level_1:
-      - Level_2
+    Level_1a:
+      Level_2a:
+        - Level_3a
+      Level_2b:
   3_Dimentional:
     Level_1:
       Level_2:
@@ -38,8 +40,13 @@ days:
     - 3_Dimentional
   Friday:
     - 3_Dimentional
+templates:
+  Birthday:
+    - Name({{NAME}})
+    - Contact({{CONTACT}})
 special:
   birthdays:
+    template: Birthday
     johnny: "2000-01-01"
   new_years_day:
     tag: "[Holiday_NewYears_Day]"

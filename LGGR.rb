@@ -16,21 +16,13 @@ class Lggr
   # TODO: Accept as input
   TEST_CONFIG_PATH = './spec/test_config.yml'
 
-  def initialize(print_type = '', print_year = nil, print_month = nil)
-    @print_type = print_type || ''
-    @print_year = print_year || nil
-    @print_month = print_month || nil
+  def initialize(config_file = TEST_CONFIG_PATH, print_type = '', print_year = nil, print_month = nil)
+    @config_file = config_file
+    @print_type = print_type
+    @print_year = print_year
+    @print_month = print_month
     @month = 1
   end
-  # TODO: Remove
-  # STEPS
-  # - Read config file
-  # - Generate year
-  # - Iterate on each day of year
-  #   - Add tasks for day of the week
-  #   - Check if day matches any special rules
-  #     - Add tasks that match rules
-  # - Print year object
 
   def main()
     # Collect type user input
@@ -60,7 +52,7 @@ class Lggr
     end
 
     # create year object
-    do_year = Year.new(@print_year, TEST_CONFIG_PATH)
+    do_year = Year.new(@print_year, @config_file)
 
     # add monthly tasks to year object
     #do_year = Month.add_start_tasks(do_year)
@@ -87,5 +79,12 @@ class Lggr
   end
 end
 
-lggr = Lggr.new()
+arguments = ARGV
+
+config_file = arguments[0].is_a?(String) && File.exist?(arguments[0]) ? arguments[0] : ''
+print_type = arguments[1] == 'LG' || arguments[1] == 'DO' ? arguments[1] : ''
+print_year = arguments[2].to_i.is_a?(Integer) ? arguments[2].to_i : nil
+print_month = arguments[3].to_i.is_a?(Integer) ? arguments[3].to_i : nil
+
+lggr = Lggr.new(config_file, print_type, print_year, print_month)
 lggr.main()

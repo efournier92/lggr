@@ -10,6 +10,7 @@ describe TaskPrinter do
     DIMENTIONAL_2: '2_Dimentional',
     DIMENTIONAL_3: '3_Dimentional',
     DIMENTIONAL_1_DOUBLE: '1_Dimentional_Double',
+    DIMENTIONAL_2_MIXED: '2_Dimentional_Mixed',
     DIMENTIONAL_3_SIBLINGS_LEAF: '3_Dimentional_Leaf_Siblings',
     DIMENTIONAL_3_SIBLINGS_INTERNAL: '3_Dimentional_Internal_Siblings',
   }
@@ -91,6 +92,18 @@ describe TaskPrinter do
       task_printed = @printer.print(task)
 
       expected_output = "Level_1(\n  Level_2a(\n    Level_3,\n  ),\n  Level_2b(\n    Level_3,\n  ),\n),\n"
+      expect(task_printed).to eq(expected_output)
+    end
+  end
+
+  context 'given a 2-dimentional task to print with mixed leaf and internal siblings' do
+    it 'formats the task appropriately' do
+      task_name = CONFIG_KEYS[:DIMENTIONAL_2_MIXED]
+      task = @config_tasks[task_name]
+
+      task_printed = @printer.print(task)
+
+      expected_output = "Level_1a(\n  Level_2a(\n    Level_3a,\n  ),\n  Level_2b,\n),\n"
       expect(task_printed).to eq(expected_output)
     end
   end

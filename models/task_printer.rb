@@ -26,6 +26,8 @@ class TaskPrinter
   end
 
   def print_leaf(node)
+    return if (node.nil?)
+
     node.each do |text|
       append_leaf(text)
       @current_node = @current_node + 1
@@ -33,13 +35,19 @@ class TaskPrinter
   end
 
   def print_internal(node)
+    return if (node.nil?)
+
     node.each do |text, task|
-      append_internal(text)
-      @current_node = @current_node + 1
-      increment_depth
-      print_node(task)
-      decrement_depth
-      print_closer()
+      if (task.nil?)
+        append_leaf(text)
+      else
+        append_internal(text)
+        @current_node = @current_node + 1
+        increment_depth
+        print_node(task)
+        decrement_depth
+        print_closer()
+      end
     end
   end
 
