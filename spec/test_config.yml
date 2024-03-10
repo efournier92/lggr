@@ -41,19 +41,23 @@ days:
   Friday:
     - 3_Dimentional
 templates:
+  Holiday:
+    Holiday:
+      - ((CONTENT))
   Birthday:
     - Name({{NAME}})
     - Contact({{CONTACT}})
+birthdays:
+  template: Holiday
+  johnny: "2000-01-01"
 special:
-  birthdays:
-    template: Birthday
-    johnny: "2000-01-01"
-  new_years_day:
-    tag: "[Holiday_NewYears_Day]"
-    type: specific_date
-    rule:
-      month: 1
-      day: 1
+  New_Years_Day:
+    method: "to_specific_date"
+    template: Holiday
+    content: New_Years_Day
+    month: 1
+    day: 1
+other:
   presidents_day:
     tag: "[Holiday_PresidentsDay]"
     type: nth_xday_in_month
