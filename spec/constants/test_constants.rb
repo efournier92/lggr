@@ -13,7 +13,11 @@ module TestConstants
     DIMENTIONAL_2_MIXED: '2_Dimentional_Mixed',
     DIMENTIONAL_3_SIBLINGS_LEAF: '3_Dimentional_Leaf_Siblings',
     DIMENTIONAL_3_SIBLINGS_INTERNAL: '3_Dimentional_Internal_Siblings',
-    NEW_YEARS_DAY: 'New_Years_Day',
+  }
+
+  HOLIDAYS = {
+    FIRST_DAY: 'First_Day',
+    NTH_XDAY: 'Nth_XDay'
   }
 
 end

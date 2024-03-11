@@ -51,16 +51,16 @@ birthdays:
   template: Holiday
   johnny: "2000-01-01"
 special:
-  New_Years_Day:
+  First_Day:
     method: "to_specific_date"
     template: Holiday
-    content: New_Years_Day
+    content: First_Day
     month: 1
     day: 1
-  presidents_day:
+  Nth_X_Day:
     method: to_nth_xday_in_month
     template: Holiday
-    content: Presidents_Day
+    content: Nth_XDay
     month: 1
     nth_day: 2
     day_name: "Tuesday"

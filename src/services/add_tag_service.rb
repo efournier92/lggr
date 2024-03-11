@@ -21,6 +21,7 @@ class AddTagService
   def to_nth_xday_in_month(do_year, config)
     month = config[ConfigConstants::KEYS[:MONTH]]
     nth_day = config[ConfigConstants::KEYS[:NTH_DAY]]
+    # TODO: Throw config error if invalid day name
     day_name = config[ConfigConstants::KEYS[:DAY_NAME]]
     new_tag = config[ConfigConstants::KEYS[:TAG]]
 

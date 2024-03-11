@@ -20,8 +20,9 @@ describe SpecialTagService do
 
         week = year.weeks[1]
         january_1 = week.days.find { |day| day.month_day == 1 }
+        holiday_name = TestConstants::HOLIDAYS[:FIRST_DAY]
 
-        expect(january_1.tasks).to include("Holiday(\n  New_Years_Day,\n),\n")
+        expect(january_1.tasks).to include("Holiday(\n  #{holiday_name},\n),\n")
       end
 
       it 'adds a tag based on a configured template to the 2nd Tuesday in a month' do
@@ -30,8 +31,9 @@ describe SpecialTagService do
 
         week = year.weeks[3]
         day = week.days.find { |day| day.name == 'Tuesday' }
+        holiday_name = TestConstants::HOLIDAYS[:NTH_XDAY]
 
-        expect(day.tasks).to include("Holiday(\n  Presidents_Day,\n),\n")
+        expect(day.tasks).to include("Holiday(\n  #{holiday_name},\n),\n")
       end
     end
   end
