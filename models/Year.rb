@@ -1,6 +1,8 @@
+require './models/Week'
+
 class Year
   attr_accessor :weeks
-  attr_reader :year, :days_in_months
+  attr_reader :year, :days_in_months, :config_file
 
   def initialize(year, config_file)
     @year  = year

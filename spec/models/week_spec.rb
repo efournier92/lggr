@@ -1,19 +1,10 @@
 require './models/Week'
 require './models/Day'
 require './models/Task'
+require './spec/constants/test_constants'
 require 'pry-byebug'
 
 describe Week do
-  TEST_CONFIG_PATH = './spec/test_config.yml'
-  CONFIG_KEYS = {
-    TASKS: 'tasks',
-    DIMENTIONAL_1: '1_Dimentional',
-    DIMENTIONAL_2: '2_Dimentional',
-    DIMENTIONAL_3: '3_Dimentional',
-    DIMENTIONAL_3_SIBLINGS_LEAF: '3_Dimentional_Leaf_Siblings',
-    DIMENTIONAL_3_SIBLINGS_INTERNAL: '3_Dimentional_Internal_Siblings',
-  }
-
   context 'given a new week' do
     before :all do
       week_index = 1
@@ -21,7 +12,7 @@ describe Week do
       days_this_week = Week.days_this_week(1, month, 31)
       year = 2000
 
-      week = Week.new(week_index, days_this_week, year, month, TEST_CONFIG_PATH)
+      week = Week.new(week_index, days_this_week, year, month, TEST_CONFIG_FILES[:TEST_PATH])
       @days = week.days
     end
 

@@ -13,10 +13,7 @@ require './modules/Printer'
 
 class Lggr
 
-  # TODO: Accept as input
-  TEST_CONFIG_PATH = './spec/test_config.yml'
-
-  def initialize(config_file = TEST_CONFIG_PATH, print_type = '', print_year = nil, print_month = nil)
+  def initialize(config_file = '', print_type = '', print_year = nil, print_month = nil)
     @config_file = config_file
     @print_type = print_type
     @print_year = print_year
@@ -79,12 +76,12 @@ class Lggr
   end
 end
 
-arguments = ARGV
+# arguments = ARGV
 
-config_file = arguments[0].is_a?(String) && File.exist?(arguments[0]) ? arguments[0] : ''
-print_type = arguments[1] == 'LG' || arguments[1] == 'DO' ? arguments[1] : ''
-print_year = arguments[2].to_i.is_a?(Integer) ? arguments[2].to_i : nil
-print_month = arguments[3].to_i.is_a?(Integer) ? arguments[3].to_i : nil
+# config_file = arguments[0].is_a?(String) && File.exist?(arguments[0]) ? arguments[0] : ''
+# print_type = arguments[1] == 'LG' || arguments[1] == 'DO' ? arguments[1] : ''
+# print_year = arguments[2].to_i.is_a?(Integer) ? arguments[2].to_i : nil
+# print_month = arguments[3].to_i.is_a?(Integer) ? arguments[3].to_i : nil
 
-lggr = Lggr.new(config_file, print_type, print_year, print_month)
-lggr.main()
+# lggr = Lggr.new(config_file, print_type, print_year, print_month)
+# lggr.main()

@@ -22,7 +22,6 @@ class TaskPrinter
     else
       print_internal(node)
     end
-
   end
 
   def print_leaf(node)
@@ -92,6 +91,28 @@ class TaskPrinter
 
   def decrement_depth()
     @current_depth = @current_depth - 1
+  end
+
+  def print_from_template(template, content)
+    template.each do |name, arr|
+      arr.each do |string|
+        if (is_template_string?(string))
+          replaced_string = replace_template_content(string, content)
+        end
+      end
+    end
+
+    print(template)
+
+    @output + "\n"
+  end
+
+  def is_template_string?(string)
+    string.include?('((CONTENT))')
+  end
+
+  def replace_template_content(template, content)
+    template.gsub!('((CONTENT))', content)
   end
 
 end

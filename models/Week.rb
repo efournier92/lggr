@@ -1,4 +1,5 @@
 require './models/config_reader'
+require './models/Day'
 
 class Week
   attr_reader   :year, :month, :days
