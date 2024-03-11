@@ -1,5 +1,5 @@
-require './models/Week'
-require './models/Day'
+require './src/models/week'
+require './src/models/day'
 require './models/Task'
 require './spec/constants/test_constants'
 require 'pry-byebug'

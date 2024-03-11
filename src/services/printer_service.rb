@@ -1,13 +1,13 @@
 require 'fileutils'
 
-module Printer
+class PrinterService
   OUT_DIR = "./_out"
 
-  def self.make_out_dir
+  def make_out_dir()
     FileUtils.mkdir_p OUT_DIR
   end
 
-  def self.print_tasks(out_file, day)
+  def print_tasks(out_file, day)
     make_out_dir
     out_file.puts("## #{ '%04d' % day.year }-#{ '%02d' % day.month }-#{ '%02d' % day.month_day } | #{day.name}")
     out_file.puts()
@@ -17,7 +17,7 @@ module Printer
     out_file.puts
   end
 
-  def self.print_do_year(do_year)
+  def print_do_year(do_year)
     make_out_dir
     year = do_year.year
     out_file = File.new("#{OUT_DIR}/DO_#{ '%04d' % year }.md", "w")
@@ -28,7 +28,7 @@ module Printer
     end
   end
 
-  def self.print_do_month(do_year, month)
+  def print_do_month(do_year, month)
     make_out_dir
     year = do_year.year
     out_file = File.new("#{OUT_DIR}/DO_#{ '%04d' % year }_#{ '%02d' % month }.md", "w")
@@ -41,7 +41,7 @@ module Printer
     end
   end
 
-  def self.print_lg(do_year)
+  def print_lg(do_year)
     make_out_dir
     year = do_year.year
     out_file = File.new("#{OUT_DIR}/LG_#{ '%04d' % year }.md", "w")

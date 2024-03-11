@@ -1,4 +1,4 @@
-class TaskPrinter
+class TaskPrinterService
   attr_reader :output
 
   def initialize()

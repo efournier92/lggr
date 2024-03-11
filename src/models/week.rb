@@ -1,5 +1,5 @@
-require './models/config_reader'
-require './models/Day'
+require './src/services/config_reader_service'
+require './src/models/day'
 
 class Week
   attr_reader   :year, :month, :days
@@ -17,7 +17,7 @@ class Week
   DAY_NAMES = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
   def create_days
-    config_reader = ConfigReader.new(@config_file)
+    config_reader = ConfigReaderService.new(@config_file)
     days_hash = {}
     DAY_NAMES.each do |day_name|
       days_hash[day_name] = config_reader.print_tasks_by_day_name(day_name)

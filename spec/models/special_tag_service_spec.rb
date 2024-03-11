@@ -1,5 +1,5 @@
-require './modules/special_tag_service'
-require './models/Year'
+require './src/services/special_tag_service'
+require './src/models/year'
 require './spec/constants/test_constants'
 require 'pry-byebug'
 

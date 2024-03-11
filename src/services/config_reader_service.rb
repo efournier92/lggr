@@ -1,8 +1,8 @@
 require 'yaml'
-require './models/task_printer'
-require './constants/config_constants'
+require './src/services/task_printer_service'
+require './src/constants/config_constants'
 
-class ConfigReader
+class ConfigReaderService
 
   def initialize(config_file)
     @config = read_file(config_file)
@@ -41,7 +41,7 @@ class ConfigReader
 
   def print_tasks_by_day_name(day_name)
     output = ''
-    printer = TaskPrinter.new()
+    printer = TaskPrinterService.new()
 
     day_tasks = get_tasks_by_day_name(day_name)
 

@@ -1,16 +1,16 @@
-require './models/config_reader'
-require './models/task_printer'
+require './src/services/config_reader_service'
+require './src/services/task_printer_service'
 require './spec/constants/test_constants'
-require './constants/config_constants'
+require './src/constants/config_constants'
 require 'pry-byebug'
 
-describe TaskPrinter do
+describe TaskPrinterService do
   before :each do
-    @config_reader = ConfigReader.new(TEST_CONFIG_FILES[:TEST_PATH])
+    @config_reader = ConfigReaderService.new(TEST_CONFIG_FILES[:TEST_PATH])
     @config = @config_reader.read_file(TEST_CONFIG_FILES[:TEST_PATH])
     @config_tasks = @config[CONFIG_KEYS[:TASKS]]
 
-    @printer = TaskPrinter.new()
+    @printer = TaskPrinterService.new()
     @config_tasks = @config[CONFIG_KEYS[:TASKS]]
   end
 

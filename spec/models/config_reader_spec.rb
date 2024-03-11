@@ -1,11 +1,11 @@
-require './models/config_reader'
-require './constants/config_constants'
+require './src/services/config_reader_service'
+require './src/constants/config_constants'
 require './spec/constants/test_constants'
 require 'pry-byebug'
 
-describe ConfigReader do
+describe ConfigReaderService do
   before :each do
-    @config_reader = ConfigReader.new(TEST_CONFIG_FILES[:TEST_PATH])
+    @config_reader = ConfigReaderService.new(TEST_CONFIG_FILES[:TEST_PATH])
     @config = @config_reader.read_file(TEST_CONFIG_FILES[:TEST_PATH])
   end
 
@@ -83,7 +83,7 @@ describe ConfigReader do
 
     context 'given a config without the supplied day' do
       before :each do
-        @config_reader = ConfigReader.new(TEST_CONFIG_FILES[:TEST_PATH])
+        @config_reader = ConfigReaderService.new(TEST_CONFIG_FILES[:TEST_PATH])
       end
 
       it 'returns an empty array' do
@@ -97,7 +97,7 @@ describe ConfigReader do
 
     context 'given a real configured and an unconfigured day' do
       before :each do
-        @config_reader = ConfigReader.new(TEST_CONFIG_FILES[:TEST_PATH])
+        @config_reader = ConfigReaderService.new(TEST_CONFIG_FILES[:TEST_PATH])
       end
 
       it 'returns an empty array' do
@@ -112,7 +112,7 @@ describe ConfigReader do
 
   describe '#print_tasks_by_day_name' do
     before :each do
-      @config_reader = ConfigReader.new(TEST_CONFIG_FILES[:TEST_PATH])
+      @config_reader = ConfigReaderService.new(TEST_CONFIG_FILES[:TEST_PATH])
     end
 
     context 'given a call to print a day with a single configured task' do

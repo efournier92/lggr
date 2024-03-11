@@ -1,4 +1,4 @@
-require './models/Week'
+require './src/models/week'
 
 class Year
   attr_accessor :weeks
@@ -84,11 +84,12 @@ class Year
     first_monday
   end
 
-  def self.add_annual_tasks(do_year)
-    Annual.add_all(do_year)
-  end
+  # def self.add_annual_tasks(do_year)
+  #   Annual.add_all(do_year)
+  # end
 
-  def self.add_birthdays(do_year)
-    Birthdays.add_all(do_year)
-  end
+  # def self.add_birthdays(do_year)
+  #   Birthdays.add_all(do_year)
+  # end
+
 end

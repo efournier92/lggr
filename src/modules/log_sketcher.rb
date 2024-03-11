@@ -1,17 +1,16 @@
 require 'pry'
 
-require './models/Day'
-require './models/Month'
-require './models/Week'
-require './models/Year'
-require './models/Task'
-require './modules/Add_Tag'
+require './src/models/day'
+require './src/models/month'
+require './src/models/week'
+require './src/models/year'
+require './src/services/printer_service'
+require './src/services/bookend_weeks_service'
+require './src/services/add_tag_service'
 require './modules/Birthdays'
-require './modules/Bookend_Weeks'
-require './modules/Annual'
-require './modules/Printer'
+require './models/Task'
 
-class Lggr
+class LogSketcher
 
   def initialize(config_file = '', print_type = '', print_year = nil, print_month = nil)
     @config_file = config_file
@@ -59,29 +58,22 @@ class Lggr
     #do_year = Year.add_annual_tasks(do_year)
 
     if @print_type == 'DO'
-      do_year = Bookend_Weeks.shift_do_start(do_year)
-      do_year = Bookend_Weeks.shift_do_start(do_year)
-      do_year = Bookend_Weeks.shift_do_end(do_year)
+      printer_service = PrinterService.new()
+      bookend_weeks_service = BookendWeeksService.new()
+
+      do_year = bookend_weeks_service.shift_do_start(do_year)
+      do_year = bookend_weeks_service.shift_do_start(do_year)
+      do_year = bookend_weeks_service.shift_do_end(do_year)
 
       if @print_month.is_a? Integer
-        Printer.print_do_month(do_year, @print_month)
+        printer_service.print_do_month(do_year, @print_month)
       else
-        Printer.print_do_year(do_year)
+        printer_service.print_do_year(do_year)
       end
     elsif @print_type == 'LG'
-      do_year = Bookend_Weeks.shift_lg_start(do_year)
-      do_year = Bookend_Weeks.shift_lg_end(do_year)
-      Printer.print_lg(do_year)
+      do_year = bookend_weeks_service.shift_lg_start(do_year)
+      do_year = bookend_weeks_service.shift_lg_end(do_year)
+      printer_service.print_lg(do_year)
     end
   end
 end
-
-# arguments = ARGV
-
-# config_file = arguments[0].is_a?(String) && File.exist?(arguments[0]) ? arguments[0] : ''
-# print_type = arguments[1] == 'LG' || arguments[1] == 'DO' ? arguments[1] : ''
-# print_year = arguments[2].to_i.is_a?(Integer) ? arguments[2].to_i : nil
-# print_month = arguments[3].to_i.is_a?(Integer) ? arguments[3].to_i : nil
-
-# lggr = Lggr.new(config_file, print_type, print_year, print_month)
-# lggr.main()

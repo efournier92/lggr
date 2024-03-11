@@ -1,23 +1,23 @@
-module Annual 
+module Annual
 
   def self.add_all(do_year)
     # New Year's Day
-    do_year = Add_Tag.to_specific_date(
+    do_year = add_tag_service.to_specific_date(
       do_year, 1, 1, "[Holiday_NewYearsDay]"
     )
 
     # President's Day
-    do_year = Add_Tag.to_nth_xday_in_month(
+    do_year = add_tag_service.to_nth_xday_in_month(
       do_year, 2, 3, "Monday", "[Holiday_PresidentsDay]"
     )
 
     # Valentine's Day
-    do_year = Add_Tag.to_specific_date(
+    do_year = add_tag_service.to_specific_date(
       do_year, 2, 14, "[Holiday_ValentinesDay]"
     )
 
     # Daylight Savings (Begin)
-    do_year = Add_Tag.to_nth_xday_in_month(
+    do_year = add_tag_service.to_nth_xday_in_month(
       do_year, 3, 2, "Sunday", "[DaylightSaving_Begins],\nClocks_Time_Set(BlueAlarm,)"
     )
 
@@ -26,68 +26,68 @@ module Annual
       do_year
     )
 
-    # Mother's Day 
-    do_year = Add_Tag.to_nth_xday_in_month(
+    # Mother's Day
+    do_year = add_tag_service.to_nth_xday_in_month(
       do_year, 5, 2, "Sunday", "[Holiday_MothersDay]"
     )
 
     # Memorial Day
-    do_year = Add_Tag.to_last_week_in_month(
+    do_year = add_tag_service.to_last_week_in_month(
       do_year, 5, "Monday", "[Holiday_MemorialDay]"
     )
 
-    # Father's Day 
-    do_year = Add_Tag.to_nth_xday_in_month(
+    # Father's Day
+    do_year = add_tag_service.to_nth_xday_in_month(
       do_year, 6, 3, "Sunday", "[Holiday_FathersDay]"
     )
 
     # Juneteenth
-    do_year = Add_Tag.to_specific_date(
+    do_year = add_tag_service.to_specific_date(
       do_year, 6, 19, "[Holiday_Juneteenth]"
     )
 
     # Independence Day
-    do_year = Add_Tag.to_specific_date(
+    do_year = add_tag_service.to_specific_date(
       do_year, 7, 4, "[Holiday_IndependenceDay]"
     )
 
     # Labor Day
-    do_year = Add_Tag.to_nth_xday_in_month(
+    do_year = add_tag_service.to_nth_xday_in_month(
       do_year, 9, 1, "Monday", "[Holiday_LaborDay]"
     )
 
     # Halloween
-    do_year = Add_Tag.to_specific_date(
+    do_year = add_tag_service.to_specific_date(
       do_year, 10, 31, "[Holiday_Halloween]"
     )
 
     # Veterans Day
-    do_year = Add_Tag.to_specific_date(
+    do_year = add_tag_service.to_specific_date(
       do_year, 11, 11, "[Holiday_VeteransDay]"
     )
 
     # Daylight Savings (End)
-    do_year = Add_Tag.to_nth_xday_in_month(
+    do_year = add_tag_service.to_nth_xday_in_month(
       do_year, 11, 1, "Sunday", "[DaylightSaving_Ends],\nClocks_Time_Set(BlueAlarm,)"
     )
 
     # Thanksgiving
-    do_year = Add_Tag.to_nth_xday_in_month(
+    do_year = add_tag_service.to_nth_xday_in_month(
       do_year, 11, 4, "Thursday", "[Holiday_Thanksgiving]"
     )
 
     # Christmas Eve
-    do_year = Add_Tag.to_specific_date(
+    do_year = add_tag_service.to_specific_date(
       do_year, 12, 24, "[Holiday_ChristmasEve],\nBill_Phone_Verizon_Dad_Pay($480,)"
     )
 
     # Christmas
-    do_year = Add_Tag.to_specific_date(
+    do_year = add_tag_service.to_specific_date(
       do_year, 12, 25, "[Holiday_Christmas]"
     )
 
-    # New Year's Eve 
-    do_year = Add_Tag.to_specific_date(
+    # New Year's Eve
+    do_year = add_tag_service.to_specific_date(
       do_year, 12, 31, "[Holiday_NewYearsEve]"
     )
 
@@ -105,7 +105,7 @@ module Annual
       31 * ( easter_month / 4 )
     )
 
-    good_friday_month = easter_day > 2 ? 
+    good_friday_month = easter_day > 2 ?
       easter_month : easter_month - 1
 
     days_in_good_friday_month = Year.days_in_months[good_friday_month - 1]
@@ -132,4 +132,3 @@ module Annual
   end
 
 end
-
