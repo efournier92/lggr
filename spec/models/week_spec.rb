@@ -12,7 +12,7 @@ describe Week do
       days_this_week = Week.days_this_week(1, month, 31)
       year = 2000
 
-      week = Week.new(week_index, days_this_week, year, month, TEST_CONFIG_FILES[:TEST_PATH])
+      week = Week.new(week_index, days_this_week, year, month, TestConstants::CONFIG_FILES[:TEST_PATH])
       @days = week.days
     end
 

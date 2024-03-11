@@ -3,9 +3,9 @@ require './src/constants/config_constants'
 class AddTagService
 
   def to_specific_date(do_year, config)
-    month = config[CONFIG_KEYS[:MONTH]]
-    month_day = config[CONFIG_KEYS[:DAY]]
-    new_tag = config[CONFIG_KEYS[:TAG]]
+    month = config[ConfigConstants::KEYS[:MONTH]]
+    month_day = config[ConfigConstants::KEYS[:DAY]]
+    new_tag = config[ConfigConstants::KEYS[:TAG]]
 
     day_count = 0
     do_year.weeks.each do | week |

@@ -5,8 +5,8 @@ require 'pry-byebug'
 
 describe ConfigReaderService do
   before :each do
-    @config_reader = ConfigReaderService.new(TEST_CONFIG_FILES[:TEST_PATH])
-    @config = @config_reader.read_file(TEST_CONFIG_FILES[:TEST_PATH])
+    @config_reader = ConfigReaderService.new(TestConstants::CONFIG_FILES[:TEST_PATH])
+    @config = @config_reader.read_file(TestConstants::CONFIG_FILES[:TEST_PATH])
   end
 
   describe '#read_file' do
@@ -19,15 +19,15 @@ describe ConfigReaderService do
     context 'given an nonexistent file to read' do
       it 'throws an error' do
         expect {
-          @config_reader.read_file(TEST_CONFIG_FILES[:FAKE_PATH])
+          @config_reader.read_file(TestConstants::CONFIG_FILES[:FAKE_PATH])
         }.to raise_error
       end
     end
 
     context 'given an internal node to read' do
       it 'returns a hash' do
-        tasks = @config[CONFIG_KEYS[:TASKS]]
-        node_name = TEST_CONFIG_KEYS[:DIMENTIONAL_2]
+        tasks = @config[ConfigConstants::KEYS[:TASKS]]
+        node_name = TestConstants::KEYS[:DIMENTIONAL_2]
 
         node = tasks[node_name]
 
@@ -37,8 +37,8 @@ describe ConfigReaderService do
 
     context 'given a leaf node to read' do
       it 'returns an array' do
-        tasks = @config[CONFIG_KEYS[:TASKS]]
-        node_name = TEST_CONFIG_KEYS[:DIMENTIONAL_1]
+        tasks = @config[ConfigConstants::KEYS[:TASKS]]
+        node_name = TestConstants::KEYS[:DIMENTIONAL_1]
 
         node = tasks[node_name]
 
@@ -62,11 +62,11 @@ describe ConfigReaderService do
     context 'given a valid config' do
       it 'returns a hash with configured special tags' do
         tags = @config_reader.get_configured_special_tags()
-        new_years = tags[TEST_CONFIG_KEYS[:NEW_YEARS_DAY]]
+        new_years = tags[TestConstants::KEYS[:NEW_YEARS_DAY]]
 
         expect(tags).to be_an_instance_of(Hash)
-        expect(new_years[CONFIG_KEYS[:TEMPLATE]]).to eql(TEMPLATE_TYPES[:HOLIDAY])
-        expect(new_years[CONFIG_KEYS[:METHOD]]).to eql(SPECIAL_METHODS[:SPECIFIC_DATE])
+        expect(new_years[ConfigConstants::KEYS[:TEMPLATE]]).to eql(ConfigConstants::TEMPLATE_TYPES[:HOLIDAY])
+        expect(new_years[ConfigConstants::KEYS[:METHOD]]).to eql(ConfigConstants::SPECIAL_METHODS[:SPECIFIC_DATE])
       end
     end
   end
@@ -77,13 +77,13 @@ describe ConfigReaderService do
         day_name = 'Monday'
         days = @config_reader.get_tasks_by_day_name(day_name)
 
-        expect(days).to include(TEST_CONFIG_KEYS[:DIMENTIONAL_1])
+        expect(days).to include(TestConstants::KEYS[:DIMENTIONAL_1])
       end
     end
 
     context 'given a config without the supplied day' do
       before :each do
-        @config_reader = ConfigReaderService.new(TEST_CONFIG_FILES[:TEST_PATH])
+        @config_reader = ConfigReaderService.new(TestConstants::CONFIG_FILES[:TEST_PATH])
       end
 
       it 'returns an empty array' do
@@ -97,7 +97,7 @@ describe ConfigReaderService do
 
     context 'given a real configured and an unconfigured day' do
       before :each do
-        @config_reader = ConfigReaderService.new(TEST_CONFIG_FILES[:TEST_PATH])
+        @config_reader = ConfigReaderService.new(TestConstants::CONFIG_FILES[:TEST_PATH])
       end
 
       it 'returns an empty array' do
@@ -112,7 +112,7 @@ describe ConfigReaderService do
 
   describe '#print_tasks_by_day_name' do
     before :each do
-      @config_reader = ConfigReaderService.new(TEST_CONFIG_FILES[:TEST_PATH])
+      @config_reader = ConfigReaderService.new(TestConstants::CONFIG_FILES[:TEST_PATH])
     end
 
     context 'given a call to print a day with a single configured task' do

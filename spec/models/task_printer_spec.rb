@@ -6,17 +6,17 @@ require 'pry-byebug'
 
 describe TaskPrinterService do
   before :each do
-    @config_reader = ConfigReaderService.new(TEST_CONFIG_FILES[:TEST_PATH])
-    @config = @config_reader.read_file(TEST_CONFIG_FILES[:TEST_PATH])
-    @config_tasks = @config[CONFIG_KEYS[:TASKS]]
+    @config_reader = ConfigReaderService.new(TestConstants::CONFIG_FILES[:TEST_PATH])
+    @config = @config_reader.read_file(TestConstants::CONFIG_FILES[:TEST_PATH])
+    @config_tasks = @config[ConfigConstants::KEYS[:TASKS]]
 
     @printer = TaskPrinterService.new()
-    @config_tasks = @config[CONFIG_KEYS[:TASKS]]
+    @config_tasks = @config[ConfigConstants::KEYS[:TASKS]]
   end
 
   context 'given a single 1-dimentional task to print' do
     it 'formats the task appropriately' do
-      task_name = TEST_CONFIG_KEYS[:DIMENTIONAL_1]
+      task_name = TestConstants::KEYS[:DIMENTIONAL_1]
       task = @config_tasks[task_name]
 
       task_printed = @printer.print(task)
@@ -28,7 +28,7 @@ describe TaskPrinterService do
 
   context 'given multiple 1-dimentional tasks to print' do
     it 'formats the task appropriately' do
-      task_name = TEST_CONFIG_KEYS[:DIMENTIONAL_1_DOUBLE]
+      task_name = TestConstants::KEYS[:DIMENTIONAL_1_DOUBLE]
       task = @config_tasks[task_name]
 
       task_printed = @printer.print(task)
@@ -40,7 +40,7 @@ describe TaskPrinterService do
 
   context 'given a 2-dimentional task to print' do
     it 'formats the task appropriately' do
-      task_name = TEST_CONFIG_KEYS[:DIMENTIONAL_2]
+      task_name = TestConstants::KEYS[:DIMENTIONAL_2]
       task = @config_tasks[task_name]
 
       task_printed = @printer.print(task)
@@ -52,7 +52,7 @@ describe TaskPrinterService do
 
   context 'given a 3-dimentional task to print' do
     it 'formats the task appropriately' do
-      task_name = TEST_CONFIG_KEYS[:DIMENTIONAL_3]
+      task_name = TestConstants::KEYS[:DIMENTIONAL_3]
       task = @config_tasks[task_name]
 
       task_printed = @printer.print(task)
@@ -64,7 +64,7 @@ describe TaskPrinterService do
 
   context 'given a 3-dimentional task to print with leaf siblings on the bottom level' do
     it 'formats the task appropriately' do
-      task_name = TEST_CONFIG_KEYS[:DIMENTIONAL_3_SIBLINGS_LEAF]
+      task_name = TestConstants::KEYS[:DIMENTIONAL_3_SIBLINGS_LEAF]
       task = @config_tasks[task_name]
 
       task_printed = @printer.print(task)
@@ -76,7 +76,7 @@ describe TaskPrinterService do
 
   context 'given a 3-dimentional task to print with internal siblings on the middle level' do
     it 'formats the task appropriately' do
-      task_name = TEST_CONFIG_KEYS[:DIMENTIONAL_3_SIBLINGS_INTERNAL]
+      task_name = TestConstants::KEYS[:DIMENTIONAL_3_SIBLINGS_INTERNAL]
       task = @config_tasks[task_name]
 
       task_printed = @printer.print(task)
@@ -88,7 +88,7 @@ describe TaskPrinterService do
 
   context 'given a 2-dimentional task to print with mixed leaf and internal siblings' do
     it 'formats the task appropriately' do
-      task_name = TEST_CONFIG_KEYS[:DIMENTIONAL_2_MIXED]
+      task_name = TestConstants::KEYS[:DIMENTIONAL_2_MIXED]
       task = @config_tasks[task_name]
 
       task_printed = @printer.print(task)
@@ -194,7 +194,7 @@ describe TaskPrinterService do
   describe '#is_leaf' do
     context 'given a leaf node' do
       it 'returns true' do
-        node_name = TEST_CONFIG_KEYS[:DIMENTIONAL_1]
+        node_name = TestConstants::KEYS[:DIMENTIONAL_1]
         node = @config_tasks[node_name]
 
         output = @printer.is_leaf?(node)
@@ -205,7 +205,7 @@ describe TaskPrinterService do
 
     context 'given an internal node' do
       it 'returns false' do
-        node_name = TEST_CONFIG_KEYS[:DIMENTIONAL_3]
+        node_name = TestConstants::KEYS[:DIMENTIONAL_3]
         node = @config_tasks[node_name]
 
         output = @printer.is_leaf?(node)
@@ -268,14 +268,14 @@ describe TaskPrinterService do
   describe '#print_from_template' do
     context 'given a special tag with a configured template' do
       it 'inserts the special tag content inside the template' do
-        task = @config[CONFIG_KEYS[:SPECIAL]][TEST_CONFIG_KEYS[:NEW_YEARS_DAY]]
-        content = task[CONFIG_KEYS[:CONTENT]]
-        template_name = task[CONFIG_KEYS[:TEMPLATE]]
-        template = @config[CONFIG_KEYS[:TEMPLATES]][template_name]
+        task = @config[ConfigConstants::KEYS[:SPECIAL]][TestConstants::KEYS[:NEW_YEARS_DAY]]
+        content = task[ConfigConstants::KEYS[:CONTENT]]
+        template_name = task[ConfigConstants::KEYS[:TEMPLATE]]
+        template = @config[ConfigConstants::KEYS[:TEMPLATES]][template_name]
 
         output = @printer.print_from_template(template, content)
 
-        expect(output).to eql("Holiday(\n  #{TEST_CONFIG_KEYS[:NEW_YEARS_DAY]},\n),\n")
+        expect(output).to eql("Holiday(\n  #{TestConstants::KEYS[:NEW_YEARS_DAY]},\n),\n")
       end
     end
   end

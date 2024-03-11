@@ -13,15 +13,15 @@ class ConfigReaderService
   end
 
   def get_configured_days()
-    @config[CONFIG_KEYS[:DAYS]]
+    @config[ConfigConstants::KEYS[:DAYS]]
   end
 
   def get_configured_templates()
-    @config[CONFIG_KEYS[:TEMPLATES]]
+    @config[ConfigConstants::KEYS[:TEMPLATES]]
   end
 
   def get_configured_special_tags()
-    @config[CONFIG_KEYS[:SPECIAL]]
+    @config[ConfigConstants::KEYS[:SPECIAL]]
   end
 
   def get_tasks_by_day_name(day_name)
@@ -36,7 +36,7 @@ class ConfigReaderService
   end
 
   def get_tasks_by_name(task_name)
-    @config[CONFIG_KEYS[:TASKS]][task_name]
+    @config[ConfigConstants::KEYS[:TASKS]][task_name]
   end
 
   def print_tasks_by_day_name(day_name)

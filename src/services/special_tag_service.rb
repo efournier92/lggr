@@ -14,9 +14,9 @@ class SpecialTagService
 
     tags.each do |name, config|
       printer = TaskPrinterService.new()
-      method = config[CONFIG_KEYS[:METHOD]]
-      template = reader.get_configured_templates[config[CONFIG_KEYS[:TEMPLATE]]]
-      config[CONFIG_KEYS[:TAG]] = printer.print_from_template(template, config[CONFIG_KEYS[:CONTENT]])
+      method = config[ConfigConstants::KEYS[:METHOD]]
+      template = reader.get_configured_templates[config[ConfigConstants::KEYS[:TEMPLATE]]]
+      config[ConfigConstants::KEYS[:TAG]] = printer.print_from_template(template, config[ConfigConstants::KEYS[:CONTENT]])
       add_tag_service.public_send(method, year, config)
     end
   end

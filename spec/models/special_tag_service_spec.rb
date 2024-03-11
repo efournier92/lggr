@@ -15,7 +15,7 @@ describe SpecialTagService do
 
     describe '#add_special_tags' do
       it 'expands a configured template adds tags to a specific date' do
-        year = Year.new(2020, TEST_CONFIG_FILES[:TEST_PATH])
+        year = Year.new(2020, TestConstants::CONFIG_FILES[:TEST_PATH])
         @tagService.add_special_tags(year)
 
         week = year.weeks[1]
