@@ -14,7 +14,7 @@ describe SpecialTagService do
     end
 
     describe '#add_special_tags' do
-      it 'expands a configured template adds tags to a specific date' do
+      it 'adds a tag based on a configured template to a specific date' do
         year = Year.new(2020, TestConstants::CONFIG_FILES[:TEST_PATH])
         @tagService.add_special_tags(year)
 
@@ -22,6 +22,16 @@ describe SpecialTagService do
         january_1 = week.days.find { |day| day.month_day == 1 }
 
         expect(january_1.tasks).to include("Holiday(\n  New_Years_Day,\n),\n")
+      end
+
+      it 'adds a tag based on a configured template to the 2nd Tuesday in a month' do
+        year = Year.new(2020, TestConstants::CONFIG_FILES[:TEST_PATH])
+        @tagService.add_special_tags(year)
+
+        week = year.weeks[3]
+        day = week.days.find { |day| day.name == 'Tuesday' }
+
+        expect(day.tasks).to include("Holiday(\n  Presidents_Day,\n),\n")
       end
     end
   end

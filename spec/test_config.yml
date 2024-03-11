@@ -57,6 +57,13 @@ special:
     content: New_Years_Day
     month: 1
     day: 1
+  presidents_day:
+    method: to_nth_xday_in_month
+    template: Holiday
+    content: Presidents_Day
+    month: 1
+    nth_day: 2
+    day_name: "Tuesday"
 other:
   presidents_day:
     tag: "[Holiday_PresidentsDay]"

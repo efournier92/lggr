@@ -12,6 +12,12 @@ module ConfigConstants
     TAG: 'tag',
     MONTH: 'month',
     DAY: 'day',
+    NTH_DAY: 'nth_day',
+    DAY_NAME: 'day_name',
+  }
+
+  PLACEHOLDERS = {
+    CONTENT: '((CONTENT))'
   }
 
   SPECIAL_METHODS = {

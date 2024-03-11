@@ -19,18 +19,18 @@ class AddTagService
   end
 
   def to_nth_xday_in_month(do_year, config)
-    month = config.month
-    nth_day = config.month_day
-    day_name = config.day_name
-    new_tag = config.new_tag
+    month = config[ConfigConstants::KEYS[:MONTH]]
+    nth_day = config[ConfigConstants::KEYS[:NTH_DAY]]
+    day_name = config[ConfigConstants::KEYS[:DAY_NAME]]
+    new_tag = config[ConfigConstants::KEYS[:TAG]]
 
     day_count = 0
     do_year.weeks.each do | week |
       week.days.each do | day |
-        if day.month == month && day.name == day_name
+        if (day.month == month && day.name == day_name)
           day_count += 1
-          if day_count == nth_day
-            day.tasks.unshift(new_tag)
+          if (day_count == nth_day)
+            day.tasks.prepend(new_tag)
           end
         end
       end

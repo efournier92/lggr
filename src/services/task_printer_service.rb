@@ -1,3 +1,5 @@
+require './src/constants/config_constants'
+
 class TaskPrinterService
   attr_reader :output
 
@@ -94,25 +96,28 @@ class TaskPrinterService
   end
 
   def print_from_template(template, content)
-    template.each do |name, arr|
+    # Clone to avoid mutating the original template
+    template_updated = Marshal.load(Marshal.dump(template))
+
+    template_updated.each do |name, arr|
       arr.each do |string|
         if (is_template_string?(string))
-          replaced_string = replace_template_content(string, content)
+          replace_template_content(string, content)
         end
       end
     end
 
-    print(template)
+    print(template_updated)
 
     @output + "\n"
   end
 
   def is_template_string?(string)
-    string.include?('((CONTENT))')
+    string.include?(ConfigConstants::PLACEHOLDERS[:CONTENT])
   end
 
   def replace_template_content(template, content)
-    template.gsub!('((CONTENT))', content)
+    template.gsub!(ConfigConstants::PLACEHOLDERS[:CONTENT], content)
   end
 
 end
