@@ -7,12 +7,10 @@ require './src/models/year'
 require './src/services/printer_service'
 require './src/services/bookend_weeks_service'
 require './src/services/add_tag_service'
-require './modules/Birthdays'
 require './models/Task'
 
 class LogSketcher
-
-  def initialize(config_file = '', print_type = '', print_year = nil, print_month = nil)
+  def initialize(config_file, print_type, print_year, print_month = 'ALL')
     @config_file = config_file
     @print_type = print_type
     @print_year = print_year
@@ -20,7 +18,7 @@ class LogSketcher
     @month = 1
   end
 
-  def main()
+  def main
     # Collect type user input
     until @print_type == 'DO' || @print_type == 'LG'
       print "DO || LG\n>> "
@@ -34,7 +32,7 @@ class LogSketcher
     end
 
     # Collect month user input
-    if @print_type == 'DO' && !@print_month.is_a?(Integer)
+    if @print_type == 'DO' && (!@print_month.is_a?(Integer) && @print_month != 'ALL')
       is_valid = false
       until is_valid == true
         print "MONTH: All || [1-12]\n>> "
@@ -51,15 +49,16 @@ class LogSketcher
     do_year = Year.new(@print_year, @config_file)
 
     # add monthly tasks to year object
-    #do_year = Month.add_start_tasks(do_year)
+    # do_year = Month.add_start_tasks(do_year)
     # add birthdays to year object
-    #do_year = Year.add_birthdays(do_year)
+    # do_year = Year.add_birthdays(do_year)
     # add annual tasks to year object
-    #do_year = Year.add_annual_tasks(do_year)
+    # do_year = Year.add_annual_tasks(do_year)
+    # do_year = do_year.add_special_tags()
 
     if @print_type == 'DO'
-      printer_service = PrinterService.new()
-      bookend_weeks_service = BookendWeeksService.new()
+      printer_service = PrinterService.new
+      bookend_weeks_service = BookendWeeksService.new
 
       do_year = bookend_weeks_service.shift_do_start(do_year)
       do_year = bookend_weeks_service.shift_do_start(do_year)
@@ -70,6 +69,7 @@ class LogSketcher
       else
         printer_service.print_do_year(do_year)
       end
+
     elsif @print_type == 'LG'
       do_year = bookend_weeks_service.shift_lg_start(do_year)
       do_year = bookend_weeks_service.shift_lg_end(do_year)

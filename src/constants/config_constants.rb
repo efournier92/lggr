@@ -1,10 +1,9 @@
 module ConfigConstants
-
   KEYS = {
-    TASKS: 'tasks',
-    DAYS: 'days',
-    SPECIAL: 'special',
-    TEMPLATES: 'templates',
+    TASKS: 'tasks_config',
+    DAYS: 'days_config',
+    SPECIAL: 'special_config',
+    TEMPLATES: 'templates_config',
     TEMPLATE: 'template',
     SPECIFIC_DATE: 'specific_date',
     METHOD: 'method',
@@ -14,18 +13,20 @@ module ConfigConstants
     DAY: 'day',
     NTH_DAY: 'nth_day',
     DAY_NAME: 'day_name',
-  }
+    IS_EACH?: 'is_each',
+  }.freeze
 
   PLACEHOLDERS = {
-    CONTENT: '((CONTENT))'
-  }
+    TEMPLATE_START: '{{',
+    TEMPLATE_END: '}}',
+    CONTENT: '{{CONTENT}}'
+  }.freeze
 
   SPECIAL_METHODS = {
     SPECIFIC_DATE: 'to_specific_date',
-  }
+  }.freeze
 
   TEMPLATE_TYPES = {
     HOLIDAY: 'Holiday',
-  }
-
+  }.freeze
 end

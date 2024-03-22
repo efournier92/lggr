@@ -1,5 +1,4 @@
 class Day
-
   attr_accessor :tasks
   attr_reader :year, :month, :month_day, :name
 
@@ -10,6 +9,4 @@ class Day
     @month = month
     @month_day = month_day
   end
-
 end
-

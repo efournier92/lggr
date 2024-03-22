@@ -1,6 +1,6 @@
 require './src/services/config_reader_service'
 require './src/services/task_printer_service'
-require './spec/constants/test_constants'
+require './test/constants/test_constants'
 require './src/constants/config_constants'
 require 'pry-byebug'
 
@@ -10,7 +10,7 @@ describe TaskPrinterService do
     @config = @config_reader.read_file(TestConstants::CONFIG_FILES[:TEST_PATH])
     @config_tasks = @config[ConfigConstants::KEYS[:TASKS]]
 
-    @printer = TaskPrinterService.new()
+    @printer = TaskPrinterService.new
     @config_tasks = @config[ConfigConstants::KEYS[:TASKS]]
   end
 
@@ -101,7 +101,7 @@ describe TaskPrinterService do
   describe '#append_output' do
     context 'given text to append with no existing output' do
       before :each do
-        text = "TextToAppend"
+        text = 'TextToAppend'
 
         @output = @printer.append_output(text)
 
@@ -191,13 +191,13 @@ describe TaskPrinterService do
     end
   end
 
-  describe '#is_leaf' do
+  describe '#leaf' do
     context 'given a leaf node' do
       it 'returns true' do
         node_name = TestConstants::KEYS[:DIMENTIONAL_1]
         node = @config_tasks[node_name]
 
-        output = @printer.is_leaf?(node)
+        output = @printer.leaf?(node)
 
         expect(output).to be true
       end
@@ -208,7 +208,7 @@ describe TaskPrinterService do
         node_name = TestConstants::KEYS[:DIMENTIONAL_3]
         node = @config_tasks[node_name]
 
-        output = @printer.is_leaf?(node)
+        output = @printer.leaf?(node)
 
         expect(output).to be false
       end
@@ -218,7 +218,7 @@ describe TaskPrinterService do
       it 'returns false' do
         node = nil
 
-        output = @printer.is_leaf?(node)
+        output = @printer.leaf?(node)
 
         expect(output).to be false
       end
@@ -228,7 +228,7 @@ describe TaskPrinterService do
       it 'returns false' do
         node = 'BadInput'
 
-        output = @printer.is_leaf?(node)
+        output = @printer.leaf?(node)
 
         expect(output).to be false
       end
@@ -238,11 +238,11 @@ describe TaskPrinterService do
   describe '#increment_depth' do
     context 'given a call to #increment_depth' do
       it 'increments currentDepth by 1 on each call' do
-        output = @printer.increment_depth()
+        output = @printer.increment_depth
 
         expect(output).to eql(1)
 
-        output = @printer.increment_depth()
+        output = @printer.increment_depth
 
         expect(output).to eql(2)
       end
@@ -252,14 +252,14 @@ describe TaskPrinterService do
   describe '#decrement_depth' do
     context 'given a call to #decrement_depth' do
       it 'decrements currentDepth by 1 on each call' do
-        output = @printer.increment_depth()
-        output = @printer.increment_depth()
+        output = @printer.increment_depth
+        output = @printer.increment_depth
         expect(output).to eql(2)
 
-        output = @printer.decrement_depth()
+        output = @printer.decrement_depth
         expect(output).to eql(1)
 
-        output = @printer.decrement_depth()
+        output = @printer.decrement_depth
         expect(output).to eql(0)
       end
     end
@@ -268,24 +268,51 @@ describe TaskPrinterService do
   describe '#print_from_template' do
     context 'given a special tag with a configured template' do
       it 'inserts the special tag content inside the template' do
-        task = @config[ConfigConstants::KEYS[:SPECIAL]][TestConstants::KEYS[:NEW_YEARS_DAY]]
+        task = @config[ConfigConstants::KEYS[:SPECIAL]][TestConstants::HOLIDAYS[:FIRST_DAY]]
         content = task[ConfigConstants::KEYS[:CONTENT]]
         template_name = task[ConfigConstants::KEYS[:TEMPLATE]]
         template = @config[ConfigConstants::KEYS[:TEMPLATES]][template_name]
 
         output = @printer.print_from_template(template, content)
 
-        expect(output).to eql("Holiday(\n  #{TestConstants::KEYS[:NEW_YEARS_DAY]},\n),\n")
+        expect(output).to eql("Holiday(\n  #{TestConstants::HOLIDAYS[:FIRST_DAY]},\n),\n")
+      end
+    end
+
+    context 'given a special tag with a configured template with multiple placeholders' do
+      it 'inserts the replaces each placeholder appropriately' do
+        task = @config[ConfigConstants::KEYS[:SPECIAL]][TestConstants::KEYS[:BIRTHDAY_PERSON]]
+        content = task[ConfigConstants::KEYS[:CONTENT]]
+        template_name = task[ConfigConstants::KEYS[:TEMPLATE]]
+        template = @config[ConfigConstants::KEYS[:TEMPLATES]][template_name]
+
+        output = @printer.print_from_template(template, content)
+
+        content_name = 'Name(Person,)'
+        content_contact = 'Contact(000-000-0000,)'
+
+        expected_output = "Birthday(\n  Name(\n    Person(#{content_name}),\n  ),\n  Contact(\n    #{content_contact},\n  ),\n),\n"
+        expect(output).to eql(expected_output)
       end
     end
   end
 
-  describe '#is_template_string' do
+  describe '#template_string' do
     context 'given a template node' do
       it 'returns true' do
-        input = '((CONTENT))'
+        input = '{{CONTENT}}'
 
-        output = @printer.is_template_string?(input)
+        output = @printer.template_string?(input)
+
+        expect(output).to eql(true)
+      end
+    end
+
+    context 'given random template content' do
+      it 'returns true' do
+        input = '{{FXJWISJFWE}}'
+
+        output = @printer.template_string?(input)
 
         expect(output).to eql(true)
       end
@@ -295,7 +322,7 @@ describe TaskPrinterService do
       it 'returns false' do
         input = 'some string'
 
-        output = @printer.is_template_string?(input)
+        output = @printer.template_string?(input)
 
         expect(output).to eql(false)
       end
@@ -305,11 +332,25 @@ describe TaskPrinterService do
   describe '#replace_template_content' do
     context 'given a template for content replacement' do
       it 'replaces the placeholder with content' do
-        template = 'This_((CONTENT))_Tag'
+        template = 'This_{{CONTENT}}_Tag'
+        placeholder = '{{CONTENT}}'
         content = 'Example'
-        output = @printer.replace_template_content(template, content)
+        output = @printer.replace_template_content(template, placeholder, content)
 
         expected_output = 'This_Example_Tag'
+        expect(output).to eql(expected_output)
+      end
+    end
+  end
+
+  describe '#get_placeholder' do
+    context 'given a string containing placeholder content' do
+      it 'returns the placeholder content along' do
+        input = 'This_{{CONTENT}}_Tag'
+
+        output = @printer.get_placeholder(input)
+
+        expected_output = '{{CONTENT}}'
         expect(output).to eql(expected_output)
       end
     end

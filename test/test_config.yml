@@ -1,4 +1,4 @@
-tasks:
+tasks_config:
   1_Dimentional:
     - Level_1
   1_Dimentional_Double:
@@ -27,7 +27,7 @@ tasks:
         - Level_3
       Level_2b:
         - Level_3
-days:
+days_config:
   Monday:
     - 1_Dimentional
   Tuesday:
@@ -40,19 +40,19 @@ days:
     - 3_Dimentional
   Friday:
     - 3_Dimentional
-templates:
+templates_config:
   Holiday:
     Holiday:
-      - ((CONTENT))
+      - '{{CONTENT}}'
   Birthday:
-    - Name({{NAME}})
-    - Contact({{CONTACT}})
-birthdays:
-  template: Holiday
-  johnny: "2000-01-01"
-special:
+    Birthday:
+      Name:
+        - 'Person({{NAME}})'
+      Contact:
+        - '{{CONTACT}}'
+special_config:
   First_Day:
-    method: "to_specific_date"
+    method: to_specific_date
     template: Holiday
     content: First_Day
     month: 1
@@ -63,25 +63,24 @@ special:
     content: Nth_XDay
     month: 1
     nth_day: 2
-    day_name: "Tuesday"
-other:
-  presidents_day:
-    tag: "[Holiday_PresidentsDay]"
-    type: nth_xday_in_month
-    rule:
-      month: 2
-      nth_day: 3
-      day_name: "Monday"
-  memorial_day:
-    tag: "[Holiday_MemorialDay]"
-    type: "last_xday_in_month"
-    rule:
-      month: 5
-      day_name: "Monday"
-  fathers_day:
-    tag: "[Holiday_FathersDay]"
-    type: "nth_xday_in_month"
-    rule:
-      month: 6
-      nth_day: 3
-      day_name: "Sunday"
+    day_name: Tuesday
+  Last_X_Day:
+    method: to_last_xday_in_month
+    template: Holiday
+    content: Last_XDay
+    month: 1
+    day_name: Thursday
+  Last_Day:
+    method: to_last_day_in_month
+    template: Holiday
+    content: Last_Day
+    month: 1
+  Birthday_Person:
+    method: to_specific_date
+    template: Birthday
+    year: 1974
+    month: 1
+    day: 3
+    content:
+      Name: Name(Person,)
+      Contact: Contact(000-000-0000,)

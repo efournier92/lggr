@@ -1,7 +1,6 @@
 require './src/services/config_reader_service'
 require './src/constants/config_constants'
-require './spec/constants/test_constants'
-require 'pry-byebug'
+require './test/constants/test_constants'
 
 describe ConfigReaderService do
   before :each do
@@ -18,9 +17,9 @@ describe ConfigReaderService do
 
     context 'given an nonexistent file to read' do
       it 'throws an error' do
-        expect {
+        expect do
           @config_reader.read_file(TestConstants::CONFIG_FILES[:FAKE_PATH])
-        }.to raise_error
+        end.to raise_error
       end
     end
 
@@ -50,7 +49,7 @@ describe ConfigReaderService do
   describe '#get_days' do
     context 'given a valid config' do
       it 'returns a hash with the configured days' do
-        days = @config_reader.get_configured_days()
+        days = @config_reader.get_configured_days
 
         expect(days).to be_an_instance_of(Hash)
         expect(days.empty?).to be false
@@ -61,12 +60,12 @@ describe ConfigReaderService do
   describe '#get_special_tags' do
     context 'given a valid config' do
       it 'returns a hash with configured special tags' do
-        tags = @config_reader.get_configured_special_tags()
-        new_years = tags[TestConstants::KEYS[:NEW_YEARS_DAY]]
+        tags = @config_reader.get_configured_special_tags
+        first_day = tags[TestConstants::HOLIDAYS[:FIRST_DAY]]
 
         expect(tags).to be_an_instance_of(Hash)
-        expect(new_years[ConfigConstants::KEYS[:TEMPLATE]]).to eql(ConfigConstants::TEMPLATE_TYPES[:HOLIDAY])
-        expect(new_years[ConfigConstants::KEYS[:METHOD]]).to eql(ConfigConstants::SPECIAL_METHODS[:SPECIFIC_DATE])
+        expect(first_day[ConfigConstants::KEYS[:TEMPLATE]]).to eql(ConfigConstants::TEMPLATE_TYPES[:HOLIDAY])
+        expect(first_day[ConfigConstants::KEYS[:METHOD]]).to eql(ConfigConstants::SPECIAL_METHODS[:SPECIFIC_DATE])
       end
     end
   end

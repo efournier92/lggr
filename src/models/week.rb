@@ -11,10 +11,10 @@ class Week
     @year = year
     @days_this_week = days_this_week
     @config_file = config_file
-    @days = create_days()
+    @days = create_days
   end
 
-  DAY_NAMES = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+  DAY_NAMES = %w[Monday Tuesday Wednesday Thursday Friday Saturday Sunday].freeze
 
   def create_days
     config_reader = ConfigReaderService.new(@config_file)
@@ -25,14 +25,14 @@ class Week
 
     days = []
     last_day = 0
-    days_hash.each_with_index do | (day_name, day_tasks), index |
+    days_hash.each_with_index do |(day_name, day_tasks), index|
       month_day = @days_this_week[index]
       # increment month if it's a new month
       @month += 1 if month_day < last_day
       # reset to January after December
       @month = 1 if @month == 13
       # adjust year on January 1st
-      @year += 1 if @month == 1 && month_day == 1 && ( @index > 5 || @index != 0 )
+      @year += 1 if @month == 1 && month_day == 1
       day = Day.new(day_name, day_tasks, @year, @month, month_day)
       days.push(day)
       last_day = month_day
@@ -45,9 +45,7 @@ class Week
     day_array = []
     days_in_month = days_in_months[month - 1]
     7.times do
-      if day > days_in_month
-        day = 1
-      end
+      day = 1 if day > days_in_month
       day_array.push(day)
       day += 1
     end
@@ -55,8 +53,8 @@ class Week
   end
 
   def self.add_first_week(do_year)
-    do_year.
-      last_monday_of_previous_year = 31 - ( 7 - first_day )
+    do_year
+      .last_monday_of_previous_year = 31 - (7 - first_day)
     days_this_week = Week.days_this_week(last_monday_of_previous_year,
                                          1, @days_in_months)
     year = @year - 1
@@ -67,12 +65,11 @@ class Week
   def self.add_final_week
     last_day_of_previous_year = @weeks.last.days.last
     last_monday_of_previous_year = last_day_of_previous_year.month_day
-    if last_day_of_previous_year.month != 1
-      days_this_week = Week.days_this_week(last_monday_of_previous_year,
-                                           12, @days_in_months)
-      final_week = Week.new(53, days_this_week, last_day_of_previous_year.year, 12, @config_file)
-      @weeks.push(final_week)
-    end
-  end
+    return unless last_day_of_previous_year.month != 1
 
+    days_this_week = Week.days_this_week(last_monday_of_previous_year,
+                                         12, @days_in_months)
+    final_week = Week.new(53, days_this_week, last_day_of_previous_year.year, 12, @config_file)
+    @weeks.push(final_week)
+  end
 end
