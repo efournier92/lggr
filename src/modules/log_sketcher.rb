@@ -64,7 +64,7 @@ class LogSketcher
       do_year = bookend_weeks_service.shift_do_start(do_year)
       do_year = bookend_weeks_service.shift_do_end(do_year)
 
-      if @print_month.is_a? Integer
+      if !@print_month.nil? && @print_month.is_a?(Integer) && @print_month.positive?
         printer_service.print_do_month(do_year, @print_month)
       else
         printer_service.print_do_year(do_year)

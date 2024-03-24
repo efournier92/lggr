@@ -71,6 +71,14 @@ class AddTagService
     to_last_xday_in_month(do_year, config)
   end
 
+  def to_last_day_in_month(do_year, config)
+    month = config[ConfigConstants::KEYS[:MONTH]]
+
+    config[ConfigConstants::KEYS[:DAY]] = Year.days_in_months[month - 1]
+
+    to_specific_date(do_year, config)
+  end
+
   def to_last_day_in_each_month(do_year, config)
     Year.days_in_months.each do |days_in_month|
       config[ConfigConstants::KEYS[:DAY]] = days_in_month
@@ -81,14 +89,6 @@ class AddTagService
 
   def to_nth_day_in_month(do_year, config)
     config[ConfigConstants::KEYS[:IS_EACH?]] = true
-
-    to_specific_date(do_year, config)
-  end
-
-  def to_last_day_in_month(do_year, config)
-    month = config[ConfigConstants::KEYS[:MONTH]]
-
-    config[ConfigConstants::KEYS[:DAY]] = Year.days_in_months[month - 1]
 
     to_specific_date(do_year, config)
   end
