@@ -13,6 +13,7 @@ module ConfigConstants
     DAY: 'day',
     NTH_DAY: 'nth_day',
     DAY_NAME: 'day_name',
+    N_WEEKS: 'n_weeks',
     IS_EACH?: 'is_each',
   }.freeze
 

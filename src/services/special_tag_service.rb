@@ -11,6 +11,8 @@ class SpecialTagService
     add_tag_service = AddTagService.new
     tags = reader.get_configured_special_tags
 
+    return if tags.nil?
+
     tags.each_value do |config|
       printer = TaskPrinterService.new
       method = config[ConfigConstants::KEYS[:METHOD]]

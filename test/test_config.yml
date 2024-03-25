@@ -64,23 +64,42 @@ special_config:
     month: 1
     nth_day: 2
     day_name: Tuesday
+  Nth_Each_X_Day:
+    method: to_nth_xday_in_each_month
+    template: Holiday
+    content: Nth_Each_XDay
+    nth_day: 2
+    day_name: Monday
   Last_X_Day:
     method: to_last_xday_in_month
     template: Holiday
     content: Last_XDay
-    month: 1
-    day_name: Thursday
+    month: 9
+    day_name: Tuesday
+  Last_Each_X_Day:
+    method: to_last_xday_in_each_month
+    template: Holiday
+    content: Last_Each_XDay
+    day_name: Friday
   Last_Day:
     method: to_last_day_in_month
     template: Holiday
     content: Last_Day
-    month: 1
+    month: 11
+  Easter:
+    method: to_easter
+    template: Holiday
+    content: Easter
+  Good_Friday:
+    method: to_good_friday
+    template: Holiday
+    content: Good_Friday
   Birthday_Person:
     method: to_specific_date
     template: Birthday
-    year: 1974
-    month: 1
-    day: 3
+    year: 1976
+    month: 7
+    day: 4
     content:
-      Name: Name(Person,)
+      Name: Name(UncleSam,)
       Contact: Contact(000-000-0000,)

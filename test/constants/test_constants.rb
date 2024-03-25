@@ -1,7 +1,13 @@
 module TestConstants
   CONFIG_FILES = {
     TEST_PATH: './test/test_config.yml',
+    BLANK_PATH: './test/blank_config.yml',
     FAKE_PATH: './test/fake_config.yml',
+  }.freeze
+
+  OUTPUT = {
+    DIRECTORY: './_out_test',
+    FILE_2020: 'DO_2020.md',
   }.freeze
 
   KEYS = {

@@ -1,0 +1,12 @@
+tasks_config:
+days_config:
+  Monday:
+  Tuesday:
+  Wednesday:
+  Thursday:
+  Friday:
+templates_config:
+  Holiday:
+    Holiday:
+      - '{{CONTENT}}'
+special_config:

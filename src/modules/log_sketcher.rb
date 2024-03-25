@@ -10,11 +10,12 @@ require './src/services/add_tag_service'
 require './models/Task'
 
 class LogSketcher
-  def initialize(config_file, print_type, print_year, print_month = 'ALL')
+  def initialize(config_file, print_type, print_year, print_month = 'ALL', output_dir = nil)
     @config_file = config_file
     @print_type = print_type
     @print_year = print_year
     @print_month = print_month
+    @output_dir = output_dir
     @month = 1
   end
 
@@ -57,7 +58,7 @@ class LogSketcher
     # do_year = do_year.add_special_tags()
 
     if @print_type == 'DO'
-      printer_service = PrinterService.new
+      printer_service = PrinterService.new(@output_dir)
       bookend_weeks_service = BookendWeeksService.new
 
       do_year = bookend_weeks_service.shift_do_start(do_year)
