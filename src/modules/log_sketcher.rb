@@ -10,7 +10,7 @@ require './src/services/add_tag_service'
 require './models/Task'
 
 class LogSketcher
-  def initialize(config_file, print_type, print_year, print_month = 'ALL', output_dir = nil)
+  def initialize(config_file, print_type, print_year, print_month, output_dir = nil)
     @config_file = config_file
     @print_type = print_type
     @print_year = print_year
@@ -23,13 +23,13 @@ class LogSketcher
     # Collect type user input
     until @print_type == 'DO' || @print_type == 'LG'
       print "DO || LG\n>> "
-      @print_type = gets.chomp.upcase
+      @print_type = $stdin.gets.chomp.upcase
     end
 
     # Collect year user input
-    until @print_year.is_a?(Integer)
+    until @print_year.is_a?(Integer) && @print_year.positive?
       print "Which Year?\n>> "
-      @print_year = gets.chomp.to_i
+      @print_year = $stdin.gets.chomp.to_i
     end
 
     # Collect month user input
@@ -37,7 +37,7 @@ class LogSketcher
       is_valid = false
       until is_valid == true
         print "MONTH: All || [1-12]\n>> "
-        @print_month = gets.chomp.upcase
+        @print_month = $stdin.gets.chomp.upcase
         is_valid = true if @print_month == 'ALL' || @print_month == 'A'
         if @print_month.match(/^([1-9]|[01][0-2])$/)
           is_valid = true

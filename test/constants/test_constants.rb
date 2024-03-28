@@ -26,5 +26,8 @@ module TestConstants
     NTH_XDAY: 'Nth_XDay',
     LAST_XDAY: 'Last_XDay',
     LAST_DAY: 'Last_Day',
+    LAST_DAY_IN_JANUARY: 'Last_Day_In_January',
+    LAST_THURDAY_IN_JANUARY: 'Last_Thursday_In_January',
+    BIRTHDAY: 'Birthday',
   }.freeze
 end
