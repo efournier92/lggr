@@ -17,8 +17,13 @@ class SpecialTagService
       printer = TaskPrinterService.new
       method = config[ConfigConstants::KEYS[:METHOD]]
       template = reader.get_configured_templates[config[ConfigConstants::KEYS[:TEMPLATE]]]
+      placeholder_values = config[ConfigConstants::KEYS[:TEMPLATE_VARIABLES]]
+
+      template = config[ConfigConstants::KEYS[:TEMPLATE]] if template.nil?
+
       config[ConfigConstants::KEYS[:TAG]] =
-        printer.print_from_template(template, config[ConfigConstants::KEYS[:CONTENT]])
+        printer.print_from_template(template, placeholder_values)
+
       add_tag_service.public_send(method, year, config)
     end
 

@@ -93,27 +93,41 @@ class TaskPrinterService
     @current_depth -= 1
   end
 
-  def print_from_template(template, content)
-    # Clone to avoid mutating the original template
-    template_updated = Marshal.load(Marshal.dump(template))
+  def print_content(content)
+    print(content)
+  end
 
-    template_updated.each_value do |template_nodes|
-      next if template_nodes.nil?
+  def print_array(template_placeholders, content_mappings)
+    template_placeholders.each do |template_string|
+      template_placeholder = get_placeholder(template_string)
 
-      template_nodes.each do |node_name, node_content|
-        # next if node_content.nil?
+      mapping = content_mappings.detect { |m| m.keys[0] == template_placeholder }
 
-        template_string = node_content && !node_content[0].nil? ? node_content[0] : node_name
-        content_string = content && !content[node_name].nil? ? content[node_name] : content
+      next if mapping.nil?
 
-        if template_string?(template_string)
-          placeholder = get_placeholder(template_string)
-          replace_template_content(template_string, placeholder, content_string)
-        end
+      replace_template_content(template_string, template_placeholder, mapping.values[0])
+    end
+  end
+
+  def print_hash(template_to_update, content_mappings)
+    template_to_update.each_value do |template_placeholders|
+      if template_placeholders.is_a?(Array)
+        print_array(template_placeholders, content_mappings)
+      else
+        print_hash(template_placeholders, content_mappings)
       end
     end
+  end
 
-    print(template_updated)
+  def print_from_template(template, content_mappings)
+    return print(template) if content_mappings.nil?
+
+    # Clone to avoid mutating the original template
+    template_to_update = Marshal.load(Marshal.dump(template))
+
+    print_hash(template_to_update, content_mappings)
+
+    print(template_to_update)
 
     "#{@output}\n"
   end

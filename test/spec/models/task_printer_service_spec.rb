@@ -252,7 +252,7 @@ describe TaskPrinterService do
   describe '#decrement_depth' do
     context 'given a call to #decrement_depth' do
       it 'decrements currentDepth by 1 on each call' do
-        output = @printer.increment_depth
+        @printer.increment_depth
         output = @printer.increment_depth
         expect(output).to eql(2)
 
@@ -269,7 +269,7 @@ describe TaskPrinterService do
     context 'given a special tag with a configured template' do
       it 'inserts the special tag content inside the template' do
         task = @config[ConfigConstants::KEYS[:SPECIAL]][TestConstants::HOLIDAYS[:FIRST_DAY]]
-        content = task[ConfigConstants::KEYS[:CONTENT]]
+        content = task[ConfigConstants::KEYS[:TEMPLATE_VARIABLES]]
         template_name = task[ConfigConstants::KEYS[:TEMPLATE]]
         template = @config[ConfigConstants::KEYS[:TEMPLATES]][template_name]
 
@@ -282,16 +282,16 @@ describe TaskPrinterService do
     context 'given a special tag with a configured template with multiple placeholders' do
       it 'inserts the replaces each placeholder appropriately' do
         task = @config[ConfigConstants::KEYS[:SPECIAL]][TestConstants::KEYS[:BIRTHDAY_PERSON]]
-        content = task[ConfigConstants::KEYS[:CONTENT]]
+        content = task[ConfigConstants::KEYS[:TEMPLATE_VARIABLES]]
         template_name = task[ConfigConstants::KEYS[:TEMPLATE]]
         template = @config[ConfigConstants::KEYS[:TEMPLATES]][template_name]
 
         output = @printer.print_from_template(template, content)
 
-        content_name = 'Name(Person,)'
+        content_name = 'Name(PersonsName,)'
         content_contact = 'Contact(000-000-0000,)'
 
-        expected_output = "Birthday(\n  Name(\n    Person(#{content_name}),\n  ),\n  Contact(\n    #{content_contact},\n  ),\n),\n"
+        expected_output = "Birthday(\n  #{content_name},\n  #{content_contact},\n),\n"
         expect(output).to eql(expected_output)
       end
     end

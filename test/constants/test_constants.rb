@@ -28,6 +28,6 @@ module TestConstants
     LAST_DAY: 'Last_Day',
     LAST_DAY_IN_JANUARY: 'Last_Day_In_January',
     LAST_THURDAY_IN_JANUARY: 'Last_Thursday_In_January',
-    BIRTHDAY: 'Birthday',
+    BIRTHDAY_PERSON: 'Birthday_Person',
   }.freeze
 end

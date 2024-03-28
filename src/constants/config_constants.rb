@@ -5,6 +5,7 @@ module ConfigConstants
     SPECIAL: 'special_config',
     TEMPLATES: 'templates_config',
     TEMPLATE: 'template',
+    TEMPLATE_VARIABLES: 'template_variables',
     SPECIFIC_DATE: 'specific_date',
     METHOD: 'method',
     CONTENT: 'content',

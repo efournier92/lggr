@@ -4,7 +4,7 @@ class PrinterService
   DEFAULT_OUTPUT_DIR = './_out'.freeze
 
   def initialize(output_dir = DEFAULT_OUTPUT_DIR)
-    @output_dir = output_dir
+    @output_dir = output_dir || DEFAULT_OUTPUT_DIR
   end
 
   def make_out_dir

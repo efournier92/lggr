@@ -46,60 +46,132 @@ templates_config:
       - '{{CONTENT}}'
   Birthday:
     Birthday:
-      Name:
-        - 'Person({{NAME}})'
-      Contact:
-        - '{{CONTACT}}'
+      - 'Name({{NAME}},)'
+      - 'Contact({{CONTACT}},)'
+  Pretend_Day:
+    Pretend_Day:
+      - 'This - {{THIS}}'
+      - 'Is - {{IS}}'
+      - 'A - {{A}}'
+      - 'PRETEND - {{PRETEND}}'
+      - 'HOLIDAY - {{HOLIDAY}}'
 special_config:
   First_Day:
     method: to_specific_date
     template: Holiday
-    content: First_Day
     month: 1
     day: 1
+    template_variables:
+      - '{{CONTENT}}': First_Day
   Nth_X_Day:
     method: to_nth_xday_in_month
     template: Holiday
-    content: Nth_XDay
     month: 1
     nth_day: 2
     day_name: Tuesday
+    template_variables:
+      - '{{CONTENT}}': Nth_XDay
   Nth_Each_X_Day:
     method: to_nth_xday_in_each_month
     template: Holiday
-    content: Nth_Each_XDay
     nth_day: 2
     day_name: Monday
+    template_variables:
+      - '{{CONTENT}}': Nth_Each_XDay
   Last_X_Day:
     method: to_last_xday_in_month
     template: Holiday
-    content: Last_XDay
     month: 9
     day_name: Tuesday
+    template_variables:
+      - '{{CONTENT}}': Last_XDay
   Last_Each_X_Day:
     method: to_last_xday_in_each_month
     template: Holiday
-    content: Last_Each_XDay
     day_name: Friday
+    template_variables:
+      - '{{CONTENT}}': Last_Each_XDay
+  Last_Day_January:
+    method: to_last_day_in_month
+    template: Holiday
+    month: 1
+    template_variables:
+      - '{{CONTENT}}': Last_Day_In_January
+  Last_Thursday_January:
+    method: to_last_xday_in_month
+    template: Holiday
+    month: 1
+    day_name: Thursday
+    template_variables:
+      - '{{CONTENT}}': Last_Thursday_In_January
   Last_Day:
     method: to_last_day_in_month
     template: Holiday
-    content: Last_Day
     month: 11
+    template_variables:
+      - '{{CONTENT}}': Last_Day
   Easter:
     method: to_easter
     template: Holiday
-    content: Easter
+    template_variables:
+      - '{{CONTENT}}': Easter
   Good_Friday:
     method: to_good_friday
     template: Holiday
-    content: Good_Friday
+    template_variables:
+      - '{{CONTENT}}': Good_Friday
   Birthday_Person:
     method: to_specific_date
-    template: Birthday
     year: 1976
-    month: 7
+    month: 1
+    day: 3
+    template: Birthday
+    template_variables:
+      - '{{NAME}}': PersonsName
+      - '{{CONTACT}}': 000-000-0000
+  1D_Task:
+    method: to_specific_date
+    month: 1
     day: 4
-    content:
-      Name: Name(UncleSam,)
-      Contact: Contact(000-000-0000,)
+    template:
+      Task_Name:
+        - Task_Value
+  2D_Task:
+    method: to_specific_date
+    month: 1
+    day: 5
+    template:
+      Level_1:
+        - Level_2a(Level_2a_Value,)
+        - Level_2b(Level_2b_Value,)
+  Multi_Level_Task:
+    method: to_specific_date
+    month: 1
+    day: 6
+    template:
+      Level_1:
+        Level_2a:
+          - Level_3a
+        Level_2b:
+          - Level_3b
+  1D_Task_WithPlaceholders:
+    method: to_specific_date
+    month: 1
+    day: 7
+    template:
+      Task_Name:
+        - '{{CONTENT}}'
+    template_variables:
+      - '{{CONTENT}}': Placeholder
+  Multi_Level_Task_With_Placeholders:
+    method: to_specific_date
+    month: 1
+    day: 8
+    template:
+      Level_1:
+        Level_2a:
+          - '{{CONTENT}}_a'
+        Level_2b:
+          - '{{CONTENT}}_b'
+    template_variables:
+      - '{{CONTENT}}': Placeholder

@@ -1,16 +1,6 @@
 require './src/constants/config_constants'
 
 class AddTagService
-  # def add_all_special_tags(do_year, config_file)
-  #   reader = ConfigReaderService.new(config_file)
-  #   tags = reader.get_configured_special_tags
-
-  #   tags.each do |key, value|
-  #     binding.pry
-  #     # puts key + value
-  #   end
-  # end
-
   def to_specific_date(do_year, config)
     month = config[ConfigConstants::KEYS[:MONTH]]
     month_day = config[ConfigConstants::KEYS[:DAY]]
