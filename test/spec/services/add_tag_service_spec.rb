@@ -2,8 +2,6 @@ require './test/constants/test_constants'
 require './src/constants/config_constants'
 require './src/services/add_tag_service'
 require './src/models/year'
-require './src/models/month'
-require 'pry-byebug'
 
 def get_day_from_year(do_year, year, month, month_day)
   do_year.weeks.each do |week|

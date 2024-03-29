@@ -1,7 +1,6 @@
 require './src/models/year'
 require './src/models/week'
 require './src/models/day'
-require './models/Task'
 require './test/constants/test_constants'
 
 describe Year do

@@ -3,7 +3,6 @@ require './src/services/task_printer_service'
 require './src/constants/config_constants'
 
 class ConfigReaderService
-
   def initialize(config_file)
     @config = read_file(config_file)
   end
@@ -12,23 +11,23 @@ class ConfigReaderService
     YAML.load_file(config_file)
   end
 
-  def get_configured_days()
+  def get_configured_days
     @config[ConfigConstants::KEYS[:DAYS]]
   end
 
-  def get_configured_templates()
+  def get_configured_templates
     @config[ConfigConstants::KEYS[:TEMPLATES]]
   end
 
-  def get_configured_special_tags()
+  def get_configured_special_tags
     @config[ConfigConstants::KEYS[:SPECIAL]]
   end
 
   def get_tasks_by_day_name(day_name)
     begin
-      days = get_configured_days()
+      days = get_configured_days
       day = days[day_name] || []
-    rescue
+    rescue StandardError
       day = []
     end
 
@@ -41,7 +40,7 @@ class ConfigReaderService
 
   def print_tasks_by_day_name(day_name)
     output = ''
-    printer = TaskPrinterService.new()
+    printer = TaskPrinterService.new
 
     day_tasks = get_tasks_by_day_name(day_name)
 

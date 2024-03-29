@@ -31,4 +31,9 @@ module ConfigConstants
   TEMPLATE_TYPES = {
     HOLIDAY: 'Holiday',
   }.freeze
+
+  MODES = {
+    DO: 'DO',
+    LG: 'LG'
+  }.freeze
 end

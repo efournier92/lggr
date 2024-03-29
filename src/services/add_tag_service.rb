@@ -1,3 +1,4 @@
+require './src/models/year'
 require './src/constants/config_constants'
 
 class AddTagService
@@ -5,10 +6,11 @@ class AddTagService
     month = config[ConfigConstants::KEYS[:MONTH]]
     month_day = config[ConfigConstants::KEYS[:DAY]]
     new_tag = config[ConfigConstants::KEYS[:TAG]]
+    is_each = config[ConfigConstants::KEYS[:IS_EACH?]]
 
     do_year.weeks.each do |week|
       week.days.each do |day|
-        day.tasks.prepend(new_tag) if day.month == month && day.month_day == month_day
+        day.tasks.prepend(new_tag) if (day.month == month || is_each) && day.month_day == month_day
       end
     end
     do_year
@@ -20,6 +22,7 @@ class AddTagService
     # TODO: Throw config error if invalid day name
     day_name = config[ConfigConstants::KEYS[:DAY_NAME]]
     new_tag = config[ConfigConstants::KEYS[:TAG]]
+    is_each = config[ConfigConstants::KEYS[:IS_EACH?]]
 
     day_count = 0
     last_month = 0
@@ -30,7 +33,7 @@ class AddTagService
           day_count = 0
         end
 
-        next unless (config[ConfigConstants::KEYS[:IS_EACH?]] || day.month == month) && day.name == day_name
+        next unless (is_each || day.month == month) && day.name == day_name
 
         day_count += 1
         day.tasks.prepend(new_tag) if day_count == nth_day
@@ -48,11 +51,12 @@ class AddTagService
     month = config[ConfigConstants::KEYS[:MONTH]]
     day_name = config[ConfigConstants::KEYS[:DAY_NAME]]
     new_tag = config[ConfigConstants::KEYS[:TAG]]
+    is_each = config[ConfigConstants::KEYS[:IS_EACH?]]
 
     do_year.weeks.each do |week|
       week.days.each do |day|
         last_week_in_month_start_date = Year.days_in_months[day.month - 1] - 6
-        next unless (config[ConfigConstants::KEYS[:IS_EACH?]] || day.month == month) &&
+        next unless (is_each || day.month == month) &&
                     day.name == day_name &&
                     day.month_day >= last_week_in_month_start_date
 
@@ -84,8 +88,9 @@ class AddTagService
     do_year
   end
 
-  def to_nth_day_in_month(do_year, config)
+  def to_nth_day_in_each_month(do_year, config)
     config[ConfigConstants::KEYS[:IS_EACH?]] = true
+    config[ConfigConstants::KEYS[:DAY]] = config[ConfigConstants::KEYS[:NTH_DAY]]
 
     to_specific_date(do_year, config)
   end

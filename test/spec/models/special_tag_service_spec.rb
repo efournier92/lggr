@@ -1,7 +1,6 @@
 require './src/services/special_tag_service'
 require './src/models/year'
 require './test/constants/test_constants'
-require 'pry-byebug'
 
 describe SpecialTagService do
   before :each do

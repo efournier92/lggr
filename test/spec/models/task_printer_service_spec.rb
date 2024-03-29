@@ -2,7 +2,6 @@ require './src/services/config_reader_service'
 require './src/services/task_printer_service'
 require './test/constants/test_constants'
 require './src/constants/config_constants'
-require 'pry-byebug'
 
 describe TaskPrinterService do
   before :each do

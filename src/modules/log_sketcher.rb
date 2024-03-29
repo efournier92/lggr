@@ -1,80 +1,113 @@
-require 'pry'
-
-require './src/models/day'
-require './src/models/month'
-require './src/models/week'
 require './src/models/year'
 require './src/services/printer_service'
 require './src/services/bookend_weeks_service'
 require './src/services/add_tag_service'
-require './models/Task'
+require './src/constants/app_constants'
 
+# Main class to kickstart the file-printing process according to initialized values
 class LogSketcher
-  def initialize(config_file, print_type, print_year, print_month, output_dir = nil)
+  attr_reader :mode, :year, :month
+
+  def initialize(config_file, mode, year, month, output_directory = nil)
     @config_file = config_file
-    @print_type = print_type
-    @print_year = print_year
-    @print_month = print_month
-    @output_dir = output_dir
-    @month = 1
+    @mode = mode
+    @year = year
+    @month = month
+    @output_directory = output_directory
   end
 
-  def main
-    # Collect type user input
-    until @print_type == 'DO' || @print_type == 'LG'
-      print "DO || LG\n>> "
-      @print_type = $stdin.gets.chomp.upcase
+  def print_file
+    collect_user_input
+    print_by_mode
+  end
+
+  def collect_user_input
+    prompt_for_mode_input until valid_mode?
+
+    prompt_for_year_input until valid_year?
+
+    prompt_for_month_input until valid_month?
+  end
+
+  def print_by_mode
+    bookend_weeks_service = BookendWeeksService.new
+    printer_service = PrinterService.new(@output_directory)
+    do_year = Year.new(@year, @config_file)
+
+    if @mode == AppConstants::MODES[:DO]
+      print_do_mode(do_year, printer_service, bookend_weeks_service)
+    elsif @mode == AppConstants::MODES[:LG]
+      print_lg_mode(do_year, printer_service, bookend_weeks_service)
     end
+  end
 
-    # Collect year user input
-    until @print_year.is_a?(Integer) && @print_year.positive?
-      print "Which Year?\n>> "
-      @print_year = $stdin.gets.chomp.to_i
+  def print_do_mode(do_year, printer_service, bookend_weeks_service)
+    do_year = bookend_weeks_service.shift_do_start(do_year)
+    do_year = bookend_weeks_service.shift_do_start(do_year)
+    do_year = bookend_weeks_service.shift_do_end(do_year)
+
+    if print_month?
+      printer_service.print_do_month(do_year, @month)
+    else
+      printer_service.print_do_year(do_year)
     end
+  end
 
-    # Collect month user input
-    if @print_type == 'DO' && (!@print_month.is_a?(Integer) && @print_month != 'ALL')
-      is_valid = false
-      until is_valid == true
-        print "MONTH: All || [1-12]\n>> "
-        @print_month = $stdin.gets.chomp.upcase
-        is_valid = true if @print_month == 'ALL' || @print_month == 'A'
-        if @print_month.match(/^([1-9]|[01][0-2])$/)
-          is_valid = true
-          @print_month = @print_month.to_i
-        end
-      end
-    end
+  def print_lg_mode(do_year, printer_service, bookend_weeks_service)
+    do_year = bookend_weeks_service.shift_lg_start(do_year)
+    do_year = bookend_weeks_service.shift_lg_end(do_year)
+    printer_service.print_lg(do_year)
+  end
 
-    # create year object
-    do_year = Year.new(@print_year, @config_file)
+  def prompt_for_mode_input
+    print AppConstants::INPUT_PROMPTS[:MODE]
+    @mode = $stdin&.gets&.chomp&.upcase
+  end
 
-    # add monthly tasks to year object
-    # do_year = Month.add_start_tasks(do_year)
-    # add birthdays to year object
-    # do_year = Year.add_birthdays(do_year)
-    # add annual tasks to year object
-    # do_year = Year.add_annual_tasks(do_year)
-    # do_year = do_year.add_special_tags()
+  def prompt_for_year_input
+    print AppConstants::INPUT_PROMPTS[:YEAR]
+    @year = $stdin&.gets&.chomp.to_i
+  end
 
-    if @print_type == 'DO'
-      printer_service = PrinterService.new(@output_dir)
-      bookend_weeks_service = BookendWeeksService.new
+  def prompt_for_month_input
+    print AppConstants::INPUT_PROMPTS[:MONTH]
+    @month = $stdin&.gets&.chomp&.upcase
+    @month = @month.to_i if valid_month_pattern?
+  end
 
-      do_year = bookend_weeks_service.shift_do_start(do_year)
-      do_year = bookend_weeks_service.shift_do_start(do_year)
-      do_year = bookend_weeks_service.shift_do_end(do_year)
+  def lg_mode?
+    @mode == AppConstants::MODES[:LG]
+  end
 
-      if !@print_month.nil? && @print_month.is_a?(Integer) && @print_month.positive?
-        printer_service.print_do_month(do_year, @print_month)
-      else
-        printer_service.print_do_year(do_year)
-      end
+  def all_mode?
+    @month == AppConstants::MODES[:ALL]
+  end
 
-    elsif @print_type == 'LG'
-      do_year = bookend_weeks_service.shift_lg_start(do_year)
-      do_year = bookend_weeks_service.shift_lg_end(do_year)
-      printer_service.print_lg(do_year)
-    end
+  def valid_month_number?
+    !@month.nil? && @month.to_i.positive? && @month.to_i <= 12
+  end
+
+  def valid_month_pattern?
+    !@month.nil? && @month.is_a?(String) && @month.match?(AppConstants::REGEX[:VALID_MONTH])
+  end
+
+  def valid_month?
+    lg_mode? || all_mode? || valid_month_number?
+  end
+
+  def all_month?
+    @month == AppConstants::MODES[:ALL]
+  end
+
+  def valid_mode?
+    @mode == AppConstants::MODES[:DO] || @mode == AppConstants::MODES[:LG]
+  end
+
+  def valid_year?
+    @year.is_a?(Integer) && @year.positive?
+  end
+
+  def print_month?
+    !@month.nil? && @month.is_a?(Integer) && @month&.positive?
   end
 end

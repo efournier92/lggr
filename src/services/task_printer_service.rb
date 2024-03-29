@@ -97,11 +97,11 @@ class TaskPrinterService
     print(content)
   end
 
-  def print_array(template_placeholders, content_mappings)
+  def update_content_array(template_placeholders, template_variables)
     template_placeholders.each do |template_string|
       template_placeholder = get_placeholder(template_string)
 
-      mapping = content_mappings.detect { |m| m.keys[0] == template_placeholder }
+      mapping = template_variables.detect { |m| m.keys[0] == template_placeholder }
 
       next if mapping.nil?
 
@@ -109,23 +109,23 @@ class TaskPrinterService
     end
   end
 
-  def print_hash(template_to_update, content_mappings)
+  def update_content_hash(template_to_update, template_variables)
     template_to_update.each_value do |template_placeholders|
       if template_placeholders.is_a?(Array)
-        print_array(template_placeholders, content_mappings)
+        update_content_array(template_placeholders, template_variables)
       else
-        print_hash(template_placeholders, content_mappings)
+        update_content_hash(template_placeholders, template_variables)
       end
     end
   end
 
-  def print_from_template(template, content_mappings)
-    return print(template) if content_mappings.nil?
+  def print_from_template(template, template_variables)
+    return print(template) if template_variables.nil?
 
     # Clone to avoid mutating the original template
     template_to_update = Marshal.load(Marshal.dump(template))
 
-    print_hash(template_to_update, content_mappings)
+    update_content_hash(template_to_update, template_variables)
 
     print(template_to_update)
 
@@ -136,6 +136,9 @@ class TaskPrinterService
     start_marker = ConfigConstants::PLACEHOLDERS[:TEMPLATE_START]
     end_marker = ConfigConstants::PLACEHOLDERS[:TEMPLATE_END]
     content_between_markers = input[/#{Regexp.escape(start_marker)}(.*?)#{Regexp.escape(end_marker)}/m, 1]
+
+    return input if content_between_markers.nil?
+
     start_marker + content_between_markers + end_marker
   end
 
