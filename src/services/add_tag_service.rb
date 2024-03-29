@@ -16,6 +16,31 @@ class AddTagService
     do_year
   end
 
+  def to_each_day(do_year, config)
+    # TODO: Throw config error if invalid day name
+    new_tag = config[ConfigConstants::KEYS[:TAG]]
+
+    do_year.weeks.each do |week|
+      week.days.each do |day|
+        day.tasks.prepend(new_tag)
+      end
+    end
+    do_year
+  end
+
+  def to_each_xday(do_year, config)
+    # TODO: Throw config error if invalid day name
+    day_name = config[ConfigConstants::KEYS[:DAY_NAME]]
+    new_tag = config[ConfigConstants::KEYS[:TAG]]
+
+    do_year.weeks.each do |week|
+      week.days.each do |day|
+        day.tasks.prepend(new_tag) if day.name == day_name
+      end
+    end
+    do_year
+  end
+
   def to_nth_xday_in_month(do_year, config)
     month = config[ConfigConstants::KEYS[:MONTH]]
     nth_day = config[ConfigConstants::KEYS[:NTH_DAY]]
@@ -93,6 +118,38 @@ class AddTagService
     config[ConfigConstants::KEYS[:DAY]] = config[ConfigConstants::KEYS[:NTH_DAY]]
 
     to_specific_date(do_year, config)
+  end
+
+  def to_nth_xday_in_each_quarter(do_year, config)
+    nth_day = config[ConfigConstants::KEYS[:NTH_DAY]]
+    # TODO: Throw config error if invalid day name
+    day_name = config[ConfigConstants::KEYS[:DAY_NAME]]
+    new_tag = config[ConfigConstants::KEYS[:TAG]]
+
+    day_count = 0
+    last_month = 0
+    quarter_months = [1, 4, 7, 10]
+    do_year.weeks.each do |week|
+      week.days.each do |day|
+        if last_month != day.month
+          last_month = day.month
+          day_count = 0
+        end
+
+        next unless quarter_months.include?(day.month) && day.name == day_name
+
+        if month == quarter_month
+          # first Sunday of quarter
+          # do_year = Add_Tag.to_nth_xday_in_month(do_year, quarter_month, 1, "Sunday", task.groom_shave_all)
+          # first Saturday of the quarter
+          do_year = Add_Tag.to_nth_xday_in_month(do_year, quarter_month, 1, 'Saturday', task.guitar_restring)
+        end
+
+        day_count += 1
+        day.tasks.prepend(new_tag) if day_count == nth_day
+      end
+    end
+    do_year
   end
 
   def to_xday_every_n_weeks(do_year, config)

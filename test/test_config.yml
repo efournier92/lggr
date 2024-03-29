@@ -1,4 +1,4 @@
-tasks_config:
+task_templates_config:
   1_Dimentional:
     - Level_1
   1_Dimentional_Double:
@@ -27,20 +27,16 @@ tasks_config:
         - Level_3
       Level_2b:
         - Level_3
-days_config:
-  Monday:
-    - 1_Dimentional
-  Tuesday:
-    - 1_Dimentional
-    - 1_Dimentional
-  Wednesday:
-    - 3_Dimentional
-  Thursday:
-    - 1_Dimentional
-    - 3_Dimentional
-  Friday:
-    - 3_Dimentional
-templates_config:
+  Composed_Level_2a:
+    Composed_Level_2a_Header:
+      - Composed_Level_2a_Content
+  Composed_Level_2b:
+    Composed_Level_2b_Header:
+      - Composed_Level_2b_Content
+  Composed_Task:
+    Composed_Task:
+      - '{{TASK.Composed_Level_2a}}'
+      - '{{TASK.Composed_Level_2b}}'
   Holiday:
     Holiday:
       - '{{CONTENT}}'
@@ -55,7 +51,7 @@ templates_config:
       - 'A - {{A}}'
       - 'PRETEND - {{PRETEND}}'
       - 'HOLIDAY - {{HOLIDAY}}'
-special_config:
+tasks_config:
   First_Day:
     method: to_specific_date
     template: Holiday
@@ -175,3 +171,31 @@ special_config:
           - '{{CONTENT}}_b'
     template_variables:
       - '{{CONTENT}}': Placeholder
+  Monday:
+    method: to_each_xday
+    day_name: Monday
+    template: 1_Dimentional
+  Tuesday_1:
+    method: to_each_xday
+    day_name: Tuesday
+    template: 1_Dimentional
+  Tuesday_2:
+    method: to_each_xday
+    day_name: Tuesday
+    template: 1_Dimentional
+  Wednesday:
+    method: to_each_xday
+    day_name: Wednesday
+    template: 3_Dimentional
+  Thursday_1:
+    method: to_each_xday
+    day_name: Thursday
+    template: 1_Dimentional
+  Thursday_2:
+    method: to_each_xday
+    day_name: Thursday
+    template: 3_Dimentional
+  Friday:
+    method: to_each_xday
+    day_name: Friday
+    template: 3_Dimentional

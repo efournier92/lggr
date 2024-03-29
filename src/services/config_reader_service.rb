@@ -1,5 +1,4 @@
 require 'yaml'
-require './src/services/task_printer_service'
 require './src/constants/config_constants'
 
 class ConfigReaderService
@@ -11,44 +10,15 @@ class ConfigReaderService
     YAML.load_file(config_file)
   end
 
-  def get_configured_days
-    @config[ConfigConstants::KEYS[:DAYS]]
+  def configured_task_templates
+    @config[ConfigConstants::KEYS[:TASK_TEMPLATES]]
   end
 
-  def get_configured_templates
-    @config[ConfigConstants::KEYS[:TEMPLATES]]
+  def configured_template_by_name(name)
+    configured_task_templates[name]
   end
 
-  def get_configured_special_tags
-    @config[ConfigConstants::KEYS[:SPECIAL]]
-  end
-
-  def get_tasks_by_day_name(day_name)
-    begin
-      days = get_configured_days
-      day = days[day_name] || []
-    rescue StandardError
-      day = []
-    end
-
-    day
-  end
-
-  def get_tasks_by_name(task_name)
-    @config[ConfigConstants::KEYS[:TASKS]][task_name]
-  end
-
-  def print_tasks_by_day_name(day_name)
-    output = ''
-    printer = TaskPrinterService.new
-
-    day_tasks = get_tasks_by_day_name(day_name)
-
-    day_tasks.each do |task|
-      tasks = get_tasks_by_name(task)
-      output = printer.print(tasks)
-    end
-
-    output
+  def configured_tasks
+    @config[ConfigConstants::KEYS[:TASKS]].to_a.reverse.to_h
   end
 end

@@ -1,9 +1,11 @@
 require './src/constants/config_constants'
+require './src/services/config_reader_service'
 
 class TaskPrinterService
   attr_reader :output
 
-  def initialize
+  def initialize(config_file)
+    @config_file = config_file
     @output = ''
     @current_depth = 0
     @current_node = 0
@@ -38,7 +40,16 @@ class TaskPrinterService
   def print_internal(node)
     return if node.nil?
 
+    reader = ConfigReaderService.new(@config_file)
+
     node.each do |text, task|
+      if template_string?(text)
+        name = get_name_from_placeholder(text)
+        configured_template = reader.configured_template_by_name(name)
+        # TODO: Inform user if configured_template.nil?
+        text = configured_template.keys[0]
+        task = configured_template.values[0]
+      end
       if task.nil?
         append_leaf(text)
       else
@@ -130,6 +141,16 @@ class TaskPrinterService
     print(template_to_update)
 
     "#{@output}\n"
+  end
+
+  def get_name_from_placeholder(input)
+    start_marker = ConfigConstants::PLACEHOLDERS[:TEMPLATE_START]
+    end_marker = ConfigConstants::PLACEHOLDERS[:TEMPLATE_END]
+    content_between_markers = input[/#{Regexp.escape(start_marker)}(.*?)#{Regexp.escape(end_marker)}/m, 1]
+
+    return input if content_between_markers.nil?
+
+    content_between_markers
   end
 
   def get_placeholder(input)

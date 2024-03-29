@@ -9,14 +9,14 @@ class SpecialTagService
     config_file = year.config_file
     reader = ConfigReaderService.new(config_file)
     add_tag_service = AddTagService.new
-    tags = reader.get_configured_special_tags
+    tags = reader.configured_tasks
 
     return if tags.nil?
 
     tags.each_value do |config|
-      printer = TaskPrinterService.new
+      printer = TaskPrinterService.new(config_file)
       method = config[ConfigConstants::KEYS[:METHOD]]
-      template = reader.get_configured_templates[config[ConfigConstants::KEYS[:TEMPLATE]]]
+      template = reader.configured_task_templates[config[ConfigConstants::KEYS[:TEMPLATE]]]
       template_variables = config[ConfigConstants::KEYS[:TEMPLATE_VARIABLES]]
 
       template = config[ConfigConstants::KEYS[:TEMPLATE]] if template.nil?

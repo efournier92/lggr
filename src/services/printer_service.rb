@@ -1,5 +1,4 @@
 require 'fileutils'
-require 'pry-byebug'
 
 class PrinterService
   DEFAULT_OUTPUT_DIR = './_out'.freeze

@@ -1,9 +1,7 @@
 module ConfigConstants
   KEYS = {
     TASKS: 'tasks_config',
-    DAYS: 'days_config',
-    SPECIAL: 'special_config',
-    TEMPLATES: 'templates_config',
+    TASK_TEMPLATES: 'task_templates_config',
     TEMPLATE: 'template',
     TEMPLATE_VARIABLES: 'template_variables',
     SPECIFIC_DATE: 'specific_date',
@@ -11,6 +9,7 @@ module ConfigConstants
     CONTENT: 'content',
     TAG: 'tag',
     MONTH: 'month',
+    QUARTER: 'quarter',
     DAY: 'day',
     NTH_DAY: 'nth_day',
     DAY_NAME: 'day_name',

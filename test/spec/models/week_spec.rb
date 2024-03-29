@@ -17,25 +17,5 @@ describe Week do
     it 'has days for each day in the week' do
       expect(@days.count).to eql(7)
     end
-
-    context 'given tasks configured against specific days' do
-      it 'has a 1-dimentional string of configured tasks printed against Monday' do
-        day_name = 'Monday'
-        day = @days.find { |d| d.name == day_name }
-        expect(day.tasks).to eql("Level_1,\n")
-      end
-
-      it 'has a multi-dimentional string of configured tasks printed against Friday' do
-        day_name = 'Friday'
-        day = @days.find { |d| d.name == day_name }
-        expect(day.tasks).to eql("Level_1(\n  Level_2(\n    Level_3,\n  ),\n),\n")
-      end
-
-      it 'prints multiple configured tasks in a string' do
-        day_name = 'Thursday'
-        day = @days.find { |d| d.name == day_name }
-        expect(day.tasks).to eql("Level_1,\nLevel_1(\n  Level_2(\n    Level_3,\n  ),\n),\n")
-      end
-    end
   end
 end
