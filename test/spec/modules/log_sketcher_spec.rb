@@ -235,7 +235,7 @@ describe LogSketcher do
     it 'prints january 1st' do
       sketcher = LogSketcher.new(TestConstants::CONFIG_FILES[:TEST_PATH], 'DO', 2020, 1, @output_dir)
       output = sketcher.print_file
-      january_1st = output[0].days.find { |day| day.year == 2020 && day.month == 1 && day.month_day == 1 }
+      january_1st = output.find { |day| day.year == 2020 && day.month == 1 && day.month_day == 1 }
 
       expect(january_1st).to_not be_nil
     end
@@ -245,7 +245,7 @@ describe LogSketcher do
     it 'prints january 1st' do
       sketcher = LogSketcher.new(TestConstants::CONFIG_FILES[:TEST_PATH], 'DO', 2020, 1, @output_dir)
       output = sketcher.print_file
-      january_1st = output[0].days.find { |day| day.year == 2020 && day.month == 1 && day.month_day == 1 }
+      january_1st = output.find { |day| day.year == 2020 && day.month == 1 && day.month_day == 1 }
 
       expect(january_1st).to_not be_nil
     end

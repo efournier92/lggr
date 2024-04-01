@@ -1,6 +1,5 @@
 require './src/models/year'
 require './src/services/printer_service'
-require './src/services/bookend_weeks_service'
 require './src/services/add_tag_service'
 require './src/constants/app_constants'
 
@@ -30,22 +29,17 @@ class LogSketcher
   end
 
   def print_by_mode
-    bookend_weeks_service = BookendWeeksService.new
     printer_service = PrinterService.new(@output_directory)
     do_year = Year.new(@year, @config_file)
 
     if @mode == AppConstants::MODES[:DO]
-      print_do_mode(do_year, printer_service, bookend_weeks_service)
+      print_do_mode(do_year, printer_service)
     elsif @mode == AppConstants::MODES[:LG]
-      print_lg_mode(do_year, printer_service, bookend_weeks_service)
+      print_lg_mode(do_year, printer_service)
     end
   end
 
-  def print_do_mode(do_year, printer_service, bookend_weeks_service)
-    do_year = bookend_weeks_service.shift_do_start(do_year)
-    do_year = bookend_weeks_service.shift_do_start(do_year)
-    do_year = bookend_weeks_service.shift_do_end(do_year)
-
+  def print_do_mode(do_year, printer_service)
     if print_month?
       printer_service.print_do_month(do_year, @month)
     else
@@ -53,9 +47,7 @@ class LogSketcher
     end
   end
 
-  def print_lg_mode(do_year, printer_service, bookend_weeks_service)
-    do_year = bookend_weeks_service.shift_lg_start(do_year)
-    do_year = bookend_weeks_service.shift_lg_end(do_year)
+  def print_lg_mode(do_year, printer_service)
     printer_service.print_lg(do_year)
   end
 

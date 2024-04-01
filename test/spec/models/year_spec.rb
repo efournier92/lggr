@@ -1,5 +1,4 @@
 require './src/models/year'
-require './src/models/week'
 require './src/models/day'
 require './test/constants/test_constants'
 

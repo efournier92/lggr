@@ -4,10 +4,8 @@ require './src/services/add_tag_service'
 require './src/models/year'
 
 def get_day_from_year(do_year, year, month, month_day)
-  do_year.weeks.each do |week|
-    week.days.each do |day|
-      return day if day.year == year && day.month == month && day.month_day == month_day
-    end
+  do_year.days.each do |day|
+    return day if day.year == year && day.month == month && day.month_day == month_day
   end
 end
 
@@ -290,7 +288,7 @@ describe AddTagService do
       expect(day.tasks).to include(tag)
 
       month = 2
-      month_day = 28
+      month_day = 29
       day = get_day_from_year(do_year, @year, month, month_day)
       expect(day.tasks).to include(tag)
 
@@ -444,6 +442,31 @@ describe AddTagService do
       day = get_day_from_year(do_year, @year, month, month_day)
 
       expect(day.tasks).to include(tag)
+    end
+  end
+
+  describe '#to_nth_day_in_each_quarter' do
+    it 'only adds the configured tag to each quarter month' do
+      tag = 'Quarterly_Task'
+      nth_day = 4
+      config = {
+        ConfigConstants::KEYS[:NTH_DAY] => nth_day,
+        ConfigConstants::KEYS[:TAG] => tag
+      }
+
+      do_year = @service.to_nth_day_in_each_quarter(@do_year, config)
+
+      AppConstants::LISTS[:QUARTER_MONTHS].each do |month|
+        month_day = nth_day
+        day = get_day_from_year(do_year, @year, month, month_day)
+        expect(day.tasks).to include(tag)
+      end
+
+      AppConstants::LISTS[:NON_QUARTER_MONTHS].each do |month|
+        month_day = nth_day
+        day = get_day_from_year(do_year, @year, month, month_day)
+        expect(day.tasks).to_not include(tag)
+      end
     end
   end
 end

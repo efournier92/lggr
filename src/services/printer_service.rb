@@ -51,29 +51,25 @@ class PrinterService
 
   def print_do_year(do_year)
     make_out_dir
-    year = do_year.year
+    year = do_year.year_number
     out_file = File.new(do_file_name(year), 'w')
-    do_year.weeks.each do |week|
-      week.days.each do |day|
-        print_tasks(out_file, day)
-      end
+    do_year.days.each do |day|
+      print_tasks(out_file, day)
     end
   end
 
   def print_do_month(do_year, month)
     make_out_dir
-    year = do_year.year
+    year = do_year.year_number
     out_file = File.new(do_file_name(year, month), 'w')
-    do_year.weeks.each do |week|
-      week.days.each do |day|
-        print_tasks(out_file, day) if day.month == month
-      end
+    do_year.days.each do |day|
+      print_tasks(out_file, day) if day.month == month
     end
   end
 
   def print_lg(do_year)
     make_out_dir
-    year = do_year.year
+    year = do_year.year_number
     out_file = File.new(lg_file_name(year), 'w')
 
     template_base = do_block_opener
