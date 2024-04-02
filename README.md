@@ -1,4 +1,4 @@
-# Log Sketcher
+# Log Builder
 
 Calendar application for maintaining TODO lists in markdown format.
 

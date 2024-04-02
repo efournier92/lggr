@@ -1,60 +1,61 @@
-require './src/modules/log_sketcher'
+require './src/modules/log_builder'
+require './src/services/input_validation_service'
 require './src/constants/app_constants'
 require './test/constants/test_constants'
 
-describe LogSketcher do
+describe LogBuilder do
   describe '#prompt_for_mode_input' do
     context 'given the user supplies a valid mode' do
       let(:input) { StringIO.new(AppConstants::MODES[:DO]) }
 
       it 'prompts for mode input' do
-        sketcher = LogSketcher.new(TestConstants::CONFIG_FILES[:TEST_PATH], '', nil, nil, nil)
+        builder = LogBuilder.new(TestConstants::CONFIG_FILES[:TEST_PATH], '', nil, nil, nil)
 
-        expect(sketcher.valid_mode?).to be false
+        expect(valid_mode?(builder.mode)).to be false
 
         $stdin = input
-        expect { sketcher.prompt_for_mode_input }.to output(
+        expect { builder.prompt_for_mode_input }.to output(
           AppConstants::INPUT_PROMPTS[:MODE]
-        ).to_stdout.and change { sketcher.mode }.to(AppConstants::MODES[:DO])
+        ).to_stdout.and change { builder.mode }.to(AppConstants::MODES[:DO])
 
         $stdin = STDIN
 
-        expect(sketcher.valid_mode?).to be true
+        expect(valid_mode?(builder.mode)).to be true
       end
     end
 
     context 'given the user supplies an invalid mode' do
       let(:invalid_input) { StringIO.new('DUN') }
       let(:valid_input) { StringIO.new(AppConstants::MODES[:DO]) }
-      let(:sketcher) { LogSketcher.new(TestConstants::CONFIG_FILES[:TEST_PATH], '', nil, nil, nil) }
+      let(:builder) { LogBuilder.new(TestConstants::CONFIG_FILES[:TEST_PATH], '', nil, nil, nil) }
 
       it 'prompts for mode input again after invalid input' do
         $stdin = invalid_input
 
-        expect(sketcher.valid_mode?).to be false
+        expect(valid_mode?(builder.mode)).to be false
 
-        expect { sketcher.prompt_for_mode_input }.to output(
+        expect { builder.prompt_for_mode_input }.to output(
           AppConstants::INPUT_PROMPTS[:MODE]
-        ).to_stdout.and change { sketcher.mode }.to('DUN')
+        ).to_stdout.and change { builder.mode }.to('DUN')
 
-        expect(sketcher.valid_mode?).to be false
+        expect(valid_mode?(builder.mode)).to be false
       end
 
       it 'accepts valid input' do
         $stdin = valid_input
 
-        expect { sketcher.prompt_for_mode_input }.to output(
+        expect { builder.prompt_for_mode_input }.to output(
           AppConstants::INPUT_PROMPTS[:MODE]
-        ).to_stdout.and change { sketcher.mode }.to(AppConstants::MODES[:DO])
+        ).to_stdout.and change { builder.mode }.to(AppConstants::MODES[:DO])
 
-        expect(sketcher.valid_mode?).to be true
+        expect(valid_mode?(builder.mode)).to be true
       end
     end
   end
 
   describe '#prompt_for_year_input' do
     context 'given the user supplies an invalid year, then a valid one' do
-      let(:sketcher) { LogSketcher.new(TestConstants::CONFIG_FILES[:TEST_PATH], '', nil, nil, nil) }
+      let(:builder) { LogBuilder.new(TestConstants::CONFIG_FILES[:TEST_PATH], '', nil, nil, nil) }
       let(:invalid_input_zero) { StringIO.new('0') }
       let(:invalid_input_negative) { StringIO.new('-1') }
       let(:invalid_input_letter) { StringIO.new('a') }
@@ -63,25 +64,25 @@ describe LogSketcher do
       it 'prompts for year input again after zero input' do
         $stdin = invalid_input_zero
 
-        expect(sketcher.valid_year?).to be false
+        expect(valid_year_number?(builder.year_number)).to be false
 
-        expect { sketcher.prompt_for_year_input }.to output(
+        expect { builder.prompt_for_year_input }.to output(
           AppConstants::INPUT_PROMPTS[:YEAR]
-        ).to_stdout.and change { sketcher.year }.to(0)
+        ).to_stdout.and change { builder.year_number }.to(0)
 
-        expect(sketcher.valid_year?).to be false
+        expect(valid_year_number?(builder.year_number)).to be false
       end
 
       it 'prompts for year input again after negative input' do
         $stdin = invalid_input_negative
 
-        expect(sketcher.valid_year?).to be false
+        expect(valid_year_number?(builder.year_number)).to be false
 
-        expect { sketcher.prompt_for_year_input }.to output(
+        expect { builder.prompt_for_year_input }.to output(
           AppConstants::INPUT_PROMPTS[:YEAR]
-        ).to_stdout.and change { sketcher.year }.to(-1)
+        ).to_stdout.and change { builder.year_number }.to(-1)
 
-        expect(sketcher.valid_year?).to be false
+        expect(valid_year_number?(builder.year_number)).to be false
 
         $stdin = STDIN
       end
@@ -89,13 +90,13 @@ describe LogSketcher do
       it 'prompts for year input again after letter input' do
         $stdin = invalid_input_letter
 
-        expect(sketcher.valid_year?).to be false
+        expect(valid_year_number?(builder.year_number)).to be false
 
-        expect { sketcher.prompt_for_year_input }.to output(
+        expect { builder.prompt_for_year_input }.to output(
           AppConstants::INPUT_PROMPTS[:YEAR]
-        ).to_stdout.and change { sketcher.year }.to('a'.to_i)
+        ).to_stdout.and change { builder.year_number }.to('a'.to_i)
 
-        expect(sketcher.valid_year?).to be false
+        expect(valid_year_number?(builder.year_number)).to be false
 
         $stdin = STDIN
       end
@@ -103,13 +104,13 @@ describe LogSketcher do
       it 'accepts valid input' do
         $stdin = valid_input
 
-        expect(sketcher.valid_year?).to be false
+        expect(valid_year_number?(builder.year_number)).to be false
 
-        expect { sketcher.prompt_for_year_input }.to output(
+        expect { builder.prompt_for_year_input }.to output(
           AppConstants::INPUT_PROMPTS[:YEAR]
-        ).to_stdout.and change { sketcher.year }.to(2024)
+        ).to_stdout.and change { builder.year_number }.to(2024)
 
-        expect(sketcher.valid_year?).to be true
+        expect(valid_year_number?(builder.year_number)).to be true
 
         $stdin = STDIN
       end
@@ -117,7 +118,7 @@ describe LogSketcher do
   end
 
   describe '#prompt_for_month_input' do
-    let(:sketcher) { LogSketcher.new(TestConstants::CONFIG_FILES[:TEST_PATH], '', nil, nil, nil) }
+    let(:builder) { LogBuilder.new(TestConstants::CONFIG_FILES[:TEST_PATH], '', nil, nil, nil) }
     let(:invalid_input_empty) { StringIO.new('') }
     let(:invalid_input_zero) { StringIO.new('0') }
     let(:invalid_input_negative) { StringIO.new('-1') }
@@ -130,13 +131,13 @@ describe LogSketcher do
       it 'prompts for input again' do
         $stdin = invalid_input_empty
 
-        expect(sketcher.valid_month?).to be false
+        expect(valid_month?(builder.month, builder.mode)).to be false
 
-        expect { sketcher.prompt_for_month_input }.to output(
+        expect { builder.prompt_for_month_input }.to output(
           AppConstants::INPUT_PROMPTS[:MONTH]
         ).to_stdout
 
-        expect(sketcher.valid_month?).to be false
+        expect(valid_month?(builder.month, builder.mode)).to be false
 
         $stdin = STDIN
       end
@@ -146,13 +147,13 @@ describe LogSketcher do
       it 'prompts for input again' do
         $stdin = invalid_input_negative
 
-        expect(sketcher.valid_month?).to be false
+        expect(valid_month?(builder.month, builder.mode)).to be false
 
-        expect { sketcher.prompt_for_month_input }.to output(
+        expect { builder.prompt_for_month_input }.to output(
           AppConstants::INPUT_PROMPTS[:MONTH]
-        ).to_stdout.and change { sketcher.month }.to('-1')
+        ).to_stdout.and change { builder.month }.to('-1')
 
-        expect(sketcher.valid_month?).to be false
+        expect(valid_month?(builder.month, builder.mode)).to be false
 
         $stdin = STDIN
       end
@@ -162,13 +163,13 @@ describe LogSketcher do
       it 'prompts for input again' do
         $stdin = invalid_input_letter
 
-        expect(sketcher.valid_month?).to be false
+        expect(valid_month?(builder.month, builder.mode)).to be false
 
-        expect { sketcher.prompt_for_month_input }.to output(
+        expect { builder.prompt_for_month_input }.to output(
           AppConstants::INPUT_PROMPTS[:MONTH]
-        ).to_stdout.and change { sketcher.month }.to('A')
+        ).to_stdout.and change { builder.month }.to('A')
 
-        expect(sketcher.valid_month?).to be false
+        expect(valid_month?(builder.month, builder.mode)).to be false
 
         $stdin = STDIN
       end
@@ -178,13 +179,13 @@ describe LogSketcher do
       it 'prompts for input again' do
         $stdin = invalid_input_high_number
 
-        expect(sketcher.valid_month?).to be false
+        expect(valid_month?(builder.month, builder.mode)).to be false
 
-        expect { sketcher.prompt_for_month_input }.to output(
+        expect { builder.prompt_for_month_input }.to output(
           AppConstants::INPUT_PROMPTS[:MONTH]
-        ).to_stdout.and change { sketcher.month }.to('13')
+        ).to_stdout.and change { builder.month }.to('13')
 
-        expect(sketcher.valid_month?).to be false
+        expect(valid_month?(builder.month, builder.mode)).to be false
 
         $stdin = STDIN
       end
@@ -194,13 +195,13 @@ describe LogSketcher do
       it 'accepts the valid input' do
         $stdin = valid_input
 
-        expect(sketcher.valid_month?).to be false
+        expect(valid_month?(builder.month, builder.mode)).to be false
 
-        expect { sketcher.prompt_for_month_input }.to output(
+        expect { builder.prompt_for_month_input }.to output(
           AppConstants::INPUT_PROMPTS[:MONTH]
-        ).to_stdout.and change { sketcher.month }.to(1)
+        ).to_stdout.and change { builder.month }.to(1)
 
-        expect(sketcher.valid_month?).to be true
+        expect(valid_month?(builder.month, builder.mode)).to be true
 
         $stdin = STDIN
       end
@@ -210,20 +211,20 @@ describe LogSketcher do
       it 'accepts the valid input' do
         $stdin = valid_input_all_mode
 
-        expect(sketcher.valid_month?).to be false
+        expect(valid_month?(builder.month, builder.mode)).to be false
 
-        expect { sketcher.prompt_for_month_input }.to output(
+        expect { builder.prompt_for_month_input }.to output(
           AppConstants::INPUT_PROMPTS[:MONTH]
-        ).to_stdout.and change { sketcher.month }.to(AppConstants::MODES[:ALL])
+        ).to_stdout.and change { builder.month }.to(AppConstants::MODES[:ALL])
 
-        expect(sketcher.valid_month?).to be true
+        expect(valid_month?(builder.month, builder.mode)).to be true
 
         $stdin = STDIN
       end
     end
   end
 
-  context 'given print_file is executed with a month' do
+  context 'given build_file is executed with a month' do
     before :all do
       @output_dir = TestConstants::OUTPUT[:DIRECTORY]
     end
@@ -233,18 +234,18 @@ describe LogSketcher do
     end
 
     it 'prints january 1st' do
-      sketcher = LogSketcher.new(TestConstants::CONFIG_FILES[:TEST_PATH], 'DO', 2020, 1, @output_dir)
-      output = sketcher.print_file
+      builder = LogBuilder.new(TestConstants::CONFIG_FILES[:TEST_PATH], 'DO', 2020, 1, @output_dir)
+      output = builder.build_file
       january_1st = output.find { |day| day.year == 2020 && day.month == 1 && day.month_day == 1 }
 
       expect(january_1st).to_not be_nil
     end
   end
 
-  context 'given print_file is executed without a month' do
+  context 'given build_file is executed without a month' do
     it 'prints january 1st' do
-      sketcher = LogSketcher.new(TestConstants::CONFIG_FILES[:TEST_PATH], 'DO', 2020, 1, @output_dir)
-      output = sketcher.print_file
+      builder = LogBuilder.new(TestConstants::CONFIG_FILES[:TEST_PATH], 'DO', 2020, 1, @output_dir)
+      output = builder.build_file
       january_1st = output.find { |day| day.year == 2020 && day.month == 1 && day.month_day == 1 }
 
       expect(january_1st).to_not be_nil
