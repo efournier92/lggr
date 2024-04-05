@@ -10,6 +10,8 @@ class AddTaskService
     is_each = config[ConfigConstants::KEYS[:IS_EACH?]]
 
     do_year.days.each do |day|
+      next if is_each && skip_month(config, day)
+
       day.tasks.prepend(new_tag) if (day.month == month || is_each) && day.month_day == month_day
     end
     do_year
@@ -53,7 +55,7 @@ class AddTaskService
         day_count = 0
       end
 
-      next unless (is_each || day.month == month) && day.name == day_name
+      next unless (is_each || day.month == month) && day.name == day_name && !skip_month(config, day)
 
       day_count += 1
       day.tasks.prepend(new_tag) if day_count == nth_day
@@ -107,7 +109,6 @@ class AddTaskService
 
   def to_nth_day_in_each_month(do_year, config)
     config[ConfigConstants::KEYS[:IS_EACH?]] = true
-    config[ConfigConstants::KEYS[:DAY]] = config[ConfigConstants::KEYS[:NTH_DAY]]
 
     to_specific_date(do_year, config)
   end
@@ -175,6 +176,18 @@ class AddTaskService
   end
 
   private
+
+  def skip_even_month?(config, day)
+    config[ConfigConstants::KEYS[:ODD_ONLY?]] && day.month.even?
+  end
+
+  def skip_odd_month?(config, day)
+    config[ConfigConstants::KEYS[:EVEN_ONLY?]] && day.month.odd?
+  end
+
+  def skip_month(config, day)
+    skip_even_month?(config, day) || skip_odd_month?(config, day)
+  end
 
   def get_days_to_sunday(year)
     epact_calc = (24 + 19 * (year % 19)) % 30

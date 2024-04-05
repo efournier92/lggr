@@ -15,6 +15,8 @@ module ConfigConstants
     DAY_NAME: 'day_name',
     N_WEEKS: 'n_weeks',
     IS_EACH?: 'is_each',
+    EVEN_ONLY?: 'even_only',
+    ODD_ONLY?: 'odd_only',
   }.freeze
 
   PLACEHOLDERS = {

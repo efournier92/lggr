@@ -1,5 +1,6 @@
 require './test/constants/test_constants'
 require './src/constants/config_constants'
+require './src/constants/app_constants'
 require './src/services/add_task_service'
 require './src/models/year'
 
@@ -146,6 +147,154 @@ describe AddTaskService do
       month_day = 16
       day = get_day_from_year(do_year, @year, month, month_day)
       expect(day.tasks).to include(tag)
+    end
+
+    it 'adds a configured tag to the 3rd Wednesday in each even month' do
+      nth_day = 3
+      day_name = 'Wednesday'
+      tag = 'Even_Month_Task'
+      config = {
+        ConfigConstants::KEYS[:NTH_DAY] => nth_day,
+        ConfigConstants::KEYS[:DAY_NAME] => day_name,
+        ConfigConstants::KEYS[:EVEN_ONLY?] => true,
+        ConfigConstants::KEYS[:TAG] => tag
+      }
+
+      do_year = @service.to_nth_xday_in_each_month(@do_year, config)
+
+      month = 1
+      month_day = 15
+      day = get_day_from_year(do_year, @year, month, month_day)
+      expect(day.tasks).to_not include(tag)
+
+      month = 2
+      month_day = 19
+      day = get_day_from_year(do_year, @year, month, month_day)
+      expect(day.tasks).to include(tag)
+
+      month = 3
+      month_day = 18
+      day = get_day_from_year(do_year, @year, month, month_day)
+      expect(day.tasks).to_not include(tag)
+
+      month = 4
+      month_day = 15
+      day = get_day_from_year(do_year, @year, month, month_day)
+      expect(day.tasks).to include(tag)
+
+      month = 5
+      month_day = 20
+      day = get_day_from_year(do_year, @year, month, month_day)
+      expect(day.tasks).to_not include(tag)
+
+      month = 6
+      month_day = 17
+      day = get_day_from_year(do_year, @year, month, month_day)
+      expect(day.tasks).to include(tag)
+
+      month = 7
+      month_day = 15
+      day = get_day_from_year(do_year, @year, month, month_day)
+      expect(day.tasks).to_not include(tag)
+
+      month = 8
+      month_day = 19
+      day = get_day_from_year(do_year, @year, month, month_day)
+      expect(day.tasks).to include(tag)
+
+      month = 9
+      month_day = 16
+      day = get_day_from_year(do_year, @year, month, month_day)
+      expect(day.tasks).to_not include(tag)
+
+      month = 10
+      month_day = 21
+      day = get_day_from_year(do_year, @year, month, month_day)
+      expect(day.tasks).to include(tag)
+
+      month = 11
+      month_day = 18
+      day = get_day_from_year(do_year, @year, month, month_day)
+      expect(day.tasks).to_not include(tag)
+
+      month = 12
+      month_day = 16
+      day = get_day_from_year(do_year, @year, month, month_day)
+      expect(day.tasks).to include(tag)
+    end
+
+    it 'adds a configured tag to the 3rd Wednesday in each odd month' do
+      nth_day = 3
+      day_name = 'Wednesday'
+      tag = 'Odd_Month_Task'
+      config = {
+        ConfigConstants::KEYS[:NTH_DAY] => nth_day,
+        ConfigConstants::KEYS[:DAY_NAME] => day_name,
+        ConfigConstants::KEYS[:ODD_ONLY?] => true,
+        ConfigConstants::KEYS[:TAG] => tag
+      }
+
+      do_year = @service.to_nth_xday_in_each_month(@do_year, config)
+
+      month = 1
+      month_day = 15
+      day = get_day_from_year(do_year, @year, month, month_day)
+      expect(day.tasks).to include(tag)
+
+      month = 2
+      month_day = 19
+      day = get_day_from_year(do_year, @year, month, month_day)
+      expect(day.tasks).to_not include(tag)
+
+      month = 3
+      month_day = 18
+      day = get_day_from_year(do_year, @year, month, month_day)
+      expect(day.tasks).to include(tag)
+
+      month = 4
+      month_day = 15
+      day = get_day_from_year(do_year, @year, month, month_day)
+      expect(day.tasks).to_not include(tag)
+
+      month = 5
+      month_day = 20
+      day = get_day_from_year(do_year, @year, month, month_day)
+      expect(day.tasks).to include(tag)
+
+      month = 6
+      month_day = 17
+      day = get_day_from_year(do_year, @year, month, month_day)
+      expect(day.tasks).to_not include(tag)
+
+      month = 7
+      month_day = 15
+      day = get_day_from_year(do_year, @year, month, month_day)
+      expect(day.tasks).to include(tag)
+
+      month = 8
+      month_day = 19
+      day = get_day_from_year(do_year, @year, month, month_day)
+      expect(day.tasks).to_not include(tag)
+
+      month = 9
+      month_day = 16
+      day = get_day_from_year(do_year, @year, month, month_day)
+      expect(day.tasks).to include(tag)
+
+      month = 10
+      month_day = 21
+      day = get_day_from_year(do_year, @year, month, month_day)
+      expect(day.tasks).to_not include(tag)
+
+      month = 11
+      month_day = 18
+      day = get_day_from_year(do_year, @year, month, month_day)
+      expect(day.tasks).to include(tag)
+
+      month = 12
+      month_day = 16
+      day = get_day_from_year(do_year, @year, month, month_day)
+      expect(day.tasks).to_not include(tag)
     end
   end
 
@@ -341,6 +490,68 @@ describe AddTaskService do
       month_day = 31
       day = get_day_from_year(do_year, @year, month, month_day)
       expect(day.tasks).to include(tag)
+    end
+  end
+
+  describe '#to_nth_day_in_each_month' do
+    it 'adds a configured tag to the 15th day of each month' do
+      tag = 'Monthly_Task'
+      day_number = 15
+      config = {
+        ConfigConstants::KEYS[:DAY] => day_number,
+        ConfigConstants::KEYS[:TAG] => tag
+      }
+
+      do_year = @service.to_nth_day_in_each_month(@do_year, config)
+
+      AppConstants::LISTS[:ALL_MONTHS].each do |month_number|
+        day = get_day_from_year(do_year, @year, month_number, day_number)
+        expect(day.tasks).to include(tag)
+      end
+    end
+
+    it 'adds a configured tag to the 17th day of each odd month' do
+      tag = 'Odd_Monthly_Task'
+      day_number = 17
+      config = {
+        ConfigConstants::KEYS[:DAY] => day_number,
+        ConfigConstants::KEYS[:ODD_ONLY?] => true,
+        ConfigConstants::KEYS[:TAG] => tag
+      }
+
+      do_year = @service.to_nth_day_in_each_month(@do_year, config)
+
+      AppConstants::LISTS[:ODD_MONTHS].each do |month_number|
+        day = get_day_from_year(do_year, @year, month_number, day_number)
+        expect(day.tasks).to include(tag)
+      end
+
+      AppConstants::LISTS[:EVEN_MONTHS].each do |month_number|
+        day = get_day_from_year(do_year, @year, month_number, day_number)
+        expect(day.tasks).to_not include(tag)
+      end
+    end
+
+    it 'adds a configured tag to the 18th day of each even month' do
+      tag = 'Even_Monthly_Task'
+      day_number = 18
+      config = {
+        ConfigConstants::KEYS[:DAY] => day_number,
+        ConfigConstants::KEYS[:EVEN_ONLY?] => true,
+        ConfigConstants::KEYS[:TAG] => tag
+      }
+
+      do_year = @service.to_nth_day_in_each_month(@do_year, config)
+
+      AppConstants::LISTS[:EVEN_MONTHS].each do |month_number|
+        day = get_day_from_year(do_year, @year, month_number, day_number)
+        expect(day.tasks).to include(tag)
+      end
+
+      AppConstants::LISTS[:ODD_MONTHS].each do |month_number|
+        day = get_day_from_year(do_year, @year, month_number, day_number)
+        expect(day.tasks).to_not include(tag)
+      end
     end
   end
 
