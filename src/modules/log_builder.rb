@@ -1,6 +1,6 @@
 require './src/models/year'
 require './src/services/printer_service'
-require './src/services/add_tag_service'
+require './src/services/add_task_service'
 require './src/services/input_validation_service'
 require './src/constants/app_constants'
 

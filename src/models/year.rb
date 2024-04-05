@@ -1,5 +1,5 @@
 require './src/models/day'
-require './src/services/special_tag_service'
+require './src/services/configured_tasks_service'
 
 class Year
   attr_accessor :days
@@ -18,7 +18,7 @@ class Year
       add_next_week
     end
 
-    add_special_tags
+    add_configured_tasks
   end
 
   def initialize_values
@@ -76,8 +76,8 @@ class Year
     first_monday
   end
 
-  def add_special_tags
-    add_tags_service = SpecialTagService.new
-    add_tags_service.add_special_tags(self)
+  def add_configured_tasks
+    add_task_service = ConfiguredTasksService.new
+    add_task_service.add_configured_tasks(self)
   end
 end

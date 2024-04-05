@@ -264,8 +264,8 @@ describe TaskPrinterService do
   end
 
   describe '#print_from_template' do
-    context 'given a special tag with a configured template' do
-      it 'inserts the special tag content inside the template' do
+    context 'given a configured task with a configured template' do
+      it 'inserts the configured task content inside the template' do
         task = @config[ConfigConstants::KEYS[:TASKS]][TestConstants::HOLIDAYS[:FIRST_DAY]]
         content = task[ConfigConstants::KEYS[:TEMPLATE_VARIABLES]]
         template_name = task[ConfigConstants::KEYS[:TEMPLATE]]
@@ -277,7 +277,7 @@ describe TaskPrinterService do
       end
     end
 
-    context 'given a special tag with a configured template with multiple placeholders' do
+    context 'given a configured task with a configured template with multiple placeholders' do
       it 'inserts the replaces each placeholder appropriately' do
         task = @config[ConfigConstants::KEYS[:TASKS]][TestConstants::KEYS[:BIRTHDAY_PERSON]]
         content = task[ConfigConstants::KEYS[:TEMPLATE_VARIABLES]]

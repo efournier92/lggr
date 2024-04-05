@@ -34,7 +34,7 @@ context 'User sketches a full-year log file' do
     end
   end
 
-  context 'given we configure periodic special tasks for the whole 2020 year' do
+  context 'given we configure periodic configured tasks for the whole 2020 year' do
     it 'adds a configured tasks to a specific date' do
       date = '2020-01-01'
       expect(@do_hash[date]).to include('First_Day')

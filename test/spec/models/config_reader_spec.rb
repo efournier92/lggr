@@ -46,15 +46,15 @@ describe ConfigReaderService do
     end
   end
 
-  describe '#get_special_tags' do
+  describe '#get_configured_tasks' do
     context 'given a valid config' do
-      it 'returns a hash with configured special tags' do
+      it 'returns a hash with configured tasks' do
         tags = @config_reader.configured_tasks
         first_day = tags[TestConstants::HOLIDAYS[:FIRST_DAY]]
 
         expect(tags).to be_an_instance_of(Hash)
         expect(first_day[ConfigConstants::KEYS[:TEMPLATE]]).to eql(ConfigConstants::TEMPLATE_TYPES[:HOLIDAY])
-        expect(first_day[ConfigConstants::KEYS[:METHOD]]).to eql(ConfigConstants::SPECIAL_METHODS[:SPECIFIC_DATE])
+        expect(first_day[ConfigConstants::KEYS[:METHOD]]).to eql(ConfigConstants::CONFIGURED_TASK_METHODS[:SPECIFIC_DATE])
       end
     end
   end

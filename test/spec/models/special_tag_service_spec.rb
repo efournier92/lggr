@@ -1,15 +1,15 @@
-require './src/services/special_tag_service'
+require './src/services/configured_tasks_service'
 require './src/models/year'
 require './test/constants/test_constants'
 
-describe SpecialTagService do
+describe ConfiguredTasksService do
   before :each do
-    @tag_service = SpecialTagService.new
+    @tag_service = ConfiguredTasksService.new
     @year = Year.new(2020, TestConstants::CONFIG_FILES[:TEST_PATH])
   end
 
   context 'given class construction' do
-    describe '#add_special_tags' do
+    describe '#add_configured_tasks' do
       it 'adds a tag based on a configured template to a specific date' do
         day = @year.days.find { |d| d.month == 1 && d.month_day == 1 }
         holiday_name = TestConstants::HOLIDAYS[:FIRST_DAY]

@@ -23,7 +23,7 @@ module ConfigConstants
     CONTENT: '{{CONTENT}}'
   }.freeze
 
-  SPECIAL_METHODS = {
+  CONFIGURED_TASK_METHODS = {
     SPECIFIC_DATE: 'to_specific_date',
   }.freeze
 

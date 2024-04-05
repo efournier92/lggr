@@ -1,6 +1,6 @@
 require './test/constants/test_constants'
 require './src/constants/config_constants'
-require './src/services/add_tag_service'
+require './src/services/add_task_service'
 require './src/models/year'
 
 def get_day_from_year(do_year, year, month, month_day)
