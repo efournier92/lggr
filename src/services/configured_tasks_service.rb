@@ -8,7 +8,7 @@ class ConfiguredTasksService
   def add_configured_tasks(year)
     config_file = year.config_file
     reader = ConfigReaderService.new(config_file)
-    add_task_service = AddTagService.new
+    add_task_service = AddTaskService.new
     tags = reader.configured_tasks
 
     return if tags.nil?

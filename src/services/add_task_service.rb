@@ -2,7 +2,7 @@ require './src/models/year'
 require './src/constants/config_constants'
 require './src/constants/app_constants'
 
-class AddTagService
+class AddTaskService
   def to_specific_date(do_year, config)
     month = config[ConfigConstants::KEYS[:MONTH]]
     month_day = config[ConfigConstants::KEYS[:DAY]]

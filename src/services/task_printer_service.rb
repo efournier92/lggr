@@ -47,8 +47,14 @@ class TaskPrinterService
         name = get_name_from_placeholder(text)
         configured_template = reader.configured_template_by_name(name)
         # TODO: Inform user if configured_template.nil?
-        text = configured_template.keys[0]
-        task = configured_template.values[0]
+        begin
+          text = configured_template.keys[0]
+          task = configured_template.values[0]
+        rescue StandardError
+          # TODO: Implement error-handling service
+          puts "TEXT: #{text}"
+          puts "TASK: #{task}"
+        end
       end
       if task.nil?
         append_leaf(text)
