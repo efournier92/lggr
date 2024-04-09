@@ -9,6 +9,7 @@ Calendar application for maintaining TODO lists in markdown format.
 ## TODOs
 
 - [ ] Add configuration examples to README.
+- [ ] Overwrite same-named tags for a day.
 - [ ] Bundle program as executable package.
 - [ ] Output to CWD unless explicitly specified.
 - [ ] Warn of duplicate keys in YAML.
