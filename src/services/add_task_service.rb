@@ -1,6 +1,6 @@
-require './src/models/year'
-require './src/constants/config_constants'
-require './src/constants/app_constants'
+require_relative '../models/year'
+require_relative '../constants/config_constants'
+require_relative '../constants/app_constants'
 
 class AddTaskService
   def to_specific_date(do_year, config)

@@ -21,10 +21,11 @@ Calendar application for maintaining TODO lists in markdown format.
 - [ ] Add configuration examples to README.
 - [ ] Overwrite same-named tags for a day.
 - [x] Bundle program as executable package.
-- [ ] Output to CWD unless explicitly specified.
+- [x] Output to CWD unless explicitly specified.
 - [ ] Warn of duplicate keys in YAML.
 - [ ] Add begin/rescue blacks to all YAML-related methods.
   - [ ] Warn user of improper configuration.
   - [ ] Do not stop running on improper configuration.
 - [ ] Validate inputs to `add_task_service`.
 - [ ] Reconsider naming on methods in `add_task_service`.
+- [ ] Ask user to open with VIM.

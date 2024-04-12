@@ -1,5 +1,5 @@
 require 'yaml'
-require './src/constants/config_constants'
+require_relative '../constants/config_constants'
 
 class ConfigReaderService
   def initialize(config_file)

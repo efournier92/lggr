@@ -1,8 +1,8 @@
-require './src/services/config_reader_service'
-require './src/services/task_printer_service'
-require './src/models/year'
-require './src/services/add_task_service'
-require './src/constants/config_constants'
+require_relative './config_reader_service'
+require_relative './task_printer_service'
+require_relative './add_task_service'
+require_relative '../models/year'
+require_relative '../constants/config_constants'
 
 class ConfiguredTasksService
   def add_configured_tasks(year)

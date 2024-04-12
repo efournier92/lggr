@@ -1,5 +1,5 @@
-require './src/models/day'
-require './src/services/configured_tasks_service'
+require_relative './day'
+require_relative '../services/configured_tasks_service'
 
 class Year
   attr_accessor :days

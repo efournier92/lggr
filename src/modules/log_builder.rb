@@ -1,8 +1,8 @@
-require './src/models/year'
-require './src/services/printer_service'
-require './src/services/add_task_service'
-require './src/services/input_validation_service'
-require './src/constants/app_constants'
+require_relative '../models/year'
+require_relative '../constants/app_constants'
+require_relative '../services/printer_service'
+require_relative '../services/add_task_service'
+require_relative '../services/input_validation_service'
 
 # Main class to kickstart the file-printing process according to initialized values
 class LogBuilder

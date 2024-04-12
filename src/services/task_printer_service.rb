@@ -1,5 +1,5 @@
-require './src/constants/config_constants'
-require './src/services/config_reader_service'
+require_relative './config_reader_service'
+require_relative '../constants/config_constants'
 
 class TaskPrinterService
   attr_reader :output
