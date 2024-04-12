@@ -2,8 +2,11 @@
 
 source 'https://rubygems.org'
 
-gem 'pry-byebug'
-gem 'rspec'
-gem 'rubocop'
-gem 'ruby-lsp'
 gem 'yaml'
+
+group :development do
+  gem 'pry-byebug'
+  gem 'rspec'
+  gem 'rubocop'
+  gem 'ruby-lsp'
+end

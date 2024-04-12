@@ -1,7 +1,7 @@
 require 'fileutils'
 
 class PrinterService
-  DEFAULT_OUTPUT_DIR = './_out'.freeze
+  DEFAULT_OUTPUT_DIR = './'.freeze
 
   def initialize(output_dir = DEFAULT_OUTPUT_DIR)
     @output_dir = output_dir || DEFAULT_OUTPUT_DIR

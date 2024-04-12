@@ -1,0 +1,3 @@
+#!/bin/bash
+
+rubyc -o ./builds/log-builder_$(date +"%Y-%m-%d") ./src/run.rb

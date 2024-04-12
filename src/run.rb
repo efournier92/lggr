@@ -1,5 +1,5 @@
-require './src/modules/log_builder'
-require './src/services/input_validation_service'
+require_relative './modules/log_builder'
+require_relative './services/input_validation_service'
 
 arguments = ARGV
 

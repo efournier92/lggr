@@ -6,11 +6,21 @@ Calendar application for maintaining TODO lists in markdown format.
 
 - _Just_ **Ruby**
 
+## Packaging
+
+### Download Requirements
+
+- [Ruby Packer](https://github.com/ericbeland/ruby-packer)
+
+### Complile from Source
+
+- `$ ./build_package`
+
 ## TODOs
 
 - [ ] Add configuration examples to README.
 - [ ] Overwrite same-named tags for a day.
-- [ ] Bundle program as executable package.
+- [x] Bundle program as executable package.
 - [ ] Output to CWD unless explicitly specified.
 - [ ] Warn of duplicate keys in YAML.
 - [ ] Add begin/rescue blacks to all YAML-related methods.
