@@ -18,7 +18,7 @@
     - [Task Examples](#template-examples)
     - [Holidays](#holidays)
     - [Birthdays](#birthdays)
-- [TODOs](todos)
+- [TODO Items](todo-items)
 
 ## Overview
 
@@ -124,9 +124,9 @@ Music_Equipment(
 
 ```yaml
 task_templates_config:
-  { TEMPLATE_NAME }:
-    { TASK }:
-      - { TASK_DETAIL }
+  $TEMPLATE_NAME:
+    $TASK:
+      - $TASK_DETAIL
 ```
 
 #### Template Examples
@@ -167,23 +167,23 @@ Appointment_Attend:
 
 ```yaml
 tasks_config:
-  { TASK_NAME }:
-    method: { METHOD_NAME }
-    { DATE_CONFIG }: { DATE_CONFIG }
-    template: { TEMPLATE_NAME }
+  $TASK_NAME:
+    method: $METHOD_NAME
+    $DATE_CONFIG: $DATE_CONFIG
+    template: $TEMPLATE_NAME
 ```
 
 ##### From Inline Template
 
 ```yaml
 tasks_config:
-  { TASK_NAME }:
-    method: { METHOD_NAME }
-    { DATE_CONFIG }: { DATE_CONFIG }
+  $TASK_NAME:
+    method: $METHOD_NAME
+    $DATE_CONFIG: $DATE_CONFIG
     template:
-      { TEMPLATE_NAME }:
-        { TEMPLATE_NODE }:
-          - { TEMPLATE_DETAIL }
+      $TEMPLATE_NAME:
+        $TEMPLATE_NODE:
+          - $TEMPLATE_DETAIL
 ```
 
 #### Supported Methods
@@ -534,7 +534,7 @@ Birthday_AbeLincoln:
     - '{{CONTACT}}': honest_abe_1809@hotmail.com
 ```
 
-## TODOs
+## TODO Items
 
 - [ ] Overwrite same-named tags for a day.
 - [ ] Warn of duplicate keys in YAML.
@@ -545,4 +545,4 @@ Birthday_AbeLincoln:
 - [ ] Ask user to open with VIM.
 - [ ] Calculate birthday age from year.
 - [ ] Address LG mode.
-  - [ ] Add README example.
+  - [ ] Add example to README.
