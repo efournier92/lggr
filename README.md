@@ -22,8 +22,9 @@
 
 ## Overview
 
-- _Facilitates capturing prospective and retrospective data in a handy Markdown syntax._
-- Builds a daily TODO list with tasks from on a configuration file.
+- **Facilitates capturing prospective and retrospective data from your day in a handy Markdown syntax.**
+- _Builds a daily prospective TODO-style list structure with tasks fed from a configuration file._
+- _Allows you to capture retrospective points of reference from each day of your life._
 
 ## Usage
 
@@ -44,19 +45,11 @@ Birthday(
   Name(YourFriend,),
   Contact(your_friend@gmail.com,),
 ),
-Music_Equipment(
-  Guitar_Restring(
-    Because(
-      HasBeen_Months(3,),
-    ),
-    Strategy(
-      Type(Augustine_Black,),
-    ),
-    Result(
-      TODO,
-    ),
+Bills_Pay(
+  Rent(
+    Price(),
   ),
-),
+):
 Code_Project_Work(
   Readme_Finish,
   Git_Commit,
@@ -78,6 +71,19 @@ Appointment_Attend(
   ),
   Result(
     TODO,
+  ),
+),
+Music_Equipment(
+  Guitar_Restring(
+    Because(
+      HasBeen_Months(3,),
+    ),
+    Strategy(
+      Type(Augustine_Black,),
+    ),
+    Result(
+      TODO,
+    ),
   ),
 ),
 ```
@@ -255,7 +261,7 @@ Appointment_Monthly_Attend:
   nth_day: 3
   odd_only: true
   day_name: Saturday
-  template: Haircut_Appointment_Attend
+  template: Appointment_Attend
 ```
 
 ###### Every Odd Month
@@ -266,7 +272,7 @@ Appointment_Monthly_Attend:
   nth_day: 3
   odd_only: true
   day_name: Saturday
-  template: Haircut_Appointment_Attend
+  template: Appointment_Attend
 ```
 
 ###### Every Even Month
@@ -295,7 +301,7 @@ Memorial_Day:
 ##### `to_last_xday_in_each_month`
 
 ```yaml
-Bill_Pay:
+Bill_Rent_Pay:
   method: to_last_xday_in_each_month
   day_name: Friday
   template:
@@ -311,7 +317,7 @@ Log_NextYear:
   method: to_last_day_in_month
   month: 12
   template:
-    - Log_NextMonth
+    - Log_NextYear
 ```
 
 ##### `to_last_day_in_each_month`
@@ -326,11 +332,11 @@ Log_NextMonth:
 ##### `to_nth_day_in_each_month`
 
 ```yaml
-Bill_Pay:
+Log_LastMonth:
   method: to_nth_day_in_each_month
   nth_day: 1
   template:
-    - Body_Photos_Progress_Take
+    - Log_LastMonth
 ```
 
 ##### `to_nth_day_in_each_quarter`
@@ -518,7 +524,7 @@ tasks_config:
 ### Birthdays
 
 ```yaml
-Birthday_E:
+Birthday_AbeLincoln:
   method: to_specific_date
   month: 2
   day: 12
@@ -531,8 +537,6 @@ Birthday_E:
 ## TODOs
 
 - [ ] Overwrite same-named tags for a day.
-- [x] Bundle program as executable package.
-- [x] Output to CWD unless explicitly specified.
 - [ ] Warn of duplicate keys in YAML.
 - [ ] Add begin/rescue blacks to all YAML-related methods.
   - [ ] Warn user of improper configuration.
