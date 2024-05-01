@@ -18,6 +18,7 @@
     - [Task Examples](#template-examples)
     - [Holidays](#holidays)
     - [Birthdays](#birthdays)
+- [Version History]($version-history)
 - [TODO Items](todo-items)
 
 ## Overview
@@ -533,6 +534,18 @@ Birthday_AbeLincoln:
     - '{{NAME}}': AbeLincoln
     - '{{CONTACT}}': honest_abe_1809@hotmail.com
 ```
+
+## Version History
+
+### 2024-05-01
+
+- Resolves a bug preventing `to_nth_day_in_each_month` from functioning correctly the `nth_day` attribute.
+  - Now treats `nth_day` and `day` attributes synonymously.
+
+### 2024-04-11
+
+- Logical retooling to read tasks from a YAML config file.
+- 1st build compiled with Ruby Packer.
 
 ## TODO Items
 

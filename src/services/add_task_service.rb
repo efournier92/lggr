@@ -109,6 +109,7 @@ class AddTaskService
 
   def to_nth_day_in_each_month(do_year, config)
     config[ConfigConstants::KEYS[:IS_EACH?]] = true
+    config[ConfigConstants::KEYS[:DAY]] = config[ConfigConstants::KEYS[:NTH_DAY]]
 
     to_specific_date(do_year, config)
   end
